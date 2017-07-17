@@ -21,8 +21,6 @@
       artist: 'Micheal Hoenig',
       bio: '70s german synth/kraut',
       location: 'San Francisco',
-      albumIds: [1,2,3],
-      trackIds: [1,2,3]
     },
   },
   searchResults: {

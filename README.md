@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-Tonedream is a web application, inspired by Bandcamp, built using Ruby on Rails
+Tonedream is an independent music network built using Ruby on Rails
 and React/Redux.  Once completed this project will have all of the following
 features:
 
