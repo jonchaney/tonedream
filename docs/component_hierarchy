@@ -1,5 +1,8 @@
 ## Component Hierarchy
 
+**HomeContainer**
+ - Home
+
 **AuthFormContainer**
  - AuthForm
 
@@ -9,15 +12,8 @@
 **AlbumIndexContainer**
  - AlbumIndexItem
 
-**AlbumIndex**
-  - AlbumIndexItem
-
 **TracksIndexContainer**
- - TrackIndex
-
-**TracksIndex**
-
-**Search**
+ - TrackIndexItem
 
 **SearchContainer**
  - SearchIndexItem
@@ -38,9 +34,9 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/" | "Search" |
+| "/" | "HomeContainer" |
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/api/artists/:artistId" | "AlbumContainer" |
 | "/api/albums/:albumId" | "AlbumIndexContainer" |
-| "/api/search" | "SearchIndexContainer" |
+| "/api/searchResult" | "SearchIndexContainer" |

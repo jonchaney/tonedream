@@ -19,7 +19,7 @@ features:
 - [ ] Song Player
 - [ ] Search
 - [ ] Upload/Download Songs
-- [ ] [Production README](docs/readme.md)
+- [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -53,7 +53,7 @@ the API. Tracks belong to albums. Artist has many albums and tracks.
 
 **Objective:** Tracks/Albums can be played.
 
-### Phase 5: Search (2 days)
+### Phase 5: Search (2 day)
 
 **Objective:** Site can be searched and artists/albums/songs displayed
 
