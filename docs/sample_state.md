@@ -3,7 +3,7 @@
   sessions: {
     currentUser: {
       id: 1,
-      email: 'jonchaney@gmail.com',
+      email: 'michealhoenig@gmail.com',
       artist: 'Micheal Hoenig',
       bio: '70s german synth/kraut',
       location: 'San Francisco',
@@ -17,7 +17,7 @@
   users: {
     1: {
       id: 1,
-      email: 'jonchaney@gmail.com',
+      email: 'michealhoenig@gmail.com',
       artist: 'Micheal Hoenig',
       bio: '70s german synth/kraut',
       location: 'San Francisco',
