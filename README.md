@@ -40,30 +40,27 @@ features:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Complete Styling of all pages (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Artist, Album, Sign In, Sign Up, and Search Page
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Album model, Tracks Model, API, and components (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Albums and Tracks can be created, read, edited and destroyed through
+the API. Tracks belong to albums. Artist has many albums and tracks.
 
-### Phase 4: Tags (1 day)
+### Phase 4: Fully functioning song player (2 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Tracks/Albums can be played.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 5: Search (2 day)
 
-**Objective:** Allow rich text editing of notes.
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Site can be searched and artists/albums/songs displayed
 
 ### Bonus Features (TBD)
 - [ ] Purchase Songs
 - [ ] Follows
+- [ ] Edit Album Page
 - [ ] Fan Page
 - [ ] Label Page
 - [ ] Events

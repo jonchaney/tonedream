@@ -1,0 +1,46 @@
+## Component Hierarchy
+
+**AuthFormContainer**
+ - AuthForm
+
+**AlbumContainer**
+ - AlbumIndexItem
+
+**AlbumIndexContainer**
+ - AlbumIndexItem
+
+**AlbumIndex**
+  - AlbumIndexItem
+
+**TracksIndexContainer**
+ - TrackIndex
+
+**TracksIndex**
+
+**Search**
+
+**SearchContainer**
+ - SearchIndexItem
+
+ **SearchIndexContainer**
+ - SearchIndexItem
+
+**SearchIndexItemContainer**
+  - SearchIndexItem
+
+**SearchIndex**
+  - SearchIndexItem
+
+**SearchIndexItem**
+  - SearchIndexItem
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+| "/" | "Search" |
+| "/sign-up" | "AuthFormContainer" |
+| "/sign-in" | "AuthFormContainer" |
+| "/api/artists/:artistId" | "AlbumContainer" |
+| "/api/albums/:albumId" | "AlbumIndexContainer" |
+| "/api/search" | "SearchIndexContainer" |
