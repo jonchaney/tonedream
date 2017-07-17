@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://tonedream.herokuapp.com/
 [trello]: https://trello.com/b/2NLKQYRR/full-stack-project
 
 ## Minimum Viable Product
