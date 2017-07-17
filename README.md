@@ -19,7 +19,7 @@ features:
 - [ ] Song Player
 - [ ] Search
 - [ ] Upload/Download Songs
-- [ ] [Production README][docs/readme.md]
+- [ ] [Production README](docs/readme.md)
 
 ## Design Docs
 * [View Wireframes][wireframes]
