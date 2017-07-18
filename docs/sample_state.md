@@ -23,11 +23,6 @@
       location: 'San Francisco',
     },
   },
-  searchResults: {
-    albumIds: [1,2,3],
-    artistIds: [1,2,3],
-    trackIds: [1,2,3]
-  },
   albums: {
     1: {
       id: 1,
