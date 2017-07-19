@@ -18,40 +18,72 @@
    background-color: pink;
  }*/
 
+ /*----------------------------------------------
+  web fonts
+  --------------------------------------------*/
+
+@font-face {
+  font-family: "MissionGothic-Light";
+  src: url('fonts/MissionGothic/Mission-Gothic-Light.otf');
+}
+
+@font-face {
+  font-family: "MissionGothic-Thin";
+  src: url('fonts/MissionGothic/Mission-Gothic-Thin.otf');
+}
+
 /****************************
   HEADER
 *****************************/
 
 h1 {
-  font-family: 'Carrois Gothic', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   display: flex;
+  font-weight: lighter;
   border-bottom: .75px solid;
   border-bottom-color: grey;
   margin: 0 5px 0 5px;
+  font-size: 60px;
 }
 
 /****************************
   NAV
 *****************************/
 
-.login-signup {
-  font-family: 'Carrois Gothic', sans-serif;
-  float: right;
-  font-size: 12px;
-}
-
 .nav {
   align-items: center;
   justify-content: center;
   display: flex;
+  margin: 10px 15px 0 0;
 }
 
 .nav li {
   margin: 0 5px 5px 0;
 }
 
-.nav li:hover {
+.nav li:first-child {
+  color: gray;
+  font-family: 'MissionGothic-Thin', sans-serif;
+  font-weight: lighter;
+  display: flex;
+}
+
+.nav li:last-child {
+  padding-left: 10px;
+  border-left: .75px solid;
+  border-color: gray;
+  border-width: thin;
+  margin-left: 5px;
+}
+
+.nav > li:not(:first-child):hover > a {
   text-decoration: underline;
+}
+
+.login-signup {
+  font-family: 'MissionGothic-Light', sans-serif;
+  float: right;
+  font-size: 16px;
 }
 
 /****************************
@@ -83,27 +115,27 @@ a:visited {
 
 .login-form > li {
   text-align: center;
-  font-size: 12px;
-  font-family: 'Carrois Gothic', sans-serif;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  font-size: 16px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  margin-bottom: 50px;
 }
 
 .login-form > ul {
   text-align: center;
   font-size: 10px;
-  font-family: 'Carrois Gothic', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
 }
 
 .login-input {
   text-align: center;
   font-size: 12px;
-  font-family: 'Carrois Gothic', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   outline: none;
+  margin-top: 5px;
 }
 
 .login-button, .logout-button {
-  font-family: 'Carrois Gothic', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   background-color: white;
   border: none;
   color: black;
@@ -118,16 +150,18 @@ a:visited {
   outline: none;
 }
 
+.login-button:hover {
+  /*box-shadow: 0 0 5px gray;*/
+}
+
 .logout-button {
-  font-family: 'Carrois Gothic', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   width: 11px;
-  font-size: 12px;
+  font-size: 16px;
   height: 11px;
   border: 0 none transparent;
-  padding:0;
-  margin:0;
+  margin: 10px 20px 0 0;
   float: right;
-  margin-right: 28px;
 }
 
 .logout-button:hover {
@@ -136,8 +170,20 @@ a:visited {
 
 label, input {
   border: 0;
-      border-bottom: .75px solid black;
-      outline: 0;
+  border-bottom: .75px solid black;
+  outline: 0;
+}
+
+.login-form > ul {
+  color: #FF161D;
+  height: 7px;
+  text-transform: lowercase;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.login-form > li {
+  margin-bottom: 5px;
 }
 
 ::-webkit-input-placeholder {

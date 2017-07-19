@@ -37,15 +37,21 @@ class SessionForm extends React.Component {
     }
   }
 
+  guestAccount(e) {
+    e.preventDefault();
+    const user = {email: "guest", password: "123456"};
+    this.props.signin({user});
+  }
+
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
     );
   }
 
