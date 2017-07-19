@@ -31,9 +31,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up</Link>;
+      return <li>login</li>;
     } else {
-      return <Link to="/login">log in</Link>;
+      return <li>sign up</li>;
     }
   }
 
@@ -54,27 +54,34 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-           {this.props.formType} -- {this.navLink()}
-          {this.renderErrors()}
           <div className="login-form">
+            {this.navLink()}
+            {this.renderErrors()}
             <br/>
-            <label>username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
+            <div className="login-input">
+              <label>
+                <input type="text"
+                  autoFocus="autofocus"
+                  className="login-input"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  placeholder="username"
+                />
+              </label>
+              <br/>
+              <br/>
+              <label>
+                <input type="password"
+                  className="login-input"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="password"
+                />
+              </label>
+                <input type="submit"
+                       className="login-button"
+                       value="submit" />
+            </div>
           </div>
         </form>
       </div>

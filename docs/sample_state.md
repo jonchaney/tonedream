@@ -9,7 +9,7 @@
       location: 'San Francisco',
     },
     errors: {
-      base: ['Invalid username or password'],
+      base: ['invalid username or password'],
       username: ["can't be blank"],
       password: ['is too short (minimum is 6 characters)'],
     },

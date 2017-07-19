@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ /*body {
+   background-color: pink;
+ }*/
+
 /****************************
   HEADER
 *****************************/
@@ -46,6 +50,10 @@ h1 {
   margin: 0 5px 5px 0;
 }
 
+.nav li:hover {
+  text-decoration: underline;
+}
+
 /****************************
   LINKS
 *****************************/
@@ -56,4 +64,83 @@ a {
 
 a:visited {
   color: black;
+}
+
+/****************************
+  LOGIN/SIGN IN FORM
+*****************************/
+
+.login-form-container {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -100px;
+  border: .75px solid;
+}
+
+.login-form > li {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Carrois Gothic', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.login-form > ul {
+  text-align: center;
+  font-size: 10px;
+  font-family: 'Carrois Gothic', sans-serif;
+}
+
+.login-input {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Carrois Gothic', sans-serif;
+  outline: none;
+}
+
+.login-button, .logout-button {
+  font-family: 'Carrois Gothic', sans-serif;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 2px 32px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 15px;
+  border: .75px solid;
+  outline: none;
+}
+
+.logout-button {
+  font-family: 'Carrois Gothic', sans-serif;
+  width: 11px;
+  font-size: 12px;
+  height: 11px;
+  border: 0 none transparent;
+  padding:0;
+  margin:0;
+  float: right;
+  margin-right: 28px;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+}
+
+label, input {
+  border: 0;
+      border-bottom: .75px solid black;
+      outline: 0;
+}
+
+::-webkit-input-placeholder {
+  color: black;
+  opacity: .25;
 }
