@@ -24,12 +24,12 @@
 
 @font-face {
   font-family: "MissionGothic-Light";
-  src: font-path('Mission-Gothic-Light.otf') format("truetype");;
+  src: font-path('Mission-Gothic-Light.otf') format("opentype");;
 }
 
 @font-face {
   font-family: "MissionGothic-Thin";
-  src: font-path('Mission-Gothic-Thin.otf') format("truetype");;
+  src: font-path('Mission-Gothic-Thin.otf') format("opentype");;
 }
 
 
@@ -93,6 +93,7 @@ h1 {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
