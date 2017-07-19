@@ -24,12 +24,12 @@
 
 @font-face {
   font-family: "MissionGothic-Light";
-  src: font-url('fonts/MissionGothic/Mission-Gothic-Light.otf');
+  src:url(asset-path('fonts/MissionGothic/Mission-Gothic-Light.otf'));
 }
 
 @font-face {
   font-family: "MissionGothic-Thin";
-  src: font-url('fonts/MissionGothic/Mission-Gothic-Thin.otf');
+  src:url('fonts/MissionGothic/Mission-Gothic-Thin.otf');
 }
 
 /****************************
