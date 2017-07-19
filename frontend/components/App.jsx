@@ -18,6 +18,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/guest" component={SessionFormContainer} />
     </Switch>
   </div>
 );

@@ -24,13 +24,14 @@
 
 @font-face {
   font-family: "MissionGothic-Light";
-  src:url(asset-path('stylesheets/fonts/MissionGothic/Mission-Gothic-Light.otf'));
+  src: font-path('Mission-Gothic-Light.otf');
 }
 
 @font-face {
   font-family: "MissionGothic-Thin";
-  src:url(asset-path('stylesheets/fonts/MissionGothic/Mission-Gothic-Thin.otf'));
+  src: font-path('Mission-Gothic-Thin.otf');
 }
+
 
 /****************************
   HEADER
