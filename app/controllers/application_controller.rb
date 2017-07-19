@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
     @currnet_user ||= User.find_by_session_token(session[:session_token])
   end
 
-  def sign_in(user)
+  def login(user)
     session[:session_token] = user.reset_session_token
   end
 
-  def sign_out
+  def logout
     current_user.reset_session_token
     session[:session_token] = nil
   end

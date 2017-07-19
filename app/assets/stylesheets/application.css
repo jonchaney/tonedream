@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
+/****************************
+  HEADER
+*****************************/
+
+h1 {
+  font-family: 'Carrois Gothic', sans-serif;
+  display: flex;
+  border-bottom: .75px solid;
+  border-bottom-color: grey;
+  margin: 0 5px 0 5px;
+}
+
+/****************************
+  NAV
+*****************************/
+
+.login-signup {
+  font-family: 'Carrois Gothic', sans-serif;
+  float: right;
+  font-size: 12px;
+}
+
+.nav {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.nav li {
+  margin: 0 5px 5px 0;
+}
+
+/****************************
+  LINKS
+*****************************/
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
