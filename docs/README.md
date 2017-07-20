@@ -58,9 +58,7 @@ the API. Tracks belong to albums. Artist has many albums and tracks.
 **Objective:** Site can be searched and artists/albums/songs displayed
 
 ### Bonus Features (TBD)
+- [ ] Edit Album Page
 - [ ] Purchase Songs
 - [ ] Follows
-- [ ] Edit Album Page
-- [ ] Fan Page
 - [ ] Label Page
-- [ ] Events

@@ -11,6 +11,7 @@
 #  location           :string
 #  banner_url         :string
 #  background_img_url :string
+#  email              :string           not null
 #
 
 require 'test_helper'
