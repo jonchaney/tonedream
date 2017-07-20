@@ -38,9 +38,10 @@ class SessionForm extends React.Component {
   }
 
   guestAccount(e) {
-    e.preventDefault();
-    const user = {email: "guest", password: "123456"};
-    this.props.signin({user});
+    // e.preventDefault();
+    const user = {username: "guest", password: "password"};
+    this.props.login({user});
+    this.props.history.push('/');
   }
 
   renderErrors() {
@@ -56,6 +57,11 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    if (this.props.location.pathname === '/guest') {
+      return (
+        <h1>{this.guestAccount()}</h1>
+      )
+    } else {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -92,6 +98,7 @@ class SessionForm extends React.Component {
         </form>
       </div>
     );
+  }
   }
 }
 
