@@ -32,6 +32,9 @@
   src: font-path('Mission-Gothic-Thin.otf') format("opentype");;
 }
 
+body {
+  background-color: white;
+}
 
 /****************************
   HEADER
@@ -39,10 +42,10 @@
 
 h1 {
   font-family: 'MissionGothic-Light', sans-serif;
-  display: flex;
+  // display: flex;
+  text-shadow: 2px 2px 2px purple;
   font-weight: lighter;
   border-bottom: .75px solid;
-  border-bottom-color: grey;
   margin: 0 5px 0 5px;
   font-size: 60px;
 }
