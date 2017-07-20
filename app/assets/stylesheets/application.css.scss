@@ -32,20 +32,21 @@
   src: font-path('Mission-Gothic-Thin.otf') format("opentype");;
 }
 
-body {
-  background-color: white;
-}
-
 /****************************
   HEADER
 *****************************/
 
 h1 {
   font-family: 'MissionGothic-Light', sans-serif;
-  text-shadow: 2px 2px 2px purple;
   font-weight: lighter;
   border-bottom: .75px solid;
   margin: 5px 18px 0 18px;
+  font-size: 60px;
+  display: flex;
+}
+
+h1 > img {
+  margin: 2px 14px 0 5px;
 }
 
 /****************************
@@ -63,13 +64,6 @@ h1 {
   margin: 0 5px 5px 0;
 }
 
-.nav li:first-child {
-  color: gray;
-  font-family: 'MissionGothic-Thin', sans-serif;
-  font-weight: lighter;
-  display: flex;
-}
-
 .nav li:last-child {
   padding-left: 10px;
   border-left: .75px solid;
@@ -78,7 +72,7 @@ h1 {
   margin-left: 5px;
 }
 
-.nav > li:not(:first-child):hover > a {
+.nav > li:hover > a {
   text-decoration: underline;
 }
 
@@ -101,42 +95,6 @@ a:visited {
   color: black;
 }
 
-/****************************
-  LOGIN/SIGN IN FORM
-*****************************/
-
-.login-form-container {
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  margin: -100px 0 0 -100px;
-  border: .75px solid;
-}
-
-.login-form > li {
-  text-align: center;
-  font-size: 16px;
-  font-family: 'MissionGothic-Light', sans-serif;
-  margin-bottom: 50px;
-}
-
-.login-form > ul {
-  text-align: center;
-  font-size: 10px;
-  font-family: 'MissionGothic-Light', sans-serif;
-}
-
-.login-input {
-  text-align: center;
-  font-size: 12px;
-  font-family: 'MissionGothic-Light', sans-serif;
-  outline: none;
-  margin-top: 5px;
-}
-
 .login-button, .logout-button {
   font-family: 'MissionGothic-Light', sans-serif;
   background-color: white;
@@ -148,13 +106,9 @@ a:visited {
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
-  margin-top: 15px;
+  margin-top: 12px;
   border: .75px solid;
   outline: none;
-}
-
-.login-button:hover {
-  /*box-shadow: 0 0 5px gray;*/
 }
 
 .logout-button {
@@ -171,7 +125,68 @@ a:visited {
   text-decoration: underline;
 }
 
-label, input {
+/****************************
+  LOGIN/SIGN IN FORM
+*****************************/
+
+.login-form {
+  margin-top: 19px;
+}
+
+label.check-box {
+    margin-top: 14px;
+    margin-left: 5px;
+}
+
+
+.login-form-container {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 252px;
+  height: 300px;
+  margin: -100px 0 0 -100px;
+  border: .75px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-check-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form > li {
+  text-align: center;
+  font-size: 16px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  margin-bottom: 50px;
+}
+
+.login-form > ul {
+  text-align: center;
+  font-size: 10px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.login-input {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  outline: none;
+  margin-top: 18px;
+  margin-bottom: -4px;
+}
+
+
+.login-form > label, input {
   border: 0;
   border-bottom: .75px solid black;
   outline: 0;

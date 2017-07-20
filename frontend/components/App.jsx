@@ -9,11 +9,12 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
-    <h1>
       <Link to="/">
-        <img src="http://res.cloudinary.com/tonedream/image/upload/c_scale,h_70/v1500568478/logo1a_wmam5q.jpg" alt="tonedream"></img>
+        <h1>
+        <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="65" height="67" alt="tonedream"></img>
+          tonedream
+       </h1>
       </Link>
-    </h1>
     <GreetingContainer />
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />

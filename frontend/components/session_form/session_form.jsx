@@ -8,9 +8,11 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       email: '',
-      band: ''
+      band: '',
+      hidden: 'hidden'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.bandForm = this.bandForm.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,6 +28,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger;
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
@@ -56,22 +59,25 @@ class SessionForm extends React.Component {
     );
   }
 
+  bandForm(e) {
+    if (this.state.hidden === 'text') {
+      this.setState({band: ''});
+    }
+    this.state.hidden = this.state.hidden === 'hidden' ? 'text' : 'hidden';
+    this.setState({hidden: this.state.hidden});
+  }
+
   render() {
     if (this.props.location.pathname === '/guest') {
       {this.guestAccount()}
       return null;
     } else {
-      const bandName = 'band name';
-      const username = 'username';
-      const placeholder = username;
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
           <div className="login-form">
             {this.navLink()}
             {this.renderErrors()}
-            <br/>
             <div className="login-input">
               <label>
                 <input type="text"
@@ -79,7 +85,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   value={this.state.username}
                   onChange={this.update('username')}
-                  placeholder={placeholder}
+                  placeholder={'username'}
                 />
               </label>
               <label>
@@ -90,8 +96,6 @@ class SessionForm extends React.Component {
                   placeholder="email"
                 />
               </label>
-              <br/>
-              <br/>
               <label>
                 <input type="password"
                   className="login-input"
@@ -100,9 +104,23 @@ class SessionForm extends React.Component {
                   placeholder="password"
                 />
               </label>
+              <label>
+                <input type={this.state.hidden}
+                  autoFocus="autofocus"
+                  className="login-input"
+                  value={this.state.band}
+                  onChange={this.update('band')}
+                  placeholder={'band/project title'}
+                />
+              </label>
+              <label className="check-box">artist account
+                <input type="checkbox" name="band" value="band" onClick={this.bandForm} />
+              </label>
+              <label>
                 <input type="submit"
                        className="login-button"
                        value="submit" />
+              </label>
             </div>
           </div>
         </form>
