@@ -11,7 +11,7 @@ const App = () => (
   <div>
     <h1>
       <Link to="/">
-        tonedream
+        <img src="http://res.cloudinary.com/tonedream/image/upload/c_scale,h_70/v1500568478/logo1a_wmam5q.jpg" alt="tonedream"></img>
       </Link>
     </h1>
     <GreetingContainer />
