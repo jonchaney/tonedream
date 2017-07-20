@@ -6,10 +6,10 @@ import {
   CLEAR_ERRORS
 } from '../actions/session_actions';
 
-const nullUser = Object.freeze({
+const nullUser = {
   currentUser: null,
   errors: []
-});
+};
 
 const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state)
@@ -20,15 +20,14 @@ const SessionReducer = (state = nullUser, action) => {
         currentUser
       });
     case RECEIVE_ERRORS:
-      const errors = action.errors;
+      const newErrors = action.errors;
       return merge({}, nullUser, {
-        errors
+        newErrors
       });
-    // case CLEAR_ERRORS:
-    //   // const errors = {};
-    //   return merge({}, nullUser, {
-    //     errors: {}
-    //   });
+    case CLEAR_ERRORS:
+      return merge({}, state, {
+        errors: []
+      });
     default:
       return state;
   }

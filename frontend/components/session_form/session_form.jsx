@@ -4,6 +4,7 @@ import { stopSubmit } from 'redux-form';
 
 class SessionForm extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       username: '',
@@ -17,6 +18,8 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    console.log(props);
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
@@ -31,7 +34,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm(user);
   }
 
   navLink() {
@@ -44,7 +47,7 @@ class SessionForm extends React.Component {
 
   guestAccount() {
     const user = {username: "guest", password: "password", email: "jonathan.chaney@yahoo.com"};
-    this.props.login({user}).then(() => this.props.history.push('/'));
+    this.props.login(user).then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
