@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
+import { stopSubmit } from 'redux-form';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -28,7 +29,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
