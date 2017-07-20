@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -37,11 +37,9 @@ class SessionForm extends React.Component {
     }
   }
 
-  guestAccount(e) {
-    // e.preventDefault();
+  guestAccount() {
     const user = {username: "guest", password: "password"};
-    this.props.login({user});
-    this.props.history.push('/');
+    this.props.login({user}).then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
@@ -58,10 +56,12 @@ class SessionForm extends React.Component {
 
   render() {
     if (this.props.location.pathname === '/guest') {
-      return (
-        <h1>{this.guestAccount()}</h1>
-      )
+      {this.guestAccount()}
+      return null;
     } else {
+      const bandName = 'band name';
+      const username = 'username';
+      const placeholder = username;
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   value={this.state.username}
                   onChange={this.update('username')}
-                  placeholder="username"
+                  placeholder={placeholder}
                 />
               </label>
               <br/>
