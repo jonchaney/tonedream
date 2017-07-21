@@ -4,7 +4,6 @@ import { stopSubmit } from 'redux-form';
 
 class SessionForm extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       username: '',
@@ -18,8 +17,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    console.log(props);
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
