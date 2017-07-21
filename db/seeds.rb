@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Album.destroy_all
+
+Album.create!(title: 'test', date: Date.new, user_id: 27)
+Album.create!(title: 'test', date: Date.new, user_id: 27)
+Album.create!(title: 'test', date: Date.new, user_id: 27)
+Album.create!(title: 'test', date: Date.new, user_id: 27)
+Album.create!(title: 'test', date: Date.new, user_id: 27)

@@ -9,17 +9,21 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
-      <Link to="/">
-        <h1>
-        <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="65" height="67" alt="tonedream"></img>
-          tonedream
-       </h1>
-      </Link>
+
+        <span className="head">
+        <Link to="/">
+          <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="65" height="67" alt="tonedream"></img>
+        </Link>
+           <h1 className="header">tonedream</h1> <p className="tagline">independent music network</p>
+       </span>
+
+
+
     <GreetingContainer />
     <Switch>
+      <AuthRoute path="/guest" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <AuthRoute path="/guest" component={SessionFormContainer} />
     </Switch>
   </div>
 );

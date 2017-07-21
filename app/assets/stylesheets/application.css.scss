@@ -33,20 +33,49 @@
 }
 
 /****************************
-  HEADER
+  HEADERS
 *****************************/
 
 h1 {
-  font-family: 'MissionGothic-Light', sans-serif;
-  font-weight: lighter;
-  border-bottom: .75px solid;
   margin: 5px 18px 0 18px;
   font-size: 60px;
   display: flex;
 }
 
+.header {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: lighter;
+ margin: 5px 18px 0px 21px;
+  font-size: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
 h1 > img {
   margin: 2px 14px 0 5px;
+}
+
+.tagline {
+  font-family:"MissionGothic-Thin";
+  display: flex;
+  font-weight: lighter;
+  font-size: 20px; 
+  margin: 0 0 10px 176px;
+  flex-direction: column-reverse;
+}
+
+.head {
+  display: flex;  
+  align-content: center;
+  flex-direction: row;
+  border-bottom: .75px solid;
+  margin: 0 10px 0 10px;
+  padding-bottom: 10px;
+}
+
+.head > a {
+  align-items: center;
+  display: flex;  
 }
 
 /****************************
@@ -78,8 +107,10 @@ h1 > img {
 
 .login-signup {
   font-family: 'MissionGothic-Light', sans-serif;
-  float: right;
+  font-weight: lighter;
+  float: left;
   font-size: 16px;
+  margin: 0 0 0 22px;
 }
 
 /****************************

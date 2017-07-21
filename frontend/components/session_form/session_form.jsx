@@ -30,7 +30,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
+    let user;
+    if (this.band) {
+      user = this.state;
+    } else {
+      user = {username: this.state.username,
+              password: this.state.password,
+              email: this.state.email
+            }
+    }
     this.props.processForm(user);
   }
 
@@ -110,7 +118,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   value={this.state.band}
                   onChange={this.update('band')}
-                  placeholder={'band/project title'}
+                  placeholder={'artist name'}
                 />
               </label>
               <label className="check-box">artist account

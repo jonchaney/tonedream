@@ -62,3 +62,6 @@ the API. Tracks belong to albums. Artist has many albums and tracks.
 - [ ] Purchase Songs
 - [ ] Follows
 - [ ] Label Page
+- [ ] Events
+- [ ] User can be in multiple bands
+- [ ] Users can be in same band 
