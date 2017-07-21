@@ -10,15 +10,20 @@ import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
 
-        <span className="head">
-        <Link to="/">
-          <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="65" height="67" alt="tonedream"></img>
-        </Link>
-           <h1 className="header">tonedream</h1> <p className="tagline">independent music network</p>
-       </span>
-
-
-
+        <div className="head">
+          <span>
+            <Link to="/">
+              <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="65" height="67" alt="tonedream"></img>
+            </Link>
+            <h1 className="header">
+              tonedream
+            </h1>
+          </span> 
+          <span> 
+           <p className="tagline">independent music network</p>
+          </span>
+       </div>
+       
     <GreetingContainer />
     <Switch>
       <AuthRoute path="/guest" component={SessionFormContainer} />

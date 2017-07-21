@@ -51,8 +51,8 @@ h1 {
   flex-direction: row;
 }
 
-h1 > img {
-  margin: 2px 14px 0 5px;
+.head > span > img {
+  margin: 3px 0 0 0;
 }
 
 .tagline {
@@ -63,10 +63,13 @@ h1 > img {
   margin: 0 0 10px 176px;
   flex-direction: column-reverse;
 }
-
+.head > span {
+  display: flex;
+  margin: 16px 0 -7px 0;
+}
 .head {
   display: flex;  
-  align-content: center;
+  justify-content: space-between;
   flex-direction: row;
   border-bottom: .75px solid;
   margin: 0 10px 0 10px;

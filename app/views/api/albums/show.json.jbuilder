@@ -1,8 +1,5 @@
-json.set! @album.id do
-  json.extract! @album,
-    :id,
-    :title,
-    :date,
-    :genre,
-    :artwork_url
-end
+json.id @album.id
+json.title @album.title
+json.date @album.date
+json.user_id @album.user_id
+

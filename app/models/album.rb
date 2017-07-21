@@ -15,4 +15,10 @@ class Album < ApplicationRecord
 
   belongs_to :user
 
+  after_initialize :set_default_date
+
+  def set_default_date
+    self.date ||= Date.today
+  end
+
 end

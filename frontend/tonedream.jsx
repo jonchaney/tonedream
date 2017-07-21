@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { login, logout, signup } from './actions/session_actions';
+import { fetchAlbum, fetchAlbums, createAlbum, deleteAlbum, updateAlbum } from './actions/album_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   // test
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchAlbum = fetchAlbum;
+  window.fetchAlbums = fetchAlbums;
+  window.createAlbum = createAlbum;
+  window.deleteAlbum = deleteAlbum;
+  window.updateAlbum = updateAlbum;
   // end test
 
   const root = document.getElementById('root');
