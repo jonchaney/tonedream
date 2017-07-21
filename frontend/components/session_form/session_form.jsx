@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
   }
 
   guestAccount() {
-    const user = {username: "guest", password: "password", email: "jonathan.chaney@yahoo.com"};
+    const user = {username: "guest", password: "guests"};
     this.props.login(user).then(() => this.props.history.push('/'));
   }
 
