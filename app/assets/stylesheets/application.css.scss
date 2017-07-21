@@ -23,13 +23,13 @@
   --------------------------------------------*/
 
 @font-face {
-  font-family: "MissionGothic-Light";
-  src: font-path('Mission-Gothic-Light.otf') format("opentype");
+  font-family:"MissionGothic-Light";
+  src:font-url('Mission-Gothic-Light.otf') format("opentype");
 }
 
 @font-face {
-  font-family: "MissionGothic-Thin";
-  src: font-path('Mission-Gothic-Thin.otf') format("opentype");
+  font-family:"MissionGothic-Thin";
+  src:font-url('Mission-Gothic-Thin.otf') format("opentype");
 }
 
 /****************************
