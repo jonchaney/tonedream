@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { fetchAlbum, fetchAlbums, createAlbum, deleteAlbum, updateAlbum } from './actions/album_actions';
+import { fetchAlbum, 
+         fetchAlbums, 
+         createAlbum, 
+         deleteAlbum, 
+         updateAlbum } from './actions/album_actions';
+// import { updateUser } from './actions/user_actions';
+import { updateUser } from './util/user_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createAlbum = createAlbum;
   window.deleteAlbum = deleteAlbum;
   window.updateAlbum = updateAlbum;
+  window.updateUser = updateUser;
   // end test
 
   const root = document.getElementById('root');

@@ -3,8 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ALBUM,
   RECEIVE_ALBUMS,
-  REQUEST_ALBUMS,
-  REQUEST_ALBUM,
+  CLEAR_ALBUMS
 } from '../actions/album_actions';
 
 const defaultState = {
@@ -27,31 +26,18 @@ const defaultState = {
 };
 
 const SessionReducer = (state = defaultState, action) => {
-  // Object.freeze(state)
-  // switch (action.type) {
-  //   case RECEIVE_ALBUM:
+  Object.freeze(state);
+  let newState = merge({}, state);
 
-  //     const currentAlbum = action.currentAlbum;
-  //     return merge({}, nullAlbum, {
-  //       currentAlbum
-  //     });
-
-  //   case RECEIVE_ALBUMS:
-  //     const newErrors = action.errors;
-  //     return merge({}, nullAlbum, {
-  //       newErrors
-  //     });
-  //   case REQUEST_ALBUMS:
-  //     return merge({}, state, {
-  //       errors: []
-  //     });
-  //   case REQUEST_ALBUM:
-  //     return merge({}, state, {
-  //       errors: []
-  //     });
-  //   default:
-  //     return state;
-  // }
+  switch (action.type) {
+    case RECEIVE_ALBUMS:
+      return merge({}, state, { allAlbums: action.albums});
+    case RECEIVE_ALBUM:
+      const newAlbum = { [action.album.id]: action.album };
+      return merge({}, state, { selectedAlbum: action.album });
+    default:
+      return state;
+  }
 };
 
 export default SessionReducer;

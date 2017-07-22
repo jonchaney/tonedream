@@ -26,6 +26,7 @@ export const requestAlbums = () => ({
   type: REQUEST_ALBUMS
 });
 
+
 export const fetchAlbum = albumId => dispatch => (
     APIUtil.fetchAlbum(albumId).then(album => {
       dispatch(receiveAlbum(album)); 

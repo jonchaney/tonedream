@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const sessionLinks = (login) => (
+const sessionLinks = () => (
   <div>
     <nav className="login-signup">
       <ul className="nav">
@@ -20,7 +20,7 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const Greeting = ({ currentUser, logout, login }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(login)
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
 );
 
 export default Greeting;

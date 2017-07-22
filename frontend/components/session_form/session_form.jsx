@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
-import { stopSubmit } from 'redux-form';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/albums');
     }
   }
 
@@ -52,7 +51,7 @@ class SessionForm extends React.Component {
 
   guestAccount() {
     const user = {username: "guest", password: "guests"};
-    this.props.login(user).then(() => this.props.history.push('/'));
+    this.props.login(user).then(() => this.props.history.push('/albums'));
   }
 
   renderErrors() {

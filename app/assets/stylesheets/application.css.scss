@@ -36,17 +36,11 @@
   HEADERS
 *****************************/
 
-h1 {
-  margin: 5px 18px 0 18px;
-  font-size: 60px;
-  display: flex;
-}
-
 .header {
   font-family: 'MissionGothic-Light', sans-serif;
   font-weight: lighter;
- margin: 5px 18px 0px 21px;
-  font-size: 60px;
+  margin: 5px 18px 0px 21px;
+  font-size: 80px;
   display: flex;
   flex-direction: row;
 }
@@ -59,7 +53,7 @@ h1 {
   font-family:"MissionGothic-Thin";
   display: flex;
   font-weight: lighter;
-  font-size: 20px; 
+  font-size: 25px; 
   margin: 0 0 10px 176px;
   flex-direction: column-reverse;
 }
@@ -90,6 +84,7 @@ h1 {
   justify-content: center;
   display: flex;
   margin: 10px 15px 0 0;
+  font-size: 20px;
 }
 
 .nav li {
@@ -139,7 +134,7 @@ a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 20px;
   margin-top: 12px;
   border: .75px solid;
   outline: none;
@@ -164,7 +159,7 @@ a:visited {
 *****************************/
 
 .login-form {
-  margin-top: 19px;
+  margin-top: 29px;
 }
 
 label.check-box {
@@ -174,17 +169,20 @@ label.check-box {
 
 
 .login-form-container {
-  background-color: white;
-  position: absolute;
-  top: 50%;
   left: 50%;
-  width: 252px;
-  height: 300px;
-  margin: -100px 0 0 -100px;
+  width: 400px;
+  height: 400px;
   border: .75px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 300px;
 }
 
 .button-check-box {
@@ -195,27 +193,27 @@ label.check-box {
 
 .login-form > li {
   text-align: center;
-  font-size: 16px;
+  font-size: 32px;
   font-family: 'MissionGothic-Light', sans-serif;
-  margin-bottom: 50px;
 }
 
 .login-form > ul {
-  text-align: center;
-  font-size: 10px;
-  font-family: 'MissionGothic-Light', sans-serif;
+  color: #FF161D;
+  height: 30px;
+  text-transform: lowercase;
+  font-size: 12px;
   margin-top: 5px;
-  margin-bottom: 16px;
+  text-align: center;
 }
 
 .login-input {
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 20px;
   font-family: 'MissionGothic-Light', sans-serif;
   outline: none;
-  margin-top: 18px;
+  margin-top: 12px;
   margin-bottom: -4px;
 }
 
@@ -226,13 +224,6 @@ label.check-box {
   outline: 0;
 }
 
-.login-form > ul {
-  color: #FF161D;
-  height: 7px;
-  text-transform: lowercase;
-  font-size: 10px;
-  margin-top: 5px;
-}
 
 .login-form > li {
   margin-bottom: 5px;
