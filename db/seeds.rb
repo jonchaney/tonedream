@@ -8,7 +8,7 @@
 Album.destroy_all
 
 date = Date.new
-guest = User.create!(username: "guest", band: "Hazel's Wart", password: "password", location: "San Francisco", bio: "rock and roll band")
+guest = User.create!(username: "guest", band: "Hazel's Wart", password: "password", location: "San Francisco", bio: "rock and roll band" email: "drowninhoney@gmail.com")
 Album.create!(title: 'Does A Secret Speak', date: date, user_id: guest.id)
 Album.create!(title: 'Regretful Dependencies', date: date, user_id: guest.id)
 Album.create!(title: 'Together We Didn\'t', date: date, user_id: guest.id)
