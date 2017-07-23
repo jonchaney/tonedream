@@ -2,12 +2,15 @@
 #
 # Table name: albums
 #
-#  id          :integer          not null, primary key
-#  user_id     :integer          not null
-#  title       :string           not null
-#  date        :date             not null
-#  genre       :string
-#  artwork_url :string
+#  id                 :integer          not null, primary key
+#  user_id            :integer          not null
+#  title              :string           not null
+#  date               :date             not null
+#  genre              :string
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 require 'test_helper'

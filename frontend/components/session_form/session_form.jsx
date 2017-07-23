@@ -50,7 +50,8 @@ class SessionForm extends React.Component {
   }
 
   guestAccount() {
-    const user = {username: "guest", password: "guests"};
+    const user = {username: "guest", password: "guests", band: "hazelswart"};
+    const path = user.band;
     this.props.login(user).then(() => this.props.history.push('/albums'));
   }
 
@@ -76,7 +77,7 @@ class SessionForm extends React.Component {
 
   render() {
     if (this.props.location.pathname === '/guest') {
-      {this.guestAccount()}
+      { this.guestAccount(); }
       return null;
     } else {
     return (

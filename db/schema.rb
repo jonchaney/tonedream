@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720164602) do
+ActiveRecord::Schema.define(version: 20170723013710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20170720164602) do
     t.string "title", null: false
     t.date "date", null: false
     t.string "genre"
-    t.string "artwork_url"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["date"], name: "index_albums_on_date"
     t.index ["title"], name: "index_albums_on_title"
   end
@@ -37,12 +40,16 @@ ActiveRecord::Schema.define(version: 20170720164602) do
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.string "username", null: false
-    t.string "email", null: false
     t.string "band"
     t.text "bio"
     t.string "location"
     t.string "banner_url"
     t.string "background_img_url"
+    t.string "email", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["band"], name: "index_users_on_band"
   end
 

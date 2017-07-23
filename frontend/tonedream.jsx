@@ -7,7 +7,8 @@ import { fetchAlbum,
          fetchAlbums, 
          createAlbum, 
          deleteAlbum, 
-         updateAlbum } from './actions/album_actions';
+         updateAlbum,
+         clearAlbums } from './actions/album_actions';
 // import { updateUser } from './actions/user_actions';
 import { updateUser } from './util/user_api_util';
 
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteAlbum = deleteAlbum;
   window.updateAlbum = updateAlbum;
   window.updateUser = updateUser;
+  window.clearAlbums = clearAlbums;
   // end test
 
   const root = document.getElementById('root');

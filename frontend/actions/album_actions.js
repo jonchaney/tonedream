@@ -5,12 +5,17 @@ export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const REQUEST_ALBUM = "REQUEST_ALBUM";
 export const REQUEST_ALBUMS = "REQUEST_ALBUMS";
+export const CLEAR_ALBUMS = "CLEAR_ALBUMS";
 
 // action creators
 
 export const receiveAlbum = album => ({
   type: RECEIVE_ALBUM,
   album
+});
+
+export const clearAlbums = () => ({
+  type: CLEAR_ALBUMS
 });
 
 export const receiveAlbums = albums => ({

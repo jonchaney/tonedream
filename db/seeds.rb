@@ -7,8 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Album.destroy_all
 
-Album.create!(title: 'test', date: Date.new, user_id: 27)
-Album.create!(title: 'test', date: Date.new, user_id: 27)
-Album.create!(title: 'test', date: Date.new, user_id: 27)
-Album.create!(title: 'test', date: Date.new, user_id: 27)
-Album.create!(title: 'test', date: Date.new, user_id: 27)
+date = Date.new
+
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
+

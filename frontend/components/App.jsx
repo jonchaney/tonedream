@@ -2,7 +2,7 @@
 import { Route,
          Switch,
          Link } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, LoginRoute } from '../util/route_util';
 import { login } from '../actions/session_actions';
 
 import GreetingContainer from './greeting/greeting_container';
@@ -28,9 +28,9 @@ const App = () => (
        
     <GreetingContainer />
     <Switch>
-      <Route path="/albums" component={AlbumIndexContainer} />
-      <AuthRoute path="/guest" component={SessionFormContainer} />
-      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/guest" component={SessionFormContainer} /> 
+      <Route path="/albums" component={AlbumIndexContainer} /> 
+      <Route path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>
   </div>

@@ -9,15 +9,15 @@ import {
 const defaultState = {
   selectedAlbum: {
     title: null,
-    date: 'Mon, 01 Jan - 4712',
+    date: null,
     Album_id: null,
     genre: null,
-    art_work_url: null
+    image_url: null
   },
   allAlbums: {
     0: {
       title: null,
-      date: 'Mon, 01 Jan - 4712',
+      date: null,
       Album_id: null,
       genre: null,
       art_work_url: null
@@ -35,6 +35,8 @@ const SessionReducer = (state = defaultState, action) => {
     case RECEIVE_ALBUM:
       const newAlbum = { [action.album.id]: action.album };
       return merge({}, state, { selectedAlbum: action.album });
+    case CLEAR_ALBUMS:
+      return defaultState;
     default:
       return state;
   }

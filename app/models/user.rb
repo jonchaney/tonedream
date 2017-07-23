@@ -25,6 +25,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   has_many :albums
 
+  has_attached_file :image, default_url: "default_profile_pic.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

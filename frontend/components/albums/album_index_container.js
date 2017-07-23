@@ -9,6 +9,7 @@ import { allAlbums } from '../../reducers/selectors';
 import AlbumIndex from './album_index';
 
 const mapStateToProps = ({ albums, session }) => ({ 
+  loggedIn: Boolean(session.currentUser),
   currentUser: session.currentUser,
   errors: session.errors,
   albums: allAlbums(albums)
