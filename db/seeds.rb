@@ -8,11 +8,11 @@
 Album.destroy_all
 
 date = Date.new
-
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
+guest = User.create!(username: "guest", band: "Hazel's Wart", password: "password", location: "San Francisco", bio: "rock and roll band")
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: guest.id)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: guest.id)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: guest.id)
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: guest.id)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: guest.id)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: guest.id)
 
