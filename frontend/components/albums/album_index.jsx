@@ -1,41 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router';
+import LoadingIcon from './loading_icon';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
     this.props.fetchAlbums();
-    this.userInfo = this.userInfo.bind(this);
-    this.showTracks = this.showTracks.bind(this);
-  }
-
-  userInfo() {
-    return(
-      <div className="user-info">
-          <img className="profile-pic" src={this.props.currentUser.image_url} />
-          <ul>
-            <li className="band">
-              {this.props.currentUser.band}
-            </li>
-            <li className="location">
-              {this.props.currentUser.location}
-            </li>
-            {/* <li className="bio">
-                {this.props.currentUser.bio}
-            </li> */}
-          </ul>
-      </div>
-    );
-  }
-
-  showTracks() {
-
   }
 
   render() {
       return (
+        this.props.loading.indexLoading ?
+          <LoadingIcon /> :
         <div className="artist-profile">
-          { this.userInfo() }
           <div className="album-index-container">
               {this.props.albums.map((album, idx) =>
             <ul key={idx}>
@@ -43,10 +23,8 @@ class AlbumIndex extends React.Component {
             </ul>
               )}
           </div>
-        </div>
-
-    );
-  }
+        </div> );
+      }
 }
 
 export default AlbumIndex;

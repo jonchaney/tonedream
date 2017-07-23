@@ -18,9 +18,9 @@ const defaultState = {
     0: {
       title: null,
       date: null,
-      Album_id: null,
-      genre: null,
-      art_work_url: null
+      id: null,
+      image_url: null,
+      genre: null
     }
   }
 };
@@ -28,7 +28,6 @@ const defaultState = {
 const SessionReducer = (state = defaultState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-
   switch (action.type) {
     case RECEIVE_ALBUMS:
       return merge({}, state, { allAlbums: action.albums});
@@ -36,7 +35,7 @@ const SessionReducer = (state = defaultState, action) => {
       const newAlbum = { [action.album.id]: action.album };
       return merge({}, state, { selectedAlbum: action.album });
     case CLEAR_ALBUMS:
-      return defaultState;
+      return {};
     default:
       return state;
   }

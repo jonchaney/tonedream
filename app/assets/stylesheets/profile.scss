@@ -2,39 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.album-index-container > ul > img {
-  height: 250px;
-  width: 250px;
-  flex: auto;
-  margin: .5vw;
-  border-radius: 150px;
+.artist-profile {
+    display: flex;
+    flex-direction: column;
 }
 
+.artist-profile-nav {
+  font-family: 'MissionGothic-Thin', sans-serif;
+  font-weight: lighter;
+  float: left;
+  font-size: 16px;
+  margin: 0 0 0 22px;
+}
 
-.album-index-container {
-  padding: .5vw;
-  font-size: 0;
-  flex-flow: row wrap;
+.artist-profile-nav > ul {
+  align-items: center;
   display: flex;
+  margin: -1px 15px 0 0;
+  font-size: 20px;
+}
+
+.artist-profile-nav > ul {
+  align-items: center;
+  justify-content: c;
+  display: flex;
+  margin: 10px 15px 0 0;
+  font-size: 20px;
+}
+
+.artist-profile-content {
+  display: flex;
+  margin: 37px 0px 0px 28px;
+}
+
+ul.artist-profile-list > li {
+  margin: 9px 30px 0px 2px;
+  padding-right: 32px;
+  font-size: 24px;
+  font-family: 'MissionGothic-Light', sans-serif;
+}
+
+ul.artist-profile-list > li:not(:last-child) {
+  border-right: .75px solid;
 }
 
 .profile-pic {
   height: 250px;
   max-width: 270px;
-  border-radius: 20px;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .user-info {
-  margin: 50px 40px 0 20px;
+  margin: 13px 40px 0 20px;
   font-family: MissionGothic-Light;
   font-size: 30px;
   text-align: left;
   width: 270px;
+  height: 500px;
+  border: .75px solid;
+  border-radius: 25px;
 }
 
 .user-info > ul {
   margin: 10px;
   text-align: center;
+  margin: 80px 0 0 0;
 }
 
 .location {
@@ -47,6 +79,4 @@
   font-size: 20px;
 }
 
-.artist-profile {
-  display: flex;
-}
+

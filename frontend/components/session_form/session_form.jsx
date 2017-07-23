@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/albums');
+      this.props.history.push('/artist');
     }
   }
 
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
   guestAccount() {
     const user = {username: "guest", password: "guests", band: "hazelswart"};
     const path = user.band;
-    this.props.login(user).then(() => this.props.history.push('/albums'));
+    this.props.login(user).then(() => this.props.history.push('/artist'));
   }
 
   renderErrors() {

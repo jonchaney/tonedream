@@ -1,0 +1,15 @@
+.album-index-container > ul > img {
+  height: 250px;
+  width: 250px;
+  flex: auto;
+  margin: .5vw;
+  border-radius: 100px;
+}
+
+
+.album-index-container {
+  padding: .5vw;
+  font-size: 0;
+  flex-flow: row wrap;
+  display: flex;
+}
