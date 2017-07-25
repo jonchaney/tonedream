@@ -12,6 +12,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props);
       return (
         this.props.loading.indexLoading ?
           <LoadingIcon /> :

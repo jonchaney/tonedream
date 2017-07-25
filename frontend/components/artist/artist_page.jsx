@@ -65,9 +65,9 @@ class ArtistPage extends React.Component {
 
         <div className="artist-profile-content">
              {this.userInfo()} 
-             <AlbumIndex  fetchAlbums={this.props.fetchAlbums} loading={this.props.loading} /> 
+             <AlbumIndex /> 
             {/* coditionally render edit link that will route to /edit
-                and then insoide of app.js add ./edit route that renders the editProfileFormContainer  */}
+                and then inside of app.js add ./edit route that renders the editProfileFormContainer  */}
             {/* <Route path="/edit" component={(props) => <EditProfileForm {...props} currentUser={this.props.currentUser} updateUser={this.props.updateUser} />} /> )} />   */}
         </div>
     </div>

@@ -12,8 +12,7 @@ const mapStateToProps = ({ albums, session, loading, fetchedUser }) => ({
   currentUser: session.currentUser,
   errors: session.errors,
   albums: allAlbums(albums),
-  loading: loading.indexLoading,
-  fetchedUser: fetchedUser
+  loading: loading.indexLoading
 });
 
 const mapDispatchToProps = dispatch => ({
