@@ -14,14 +14,16 @@ class ArtistPage extends React.Component {
     this.toggleStatus = this.toggleStatus.bind(this);
     this.pageContent = this.pageContent.bind(this);
 
-    this.updateState = this.updateState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
     this.state = {
       id: this.props.currentUser.id,
       username: this.props.currentUser.username,
       email: this.props.currentUser.email,
       band: this.props.currentUser.band,
       bio: this.props.currentUser.bio,
+      imageFile: null,
+      imageUrl: this.props.currentUser.image_url,
       status: false
     };
   }
@@ -42,16 +44,28 @@ class ArtistPage extends React.Component {
     }
   }
 
-  updateState(e) {
-    e.preventDefault();
-    console.log(e);
-    this.setState({ [e.currentTarget.id]: e.currentTarget.value });
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state);
+    let formData = new FormData();
+    formData.append("user[username]", this.state.username);
+    formData.append("user[email]", this.state.email);
+    formData.append("user[band]", this.state.band);
+    formData.append("user[bio]", this.state.bio);
+    formData.append("user[image]", this.state.imageUrl);
+
+    this.props.updateUserProfile(formData, this.state.id);
     this.toggleStatus();
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({imsageFile: file, imageUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   update(field) {
@@ -63,7 +77,7 @@ class ArtistPage extends React.Component {
   editForm() {
     return (
       <div className="edit-form-container">
-        <img className="profile-pic" src={this.props.currentUser.image_url} />
+        <img className="profile-pic" src={this.state.imageUrl} />
         <form onSubmit={this.handleSubmit} className="login-form-box">
              {/* {this.renderErrors()}  */}
             <div className="login-input-box">
@@ -98,6 +112,12 @@ class ArtistPage extends React.Component {
                   value={this.state.bio}
                   onChange={this.update('bio')}
                   placeholder="bio"
+                />
+              </label>
+              <label>
+                <input type="file"
+                  className="edit-input"
+                  onChange={this.updateFile}
                 />
               </label>
               <label>

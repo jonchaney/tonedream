@@ -5,3 +5,13 @@ export const updateUser = (user) => {
     data: { user }
   });
 };
+
+export const updateProfile = (formData, id) => {
+  return $.ajax({
+    url: `api/users/${id}`,
+    type: 'PATCH',
+    processData: false,
+    contentType: false,
+    data: formData,
+  });
+};
