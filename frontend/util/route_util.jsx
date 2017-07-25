@@ -11,6 +11,7 @@ const Auth = ({component: Component, path, loggedIn}) => (
     )
   )}/>
 );
+
 const requireLogin = ({component: Component, path, loggedIn}) => (
   <Route path= { path } render= {(props) => (
     loggedIn ? (

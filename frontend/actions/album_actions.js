@@ -21,13 +21,18 @@ export const clearAlbums = () => ({
   type: CLEAR_ALBUMS
 });
 
+export const clearAlbum = () => ({
+  type: CLEAR_ALBUMS
+});
+
 export const receiveAlbums = albums => ({
   type: RECEIVE_ALBUMS,
   albums
 });
 
 export const requestAlbum = () => ({
-  type: REQUEST_ALBUM
+  type: REQUEST_ALBUM,
+  
 });
 
 export const requestAlbums = () => ({
@@ -48,13 +53,14 @@ export const receiveAlbumErrors = errors => ({
 });
 
 
-export const fetchAlbum = albumId => dispatch => (
-    APIUtil.fetchAlbum(albumId).then(album => {
+export const fetchAlbum = albumId => dispatch => {
+    dispatch(startLoadingSingleAlbum());
+    return APIUtil.fetchAlbum(albumId).then(album => {
       dispatch(receiveAlbum(album)); 
     }, errors => (
       dispatch(receiveErrors(errors))
-    ))
-);
+    ));
+};
 
 export const fetchAlbums = () => dispatch => {
   dispatch(startLoadingAllAlbums());

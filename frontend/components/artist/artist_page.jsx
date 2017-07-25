@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AlbumIndexContainer from '../albums/album_index_container';
+import LoadingIcon from '../albums/loading_icon';
 
 // not yet built
-// import EditProfileForm from '../profile_form/edit_profile_form';
 // import TrackIndex from '../track_index/track_index';
 
 class ArtistPage extends React.Component {
@@ -13,6 +13,7 @@ class ArtistPage extends React.Component {
     this.editForm = this.editForm.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
     this.pageContent = this.pageContent.bind(this);
+    this.renderAlbumInfo = this.renderAlbumInfo.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -36,14 +37,6 @@ class ArtistPage extends React.Component {
     }
   }
 
-  pageContent() {
-    if (!this.state.status) {
-      return ( this.profileInfo() );
-    } else {
-      return ( this.editForm() );
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
@@ -55,6 +48,18 @@ class ArtistPage extends React.Component {
 
     this.props.updateUserProfile(formData, this.state.id);
     this.toggleStatus();
+  }
+
+  pageContent() {
+    if (this.props.selectedAlbum.id === null) {  
+      if (!this.state.status) {
+        return ( this.profileInfo() );
+      } else {
+        return ( this.editForm() );
+      }
+    } else {
+      return this.renderAlbumInfo();
+    }
   }
 
   updateFile(e) {
@@ -127,6 +132,18 @@ class ArtistPage extends React.Component {
               </label>
             </div>
         </form>
+      </div>
+    );
+  }
+
+  renderAlbumInfo() {
+    console.log(this.props.selectedAlbum.title);
+    return (
+      <div className="album-info"> 
+         <p>{this.props.currentUser.band}</p>
+         <p>{this.props.selectedAlbum.title}</p> 
+         <p>{this.props.selectedAlbum.date}</p> 
+         <p>{this.props.selectedAlbum.genre}</p> 
       </div>
     );
   }

@@ -12,6 +12,10 @@
 #  banner_url         :string
 #  background_img_url :string
 #  email              :string           not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -24,6 +28,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
   has_many :albums
+  has_many :tracks
 
   has_attached_file :image, default_url: "default_profile_pic.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

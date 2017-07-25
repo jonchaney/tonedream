@@ -1,4 +1,6 @@
-json.title album.title
-json.id album.id
-json.genre album.genre
-json.image_url asset_path(album.image.url)
+# json.set! album.id do
+  json.id album.id
+  json.title album.title
+  json.genre album.genre
+  json.image_url album.image.url
+# end

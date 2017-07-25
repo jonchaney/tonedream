@@ -7,14 +7,44 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Album.destroy_all
 User.destroy_all
+Track.destroy_all
 
 date = Date.new
 
 u = User.create!(username: "guest", password: "password", email:"drowninhoney@gmail.com", band: "Hazel's Wart", location: "San Francisco", bio: "rock n roll band")
+u2 = User.create!(username: "slowcrawl", password: "password", email:"jonchaney@gmail.com", band: "Slow Crawl", location: "San Francisco", bio: "post punk")
 
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
+a1 = Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
+a2 = Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
+a3 = Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
+a4 = Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
+a5 = Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
+a6 = Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
+
+a = Album.create!(title: "Satan\'s Gulch", date: date, user_id: u2.id)
+a.image = File.open('app/assets/images/satans_gulch.png')
+a.save!
+
+a1.image = File.open('app/assets/images/does_a_secret_speak.jpg')
+a1.save!
+
+a2.image = File.open('app/assets/images/regretful_dependencies.jpg')
+a2.save!
+
+a3.image = File.open("app/assets/images/together_we_didn't.jpg")
+a3.save!
+
+a4.image = File.open('app/assets/images/does_a_secret_speak.jpg')
+a4.save!
+
+a5.image = File.open('app/assets/images/regretful_dependencies.jpg')
+a5.save!
+
+a6.image = File.open("app/assets/images/together_we_didn't.jpg")
+a6.save!
+
+Track.create!(title: "Lost Coast", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+Track.create!(title: "Shrubs and Trees", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+Track.create!(title: "Reptile", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+Track.create!(title: "Fadeaway", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+Track.create!(title: "Jam", track_num: 1, download: true, album_id: a.id, user_id: u2.id)

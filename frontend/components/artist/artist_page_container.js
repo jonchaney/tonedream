@@ -8,7 +8,8 @@ import { withRouter } from 'react-router';
 const mapStateToProps = ({ albums, session, loading }) => ({
   currentUser: session.currentUser,
   albums: allAlbums(albums),
-  loading: loading.userLoading,
+  loading: loading.detailLoading,
+  selectedAlbum: albums.selectedAlbum 
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -25,6 +25,7 @@ const LoadingReducer = (state = initialState, action) => {
       return Object.assign({}, state, { indexLoading: false });
     case RECEIVE_NEW_ALBUM:
     case RECEIVE_ALBUM:
+      return Object.assign({}, state, { detailLoading: false });
     case UPDATE_ARTIST:
       return Object.assign({}, state, { artistLoading: true });
     case RECEIVE_ALBUM_ERRORS:
