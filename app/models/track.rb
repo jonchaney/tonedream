@@ -40,7 +40,8 @@ class Track < ApplicationRecord
       path = file.queued_for_write[:original].path
       open_opts = { :encoding => 'utf-8' }
       Mp3Info.open(path, open_opts) do |mp3info|
-      self.duration = mp3info.length.to_i
+        self.duration = mp3info.length.to_i
+      end
     end
   end
 
