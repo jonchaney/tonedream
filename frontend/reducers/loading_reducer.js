@@ -10,10 +10,12 @@ import {
   START_LOADING_SINGLE_ALBUM
 } from '../actions/album_actions';
 
+import UPDATE_ARTIST from '../actions/user_actions';
 
 const initialState = {
   indexLoading: false,
-  detailLoading: false
+  detailLoading: false,
+  artistLoading: false,
 };
 
 const LoadingReducer = (state = initialState, action) => {
@@ -23,6 +25,8 @@ const LoadingReducer = (state = initialState, action) => {
       return Object.assign({}, state, { indexLoading: false });
     case RECEIVE_NEW_ALBUM:
     case RECEIVE_ALBUM:
+    case UPDATE_ARTIST:
+      return Object.assign({}, state, { artistLoading: true });
     case RECEIVE_ALBUM_ERRORS:
       return Object.assign({}, state, { detailLoading: false });
     case START_LOADING_ALL_ALBUMS:

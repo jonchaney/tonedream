@@ -12,7 +12,7 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
-    console.log("FUCK");
+    console.log(this.props.status);
       return (
         this.props.loading ?
           <LoadingIcon /> :
@@ -24,7 +24,7 @@ class AlbumIndex extends React.Component {
             </ul>
               )}
           </div>
- </div> 
+        </div> 
 );
       }
 }

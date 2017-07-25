@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AlbumIndexContainer from '../albums/album_index_container';
-import ProfileInfo from './profile_info';
 
 // not yet built
 // import EditProfileForm from '../profile_form/edit_profile_form';
@@ -11,6 +10,105 @@ class ArtistPage extends React.Component {
   constructor(props) {
     super(props);
     this.profileInfo = this.profileInfo.bind(this);
+    this.editForm = this.editForm.bind(this);
+    this.toggleStatus = this.toggleStatus.bind(this);
+    this.pageContent = this.pageContent.bind(this);
+
+    this.updateState = this.updateState.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      id: this.props.currentUser.id,
+      username: this.props.currentUser.username,
+      email: this.props.currentUser.email,
+      band: this.props.currentUser.band,
+      bio: this.props.currentUser.bio,
+      status: false
+    };
+  }
+  
+  toggleStatus() {
+    if (!this.state.status) {
+      this.setState({status: true});
+    } else {
+      this.setState({status: false});
+    }
+  }
+
+  pageContent() {
+    if (!this.state.status) {
+      return ( this.profileInfo() );
+    } else {
+      return ( this.editForm() );
+    }
+  }
+
+  updateState(e) {
+    e.preventDefault();
+    console.log(e);
+    this.setState({ [e.currentTarget.id]: e.currentTarget.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateUser(this.state);
+    this.toggleStatus();
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  editForm() {
+    return (
+      <div className="edit-form-container">
+        <img className="profile-pic" src={this.props.currentUser.image_url} />
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+             {/* {this.renderErrors()}  */}
+            <div className="login-input-box">
+              <label>
+                <input type="text"
+                  autoFocus="autofocus"
+                  className="edit-input"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  placeholder={'username'}
+                />
+              </label>
+              <label>
+                <input type="text"
+                  className="edit-input"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="email"
+                />
+              </label>
+              <label>
+                <input type="text"
+                  className="edit-input"
+                  value={this.state.band}
+                  onChange={this.update('band')}
+                  placeholder={'artist'}
+                />
+              </label>
+              <label>
+                <input type="text"
+                  className="edit-input"
+                  value={this.state.bio}
+                  onChange={this.update('bio')}
+                  placeholder="bio"
+                />
+              </label>
+              <label>
+                <input type="submit"
+                  className="submit-edit"
+                  value="submit" />
+              </label>
+            </div>
+        </form>
+      </div>
+    );
   }
 
   profileInfo() {
@@ -27,6 +125,9 @@ class ArtistPage extends React.Component {
           <li className="bio">
             {this.props.currentUser.bio}
           </li>
+          <li className="edit">
+            <button type="button" onClick={this.toggleStatus}>edit profile</button>
+          </li>
         </ul>
       </div>
     );
@@ -35,7 +136,6 @@ class ArtistPage extends React.Component {
   render() {
     return (
       <div className = "artist-profile">
-
         <div className="artist-profile-nav">
           <ul className="artist-profile-list">
             <li>digital</li>
@@ -44,12 +144,10 @@ class ArtistPage extends React.Component {
             <li>merch</li>
           </ul>
         </div>
-
-        <div className="artist-profile-content">
-            {this.profileInfo()}     
-            <AlbumIndexContainer  /> 
-        </div>
-
+          <div className="artist-profile-content">
+            { this.pageContent() }
+            <AlbumIndexContainer />
+          </div>
       </div>
     );
   }

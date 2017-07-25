@@ -2,7 +2,7 @@
 import { Route,
          Switch,
          Link } from 'react-router-dom';
-import { withRoute } from 'react-router'
+import { withRoute } from 'react-router';
 import { AuthRoute, LoginRoute } from '../util/route_util';
 import { login } from '../actions/session_actions';
 
