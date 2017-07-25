@@ -32,7 +32,7 @@
 
 .artist-profile-content {
   display: flex;
-  margin: 37px 0px 0px 28px;
+  margin: 16px 0px 0px 28px;
 }
 
 ul.artist-profile-list > li {
@@ -49,7 +49,7 @@ ul.artist-profile-list > li:not(:last-child) {
 .profile-pic {
   height: 250px;
   max-width: 270px;
-  border-radius: 20px 20px 0px 0px;
+  // border-radius: 20px 20px 0px 0px;
 }
 
 .user-info {
@@ -59,24 +59,28 @@ ul.artist-profile-list > li:not(:last-child) {
   text-align: left;
   width: 270px;
   height: 500px;
-  border: .75px solid;
-  border-radius: 25px;
 }
 
 .user-info > ul {
   margin: 10px;
   text-align: center;
   margin: 80px 0 0 0;
+  text-align: left;
 }
 
 .location {
   font-family: MissionGothic-Thin;
-  font-size: 25px;
+  font-size: 20px;
+  border-bottom: .75px solid;
+  padding: 0 0 10px 0;
+}
+
+li.band {
+    margin: -69px 0 0 0;
 }
 
 .bio {
-  font-family: MissionGothic-Thin;
-  font-size: 20px;
+    font-family: MissionGothic-Thin;
+    font-size: 20px;
+    margin: 9px 0 0 0;
 }
-
-

@@ -19,9 +19,9 @@ class ProfileInfo extends React.Component {
           <li className="location">
             {this.props.currentUser.location}
           </li>
-          {/* <li className="bio">
-                {this.props.currentUser.bio}
-            </li> */}
+          <li className="bio">
+            {this.props.currentUser.bio}
+          </li> 
         </ul>
       </div>
     );

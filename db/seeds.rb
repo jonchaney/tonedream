@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Album.destroy_all
+User.destroy_all
 
 date = Date.new
 
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
-Album.create!(title: 'Does A Secret Speak', date: date, user_id: 27)
-Album.create!(title: 'Regretful Dependencies', date: date, user_id: 27)
-Album.create!(title: 'Together We Didn\'t', date: date, user_id: 27)
+u = User.create!(username: "guest", password: "password", email:"drowninhoney@gmail.com", band: "Hazel's Wart", location: "San Francisco", bio: "rock n roll band")
 
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
+Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
+Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
+Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)

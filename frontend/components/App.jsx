@@ -2,6 +2,7 @@
 import { Route,
          Switch,
          Link } from 'react-router-dom';
+import { withRoute } from 'react-router'
 import { AuthRoute, LoginRoute } from '../util/route_util';
 import { login } from '../actions/session_actions';
 
@@ -29,7 +30,8 @@ const App = () => (
     <GreetingContainer />
     <Switch>
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      <LoginRoute path="/artist" component={ArtistPageContainer} /> 
+      <Route path="/artist/:user_id" component={ArtistPageContainer} /> 
+      <LoginRoute path="/profile" component={ArtistPageContainer} /> 
       <Route path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AlbumIndex from '../albums/album_index';
+import AlbumIndexContainer from '../albums/album_index_container';
 import ProfileInfo from './profile_info';
 
 // not yet built
@@ -10,6 +10,26 @@ import ProfileInfo from './profile_info';
 class ArtistPage extends React.Component {
   constructor(props) {
     super(props);
+    this.profileInfo = this.profileInfo.bind(this);
+  }
+
+  profileInfo() {
+    return (
+      <div className="user-info">
+        <img className="profile-pic" src={this.props.currentUser.image_url} />
+        <ul>
+          <li className="band">
+            {this.props.currentUser.band}
+          </li>
+          <li className="location">
+            {this.props.currentUser.location}
+          </li>
+          <li className="bio">
+            {this.props.currentUser.bio}
+          </li>
+        </ul>
+      </div>
+    );
   }
 
   render() {
@@ -26,8 +46,8 @@ class ArtistPage extends React.Component {
         </div>
 
         <div className="artist-profile-content">
-            <ProfileInfo currentUser={this.props.currentUser}/>  
-            <AlbumIndex fetchAlbums={this.props.fetchAlbums} loading={this.props.loading} albums={this.props.albums} /> 
+            {this.profileInfo()}     
+            <AlbumIndexContainer  /> 
         </div>
 
       </div>

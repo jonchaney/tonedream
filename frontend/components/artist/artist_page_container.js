@@ -3,11 +3,12 @@ import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
 import { updateUser } from '../../actions/user_actions';
 import ArtistPage from './artist_page';
 import { allAlbums } from '../../reducers/selectors';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ albums, session, loading }) => ({
   currentUser: session.currentUser,
   albums: allAlbums(albums),
-  loading: loading.indexLoading
+  loading: loading.indexLoading,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   updateUser: (user) => dispatch(updateUser(user))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ArtistPage);
+)(ArtistPage));
