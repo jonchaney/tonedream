@@ -25,9 +25,9 @@ const defaultState = {
   }
 };
 
-const SessionReducer = (state = defaultState, action) => {
+const AlbumsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  let newState = merge({}, state);
+  
   switch (action.type) {
     case RECEIVE_ALBUMS:
       return merge({}, state, { allAlbums: action.albums});
@@ -41,4 +41,4 @@ const SessionReducer = (state = defaultState, action) => {
   }
 };
 
-export default SessionReducer;
+export default AlbumsReducer;

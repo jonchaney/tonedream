@@ -10,23 +10,34 @@ import {
   START_LOADING_SINGLE_ALBUM
 } from '../actions/album_actions';
 
+import {
+  RECEIVE_USER, 
+  START_LOADING_FETCH_USER,
+  RECEIVE_FETCHED_USER
+} from '../actions/user_actions';
+
 
 const initialState = {
   indexLoading: false,
-  detailLoading: false
+  detailLoading: false,
+  userLoading: false
 };
 
 const LoadingReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case START_LOADING_FETCH_USER:
+      return Object.assign({}, state, { userLoading: true });
+    case START_LOADING_ALL_ALBUMS:
+      return Object.assign({}, state, { indexLoading: true });
+    case RECEIVE_FETCHED_USER:
+      return Object.assign({}, state, { userLoading: false });
     case RECEIVE_ALBUMS:
       return Object.assign({}, state, { indexLoading: false });
     case RECEIVE_NEW_ALBUM:
     case RECEIVE_ALBUM:
     case RECEIVE_ALBUM_ERRORS:
       return Object.assign({}, state, { detailLoading: false });
-    case START_LOADING_ALL_ALBUMS:
-      return Object.assign({}, state, { indexLoading: true });
     case START_LOADING_SINGLE_ALBUM:
       return Object.assign({}, state, { detailLoading: true });
     default:

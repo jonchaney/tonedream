@@ -5,3 +5,4 @@ json.band user.band
 json.bio user.bio
 json.location user.location
 json.image_url asset_path(user.image.url)
+json.albums user.albums

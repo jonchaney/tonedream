@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: '',
       email: '',
       band: '',
+      bio: '',
       hidden: 'hidden'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,13 +31,13 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user;
-    if (this.band) {
+    if (this.state.band) {
       user = this.state;
     } else {
       user = {username: this.state.username,
               password: this.state.password,
               email: this.state.email
-            }
+            };
     }
     this.props.processForm(user);
   }
@@ -50,9 +51,9 @@ class SessionForm extends React.Component {
   }
 
   guestAccount() {
-    const user = {username: "guest", password: "guests", band: "hazelswart"};
+    const user = {username: "guest", password: "password", band: "hazelswart"};
     const path = user.band;
-    this.props.login(user).then(() => this.props.history.push('/artist'));
+    this.props.login(user).then(() => this.props.history.push('/profile'));
   }
 
   renderErrors() {
@@ -118,7 +119,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   value={this.state.band}
                   onChange={this.update('band')}
-                  placeholder={'artist name'}
+                  placeholder={'artist/band name'}
                 />
               </label>
               <label className="check-box">artist account

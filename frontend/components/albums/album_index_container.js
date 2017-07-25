@@ -7,12 +7,13 @@ import { allAlbums } from '../../reducers/selectors';
 
 import AlbumIndex from './album_index';
 
-const mapStateToProps = ({ albums, session, loading }) => ({ 
+const mapStateToProps = ({ albums, session, loading, fetchedUser }) => ({ 
   loggedIn: Boolean(session.currentUser),
   currentUser: session.currentUser,
   errors: session.errors,
   albums: allAlbums(albums),
-  loading: loading.indexLoading
+  loading: loading.indexLoading,
+  fetchedUser: fetchedUser
 });
 
 const mapDispatchToProps = dispatch => ({

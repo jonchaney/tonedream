@@ -2,10 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/****************************
+  MAIN
+*****************************/
+
+
 .artist-profile {
     display: flex;
     flex-direction: column;
 }
+
+ul.artist-profile-list > li {
+  margin: 9px 30px 0px 2px;
+  padding-right: 32px;
+  font-size: 24px;
+  font-family: 'MissionGothic-Light', sans-serif;
+}
+
+ul.artist-profile-list > li:not(:last-child) {
+  border-right: .75px solid;
+}
+
+/****************************
+  NAV
+*****************************/
 
 .artist-profile-nav {
   font-family: 'MissionGothic-Thin', sans-serif;
@@ -35,48 +56,48 @@
   margin: 37px 0px 0px 28px;
 }
 
-ul.artist-profile-list > li {
-  margin: 9px 30px 0px 2px;
-  padding-right: 32px;
-  font-size: 24px;
-  font-family: 'MissionGothic-Light', sans-serif;
+.artist-profile-list > li:hover {
+  text-decoration: underline;
 }
 
-ul.artist-profile-list > li:not(:last-child) {
-  border-right: .75px solid;
-}
+
+/****************************
+  USER INFO
+*****************************/
+
 
 .profile-pic {
-  height: 250px;
-  max-width: 270px;
-  border-radius: 20px 20px 0px 0px;
+  height: 150px;
 }
 
 .user-info {
-  margin: 13px 40px 0 20px;
+  margin: 14px 70px 0 50px;
   font-family: MissionGothic-Light;
   font-size: 30px;
   text-align: left;
-  width: 270px;
-  height: 500px;
-  border: .75px solid;
-  border-radius: 25px;
 }
 
 .user-info > ul {
   margin: 10px;
-  text-align: center;
-  margin: 80px 0 0 0;
+  text-align: left;
+  margin: 5px 0 0 0;
 }
 
 .location {
-  font-family: MissionGothic-Thin;
-  font-size: 25px;
+  font-family: MissionGothic-Light;
+  font-size: 16px;
 }
 
 .bio {
   font-family: MissionGothic-Thin;
-  font-size: 20px;
+  font-size: 16px;
+  border-top: .75px solid;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.band {
+  font-size: 25px;
 }
 
 

@@ -7,10 +7,11 @@ const Auth = ({component: Component, path, loggedIn}) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/" />
+      <Redirect to="/artist" />
     )
   )}/>
 );
+
 const requireLogin = ({component: Component, path, loggedIn}) => (
   <Route path= { path } render= {(props) => (
     loggedIn ? (

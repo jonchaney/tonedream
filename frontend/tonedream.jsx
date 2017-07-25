@@ -9,8 +9,7 @@ import { fetchAlbum,
          deleteAlbum, 
          updateAlbum,
          clearAlbums } from './actions/album_actions';
-// import { updateUser } from './actions/user_actions';
-import { updateUser } from './util/user_api_util';
+import { updateUser, fetchUser } from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -32,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateAlbum = updateAlbum;
   window.updateUser = updateUser;
   window.clearAlbums = clearAlbums;
+  window.fetchUser = fetchUser;
   // end test
 
   const root = document.getElementById('root');

@@ -1,7 +1,9 @@
  import React from 'react';
 import { Route,
          Switch,
-         Link } from 'react-router-dom';
+         Link, 
+         IndexRoute, 
+         hashHistory } from 'react-router-dom';
 import { AuthRoute, LoginRoute } from '../util/route_util';
 import { login } from '../actions/session_actions';
 
@@ -17,9 +19,11 @@ const App = () => (
         <Link to="/">
           <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="90" height="91" alt="tonedream"></img>
         </Link>
-        <h1 className="header">
-          tonedream
-        </h1>
+        <Link to="/">
+          <h1 className="header">
+            tonedream
+          </h1>
+        </Link>
       </span> 
       <span> 
         <p className="tagline">independent music network</p>
@@ -29,7 +33,8 @@ const App = () => (
     <GreetingContainer />
     <Switch>
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      <LoginRoute path="/artist" component={ArtistPageContainer} /> 
+      <LoginRoute exact path="/profile" component={ArtistPageContainer} /> 
+      <Route path="/artist/:id" component={ArtistPageContainer} /> 
       <Route path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>

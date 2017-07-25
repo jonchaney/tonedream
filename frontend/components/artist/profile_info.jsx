@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class ProfileInfo extends React.Component {
   constructor(props) {
@@ -19,9 +19,13 @@ class ProfileInfo extends React.Component {
           <li className="location">
             {this.props.currentUser.location}
           </li>
-          {/* <li className="bio">
+           <li className="bio">
                 {this.props.currentUser.bio}
-            </li> */}
+            </li> 
+          <li>
+             {/* only let user see this this if they are logged in as artist */}
+              <Link to="/edit">edit</Link>  
+          </li>
         </ul>
       </div>
     );

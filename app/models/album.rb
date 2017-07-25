@@ -17,7 +17,7 @@ class Album < ApplicationRecord
   validates :title, :date, presence: true
   belongs_to :user
   
-  has_attached_file :image, default_url: "default_album.png"
+  has_attached_file :image, default_url: "does_a_secret_speak.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :set_default_date

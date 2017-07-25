@@ -1,13 +1,11 @@
-json.array! @albums do |album|
-  json.partial! "album", album: album
-end
-
-# albums.each do |album|
-#   json.set! album.id do
-#     json.extract! album,
-#       :id,
-#       :title,
-#       :date,
-#       :genre
-#   end
-# end
+@albums.each do |album|
+  json.set! album.id do 
+    json.id album.id
+    json.albumname album.albumname
+    json.email album.email
+    json.band album.band
+    json.bio album.bio
+    json.location album.location
+    json.image_url asset_path(album.image.url)
+  end
+end 
