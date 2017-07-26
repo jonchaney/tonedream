@@ -5,8 +5,8 @@ const sessionLinks = (login, user) => (
   <div>
     <nav className="login-signup">
       <ul className="nav">
-        <li><Link to="/signup">signup</Link> &middot;</li>
-        <li><Link to="/guest">guest</Link></li>
+        <li><Link to="/signup">signup</Link></li>
+        <li className="guest"><Link to="/guest">guest</Link></li>
         <li><Link to="/login">login</Link></li>
       </ul>
     </nav>
@@ -15,7 +15,9 @@ const sessionLinks = (login, user) => (
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="logout">
-    <button className="logout-button" onClick={logout}>logout</button>
+    <ul>
+      <button className="logout-button" onClick={logout}>logout</button>
+    </ul>
 	</hgroup>
 );
 

@@ -19,6 +19,7 @@ class Track < ApplicationRecord
     through: :album,
     class_name: :User
   
+  # spoofing protection removed -- fix later (validate_media_type: false)
   has_attached_file :audio, validate_media_type: false
   validates_attachment_content_type :audio,
   :content_type => [

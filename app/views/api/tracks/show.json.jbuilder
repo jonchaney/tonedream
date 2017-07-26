@@ -1,2 +1,5 @@
-<h1>Tracks#show</h1>
-<p>Find me in app/views/tracks/show.html.erb</p>
+json.id @track.id
+json.title @track.title
+json.date @track.date
+json.user_id @track.user_id
+json.image_url @track.image.url

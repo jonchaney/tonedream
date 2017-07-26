@@ -43,8 +43,15 @@ a5.save!
 a6.image = File.open("app/assets/images/together_we_didn't.jpg")
 a6.save!
 
-Track.create!(title: "Lost Coast", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
-Track.create!(title: "Shrubs and Trees", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
-Track.create!(title: "Reptile", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
-Track.create!(title: "Fadeaway", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
-Track.create!(title: "Jam", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+t = Track.create!(title: "Lost Coast", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+t1 = Track.create!(title: "Shrubs and Trees", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+t2 = Track.create!(title: "Reptile", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+t2 = Track.create!(title: "Fadeaway", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+t4 = Track.create!(title: "Jam", track_num: 1, download: true, album_id: a.id, user_id: u2.id)
+
+
+t.audio = File.open('app/assets/audio/LostCoast.mp3')
+t1.audio = File.open('app/assets/audio/ShrubsandTrees.mp3')
+t2.audio = File.open('app/assets/audio/Reptile.mp3')
+t3.audio = File.open('app/assets/audio/Fadeaway.mp3')
+t4.audio = File.open('app/assets/audio/Jam.mp3')

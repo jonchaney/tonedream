@@ -1,7 +1,8 @@
  import React from 'react';
 import { Route,
          Switch,
-         Link } from 'react-router-dom';
+         Link,
+         Redirect } from 'react-router-dom';
 import { withRoute } from 'react-router';
 import { AuthRoute, LoginRoute } from '../util/route_util';
 import { login } from '../actions/session_actions';
@@ -29,11 +30,11 @@ const App = () => (
        
     <GreetingContainer />
     <Switch>
-      <Route path="/login" component={SessionFormContainer} />
+      <LoginRoute path="/profile" component={ArtistPageContainer} /> 
+      <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
       <Route path="/:user_id" component={ArtistPageContainer} /> 
-      <LoginRoute path="/profile" component={ArtistPageContainer} /> 
     </Switch>
   </div>
 );

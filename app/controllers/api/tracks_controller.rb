@@ -27,7 +27,7 @@ class Api::TracksController < ApplicationController
   end
 
   def index
-    @tracks = current_user.tracks
+    @tracks = Album.find_by(id: params[:album_id])
     render :index
   end
 

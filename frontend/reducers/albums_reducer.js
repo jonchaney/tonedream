@@ -13,7 +13,8 @@ const defaultState = {
       date: null,
       genre: null,
       image_url: null,
-      id: null
+      id: null,
+      tracks: null
   },
   allAlbums: [
     {
@@ -21,13 +22,15 @@ const defaultState = {
       date: null,
       id: null,
       image_url: null,
-      genre: null
+      genre: null,
+      tracks: null
     }
   ]
 };
 
 const AlbumsReducer = (state = defaultState, action) => {
   Object.freeze(state);
+  console.log(action.album);
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALBUMS:

@@ -10,28 +10,39 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  margin: 10px 15px 0 0;
+  margin: 20px 15px 0 0;
   font-size: 24px;
 }
 
 .nav li {
   margin: 0 5px 5px 0;
+  border-right: .75px solid;
 }
 
 .nav li:last-child {
   padding-left: 10px;
-  border-left: .75px solid;
-  border-color: gray;
-  border-width: thin;
+  border-right: 0;
   margin-left: 5px;
 }
+
+.nav li:first-child {
+  padding-left: 10px;
+  margin-left: 5px;
+  padding-right: 17px;
+}
+
+li.guest {
+    padding-left: 13px;
+    padding-right: 19px;
+}
+
 
 .nav > li:hover > a {
   text-decoration: underline;
 }
 
 .login-signup {
-  font-family: 'MissionGothic-Thin', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   font-weight: lighter;
   float: left;
   margin: 0 0 0 22px;

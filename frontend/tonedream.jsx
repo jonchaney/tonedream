@@ -2,15 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-
-import { fetchAlbum, 
-         fetchAlbums, 
-         createAlbum, 
-         deleteAlbum, 
-         updateAlbum,
-         clearAlbums } from './actions/album_actions';
-// import { updateUser } from './actions/user_actions';
 import { updateUser } from './util/user_api_util';
+import { fetchAlbum } from './actions/album_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -26,12 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.fetchAlbum = fetchAlbum;
-  window.fetchAlbums = fetchAlbums;
-  window.createAlbum = createAlbum;
-  window.deleteAlbum = deleteAlbum;
-  window.updateAlbum = updateAlbum;
-  window.updateUser = updateUser;
-  window.clearAlbums = clearAlbums;
   // end test
 
   const root = document.getElementById('root');
