@@ -66,7 +66,7 @@ class ArtistPage extends React.Component {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({imsageFile: file, imageUrl: fileReader.result });
+      this.setState({imageFile: file, imageUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);

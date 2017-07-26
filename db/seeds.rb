@@ -21,7 +21,7 @@ a4 = Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
 a5 = Album.create!(title: 'Regretful Dependencies', date: date, user_id: u.id)
 a6 = Album.create!(title: 'Together We Didn\'t', date: date, user_id: u.id)
 
-a = Album.create!(title: "Satan\'s Gulch", date: date, user_id: u2.id)
+a = Album.create!(title: "Satan's Gulch", date: date, user_id: u2.id)
 a.image = File.open('app/assets/images/satans_gulch.png')
 a.save!
 

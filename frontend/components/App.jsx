@@ -30,10 +30,10 @@ const App = () => (
     <GreetingContainer />
     <Switch>
       <Route path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
       <Route path="/:user_id" component={ArtistPageContainer} /> 
       <LoginRoute path="/profile" component={ArtistPageContainer} /> 
-      <AuthRoute path="/signup" component={SessionFormContainer} />
     </Switch>
   </div>
 );
