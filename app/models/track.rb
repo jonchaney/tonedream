@@ -13,13 +13,13 @@
 
 class Track < ApplicationRecord
   validates :title, :track_num, :download, :album_id, presence: true
-
+      
   belongs_to :album
   has_one :user,
     through: :album,
     class_name: :User
-
-  has_attached_file :audio
+  
+  has_attached_file :audio, validate_media_type: false
   validates_attachment_content_type :audio,
   :content_type => [
     'audio/mpeg',
@@ -33,7 +33,17 @@ class Track < ApplicationRecord
     'audio/x-mpegaudio',
     'audio/mp4',
     'audio/x-mp4',
-    'audio/x-mp4audio'
+    'audio/x-mp4audio',
+    'audio/wav', 
+    'audio/wave', 
+    'audio/x-wave', 
+    'audio/vnd.wave',
+    'audio/flac',
+    'audio/aiff',
+    'audio/aiff',
+    'audio/x-aiff',
+    'audio/mpeg',
+    'audio/ogg'
   ]
   
 end
