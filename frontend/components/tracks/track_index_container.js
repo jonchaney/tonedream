@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRoute } from 'react-router';
 import {
   fetchAlbums,
   createAlbum,

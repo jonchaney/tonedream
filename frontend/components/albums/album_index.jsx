@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Link, withRouter } from 'react-router';
 import LoadingIcon from './loading_icon';
 
 class AlbumIndex extends React.Component {
@@ -23,7 +24,6 @@ class AlbumIndex extends React.Component {
           <LoadingIcon /> :
         <div className="artist-profile">
           <ul className="album-index-container">
-
               {this.props.albums.map((album, idx) =>
             <li key={idx}>
                 <img value={album.id} onClick={() => this.handleClick(album.id)} src={album.image_url}/>
@@ -36,4 +36,4 @@ class AlbumIndex extends React.Component {
       }
 }
 
-export default AlbumIndex;
+export default withRouter(AlbumIndex);

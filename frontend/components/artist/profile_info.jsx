@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class ProfileInfo extends React.Component {
   constructor(props) {
@@ -22,6 +22,9 @@ class ProfileInfo extends React.Component {
           <li className="bio">
             {this.props.currentUser.bio}
           </li> 
+          <li className="submit-edit">
+             <Link to="/profile/edit">edit profile</ Link> 
+          </li>
         </ul>
       </div>
     );

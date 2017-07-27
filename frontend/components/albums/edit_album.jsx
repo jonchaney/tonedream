@@ -29,7 +29,6 @@ class EditAlbum extends React.Component {
   }
 
   toggleStatus() {
-    console.log("hi");
     if (this.state.status) {
       this.setState({ status: true });
     } else {

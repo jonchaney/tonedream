@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import AlbumIndexContainer from '../albums/album_index_container';
 import TrackIndexContainer from '../tracks/track_index_container';
 import LoadingIcon from '../albums/loading_icon';
+import ProfileInfoContainer from './profile_info_container';
+import EditProfileFormContainer from './edit_profile_form_container';
 
 // not yet built
 // import TrackIndex from '../track_index/track_index';
@@ -162,7 +164,8 @@ class ArtistPage extends React.Component {
             {this.props.currentUser.bio}
           </li>
           <li className="edit">
-            <button type="button" onClick={this.toggleStatus}>edit profile</button>
+             {/* <button type="button" onClick={this.toggleStatus}>edit profile</button>  */}
+             <button type="button">edit profile</button> 
           </li>
         </ul>
       </div>
@@ -181,7 +184,11 @@ class ArtistPage extends React.Component {
           </ul>
         </div>
           <div className="artist-profile-content">
-            { this.pageContent() }
+             <Switch>
+              <Route exact path="/profile" component={ProfileInfoContainer}/>  
+              <Route path="/profile/edit" component={EditProfileFormContainer}/>  
+              <Route path="/profile/album" component={TrackIndexContainer}/>  
+            </Switch> 
             <AlbumIndexContainer />
           </div>
       </div>
