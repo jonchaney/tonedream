@@ -5,7 +5,8 @@ import {
   fetchAlbum,
   receiveAlbum,
   deleteAlbum,
-  updateAlbum
+  updateAlbum,
+  updateFormAlbum,
 } from '../../actions/album_actions';
 
 import {
@@ -27,7 +28,7 @@ const mapStateToProps = ({ albums, session, loading, tracks }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateAlbum: (album) => dispatch(updateAlbum(album)),
+  updateFormAlbum: (formData, id) => dispatch(updateFormAlbum(formData, id)),
   receiveAlbum: (album) => dispatch(receiveAlbum(album)),
   updateTrack: (track) => dispatch(updateTrack(track)),
   createTrack: (track) => dispatch(createTrack(track)),

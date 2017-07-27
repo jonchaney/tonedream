@@ -36,3 +36,12 @@ export const updateAlbum = data => (
   })
 );
 
+export const updateFormAlbum = (formData, id) => {
+  return $.ajax({
+    url: `api/albums/${id}`,
+    type: 'PATCH',
+    processData: false,
+    contentType: false,
+    data: formData,
+  });
+};

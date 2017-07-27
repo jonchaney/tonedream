@@ -91,3 +91,9 @@ export const updateAlbum = album => dispatch => (
   ))
 );
 
+export const updateFormAlbum = (formData, id) => (dispatch) => {
+  return APIUtil.updateFormAlbum(formData, id).then(
+    response => dispatch(receiveAlbum(response))
+  );
+};
+
