@@ -87,3 +87,9 @@ export const updateTrack = track => dispatch => (
   ))
 );
 
+export const updateFormTrack = (formData, id) => (dispatch) => {
+  return APIUtil.updateFormTrack(formData, id).then(
+    response => dispatch(receiveTrack(response))
+  );
+};
+

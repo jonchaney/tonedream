@@ -8,18 +8,19 @@ class EditAlbum extends React.Component {
     this.editAlbum = this.editAlbum.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.update = this.update.bind(this);
-      this.state = {
-        id: this.props.selectedAlbum.id,
-        title: this.props.selectedAlbum.title,
-        date: this.props.selectedAlbum.date,
-        imageFile: null,
-        imageUrl: this.props.selectedAlbum.image_url,
-        status: true
+    this.state = {
+      id: this.props.selectedAlbum.id,
+      title: this.props.selectedAlbum.title,
+      date: this.props.selectedAlbum.date,
+      imageFile: null,
+      imageUrl: this.props.selectedAlbum.image_url,
+      status: false
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('this.state.id');
     let formData = new FormData();
     formData.append("album[title]", this.state.title);
     formData.append("album[date]", this.state.date);
@@ -29,7 +30,7 @@ class EditAlbum extends React.Component {
   }
 
   toggleStatus() {
-    if (this.state.status) {
+    if (!this.state.status) {
       this.setState({ status: true });
     } else {
       this.setState({ status: false });
@@ -91,7 +92,7 @@ class EditAlbum extends React.Component {
       </div>
     );
   }
-  
+
   render() {
     return (
       <div className="album-info">

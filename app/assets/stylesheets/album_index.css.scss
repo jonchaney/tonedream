@@ -16,3 +16,13 @@
 .album-index-container > li:nth-child(3) {
     flex-basis: 0;
 }
+
+.edit-album-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 0 0 -15px;
+}
+
+.edit-album-buttons li.edit {
+    margin: 0 14px 0 0px;
+}

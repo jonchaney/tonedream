@@ -15,8 +15,7 @@ const mapStateToProps = ({ albums, session, loading }) => ({
   errors: session.errors,
   albums: allAlbums(albums),
   selectedAlbum: albums.selectedAlbum,
-  indexLoading: loading.indexLoading,
-  detailLoading: loading.detailLoading
+  indexLoading: loading.indexLoading
 });
 
 const mapDispatchToProps = dispatch => ({

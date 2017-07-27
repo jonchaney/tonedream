@@ -20,7 +20,7 @@ class TrackIndex extends React.Component {
       }
     };
   }
-  
+
   toggleStatus() {
     if (!this.state.status) {
       this.setState({ status: true });
@@ -67,9 +67,14 @@ class TrackIndex extends React.Component {
                 }
             }, true)}  
         </ul> 
+         <div className="edit-album-buttons">
             <li className="edit">
-              <button type="button" onClick={this.toggleStatus}>edit album</button>
+              <button type="button" onClick={this.toggleStatus}>update album</button>
             </li>
+            <li className="edit">
+              <button type="button" onClick={this.toggleStatus}>update tracks</button>
+            </li>
+          </div>
       </div>
     );
   }
@@ -79,7 +84,7 @@ class TrackIndex extends React.Component {
       <div className="album-info">
         <div className="album-info-main">
           <ul>
-            <li>{this.props.selectedAlbum.title}</li>
+             <li>{this.props.selectedAlbum.title}</li> 
           </ul>
         </div>
            {this.pageContent()}

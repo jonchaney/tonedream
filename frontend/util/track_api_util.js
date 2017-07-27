@@ -34,3 +34,13 @@ export const updateTrack = data => (
     data
   })
 );
+
+export const updateFormTrack = (formData, id) => {
+  return $.ajax({
+    url: `api/tracks/${id}`,
+    type: 'PATCH',
+    processData: false,
+    contentType: false,
+    data: formData,
+  });
+};

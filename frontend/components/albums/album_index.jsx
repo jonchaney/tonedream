@@ -13,14 +13,6 @@ class AlbumIndex extends React.Component {
   }
 
   handleClick(id) {
-    // refactor, the albums > allAlbums slice of state should be an object
-    // of ojects with key set to id of each element
-    // let album = {};
-    // this.props.albums.forEach(function(item) {
-    //   if (item.id === id) {
-    //     album = item;
-    //   }
-    // });
     this.props.startLoadingSingleAlbum();
     this.props.fetchAlbum(id);
   }
