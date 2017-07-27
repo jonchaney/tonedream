@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import { updateUser } from './util/user_api_util';
-import { fetchAlbum } from './actions/album_actions';
+import { fetchTracks,
+         createTrack,
+         deleteTrack,
+         updateTrack,
+         fetchTrack,
+         clearTrack,
+         clearTracks  } from './actions/track_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -18,7 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchAlbum = fetchAlbum;
+  window.fetchTracks = fetchTracks;
+  window.createTrack = createTrack;
+  window.deleteTrack = deleteTrack;
+  window.updateTrack = updateTrack;
+  window.fetchTrack = fetchTrack;
+  window.clearTrack = clearTrack;
+  window.clearTracks = clearTracks;
   // end test
 
   const root = document.getElementById('root');

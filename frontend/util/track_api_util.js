@@ -1,7 +1,7 @@
-export const fetchTracks = (albumId) => (
+export const fetchTracks = () => (
   $.ajax({
     method: 'GET',
-    url: `api/albums/${albumId}/tracks`,
+    url: `api/tracks`,
   })
 );
 
@@ -30,7 +30,7 @@ export const deleteTrack = id => (
 export const updateTrack = data => (
   $.ajax({
     method: 'PATCH',
-    url: `api/tracks/${data.album.id}`,
+    url: `api/tracks/${data.track.id}`,
     data
   })
 );

@@ -1,0 +1,63 @@
+.album-info {
+    margin: 46px 60px 0 20px;
+    font-family: MissionGothic-Light;
+    font-size: 30px;
+    text-align: left;
+    width: 270px;
+    height: 500px;
+}
+
+.album-info audio { 
+  width: 164px; 
+}
+
+.track-list {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-info ul {
+  font-size: 20px;
+  border-bottom: .75px solid;
+  margin: 14px -37px 17px -17px;
+  padding: 0 0 11px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 75px); /* Adjust as needed */
+    background-color: white;
+    height: 15px;
+}
+
+.audio-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.audio-info {
+    margin: 0px 0px 0px 0px;
+    font-size: 13px;
+    display: inline;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.album-info > .edit {
+    margin: 0 0 0 -17px;
+}

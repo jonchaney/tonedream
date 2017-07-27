@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AlbumIndexContainer from '../albums/album_index_container';
+import TrackIndexContainer from '../tracks/track_index_container';
 import LoadingIcon from '../albums/loading_icon';
 
 // not yet built
@@ -60,6 +61,10 @@ class ArtistPage extends React.Component {
     } else {
       return this.renderAlbumInfo();
     }
+  }
+
+  componentWillMount() {
+    this.props.fetchTracks();
   }
 
   updateFile(e) {
@@ -137,14 +142,8 @@ class ArtistPage extends React.Component {
   }
 
   renderAlbumInfo() {
-    console.log(this.props.selectedAlbum.title);
     return (
-      <div className="album-info"> 
-         <p>{this.props.currentUser.band}</p>
-         <p>{this.props.selectedAlbum.title}</p> 
-         <p>{this.props.selectedAlbum.date}</p> 
-         <p>{this.props.selectedAlbum.genre}</p> 
-      </div>
+      <TrackIndexContainer />
     );
   }
 

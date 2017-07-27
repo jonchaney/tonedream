@@ -30,12 +30,13 @@ const defaultState = {
 
 const AlbumsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  console.log(action.album);
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALBUMS:
       return merge({}, state, { allAlbums: action.albums});
     case RECEIVE_ALBUM:
+      // needs a refactor of state shape
+      // return Object.assign({}, {selectedAlbum: { [action.album.id]: action.album }});
       newState.selectedAlbum = action.album;
       return merge({}, newState);
     case CLEAR_ALBUMS:

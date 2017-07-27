@@ -1,4 +1,4 @@
-json.array! @track do |track|
+json.array! @tracks do |track|
   json.partial! "track", track: track
 end
 
