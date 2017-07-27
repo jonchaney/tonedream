@@ -5,29 +5,57 @@ import LoadingIcon from '../albums/loading_icon';
 class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderTracks = this.renderTracks.bind(this);
     this.pageContent = this.pageContent.bind(this);
     this.editAlbum = this.editAlbum.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
+    this.updateImageFile = this.updateImageFile.bind(this);
+    this.update = this.update.bind(this);
+
     // this.editTrack = this.editTrack.bind(this);
     this.state = {
-      audio_url: null,
-      download: null,
-      id: null,
-      title: null,
-      track_num: null,
+      track: {
+        audioUrl: null,
+        download: null,
+        id: null,
+        title: null,
+        track_num: null,
+      },
+      album: {
+        title: this.props.selectedAlbum.title,
+        date: this.props.selectedAlbum.date,
+        imageUrl: this.props.selectedAlbum.date,
+        id: this.props.selectedAlbum.id
+      },
       status: false
     };
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("album[title]", this.state.album.title);
+    formData.append("album[date]", this.state.album.date);
+    formData.append("user[image]", this.state.album.imageUrl);
+
+    this.props.updateAlbum(formData, this.state.album.id);
+    this.toggleStatus();
+  }
+
   toggleStatus() {
-    console.log(this.state);
     if (!this.state.status) {
       this.setState({ status: true });
     } else {
       this.setState({ status: false });
     }
+  }
+
+  update(field) {
+    console.log(field);
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   pageContent() {
@@ -36,29 +64,55 @@ class TrackIndex extends React.Component {
     } else {
       return (this.editAlbum());
       }
-  } 
+  }
+
+  updateImageFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({album: { imageFile: file, imageUrl: fileReader.result }});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
   
   editAlbum() {
     return (
-      <div>
-        <li>edit album</li>  
+      <div className="edit-album-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          {/* {this.renderErrors()}  */}
+          <div className="login-input-box">
+            <label>
+              <input type="text"
+                autoFocus="autofocus"
+                className="edit-input"
+                value={this.state.album.title}
+                onChange={this.update('title')}
+              />
+            </label>
+            <label>
+              <input type="text"
+                className="edit-input"
+                value={this.state.album.date}
+                onChange={this.update('date')}
+              />
+            </label>
+            <label>
+              <input type="file"
+                className="edit-input"
+                onChange={this.updateImageFile}
+              />
+            </label>
+            <label>
+              <input type="submit"
+                className="submit-edit"
+                value="submit" />
+            </label>
+          </div>
+        </form>
       </div>
      );
-  }
-
-
-  // componentDidMount() {
-  //   this.setState({
-  //     audio_url: this.props.track.audio_url,
-  //     download: this.props.track.download,
-  //     id: this.props.track.id,
-  //     title: this.props.track.title,
-  //     track_num: this.props.track.track_num,
-  //     status: false});
-  // }
-
-  handleClick(id) {
-
   }
 
   renderTracks() {

@@ -30,15 +30,15 @@ class AlbumIndex extends React.Component {
         this.props.indexLoading ?
           <LoadingIcon /> :
         <div className="artist-profile">
-          <div className="album-index-container">
+          <ul className="album-index-container">
 
               {this.props.albums.map((album, idx) =>
-            <ul key={idx}>
+            <li key={idx}>
                 <img value={album.id} onClick={() => this.handleClick(album.id)} src={album.image_url}/>
-            </ul>
+            </li>
               )}
               
-          </div>
+          </ul>
         </div> 
         );
       }
