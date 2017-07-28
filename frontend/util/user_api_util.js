@@ -15,3 +15,10 @@ export const updateProfile = (formData, id) => {
     data: formData,
   });
 };
+
+export const getUser = id => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}`
+  });
+};

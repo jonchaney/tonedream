@@ -1,9 +1,13 @@
-export const fetchAlbums = () => (
-  $.ajax({
+export const fetchAlbums = id => {
+  let url = 'api/albums';
+  if (id) {
+    url = `api/user/${id}/albums`;
+  }
+  return $.ajax({
     method: 'GET',
-    url: 'api/albums',
-  })
-);
+    url: url,
+  });
+};
 
 export const fetchAlbum = id => (
   $.ajax({

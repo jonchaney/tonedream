@@ -30,7 +30,7 @@ class User < ApplicationRecord
   has_many :albums
   has_many :tracks
 
-  has_attached_file :image, default_url: "default_profile_pic.jpg"
+  has_attached_file :image, default_url: "https://s3-us-west-2.amazonaws.com/tonedream-dev/default_profile_pic.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def password=(password)

@@ -62,9 +62,9 @@ export const fetchAlbum = albumId => dispatch => {
     ));
 };
 
-export const fetchAlbums = () => dispatch => {
+export const fetchAlbums = (id) => dispatch => {
   dispatch(startLoadingAllAlbums());
-  return APIUtil.fetchAlbums().then(albums => {
+  return APIUtil.fetchAlbums(id).then(albums => {
     dispatch(receiveAlbums(albums));
   }, errors => (
     dispatch(receiveErrors(errors))

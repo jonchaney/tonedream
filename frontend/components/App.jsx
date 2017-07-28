@@ -10,8 +10,9 @@ import { login } from '../actions/session_actions';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import AlbumIndexContainer from './albums/album_index_container';
-import ArtistPageContainer from './artist/artist_page_container';
+import ArtistPage from './artist/artist_page_container';
 import SearchContainer from './search_bar/search_container';
+import ArtistProfilePageContainer from './artist/artist_profile_page_container';
 import Home from './greeting/home';
 
 const App = () => (
@@ -36,12 +37,13 @@ const App = () => (
        
     <GreetingContainer />
     <Switch>
-       <Route exact path="/" component={Home} /> 
-      <LoginRoute path="/profile" component={ArtistPageContainer} /> 
+      <Route exact path="/" component={Home} /> 
+      {/* <Route path="/artists/:id" component={ArtistProfilePageContainer} />  */}
+      <LoginRoute path="/profile" component={ArtistPage} /> 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      <Route path="/:user_id" component={ArtistPageContainer} /> 
+       <Route path="/:user_id" component={ArtistProfilePageContainer} />  
     </Switch>
   </div>
 );

@@ -19,6 +19,12 @@ class Api::AlbumsController < ApplicationController
     render :index
   end
 
+  def select_albums
+    @user = User.find_by(id: params[:user_id])
+    @albums = @user.albums
+    render :index
+  end
+
   def update
     @album = current_user.albums.find(params[:id])
     if @album.update_attributes(album_params)

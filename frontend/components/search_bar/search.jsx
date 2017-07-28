@@ -8,7 +8,7 @@ class Search extends React.Component {
       value: "",
       show: true
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
     $(window).on("click", this.checkActiveSearch.bind(this));
   }

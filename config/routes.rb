@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get 'index/show'
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create, :update]
+    resources :users, only: [:create, :update, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :albums, only: [:create, :destroy, :show, :update, :index]
     resources :tracks, only: [:create, :destroy, :show, :update, :index]  
     resources :searches, only: [:index, :show] 
+    get '/user/:user_id/albums', to: 'albums#select_albums'
   end
 
 
