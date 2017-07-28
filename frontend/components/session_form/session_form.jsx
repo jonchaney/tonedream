@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
               email: this.state.email
             };
     }
-    this.props.processForm(user).then(() => this.props.history.push('/profile'));
+    this.props.processForm(user).then(() => this.props.history.push(`/profile`));
   }
 
   navLink() {
@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
   }
 
   guestAccount() {
-    const user = {username: "guest", password: "password", band: "hazelswart"};
+    const user = {username: "slowcrawl", password: "password"};
     const path = user.band;
     this.props.login(user).then(() => this.props.history.push('/profile'));
   }

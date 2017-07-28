@@ -15,36 +15,15 @@ class Track < ApplicationRecord
   validates :title, :track_num, :download, :album_id, presence: true
       
   belongs_to :album
-  has_one :user,
-    through: :album,
-    class_name: :User
-  
+  belongs_to :user
+
   # spoofing protection removed -- fix later (validate_media_type: false)
-  has_attached_file :audio, validate_media_type: false
-  validates_attachment_content_type :audio,
-  :content_type => [
-    'audio/mpeg',
-    'audio/x-mpeg',
-    'audio/mp3',
-    'audio/x-mp3',
-    'audio/mpeg3',
-    'audio/x-mpeg3',
-    'audio/mpg',
-    'audio/x-mpg',
-    'audio/x-mpegaudio',
-    'audio/mp4',
-    'audio/x-mp4',
-    'audio/x-mp4audio',
-    'audio/wav', 
-    'audio/wave', 
-    'audio/x-wave', 
-    'audio/vnd.wave',
-    'audio/flac',
-    'audio/aiff',
-    'audio/aiff',
-    'audio/x-aiff',
-    'audio/mpeg',
-    'audio/ogg'
-  ]
+  
+  has_attached_file :audio, presence: true, validate_media_type: false
+
+
+
+  # , url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'tonedream'
+  validates_attachment_content_type :audio, content_type: /\Aaudio\/.*\z/
   
 end

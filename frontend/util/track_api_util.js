@@ -44,3 +44,13 @@ export const updateFormTrack = (formData, id) => {
     data: formData,
   });
 };
+
+export const addTrack = (formData) => {
+  return $.ajax({
+    url: 'api/tracks',
+    type: 'POST',
+    processData: false,
+    contentType: false,
+    data: formData,
+  });
+};

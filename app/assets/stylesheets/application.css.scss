@@ -74,3 +74,13 @@
   align-items: center;
   display: flex;  
 }
+
+.background-image {
+    height: 600px;
+    display: block;
+    background-image: url('https://s3-us-west-2.amazonaws.com/tonedream-dev/pexels-photo-164828.jpeg');
+    background-repeat: no-repeat;
+    margin: 5% 0 0 0;
+    background-size: 100%;
+    background-position: center;
+}

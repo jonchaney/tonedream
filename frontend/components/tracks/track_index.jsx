@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import LoadingIcon from '../albums/loading_icon';
 import EditAlbumContainer from '../albums/edit_album_container';
 
 class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.renderTracks = this.renderTracks.bind(this);
-    this.pageContent = this.pageContent.bind(this);
-    this.toggleStatus = this.toggleStatus.bind(this);
     this.state = {
       album: {
         title: this.props.selectedAlbum.title,
@@ -21,65 +18,9 @@ class TrackIndex extends React.Component {
     };
   }
 
-  toggleStatus() {
-    if (!this.state.status) {
-      this.setState({ status: true });
-    } else {
-      this.setState({ status: false });
-    }
-  }
-  
-  pageContent() {
-    if (!this.state.status) {
-      return (this.renderTracks());
-    } else {
-      return ( <EditAlbumContainer />);
-      }
-  }
-
-  renderTracks() {
-    // event listener to stop track when another is played
-    // refactor code so tracks are not nested under selectedAlbum?
-    // aaaand obfuscate the tracks so people can't download them from the html source
-    return (
-      <div>
-        <ul className="track-list">
-          {
-            this.props.tracks.map((track, idx) =>
-                <ol key={idx} className="audio-item">
-                    <li className="audio-info">
-                      {track.track_num} | {track.title}  
-                    </li>
-                  <div id="audioplayer">
-                    <audio controls="controls">
-                      <source src={track.audio_url} type="audio/wav"></source>
-                      <source src={track.audio_url} type="audio/mpeg"></source> 
-                    </audio>   
-                  </div>
-                </ol>
-          )}
-            { document.addEventListener('play', function(e){
-            var audios = document.getElementsByTagName('audio');
-            for(var i = 0, len = audios.length; i < len;i++){
-                if(audios[i] != e.target){
-                  audios[i].pause();
-                    }
-                }
-            }, true)}  
-        </ul> 
-         <div className="edit-album-buttons">
-            <li className="edit">
-              <button type="button" onClick={this.toggleStatus}>update album</button>
-            </li>
-            <li className="edit">
-              <button type="button" onClick={this.toggleStatus}>update tracks</button>
-            </li>
-          </div>
-      </div>
-    );
-  }
-
   render() {
+    // needs refactor to ensure tracks always print in order
+    
     return (
       <div className="album-info">
         <div className="album-info-main">
@@ -87,7 +28,42 @@ class TrackIndex extends React.Component {
              <li>{this.props.selectedAlbum.title}</li> 
           </ul>
         </div>
-           {this.pageContent()}
+      <div>
+          <ul className="track-list">
+            {
+              this.props.tracks.map((track, idx) =>
+                <ol key={idx} className="audio-item">
+                  <li className="audio-info">
+                    {track.track_num} | {track.title}
+                  </li>
+                  <div id="audioplayer">
+                    <audio controls="controls">
+                      <source src={track.audio_url} type="audio/wav"></source>
+                      <source src={track.audio_url} type="audio/mpeg"></source>
+                    </audio>
+                  </div>
+                   <li><Link key={track.id} to={`/profile/album/update/track/${track.id}`}><i className="fa fa-pencil" aria-hidden="false"></i></Link></li>
+                   <li><i className="fa fa-trash-o" aria-hidden="false"></i></li>
+                </ol>
+              )}
+            {document.addEventListener('play', function (e) {
+              var audios = document.getElementsByTagName('audio');
+              for (var i = 0, len = audios.length; i < len; i++) {
+                if (audios[i] != e.target) {
+                  audios[i].pause();
+                }
+              }
+            }, true)}
+          </ul>
+          <div className="edit-album-buttons">
+            <li className="submit-edit">
+              <Link to="/profile/album/update">update album</Link>
+            </li>
+            <li className="submit-edit">
+              <Link to="/profile/album/upload/track">add track</Link>
+            </li>
+          </div>
+        </div>
       </div>
     );
   }

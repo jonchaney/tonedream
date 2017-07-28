@@ -32,9 +32,9 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @track = current_user.tracks.find(params[:id])
-
-    if @track.update_attributes(track_params)
+    # @track = current_user.tracks.find(params[:id])
+    @track = Track.find(params[:id])
+    if @track && @track.update_attributes(track_params)
       render :show
     else
       render json: @track.errors.full_messages, status: 422
@@ -54,6 +54,6 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:title, :download, :duration, :album_id, :track_num, :user_id)
+    params.require(:track).permit(:title, :download, :album_id, :track_num, :user_id, :audio)
   end
 end

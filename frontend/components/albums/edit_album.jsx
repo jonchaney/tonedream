@@ -19,21 +19,14 @@ class EditAlbum extends React.Component {
   }
 
   handleSubmit(e) {
+    // need to configure date so it persists
     e.preventDefault();
     let formData = new FormData();
     formData.append("album[title]", this.state.title);
     formData.append("album[date]", this.state.date);
     formData.append("album[image]", this.state.imageUrl);
     this.props.updateFormAlbum(formData, this.state.id);
-    this.toggleStatus();
-  }
-
-  toggleStatus() {
-    if (this.state.status) {
-      this.setState({ status: true });
-    } else {
-      this.setState({ status: false });
-    }
+    this.props.history.push(`/profile/album`);
   }
 
   updateFile(e) {

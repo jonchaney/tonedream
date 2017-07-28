@@ -17,16 +17,20 @@ import {
   fetchSelectedTrack
 } from '../../actions/track_actions';
 
+import { selectAllTracks } from '../../reducers/selectors';
+
 import TrackIndex from './track_index';
 
-const mapStateToProps = ({ albums, session, loading, tracks }) => ({
-  loggedIn: Boolean(session.currentUser),
-  currentUser: session.currentUser,
-  selectedAlbum: albums.selectedAlbum,
-  selectedTrack: tracks.selectedTrack,
-  tracks: albums.selectedAlbum.tracks,
-  loading: loading.indexLoading
-});
+const mapStateToProps = ({ albums, session, loading, tracks }) => {
+  return {
+    loggedIn: Boolean(session.currentUser),
+    currentUser: session.currentUser,
+    selectedAlbum: albums.selectedAlbum,
+    selectedTrack: tracks.selectedTrack,
+    tracks: selectAllTracks(albums.selectedAlbum.tracks),
+    loading: loading.indexLoading
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   updateFormAlbum: (formData, id) => dispatch(updateFormAlbum(formData, id)),

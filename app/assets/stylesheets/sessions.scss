@@ -44,6 +44,7 @@ li.guest {
 .login-signup {
   font-family: 'MissionGothic-Light', sans-serif;
   font-weight: lighter;
+  display: block;
   float: left;
   margin: 0 0 0 22px;
 }
@@ -88,6 +89,26 @@ a:visited {
 }
 
 .logout-button:hover {
+  text-decoration: underline;
+}
+
+li.home {
+    /* float: right; */
+    font-family: 'MissionGothic-Thin', sans-serif;
+    width: 11px;
+    font-size: 20px;
+    height: 11px;
+    border: 0 none transparent;
+    margin: 17px 31px 0 0;
+    float: right;
+}
+
+li.home {
+  color: black;
+  text-decoration: none;
+}
+
+li.home:hover {
   text-decoration: underline;
 }
 

@@ -12,7 +12,9 @@ import {
 
 import UPDATE_ARTIST from '../actions/user_actions';
 import { START_LOADING_TRACKS,
-         RECEIVE_SINGLE_TRACK } from '../actions/track_actions';
+         RECEIVE_SINGLE_TRACK,
+         START_LOADING_TRACK,
+         RECEIVE_LOADED_TRACK } from '../actions/track_actions';
 
 const initialState = {
   indexLoading: false,
@@ -23,6 +25,10 @@ const initialState = {
 const LoadingReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case START_LOADING_TRACK:
+      return Object.assign({}, state, { detailLoading: true });
+    case RECEIVE_LOADED_TRACK:
+      return Object.assign({}, state, { detailLoading: true });
     case RECEIVE_ALBUMS:
       return Object.assign({}, state, { indexLoading: false });
     case RECEIVE_SINGLE_TRACK:

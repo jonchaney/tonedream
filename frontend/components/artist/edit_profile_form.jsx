@@ -11,7 +11,6 @@ import ProfileInfo from './profile_info';
 class ArtistPage extends React.Component {
   constructor(props) {
     super(props);
-    this.editForm = this.editForm.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -59,7 +58,8 @@ class ArtistPage extends React.Component {
     });
   }
 
-  editForm() {
+
+  render() {
     return (
       <div className="edit-form-container">
         <img className="profile-pic" src={this.state.imageUrl} />
@@ -112,16 +112,6 @@ class ArtistPage extends React.Component {
             </label>
           </div>
         </form>
-      </div>
-    );
-  }
-
-  render() {
-    return (
-      <div className="artist-profile">
-        <div className="artist-profile-content">
-          {this.editForm()}
-        </div>
       </div>
     );
   }

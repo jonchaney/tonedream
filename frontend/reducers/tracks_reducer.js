@@ -41,12 +41,12 @@ const TracksReducer = (state = defaultState, action) => {
     case RECEIVE_TRACKS:
       return merge({}, state, { selectedTracks: action.tracks });
     case RECEIVE_SELECTED_TRACK:
-      console.log(action.track);
-      newState[[action.track.id]] = action.track;
-      return merge({}, state, { selectedTracks: newState });
-    case RECEIVE_TRACK:
       newState.selectedTrack = action.track;
       return merge({}, newState);
+    case RECEIVE_TRACK:
+      return merge({}, state, { selectedTrack: action.track });
+      // newState.selectedTrack = action.track;
+      // return merge({}, newState);
     case CLEAR_TRACKS:
       return defaultState;
     case CLEAR_TRACK:
