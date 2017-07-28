@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoadingIcon from '../albums/loading_icon';
 import EditAlbumContainer from '../albums/edit_album_container';
+import DownloadLink from 'react-download-link'
 
 class TrackIndex extends React.Component {
   constructor(props) {
@@ -42,8 +43,14 @@ class TrackIndex extends React.Component {
                       <source src={track.audio_url} type="audio/mpeg"></source>
                     </audio>
                   </div>
-                   <li><Link key={track.id} to={`/profile/album/update/track/${track.id}`}><i className="fa fa-pencil" aria-hidden="false"></i></Link></li>
-                   <li><i className="fa fa-trash-o" aria-hidden="false"></i></li>
+                  {/* unknown bug, update not working // trash not set up  */}
+                  <li><Link key={track.id} to={`/profile/album/update/track/${track.id}`}><i className="fa fa-pencil" aria-hidden="false"></i></Link></li> 
+                  <li><DownloadLink
+                    filename={track.title}
+                    label={<i className="fa fa-download" aria-hidden="false"></i>}
+                    exportFile={() => {track.url;}} />
+                  </li>   
+                  {/* <li><i className="fa fa-trash-o" aria-hidden="false"></i></li> */}
                 </ol>
               )}
             {document.addEventListener('play', function (e) {

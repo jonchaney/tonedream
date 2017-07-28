@@ -54,8 +54,9 @@
   display: flex;
   font-weight: lighter;
   font-size: 25px; 
-  margin: 0 10px 10px 176px;
+  margin: 0 10px 12px 176px;
   flex-direction: column-reverse;
+  white-space:nowrap;
 }
 .head > span {
   display: flex;
@@ -76,11 +77,49 @@
 }
 
 .background-image {
-    height: 600px;
+    height: 450px;
     display: block;
-    background-image: url('https://s3-us-west-2.amazonaws.com/tonedream-dev/pexels-photo-164828.jpeg');
-    background-repeat: no-repeat;
-    margin: 5% 0 0 0;
-    background-size: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/tonedream-dev/pexels-photo-11762.jpeg);
+    background-repeat: repeat-x;
+    margin: 100px 0 0 0;
+    background-size: 80%;
     background-position: center;
+    // border-bottom: .75px solid;
+    // border-top: .75px solid;
+    /* margin: 0 0 0 0; */
+    padding: 0px 0 0 0;
+    // background-color: #464035;
+
+}
+
+p.main-tagline {
+    float: left;
+    display: flex;
+    font-family: "MissionGothic-Thin";
+    display: flex;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0px 4px 6px 7px;
+    float: left;
+    flex-direction: column-reverse;
+    text-align: right;
+    border-bottom: .75px solid;
+    padding: 8px 0 -3px 8px;
+}
+
+.search-wrapper {
+    display: flex;
+    float: left;
+    flex-direction: column-reverse;
+    margin-bottom: 23px;
+}
+
+input.search-bar {
+    font-size: 15px;
+    margin: 0px 11px -6px 12px;
+    width: 247px;
+    border: .75px solid;
+    border-radius: 8px;
+    text-align: center;
+    height: 24px;
 }

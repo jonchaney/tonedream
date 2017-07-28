@@ -11,6 +11,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import AlbumIndexContainer from './albums/album_index_container';
 import ArtistPageContainer from './artist/artist_page_container';
+import SearchContainer from './search_bar/search_container';
 import Home from './greeting/home';
 
 const App = () => (
@@ -25,9 +26,12 @@ const App = () => (
           tonedream
         </h1></Link>
       </span> 
-      <span> 
+      <span>
         <p className="tagline">independent music network</p>
+        <SearchContainer />
       </span>
+      {/* <span>
+      </span> */}
     </div>
        
     <GreetingContainer />

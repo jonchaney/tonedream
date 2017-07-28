@@ -13,6 +13,7 @@
     "react-audio-player": "^0.6.0",
     "react-audioplayer": "^0.3.0",
     "react-dom": "^15.6.1",
+    "react-download-link": "^1.0.1",
     "react-howler": "^3.6.3",
     "react-redux": "^5.0.5",
     "react-render-html": "^0.5.0",
