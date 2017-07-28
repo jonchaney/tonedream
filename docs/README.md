@@ -1,14 +1,5 @@
 # tonedream
 
-[Heroku link][heroku]
-
-[Trello link][trello]
-
-[heroku]: https://tonedream.herokuapp.com/
-[trello]: https://trello.com/b/2NLKQYRR/full-stack-project
-
-## Minimum Viable Product
-
 Tonedream is an independent music network built using Ruby on Rails
 and React/Redux.  Once completed this project will have all of the following
 features:
