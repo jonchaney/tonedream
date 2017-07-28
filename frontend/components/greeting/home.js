@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchResultsContainer from '../search/search_results_container';
 import SearchContainer from '../search_bar/search_container';
 
 const backgroundImage = (login, user) => (
