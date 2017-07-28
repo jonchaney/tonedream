@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import LoadingIcon from '../albums/loading_icon';
 import EditAlbumContainer from '../albums/edit_album_container';
-import DownloadLink from 'react-download-link'
+import DownloadLink from 'react-download-link';
 
 class TrackIndex extends React.Component {
   constructor(props) {
@@ -76,4 +76,4 @@ class TrackIndex extends React.Component {
   }
 }
 
-export default TrackIndex;
+export default withRouter(TrackIndex);

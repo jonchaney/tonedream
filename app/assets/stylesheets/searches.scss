@@ -1,3 +1,33 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul.search-results {
+    font-family: MissionGothic-Light;
+    font-weight: 900;
+    border: .75px solid;
+    padding: 9px 3px 4px 12px;
+    margin: -19px 0 0 22px;
+    width: 214px;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 107px;
+    background-color: white;
+}
+
+input.search-bar {
+    font-size: 15px;
+    margin: 0px 19px -6px -43px;
+    width: 256px;
+    border: .75px solid;
+    border-radius: 8px;
+    text-align: center;
+    height: 24px;
+}
+
+.search-wrapper {
+    display: flex;
+    float: left;
+    flex-direction: column-reverse;
+    margin-bottom: 23px;
+    position: relative;
+}

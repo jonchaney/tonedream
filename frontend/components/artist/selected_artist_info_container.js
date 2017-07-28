@@ -9,7 +9,7 @@ import { withRouter } from 'react-router';
 const mapStateToProps = ({ albums, session, loading, selectedArtist }) => ({
   selectedArtist: selectedArtist,
   albums: allAlbums(albums),
-  loading: loading.detailLoading,
+  loading: loading.artistLoading,
   selectedAlbum: albums.selectedAlbum
 });
 

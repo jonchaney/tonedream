@@ -41,6 +41,13 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-wrapper">
+              <ul className="search-results">
+                {this.props.results.map((result, idx) =>
+                  <li key={idx}>
+                    <Link to={`./${result.id}`}>{result.type} | {result.name}</Link>
+                  </li>
+                )}
+              </ul>   
             <form className="autocomplete-search">
               <input className="search-bar" onChange={this.updateSearch} value={this.state.value} placeholder="Search for artist, track or album"></input>
             </form>

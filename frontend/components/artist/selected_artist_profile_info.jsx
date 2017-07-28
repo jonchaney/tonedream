@@ -8,26 +8,26 @@ class SelectedArtistInfo extends React.Component {
 
   render() {
     const { loading } = this.props;
-
-    return (
-      <div className="user-info">
-        <img className="profile-pic" src={this.props.selectedArtist.image_url} />
-        <ul>
-          <li className="band">
-            {this.props.selectedArtist.band}
-          </li>
-          <li className="location">
-            {this.props.selectedArtist.location}
-          </li>
-          <li className="bio">
-            {this.props.selectedArtist.bio}
-          </li>
-          <li className="submit-edit">
-            <Link to="/profile/edit">edit profile</ Link>
-          </li>
-        </ul>
-      </div>
-    );
+    if (!this.props.selectedArtist.artist) {
+      return (<div>Loading...</div>);
+    } else {
+      return (
+        <div className="user-info">
+          <img className="profile-pic" src={this.props.selectedArtist.artist.image_url} />
+          <ul>
+            <li className="band">
+                {this.props.selectedArtist.artist.band}
+            </li>
+            <li className="location">
+                {this.props.selectedArtist.artist.location}
+            </li>
+            <li className="bio">
+                {this.props.selectedArtist.artist.bio}
+            </li>
+          </ul>
+        </div>
+      );
+    }
   }
 }
 

@@ -7,7 +7,7 @@ import {
   RECEIVE_NEW_ALBUM,
   RECEIVE_ALBUM_ERRORS,
   START_LOADING_ALL_ALBUMS,
-  START_LOADING_SINGLE_ALBUM
+  START_LOADING_SINGLE_ALBUM,
 } from '../actions/album_actions';
 
 import UPDATE_ARTIST from '../actions/user_actions';
@@ -15,6 +15,8 @@ import { START_LOADING_TRACKS,
          RECEIVE_SINGLE_TRACK,
          START_LOADING_TRACK,
          RECEIVE_LOADED_TRACK } from '../actions/track_actions';
+
+import { ARTIST_LOADING, RECEIVE_LOADED_ARTIST } from '../actions/user_actions';
 
 const initialState = {
   indexLoading: false,
@@ -25,6 +27,10 @@ const initialState = {
 const LoadingReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case ARTIST_LOADING:
+      return Object.assign({}, state, { artistLoading: true });
+    case RECEIVE_LOADED_ARTIST:
+      return Object.assign({}, state, { artistLoading: false });
     case START_LOADING_TRACK:
       return Object.assign({}, state, { detailLoading: true });
     case RECEIVE_LOADED_TRACK:

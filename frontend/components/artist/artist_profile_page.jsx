@@ -15,11 +15,18 @@ class ArtistProfilePage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    console.log(this.props.match.params.user_id);
+  componentWillMount() {
     this.props.fetchUser(this.props.match.params.user_id).then(() => {
       this.props.fetchAlbums(this.props.match.params.user_id);
     } );
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
+      this.props.fetchUser(nextProps.match.params.user_id).then(() => {
+        this.props.fetchAlbums(nextProps.match.params.user_id);
+      });
+    }
   }
 
   render() {

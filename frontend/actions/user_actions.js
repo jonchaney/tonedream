@@ -4,6 +4,8 @@ import * as APIUtil from '../util/user_api_util';
 export const UPDATE_ARTIST = "UPDATE_ARTIST";
 export const RECEIVE_UPDATED_USER = "RECEIVE_UPDATED_USER";
 export const RECEIVE_USER = "RECEIVE_USER";
+export const ARTIST_LOADING = "ARTIST_LOADING";
+export const RECEIVE_LOADED_ARTIST = "RECEIVE_LOADED_ARTIST";
 
 export const receiveUpdatedUser = (updatedUser) => {
   return {
@@ -18,6 +20,14 @@ export const receiveUser = (user) => {
     user
   };
 };
+
+export const loadArtist = () => ({
+  type: ARTIST_LOADING
+});
+
+export const receiveLoadedArtist = () => ({
+  type: RECEIVE_LOADED_ARTIST
+});
 
 export const updatingArtist = () => ({
   type: UPDATE_ARTIST
