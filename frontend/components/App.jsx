@@ -31,8 +31,6 @@ const App = () => (
         <p className="tagline">independent music network</p>
         <SearchContainer />
       </span>
-      {/* <span>
-      </span> */}
     </div>
        
     <GreetingContainer />
