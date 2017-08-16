@@ -31,7 +31,7 @@ A musician can easily create, upload, download, and destroy tracks and albums. T
 
 ## Search
 
-To find other music and musicians, search is enabled on the main page. The results are split up into tracks, albums, and artist/bands. This allows for easy location of other musicians in the network.
+To find other music and musicians, search is enabled on the main page. The results are split up into tracks, albums, and artist/bands. This allows for easy location of other musicians in the network. 
 
 ![artist_page](docs/images/search.png)
 

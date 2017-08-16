@@ -3,7 +3,7 @@ class Api::SearchesController < ApplicationController
     query = search_params[:query].downcase
     users = User.where("LOWER(band) ~ ?", query)
     albums = Album.where("LOWER(title) ~ ?", query)
-    tracks = Track.where("LOWER(title) ~ ?", query).includes(:album)
+    tracks = Track.where("LOWER(title) ~ ?", query)
     @results = {}
     counter = 1;
 
@@ -12,7 +12,6 @@ class Api::SearchesController < ApplicationController
       @results[counter][:type] = "artist"
       @results[counter][:id] = user.id
       @results[counter][:name] = user.band
-      @results[counter][:image] = user.image
       counter += 1
     end
 
@@ -21,7 +20,6 @@ class Api::SearchesController < ApplicationController
       @results[counter][:type] = "album"
       @results[counter][:id] = album.user_id
       @results[counter][:name] = album.title
-      @results[counter][:image] = album.image
       counter += 1
     end
 
@@ -30,7 +28,6 @@ class Api::SearchesController < ApplicationController
       @results[counter][:type] = "track"
       @results[counter][:id] = track.album.user_id
       @results[counter][:name] = track.title
-      @results[counter][:image] = track.album.image 
       counter += 1
     end
 

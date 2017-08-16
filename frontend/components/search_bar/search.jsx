@@ -29,7 +29,6 @@ class Search extends React.Component {
 
   updateSearch(e) {
     if (e.currentTarget.value !== "") {
-      this.props.clearErrors();
       this.props.search(e.currentTarget.value);
     } else {
       this.setState({ results: [] });
