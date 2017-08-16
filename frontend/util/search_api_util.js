@@ -1,4 +1,4 @@
-export function search(query) {
+export function searchDB(query) {
   return $.ajax({
     method: "GET",
     url: "api/searches",

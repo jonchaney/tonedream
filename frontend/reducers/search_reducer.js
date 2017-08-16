@@ -1,4 +1,4 @@
-import { RECEIVE_RESULTS, CLEAR_RESULTS, RECEIVE_RANDOM } from '../actions/search_actions';
+import { RECEIVE_RESULTS, CLEAR_RESULTS } from '../actions/search_actions';
 
 const SearchReducer = (state = { results: [], random: [] }, action) => {
   let newState = Object.assign({}, state);
@@ -7,9 +7,6 @@ const SearchReducer = (state = { results: [], random: [] }, action) => {
   switch (action.type) {
     case RECEIVE_RESULTS:
       newState.results = action.results;
-      return newState;
-    case RECEIVE_RANDOM:
-      newState.random = action.random;
       return newState;
     case CLEAR_RESULTS:
       newState = { results: [], random: [] };

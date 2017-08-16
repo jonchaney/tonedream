@@ -8,7 +8,6 @@ class Search extends React.Component {
       value: "",
       show: true
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
     $(window).on("click", this.checkActiveSearch.bind(this));
   }
@@ -31,7 +30,7 @@ class Search extends React.Component {
   updateSearch(e) {
     if (e.currentTarget.value !== "") {
       this.props.clearErrors();
-      this.props.runSearch(e.currentTarget.value);
+      this.props.search(e.currentTarget.value);
     } else {
       this.setState({ results: [] });
     }
