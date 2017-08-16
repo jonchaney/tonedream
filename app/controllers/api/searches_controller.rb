@@ -40,13 +40,7 @@ class Api::SearchesController < ApplicationController
       render json: ["nothing found"], status: 200
     end
   end
-
-  def show
-    @random_albums = Album.order("RANDOM()").includes("artist").limit(params[:id].to_i)
-
-    render "api/searches/random"
-  end
-
+  
   private
 
   def search_params
