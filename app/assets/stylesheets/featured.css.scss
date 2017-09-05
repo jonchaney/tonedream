@@ -1,0 +1,29 @@
+.featured-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 200 0 0 0;
+  ul {
+      display: flex;
+      flex-flow: row-wrap;
+      float: left;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        font-family: 'MissionGothic-Light';
+        font-size: 20px;
+        text-align: center;
+        padding: 15px;
+
+          .profile-pic {
+            border: 2px solid;
+            border-radius: 100%;
+          }
+      }
+    }
+}
+
+ul:nth-child(2n) {
+  flex-basis: 100%;
+}
+

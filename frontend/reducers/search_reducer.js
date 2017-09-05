@@ -1,6 +1,6 @@
-import { RECEIVE_RESULTS, CLEAR_RESULTS } from '../actions/search_actions';
+import { RECEIVE_RESULTS, CLEAR_RESULTS, RECEIVE_FEATURED } from '../actions/search_actions';
 
-const SearchReducer = (state = { results: [] }, action) => {
+const SearchReducer = (state = { results: [], featured: [] }, action) => {
   let newState = Object.assign({}, state);
   Object.freeze(state);
 
@@ -9,7 +9,10 @@ const SearchReducer = (state = { results: [] }, action) => {
       newState.results = action.results;
       return newState;
     case CLEAR_RESULTS:
-      newState = { results: [], random: [] };
+      newState = { results: [] };
+      return newState;
+    case RECEIVE_FEATURED:
+      newState.featured = action.featured;
       return newState;
     default:
       return state;

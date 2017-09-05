@@ -13,7 +13,7 @@ import AlbumIndexContainer from './albums/album_index_container';
 import ArtistPage from './artist/artist_page_container';
 import SearchContainer from './search_bar/search_container';
 import ArtistProfilePageContainer from './artist/artist_profile_page_container';
-import Home from './greeting/home';
+import HomeContainer from './greeting/home_container';
 
 const App = () => (
   <div>
@@ -35,8 +35,7 @@ const App = () => (
        
     <GreetingContainer />
     <Switch>
-      <Route exact path="/" component={Home} /> 
-      {/* <Route path="/artists/:id" component={ArtistProfilePageContainer} />  */}
+      <Route exact path="/" component={HomeContainer} /> 
       <LoginRoute path="/profile" component={ArtistPage} /> 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

@@ -6,9 +6,9 @@ export function searchDB(query) {
   });
 }
 
-export function random(amount) {
+export function featured(num) {
   return $.ajax({
     method: "GET",
-    url: `api/searches/${amount}`
+    url: `api/searches/${num}`
   });
 }

@@ -21,12 +21,12 @@ class ArtistPage extends React.Component {
     return (
       <div className = "artist-profile">
         <div className="artist-profile-nav">
-          <ul className="artist-profile-list">
+          {/* <ul className="artist-profile-list">
             <li>digital</li>
             <li>vinyl</li>
             <li>tapes</li>
             <li>merch</li>
-          </ul>
+          </ul> */}
         </div>
           <div className="artist-profile-content">
              <Switch>

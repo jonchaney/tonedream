@@ -9,6 +9,7 @@ import { fetchTracks,
          fetchTrack,
          clearTrack,
          clearTracks  } from './actions/track_actions';
+import { getFeatured, search } from './actions/search_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,13 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchTracks = fetchTracks;
-  window.createTrack = createTrack;
-  window.deleteTrack = deleteTrack;
-  window.updateTrack = updateTrack;
-  window.fetchTrack = fetchTrack;
-  window.clearTrack = clearTrack;
-  window.clearTracks = clearTracks;
+  window.getFeatured = getFeatured;
+  window.search = search;
   // end test
 
   const root = document.getElementById('root');

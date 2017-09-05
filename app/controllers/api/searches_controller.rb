@@ -37,10 +37,16 @@ class Api::SearchesController < ApplicationController
       render json: ["nothing found"], status: 200
     end
   end
+
+    def show
+    @featured_albums = User.order("RANDOM()").first(6)
+    
+    render "api/searches/featured"
+  end
   
   private
 
   def search_params
-    params.require(:search).permit(:query)
+    params.require(:search).permit(:query, :id)
   end
 end

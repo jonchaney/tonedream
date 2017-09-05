@@ -9,11 +9,11 @@ class Search extends React.Component {
       show: true
     };
     this.updateSearch = this.updateSearch.bind(this);
-    $(window).on("click", this.checkActiveSearch.bind(this));
+    // $(window).on("click", this.checkActiveSearch.bind(this));
   }
 
   componentDidMount() {
-    this.props.clearResults();
+    // this.props.clearResults();
   }
 
   componentWillReceiveProps(newProps) {
