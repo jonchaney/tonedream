@@ -26,7 +26,7 @@ class Home extends React.Component {
           <ul className="featured-artist">
             {this.props.featured.map((artist, idx) =>
               <li key={idx}>
-                <img className="profile-pic" src={artist.image_url} />
+                <img className="featured-pic" src={artist.image_url} />
                 <Link to={`./${artist.id}`}>{artist.name}</Link>
               </li>
             )}
