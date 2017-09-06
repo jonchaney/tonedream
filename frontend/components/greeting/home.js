@@ -23,8 +23,8 @@ class Home extends React.Component {
     } else {
       return (
         <div className="featured-wrapper">
+          <h3>FEATURED ARTISTS</h3>
           <div className="featured-artist">
-          {/* <h3>Featured Artists</h3> */}
             {this.props.featured.map((artist, idx) =>
               <div key={idx}>
                 <img className="featured-pic" src={artist.image_url} />

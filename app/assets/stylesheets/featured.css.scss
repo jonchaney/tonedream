@@ -1,7 +1,11 @@
 .featured-wrapper {
   background: #EEF2F3;
   h3 {
-    font-family: 'MissionGothic-Light';
+    font-family: 'MissionGothic-Regular';
+    font-weight: 200;
+    color: #228199;
+    font-size: 25px;
+    padding: 15px 0 0 0;
   }
   div {
     display: flex;
@@ -13,10 +17,9 @@
         font-family: 'MissionGothic-Light';
         font-size: 20px;
         text-align: left;
-        margin: 15px;
+        margin: 10px;
         border: 1px solid;
         border-color: #EEF2F3;
-        border-radius: 25px;
         height: 314px;
         a {
           margin: 0 0 10px 0;
@@ -25,19 +28,12 @@
           text-decoration: underline;
         }
       }
-      
       img {
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
         height: 250px;
         width: 250px;
       }
     }
   }
-
-.featured-artist {
-  padding: 0 0 0 10%;
-}
   
 .featured-wrapper div div a {
     margin: 19px 0 0px 16px;
