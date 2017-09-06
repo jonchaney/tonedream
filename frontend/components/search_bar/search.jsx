@@ -9,7 +9,7 @@ class Search extends React.Component {
       show: true
     };
     this.updateSearch = this.updateSearch.bind(this);
-    // $(window).on("click", this.checkActiveSearch.bind(this));
+    $(window).on("click", this.checkActiveSearch.bind(this));
   }
 
   componentDidMount() {
@@ -31,6 +31,7 @@ class Search extends React.Component {
     if (e.currentTarget.value !== "") {
       this.props.search(e.currentTarget.value);
     } else {
+      this.props.clearResults();
       this.setState({ results: [] });
     }
     this.setState({ value: e.currentTarget.value });
