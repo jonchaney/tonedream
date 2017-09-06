@@ -23,14 +23,14 @@ class Home extends React.Component {
     } else {
       return (
         <div className="featured-wrapper">
-          <ul className="featured-artist">
+          <div className="featured-artist">
             {this.props.featured.map((artist, idx) =>
-              <li key={idx}>
+              <div key={idx}>
                 <img className="featured-pic" src={artist.image_url} />
                 <Link to={`./${artist.id}`}>{artist.name}</Link>
-              </li>
+              </div>
             )}
-          </ul>
+          </div>
         </div>
       );
     }
