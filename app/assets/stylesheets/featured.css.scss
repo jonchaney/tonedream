@@ -1,17 +1,13 @@
 .featured-wrapper {
-  // display: flex;
-  // width: 100%;
-  padding: .5vw;
-  margin: 60px 0 0 0px;
+  background: #EEF2F3;
+  h3 {
+    font-family: 'MissionGothic-Light';
+  }
   div {
-    background: #EEF2F3;
     display: flex;
     flex-wrap: wrap;
       div {
         background: white;
-        // flex-grow: 1;
-        // width: 33%;
-        // height: 250px;
         width: 250px;
         flex-direction: column;
         font-family: 'MissionGothic-Light';
@@ -20,10 +16,19 @@
         margin: 15px;
         border: 1px solid;
         border-color: #EEF2F3;
-        position:relative;
+        border-radius: 25px;
+        height: 314px;
+        a {
+          margin: 0 0 10px 0;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
       }
-
+      
       img {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
         height: 250px;
         width: 250px;
       }
@@ -31,8 +36,11 @@
   }
 
 .featured-artist {
-  padding: 0 0 0 20%;
+  padding: 0 0 0 10%;
 }
   
+.featured-wrapper div div a {
+    margin: 19px 0 0px 16px;
+}
 
 

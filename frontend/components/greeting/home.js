@@ -24,6 +24,7 @@ class Home extends React.Component {
       return (
         <div className="featured-wrapper">
           <div className="featured-artist">
+          {/* <h3>Featured Artists</h3> */}
             {this.props.featured.map((artist, idx) =>
               <div key={idx}>
                 <img className="featured-pic" src={artist.image_url} />

@@ -39,7 +39,7 @@ class Api::SearchesController < ApplicationController
   end
 
     def show
-    @featured_albums = User.order("RANDOM()").first(6)
+    @featured_albums = User.order("RANDOM()").first(8)
     
     render "api/searches/featured"
   end
