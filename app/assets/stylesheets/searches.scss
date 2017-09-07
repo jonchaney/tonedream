@@ -6,28 +6,40 @@ ul.search-results {
     font-weight: 900;
     border: .75px solid;
     padding: 9px 3px 4px 12px;
-    margin: -19px 0 0 22px;
-    width: 214px;
+    margin: -72px 0 0px -29px;
+    width: 227px;
     text-overflow: ellipsis;
     position: absolute;
     top: 107px;
     background-color: white;
+    border-color:darkgray;
 }
 
 input.search-bar {
     font-size: 15px;
-    margin: 0px 19px -6px -43px;
-    width: 256px;
+    margin: -62px 0 0 -31px;
+    width: 243px;
+    border-style: solid;
     border: .75px solid;
-    border-radius: 8px;
+    border-color: darkgray;
+    text-align: center;
     text-align: center;
     height: 24px;
+    border-radius: 5px;
+}
+
+.search-bar:focus { 
+    outline: none;
+    border-color: darkgray;
+    box-shadow: 0 0 5px darkgray;
 }
 
 .search-wrapper {
     display: flex;
     float: left;
-    flex-direction: column-reverse;
-    margin-bottom: 23px;
     position: relative;
+    display: flex;
+    float: left;
+    flex-direction: column-reverse;
+    margin: 0 20px 20px 0;
 }

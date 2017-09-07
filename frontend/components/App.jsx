@@ -20,15 +20,15 @@ const App = () => (
     <div className="head">
       <span>
         <Link to="/">
-          <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="90" height="91" alt="tonedream"></img>
+          <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="50" height="51" alt="tonedream"></img>
         </Link>
         <Link to="/">
         <h1 className="header">
           tonedream
         </h1></Link>
+        {/* <p className="tagline">independent music network</p> */}
       </span> 
       <span>
-        <p className="tagline">independent music network</p>
         <SearchContainer />
       </span>
     </div>
