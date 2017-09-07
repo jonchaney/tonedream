@@ -5,53 +5,77 @@ ul.search-results {
     font-family: MissionGothic-Light;
     font-weight: 900;
     border: .75px solid;
-    padding: 9px 3px 4px 12px;
-    margin: -72px 0 0px -29px;
-    width: 227px;
+    margin: -70px 0 0px -30px;
+    width: 279px;
     text-overflow: ellipsis;
     position: absolute;
     top: 107px;
     background-color: white;
     border-color:darkgray;
+
+    img {
+        height: 54px;
+        width: 54px;
+        border: 1px solid lightgray;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 0px 0 10px;
+
+      div {
+        padding: 0px;
+      }
+    }
+
+    li:hover {
+        outline: none;
+        background-color: #EEF2F3;
+    }
 }
 
 input.search-bar {
-    font-size: 15px;
-    margin: -62px 0 0 -31px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #fff;
-    border: 1px solid #bebebe;
-    border-radius: 3px;
-    color: rgba(22,17,19,0.7);
-    height: 26px;
-    padding: 0 28px 0 10px;
-    width: 243px;
-    outline: none;
+  font-size: 15px;
+  margin: -62px 0 0 -31px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: 1px solid #bebebe;
+  border-radius: 3px;
+  color: rgba(22,17,19,0.7);
+  height: 30px;
+  padding: 0 28px 0 10px;
+  width: 243px;
+  outline: none;
+}
+
+.results-text {
+  margin: 0 0 0 10px;
 }
 
 .search-bar:focus { 
-    outline: none;
-    border-color: darkgray;
-    box-shadow: 0 0 2px darkgray;
-    background-color: #EEF2F3;
+  outline: none;
+  border-color: darkgray;
+  box-shadow: 0 0 2px darkgray;
+  background-color: #EEF2F3;
 }
 
 .search-wrapper {
-    display: flex;
-    float: left;
-    position: relative;
-    display: flex;
-    float: left;
-    flex-direction: column-reverse;
-    margin: 0 20px 20px 0;
+  display: flex;
+  float: left;
+  position: relative;
+  display: flex;
+  float: left;
+  flex-direction: column-reverse;
+  margin: 0 20px 20px 0;
 }
 
 .fa-search { 
   position: absolute;
-  top: 24px;
-  left: 7px;
-  font-size: 15px;
+  top: 13px;
+  left: 224px;
+  font-size: 19px;
   border-style: none;
 }

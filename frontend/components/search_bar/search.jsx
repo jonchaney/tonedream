@@ -51,10 +51,17 @@ class Search extends React.Component {
       return (
         <ul className="search-results">
           {this.props.results.slice(0,4).map((result, idx) =>
+              <Link to={`./${result.id}`}>
             <li key={idx}>
-              
-              <Link to={`./${result.id}`}>{result.type} | {result.name}</Link>
+              <div>
+                <img src={result.image} />
+              </div>
+                <div className="results-text">
+                  <p>{result.name}</p>
+                  <p>{result.type}</p>
+                </div>
             </li>
+              </Link>
           )}
         </ul>   
       );

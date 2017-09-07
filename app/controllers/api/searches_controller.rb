@@ -9,7 +9,7 @@ class Api::SearchesController < ApplicationController
 
     users.each do |user|
       @results[counter] = {}
-      @results[counter][:type] = "artist"
+      @results[counter][:type] = "Artist"
       @results[counter][:id] = user.id
       @results[counter][:name] = user.band
       @results[counter][:artist] = user.band
@@ -19,7 +19,7 @@ class Api::SearchesController < ApplicationController
 
     albums.each do |album|
       @results[counter] = {}
-      @results[counter][:type] = "album"
+      @results[counter][:type] = "Album"
       @results[counter][:id] = album.user_id
       @results[counter][:name] = album.title
       @results[counter][:artist] = album.user.band
@@ -29,7 +29,7 @@ class Api::SearchesController < ApplicationController
 
     tracks.each do |track|
       @results[counter] = {}
-      @results[counter][:type] = "track"
+      @results[counter][:type] = "Track"
       @results[counter][:id] = track.album.user_id
       @results[counter][:name] = track.title
       @results[counter][:artist] = track.user.band
