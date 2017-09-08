@@ -49,7 +49,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-       <Route path="/:user_id" component={ArtistProfilePageContainer} />  
+      <Route path="/:user_id" component={ArtistProfilePageContainer} />  
     </Switch>
   </div>
 );

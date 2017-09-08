@@ -48,7 +48,6 @@ class Search extends React.Component {
             <div>
               <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" alt="tonedream"></img>
             </div>
-            ßß∆ˆåßå∂∆ˆåß∂
             <div className="results-text">
               <p>Nothing Found</p>
             </div>
