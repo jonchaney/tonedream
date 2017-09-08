@@ -5,9 +5,9 @@ const sessionLinks = (login, user) => (
   <div>
     <nav className="login-signup">
       <ul className="nav">
-        {/* <li><Link to="/signup">signup</Link></li>
+        <li><Link to="/signup">signup</Link></li>
         <li className="guest"><Link to="/guest">guest</Link></li>
-        <li><Link to="/login">login</Link></li> */}
+        <li><Link to="/login">login</Link></li>
       </ul>
     </nav>
   </div>

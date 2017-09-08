@@ -38,26 +38,19 @@
 
 .header {
   font-family: 'MissionGothic-Light', sans-serif;
-  font-weight: 500;
-  margin: -6px 18px 0px 10px;
+  font-weight: 800;
+  margin: -1px 18px 0px 11px;
   font-size: 50px;
   display: flex;
   flex-direction: row;
 }
 
 .tagline {
-  font-family:"MissionGothic-Thin";
-  display: flex;
-  font-weight: lighter;
-  font-size: 25px; 
-  margin: 0 10px 12px 176px;
-  flex-direction: column-reverse;
-  white-space:nowrap;
-}
-
-.head > span {
-  display: flex;
-  margin: 27px 0 20px 20px;
+  font-family:"MissionGothic-Light";
+  font-weight: 800;
+  font-size: 20px; 
+  color: #649922;
+  margin: 7px 0 0 4px;
 }
 
 .head {
@@ -89,4 +82,14 @@ p.main-tagline {
     text-align: right;
     border-bottom: .75px solid;
     padding: 8px 0 -3px 8px;
+}
+
+.head-tag span {
+    display: flex;
+}
+
+.head-tag {
+  margin: 27px 0 20px 42px;
+  display: flex;
+  flex-direction: column;
 }

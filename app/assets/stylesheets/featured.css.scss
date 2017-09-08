@@ -1,19 +1,17 @@
 .featured-wrapper {
-  background: #EEF2F3;
+  background: #F2FFE2;
   padding: 0 0 8px 30px;
-  clear: both;
   width: 100%;
-  // margin: 106px 0px 0px 0;
   z-index: 5;
-  background: #EEF2F3;
-  padding: 95px 0 8px 30px;
+  background: #F2FFE2;
+  padding: 147px 0 12px 34px;
   margin: 0px 0px 0px 0;
   h3 {
     font-family: 'MissionGothic-Regular';
     font-weight: 200;
-    color: #228199;
+    color: #649922;
     font-size: 25px;
-    padding: 10px 0 0 15px;
+    padding: 10px 0 0 10px;
   }
   div {
     display: flex;
@@ -26,7 +24,7 @@
         text-align: left;
         margin: 10px 35px 10px 10px;
         border: 1px solid;
-        border-color: #EEF2F3;
+        border-color: #F2FFE2;
         height: 296px;
         width: 230px;
         a {

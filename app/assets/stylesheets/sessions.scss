@@ -7,16 +7,15 @@
 *****************************/
 
 .nav {
-  align-items: center;
-  justify-content: center;
   display: flex;
-  margin: 20px 15px 0 0;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 .nav li {
   margin: 0 5px 5px 0;
-  border-right: .75px solid;
+  border-right: .75px solid #e9e5e5;
+  margin: 0 0 0 -6px;
 }
 
 .nav li:last-child {

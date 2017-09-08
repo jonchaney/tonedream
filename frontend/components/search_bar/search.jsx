@@ -44,7 +44,15 @@ class Search extends React.Component {
     } else if (this.props.results[0] == "nothing found") {
       return (
         <ul className="search-results">
-          <li>nothing found</li>
+          <li>
+            <div>
+              <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" alt="tonedream"></img>
+            </div>
+            ßß∆ˆåßå∂∆ˆåß∂
+            <div className="results-text">
+              <p>Nothing Found</p>
+            </div>
+          </li>
         </ul> 
       );
     } else {
@@ -53,10 +61,10 @@ class Search extends React.Component {
           {this.props.results.slice(0,4).map((result, idx) =>
               <Link to={`./${result.id}`}>
             <li key={idx}>
-              <div>
+                <div key={idx+10}>
                 <img src={result.image} />
               </div>
-                <div className="results-text">
+                <div key={idx+20} className="results-text">
                   <p>{result.name}</p>
                   <p>{result.type}</p>
                 </div>
