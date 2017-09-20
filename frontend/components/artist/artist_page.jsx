@@ -20,14 +20,6 @@ class ArtistPage extends React.Component {
   render() {
     return (
       <div className = "artist-profile">
-        <div className="artist-profile-nav">
-          {/* <ul className="artist-profile-list">
-            <li>digital</li>
-            <li>vinyl</li>
-            <li>tapes</li>
-            <li>merch</li>
-          </ul> */}
-        </div>
           <div className="artist-profile-content">
              <Switch>
               <Route path="/profile/album/update/track/:id" component={EditTrackContainer}/>    
