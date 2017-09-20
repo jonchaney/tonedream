@@ -78,13 +78,15 @@ a:visited {
 }
 
 .logout-button {
-  font-family: 'MissionGothic-Thin', sans-serif;
+  font-family: 'MissionGothic-Light', sans-serif;
   width: 11px;
-  font-size: 20px;
+  font-weight: lighter;
   height: 11px;
   border: 0 none transparent;
   margin: 15px 31px 0 0;
   float: right;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 .logout-button:hover {
@@ -92,21 +94,19 @@ a:visited {
 }
 
 li.home {
-    /* float: right; */
-    font-family: 'MissionGothic-Thin', sans-serif;
+    font-family: 'MissionGothic-Light', sans-serif;
     width: 11px;
     font-size: 20px;
     height: 11px;
     border: 0 none transparent;
     margin: 17px 31px 0 0;
     float: right;
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    font-weight: 800;
+    font-size: 20px;
 }
-
-li.home {
-  color: black;
-  text-decoration: none;
-}
-
 li.home:hover {
   text-decoration: underline;
 }
