@@ -5,6 +5,8 @@
 .artist-profile {
     display: flex;
     flex-direction: column;
+    background-color: #F2FFE2;
+    padding-bottom: 127px;
 }
 
 .artist-profile-nav {
@@ -57,8 +59,9 @@ ul.artist-profile-list > li:not(:last-child) {
   font-family: MissionGothic-Light;
   font-size: 30px;
   text-align: left;
-  width: 270px;
+  width: 252px;
   height: 500px;
+  background-color: white;
 }
 
 .user-info > ul {
