@@ -9,7 +9,7 @@ const SearchReducer = (state = { results: [], featured: [] }, action) => {
       newState.results = action.results;
       return newState;
     case CLEAR_RESULTS:
-      newState = { results: [], featured: [] };
+      newState = { results: [], featured: state.featured };
       return newState;
     case RECEIVE_FEATURED:
       newState.featured = action.featured;
