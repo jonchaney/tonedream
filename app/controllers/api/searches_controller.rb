@@ -45,7 +45,7 @@ class Api::SearchesController < ApplicationController
   end
 
     def show
-    @featured_albums = User.order("RANDOM()").first(10)
+    @featured_albums = User.where.not(band: nil).order("RANDOM()").first(10)
     
     render "api/searches/featured"
   end
