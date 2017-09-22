@@ -15,7 +15,6 @@ const UserReducer = (state = nullUser, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
-    console.log(action.user);
       const artist = action.user;
       return merge({}, nullUser, {
         artist

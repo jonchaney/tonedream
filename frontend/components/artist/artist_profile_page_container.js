@@ -17,7 +17,8 @@ const mapStateToProps = ({ albums, session, loading, selectedArtist }) => ({
 const mapDispatchToProps = dispatch => ({
   fetchAlbums: (user) => dispatch(fetchAlbums(user)),
   fetchUser: (user) => dispatch(fetchUser(user)),
-  fetchTracks: () => dispatch(fetchTracks())
+  fetchTracks: () => dispatch(fetchTracks()),
+  clearAlbums: () => dispatch(clearAlbums())
 });
 
 export default withRouter(connect(

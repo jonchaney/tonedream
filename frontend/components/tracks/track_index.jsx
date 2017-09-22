@@ -20,8 +20,6 @@ class TrackIndex extends React.Component {
   }
 
   render() {
-    // needs refactor to ensure tracks always print in order
-    
     return (
       <div className="album-info">
         <div className="album-info-main">
@@ -43,14 +41,6 @@ class TrackIndex extends React.Component {
                       <source src={track.audio_url} type="audio/mpeg"></source>
                     </audio>
                   </div>
-                  {/* unknown bug, update not working // trash not set up  */}
-                  <li><Link key={track.id} to={`/profile/album/update/track/${track.id}`}><i className="fa fa-pencil" aria-hidden="false"></i></Link></li> 
-                  <li><DownloadLink
-                    filename={track.title}
-                    label={<i className="fa fa-download" aria-hidden="false"></i>}
-                    exportFile={() => {track.url;}} />
-                  </li>   
-                  {/* <li><i className="fa fa-trash-o" aria-hidden="false"></i></li> */}
                 </ol>
               )}
             {document.addEventListener('play', function (e) {
@@ -62,14 +52,6 @@ class TrackIndex extends React.Component {
               }
             }, true)}
           </ul>
-          <div className="edit-album-buttons">
-            <li className="submit-edit">
-              <Link to="/profile/album/update">update album</Link>
-            </li>
-            <li className="submit-edit">
-              <Link to="/profile/album/upload/track">add track</Link>
-            </li>
-          </div>
         </div>
       </div>
     );

@@ -10,14 +10,16 @@ class AlbumIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchAlbums();
+    if (this.props.location.pathname === '/profile'){
+      this.props.fetchAlbums();
+    }
   }
 
   handleClick(id) {
     console.log(this.props.match.params.user_id);
     this.props.startLoadingSingleAlbum();
     if (this.props.match.params.user_id) {
-      this.props.fetchAlbum(id).then(() => this.props.history.push('/:user_id/tracks'));
+      this.props.fetchAlbum(id).then(() => this.props.history.push(`/${this.props.match.params.user_id}/album`));
     } else {
       this.props.fetchAlbum(id).then(() => this.props.history.push('/profile/album'));
     }

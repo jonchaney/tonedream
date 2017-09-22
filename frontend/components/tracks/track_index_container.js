@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { withRoute } from 'react-router';
+import { withRouter } from 'react-router';
 import {
   fetchAlbums,
   createAlbum,
@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch => ({
   fetchSelectedTrack: (track) => dispatch(fetchSelectedTrack(track))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(TrackIndex);
+)(TrackIndex));
