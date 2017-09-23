@@ -8,9 +8,7 @@ import EditProfileFormContainer from './edit_profile_form_container';
 import EditAlbumContainer from '../albums/edit_album_container';
 import EditTrackContainer from '../tracks/edit_track_container';
 import AddTrackContainer from '../tracks/add_track_container';
-
-// not yet built
-// import TrackIndex from '../track_index/track_index';
+import AltHeaderContainer from '../headers/alt_header_container';
 
 class ArtistPage extends React.Component {
   constructor(props) {
@@ -20,6 +18,7 @@ class ArtistPage extends React.Component {
   render() {
     return (
       <div className = "artist-profile">
+          <AltHeaderContainer />
           <div className="artist-profile-content">
              <Switch>
               <Route path="/profile/album/update/track/:id" component={EditTrackContainer}/>    

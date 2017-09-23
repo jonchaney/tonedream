@@ -5,6 +5,7 @@ import LoadingIcon from '../albums/loading_icon';
 import AlbumIndexContainer from '../albums/album_index_container';
 import TrackIndexContainer from '../tracks/track_index_container';
 import SelectedArtistInfo from './selected_artist_info_container';
+import AltHeaderContainer from '../headers/alt_header_container';
 
 class ArtistProfilePage extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class ArtistProfilePage extends React.Component {
   render() {
     return (
       <div className="artist-profile">
+      <AltHeaderContainer />
         <div className="artist-profile-content">
           <Switch>
             <Route path="/:user_id/album" component={TrackIndexContainer} />
