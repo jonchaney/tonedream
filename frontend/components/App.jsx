@@ -14,35 +14,11 @@ import ArtistPage from './artist/artist_page_container';
 import SearchContainer from './search_bar/search_container';
 import ArtistProfilePageContainer from './artist/artist_profile_page_container';
 import HomeContainer from './greeting/home_container';
+import MainHeader from './headers/main_header';
 
 const App = () => (
   <div>
-    <div className="head">
-      <div className="head-tag">
-        <span>
-          <Link to="/">
-            <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="50" height="51" alt="tonedream"></img>
-          </Link>
-          <Link to="/">
-            <h1 className="header">
-              tonedream
-            </h1>
-          </Link>
-        </span> 
-        <span>
-          <p className="tagline">independent music network</p>
-        </span>
-      </div>
-      <div>
-        <span>
-          <SearchContainer />
-        </span>
-        <span>
-          <GreetingContainer />
-        </span>
-      </div>
-    </div>
-       
+    <Route exact path="/" component={MainHeader} /> 
     <Switch>
       <Route exact path="/" component={HomeContainer} /> 
       <LoginRoute path="/profile" component={ArtistPage} /> 
