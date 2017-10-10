@@ -1,31 +1,64 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const sessionLinks = (login, user) => {
-  return (
-    <div className="greeting">
-      <nav className="login-signup">
-        <ul className="nav">
-          <li><Link to="/signup">signup</Link></li>
-          <li className="guest"><Link to="/guest">guest</Link></li>
-          <li><Link to="/login">login</Link></li>
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  sessionLinks(login, user) {
+    let greeting = "alt-greeting";
+    let loginSignup = "alt-login-signup";
+    let nav = "alt-nav";
+    let guest = "alt-guest";
+    if (this.props.location.pathname === '/') {
+      greeting = "greeting";
+      loginSignup = "login-signup";
+      nav = "nav";
+      guest = "guest";
+    }
+    return (
+      <div className={greeting}>
+        <nav className={loginSignup}>
+          <ul className={nav}>
+            <li><Link to="/signup">signup</Link></li>
+            <li className={guest}><Link to="/guest">guest</Link></li>
+            <li><Link to="/login">login</Link></li>
+          </ul>
+        </nav>
+      </div>
+    );
+  }
+
+  personalGreeting(currentUser, logout) {
+    let styleLogout = "alt-logout";
+    let home = "alt-home";
+    let logoutButton = "alt-logout-button";
+    if (this.props.location.pathname === '/') {
+      styleLogout = "logout";
+      home = "home";
+      logoutButton = "logout-button";
+    }
+    return (
+      <hgroup className={styleLogout}>
+        <ul>
+          <li><button className={logoutButton} onClick={logout}>logout</button></li>
+          <li className={home}><Link to="/profile">home</Link></li>
         </ul>
-      </nav>
-    </div>
-  );
-};
+      </hgroup>
+    );
+  }
 
-const personalGreeting = (currentUser, logout) => (
-	<hgroup className="logout">
-    <ul>
-      <li><button className="logout-button" onClick={logout}>logout</button></li>
-       <li className="home"><Link to="/profile">home</Link></li> 
-    </ul>
-	</hgroup>
-);
+  render() {
+    const greeting = this.props.currentUser ? 
+                     this.personalGreeting(this.props.currentUser, this.props.logout) : 
+                     this.sessionLinks(this.props.login);       
+    return greeting;
+  }
 
-const Greeting = ({ currentUser, logout, login }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(login)
-);
+
+
+}
 
 export default Greeting;

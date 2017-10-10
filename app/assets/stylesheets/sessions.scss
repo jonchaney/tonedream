@@ -176,7 +176,6 @@ label.check-box {
   margin-bottom: -4px;
 }
 
-
 .login-form > label, input {
   border: 0;
   border-bottom: .75px solid black;
@@ -188,18 +187,72 @@ label.check-box {
   margin-bottom: 5px;
 }
 
-.alt-greeting {
-  div {
-    display: flex;
-    nav {
-      flex-direction: column;
-      ul {
-        font-family: 'MissionGothic-Light', sans-serif;
-        display: block;
-        float: left;
-        margin: 0 0 0 21px;
-      }
-    }
-  }
 
+/****************************
+  ALT-NAV
+*****************************/
+
+.alt-nav {
+  display: flex;
+  font-weight: 800;
+  font-size: 15px;
+    a {
+      color: #649922;
+    }
+}
+
+.alt-guest {
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+
+.alt-nav > li:hover > a {
+  text-decoration: underline;
+}
+
+.alt-login-signup {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: lighter;
+  display: block;
+  float: left;
+  margin: 14px 23px 0 22px;
+}
+
+
+/****************************
+  ALT-LOGOUT
+*****************************/
+
+.alt-logout {
+  margin: 0 26px 0 0;
+}
+
+.alt-logout-button {
+  font-family: 'MissionGothic-Light', sans-serif;
+  background-color: #ececec;
+  border: none;
+  color: #649922;
+  font-size: 15px;
+  outline: none;
+  font-weight: 800;
+  border: 0 none transparent;
+  margin: 14px 0 0 40px;
+}
+
+.alt-logout-button:hover {
+  text-decoration: underline;
+}
+
+.alt-home {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    margin: -23px 0 0 -6px;
+    a {
+      color: #649922;
+    }
+}
+.alt-home:hover {
+  text-decoration: underline;
 }
