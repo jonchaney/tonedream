@@ -103,3 +103,48 @@ p.main-tagline {
   display: flex;
   flex-direction: column;
 }
+
+/****************************
+  ALT HEADER
+*****************************/
+
+.alt-header {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  margin: 3px 0px 0px 4px;
+}
+
+.alt-head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  transition: margin 0.25s ease-out;
+  position: fixed;
+  background-color: rgba(255,255,255,0.96);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+  height: 50px;
+  background-color: #ECECEC;
+  border-top: 5px solid;
+  border-top-color: #848484;
+  border-bottom: 1px dotted;
+  border-bottom-color: #848484;
+}
+
+.alt-head > a {
+  align-items: center;
+  display: flex;  
+}
+
+.alt-head-tag span {
+    display: flex;
+    margin: 10px 0 0 13px;
+}
+
+.alt-head-tag {
+  display: flex;
+  flex-direction: column;
+}

@@ -10,30 +10,29 @@ class AltHeader extends React.Component {
 
   render() {
     return (
-      <div className="head">
-        <div className="head-tag">
+      <div className="alt-head">
+
+        <div className="alt-head-tag">
           <span>
             <Link to="/">
-              <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="50" height="51" alt="tonedream"></img>
+              <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="24" height="25" alt="tonedream"></img>
             </Link>
             <Link to="/">
-              <h1 className="header">
+              <h1 className="alt-header">
                 tonedream
             </h1>
             </Link>
           </span>
-          <span>
-            <p className="tagline">independent music network</p>
-          </span>
         </div>
-        <div>
-          <span>
+
+        <div className="alt-search">
             <SearchContainer />
-          </span>
-          <span>
-            <GreetingContainer />
-          </span>
         </div>
+
+        <div className="alt-greeting">
+            <GreetingContainer />
+        </div>
+
       </div>
     );
   }

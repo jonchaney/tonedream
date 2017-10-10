@@ -16,7 +16,7 @@ class Api::SearchesController < ApplicationController
       @results[counter][:image] = user.image.url
       counter += 1
     end
-
+    
     albums.each do |album|
       @results[counter] = {}
       @results[counter][:type] = "Album"
