@@ -13,8 +13,8 @@ class Search extends React.Component {
     $(window).on("click", this.checkActiveSearch.bind(this));
   }
 
-  componentDidMount() {
-    // this.props.clearResults();
+  componentDidUnMount() {
+    this.props.clearAlbums();
   }
 
   componentWillReceiveProps(newProps) {

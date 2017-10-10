@@ -18,19 +18,19 @@ class ArtistProfilePage extends React.Component {
     } );
   }
 
-  componentWillUnmount() {
-    this.props.clearAlbums();
-  }
-
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
       this.props.fetchUser(nextProps.match.params.user_id).then(() => {
         this.props.fetchAlbums(nextProps.match.params.user_id);
       });
     }
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.props.clearAlbums();
+    }
   }
 
   render() {
+    console.log('main render');
     return (
       <div className="artist-profile">
       <AltHeaderContainer />

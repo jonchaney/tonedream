@@ -6,6 +6,7 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import { resultsArray } from '../../reducers/selectors';
 import Search from './search';
 import { withRouter } from 'react-router';
+import { clearAlbums } from '../../actions/album_actions';
 
 function mapStateToProps(state) {
   return ({
@@ -20,7 +21,8 @@ function mapDispatchToProps(dispatch, ownProps) {
     dispatch,
     logout: () => dispatch(logout()),
     search: (query) => dispatch(search(query)),
-    clearResults: () => dispatch(clearResults())
+    clearResults: () => dispatch(clearResults()),
+    clearAlbums: () => dispatch(clearAlbums())
   });
 }
 
