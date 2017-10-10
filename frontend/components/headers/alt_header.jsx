@@ -11,7 +11,6 @@ class AltHeader extends React.Component {
   render() {
     return (
       <div className="alt-head">
-
         <div className="alt-head-tag">
           <span>
             <Link to="/">

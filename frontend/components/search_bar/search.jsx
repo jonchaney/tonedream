@@ -41,7 +41,7 @@ class Search extends React.Component {
   searchResults() {
     if (this.props.results.length == 0) {
       return;
-    } else if (this.props.results[0] == "nothing found") {
+    } else if (this.props.results[0] == "nothing found") {  
       return (
         <ul className="search-results">
           <li>
@@ -77,6 +77,11 @@ class Search extends React.Component {
   }
 
   render() {
+    let autoCompleteStyles;
+    let searchWrapperStyles;
+    if (this.props.location.pathname !== '/') {
+      console.log(this.props.location.pathname);
+    }
     return (
       <div className="search-wrapper">
         <span className="fa fa-search"></span>

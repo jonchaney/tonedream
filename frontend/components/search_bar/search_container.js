@@ -5,12 +5,13 @@ import { clearErrors } from '../../actions/error_actions';
 import { receiveCurrentUser } from '../../actions/session_actions';
 import { resultsArray } from '../../reducers/selectors';
 import Search from './search';
+import { withRouter } from 'react-router';
 
 function mapStateToProps(state) {
   return ({
     errors: state.errors,
     results: resultsArray(state.search.results),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
   });
 }
 
@@ -23,7 +24,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   });
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(Search));
