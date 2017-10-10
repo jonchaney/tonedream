@@ -28,9 +28,7 @@ class AltHeader extends React.Component {
             <SearchContainer />
         </div>
 
-        <div className="alt-greeting">
             <GreetingContainer />
-        </div>
 
       </div>
     );

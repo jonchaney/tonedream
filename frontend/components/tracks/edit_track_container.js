@@ -5,8 +5,6 @@ import { updateFormTrack, fetchSelectedTrack } from '../../actions/track_actions
 import EditTrack from './edit_track';
 
 const mapStateToProps = ({ albums, session, tracks, loading }, { match }) => {
- console.log(albums.selectedAlbum.tracks);
- console.log(match.params);
  return {
    currentUser: session.currentUser,
    selectedAlbum: albums.selectedAlbum,

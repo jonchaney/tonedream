@@ -77,17 +77,26 @@ class Search extends React.Component {
   }
 
   render() {
-    let autoCompleteStyles;
-    let searchWrapperStyles;
-    if (this.props.location.pathname !== '/') {
-      console.log(this.props.location.pathname);
+    let autoCompleteStyles = "alt-autocomplete-search";
+    let searchWrapperStyles = "alt-search-wrapper";
+    let searchbar = "alt-search-bar";
+    let placeHolder = "search tonedream";
+    if (this.props.location.pathname === '/') {
+      autoCompleteStyles = "autocomplete-search";
+      searchWrapperStyles = "search-wrapper";
+      searchbar = "search-bar";
+      placeHolder = "Search for artist, track or album";
     }
     return (
-      <div className="search-wrapper">
+      <div className={searchWrapperStyles}>
         <span className="fa fa-search"></span>
         {this.searchResults()}
-        <form className="autocomplete-search">
-          <input className="search-bar" onChange={this.updateSearch} value={this.state.value} placeholder="Search for artist, track or album"></input>
+        <form className={autoCompleteStyles}>
+          <input className={searchbar} 
+                 onChange={this.updateSearch} 
+                 value={this.state.value} 
+                 placeholder={placeHolder}>
+          </input>
         </form>
       </div>
     );

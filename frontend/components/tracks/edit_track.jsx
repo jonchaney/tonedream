@@ -20,7 +20,6 @@
 //       track_num: ''
 //     };
 
-//     console.log(this.props);
 //   }
 
 
@@ -30,7 +29,6 @@
 
 
 //   handleSubmit(e) {
-//     console.log(this.state);
 //     e.preventDefault();
 //     // check if download box was checked
 //     let download = false;

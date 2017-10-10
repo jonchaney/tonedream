@@ -188,7 +188,18 @@ label.check-box {
   margin-bottom: 5px;
 }
 
-::-webkit-input-placeholder {
-  color: black;
-  opacity: .25;
+.alt-greeting {
+  div {
+    display: flex;
+    nav {
+      flex-direction: column;
+      ul {
+        font-family: 'MissionGothic-Light', sans-serif;
+        display: block;
+        float: left;
+        margin: 0 0 0 21px;
+      }
+    }
+  }
+
 }
