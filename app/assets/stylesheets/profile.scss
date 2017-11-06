@@ -5,7 +5,6 @@
 .artist-profile {
     display: flex;
     flex-direction: column;
-    padding-bottom: 127px;
 }
 
 .artist-profile-nav {
@@ -33,8 +32,10 @@
 
 .artist-profile-content {
   display: flex;
-  margin: 115px 0px 0px 28px;
+  width: 930px;
+  margin: 89px auto auto auto;
   flex-direction: row-reverse;
+  justify-content: space-around;
 }
 
 ul.artist-profile-list > li {
@@ -54,7 +55,8 @@ ul.artist-profile-list > li:not(:last-child) {
 }
 
 .user-info {
-  margin: 63px 70px 0 20px;
+  // margin: 17px 70px 0 20px;
+  margin: 1% 5% 0% 0%;
   font-family: MissionGothic-Light;
   font-size: 30px;
   text-align: left;
@@ -79,8 +81,9 @@ ul.artist-profile-list > li:not(:last-child) {
 
 li.band {
     margin: -69px 0 0 0;
-    font-size: 21px;
+    font-size: 16px;
     font-weight: bold;
+    font-family: MissionGothic-Regular;
 }
 
 .bio {

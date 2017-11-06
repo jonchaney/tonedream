@@ -31,9 +31,10 @@ class AlbumIndex extends React.Component {
         <div className="artist-profile">
           <ul className="album-index-container">
               {this.props.albums.map((album, idx) =>
-            <li key={idx}>
-                  <img className="album-index-photo" value={album.id} onClick={() => this.handleClick(album.id)} src={album.image_url}/>
-            </li>
+                <li key={idx} onClick={() => this.handleClick(album.id)}>
+                  <img className="album-index-photo" value={album.id} src={album.image_url}/>
+                  <p>{album.title}</p>
+                </li>
               )}
               
           </ul>
