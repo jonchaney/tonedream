@@ -20,7 +20,6 @@ const App = () => (
   <div>
     <Route exact path="/" component={MainHeader} /> 
     <Switch>
-      <Route exact path="/" component={HomeContainer} /> 
       <LoginRoute path="/profile" component={ArtistPage} /> 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

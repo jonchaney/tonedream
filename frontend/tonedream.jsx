@@ -9,7 +9,8 @@ import { fetchTracks,
          fetchTrack,
          clearTrack,
          clearTracks  } from './actions/track_actions';
-import { getFeatured, search } from './actions/search_actions';
+// import { getFeatured, search } from './actions/search_actions';
+import { featured } from './util/search_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.getFeatured = getFeatured;
-  window.search = search;
+  window.featured = featured;
+  // window.search = search;
   // end test
 
   const root = document.getElementById('root');
