@@ -19,6 +19,7 @@ import MainHeader from './headers/main_header';
 const App = () => (
   <div>
     <Route exact path="/" component={MainHeader} /> 
+    <Route exact path="/" component={HomeContainer} /> 
     <Switch>
       <LoginRoute path="/profile" component={ArtistPage} /> 
       <AuthRoute path="/login" component={SessionFormContainer} />
