@@ -1,37 +1,33 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+
 import {
-  receiveAlbum,
+  receiveAlbum
 } from '../../actions/album_actions';
 
 import {
-  fetchSelectedTrack,
-  clearTrack
+  fetchSelectedTrack
 } from '../../actions/track_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
 
-import TrackIndex from './track_index';
+import AudioPlayer from './audio_player';
 
-const mapStateToProps = ({ albums, session, loading, tracks, selectedArtist }) => {
+const mapStateToProps = ({ albums, session, tracks, selectedArtist }) => {
   return {
-    loggedIn: Boolean(session.currentUser),
-    currentUser: session.currentUser,
     selectedAlbum: albums.selectedAlbum,
     selectedTrack: tracks.selectedTrack,
     tracks: selectAllTracks(albums.selectedAlbum.tracks),
-    loading: loading.indexLoading,
     selectedArtist: selectedArtist.artist
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   receiveAlbum: (album) => dispatch(receiveAlbum(album)),
-  fetchSelectedTrack: (track) => dispatch(fetchSelectedTrack(track)),
-  clearTrack: () => dispatch(clearTrack())
+  fetchSelectedTrack: (track) => dispatch(fetchSelectedTrack(track))
 });
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(TrackIndex));
+)(AudioPlayer));

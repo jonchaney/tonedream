@@ -13,5 +13,6 @@ album.tracks.each do |track|
     json.id track.id
     json.user_id track.user_id
     json.album_id track.album_id
+    json.duration track.duration
   end
 end

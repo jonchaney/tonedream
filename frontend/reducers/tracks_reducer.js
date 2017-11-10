@@ -10,7 +10,7 @@ import {
 } from '../actions/track_actions';
 
 const defaultState = {
-  selectedTracks: {
+  playlist: {
     0: {
       title: null,
       audio_url: null,

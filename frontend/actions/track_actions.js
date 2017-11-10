@@ -63,9 +63,7 @@ export const fetchTrack = trackId => dispatch => {
 };
 
 export const fetchSelectedTrack = trackId => dispatch => {
-  // dispatch(startLoadingTrack());
   return APIUtil.fetchTrack(trackId).then(track => {
-    // dispatch(receiveLoadedTrack());
     dispatch(receiveTrack(track));
   });
 };

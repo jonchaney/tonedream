@@ -16,6 +16,7 @@ import SearchContainer from './search_bar/search_container';
 import ArtistProfilePageContainer from './artist/artist_profile_page_container';
 import HomeContainer from './greeting/home_container';
 import MainHeader from './headers/main_header';
+import AudioPlayerContainer from './audio_player/audio_player_container';
 
 const App = () => (
   <div>
@@ -29,6 +30,7 @@ const App = () => (
       <Route path="/albums/:id" component={AlbumShowContainer} /> 
       <Route path="/:user_id" component={ArtistProfilePageContainer} />  
     </Switch>
+    <Route path="/" component={AudioPlayerContainer} /> 
   </div>
 );
 

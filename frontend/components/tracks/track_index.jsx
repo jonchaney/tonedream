@@ -1,28 +1,36 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import LoadingIcon from '../albums/loading_icon';
-import EditAlbumContainer from '../albums/edit_album_container';
-import DownloadLink from 'react-download-link';
+
+import AudioPlayerContainer from '../audio_player/audio_player_container';
 
 class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      album: {
-        title: this.props.selectedAlbum.title,
-        date: this.props.selectedAlbum.date,
-        imageFile: null,
-        imageUrl: this.props.selectedAlbum.image_url,
-        id: this.props.selectedAlbum.id,
-        status: false
-      }
-    };
+  }
+
+  handleClick(id) {
+    if (this.props.selectedTrack.id === id) {
+      this.props.clearTrack();
+    } else {
+      this.props.fetchSelectedTrack(id);
+    }
+  }
+
+  renderPlayOrPause(id){
+    if (this.props.selectedTrack.id === id) {
+      return (
+        <i className="fa fa-pause" aria-hidden="true"></i>
+      );
+    } else {
+      return (
+        <i className="fa fa-play" aria-hidden="true"></i>
+      );
+    }
   }
 
   render() {
     return (
       <div className="album-main">
-
           <div className="album-info">
               <h1>{this.props.selectedAlbum.title}</h1>
               <p>by {this.props.selectedArtist.band}</p>
@@ -31,22 +39,14 @@ class TrackIndex extends React.Component {
                   {
                     this.props.tracks.map((track, idx) =>
                       <ul key={idx} className="audio-item">
-                        <li>
-                          <i className="fa fa-play" aria-hidden="true"></i>
+                        <li onClick={() => this.handleClick(track.id)}>
+                          {this.renderPlayOrPause(track.id)}
                         </li>
                         <li className="track-info">
                           {track.track_num}. {track.title}
                         </li>
                       </ul>
                     )}
-                  {document.addEventListener('play', function (e) {
-                    var audios = document.getElementsByTagName('audio');
-                    for (var i = 0, len = audios.length; i < len; i++) {
-                      if (audios[i] != e.target) {
-                        audios[i].pause();
-                      }
-                    }
-                  }, true)}
                 </div> 
               </div>
           </div>
