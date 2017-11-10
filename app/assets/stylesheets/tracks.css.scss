@@ -1,14 +1,27 @@
-.album-info {
-    margin: 46px 70px 0 20px;
+.album-main {
+    display: flex;
     font-family: MissionGothic-Light;
-    font-size: 30px;
-    text-align: left;
-    width: 270px;
-    height: 500px;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-album-show-photo {
+    display: flex;
 }
 
 .album-info audio { 
   width: 164px; 
+}
+
+.non-track-data {
+    display: flex;
+}
+
+.non-track-data div {
+    // display: flex;
 }
 
 .track-list {
@@ -62,19 +75,11 @@ audio::-webkit-media-controls-panel {
     margin: 0 0 0 -17px;
 }
 
-// .fa {
-//     display: inline-block;
-//     font: normal normal normal 14px/1 FontAwesome;
-//     font-size: 15px;
-//     text-rendering: auto;
-//     -webkit-font-smoothing: antialiased;
-//     -moz-osx-font-smoothing: grayscale;
-//     color: black;
-//     border: .5px solid;
-//     border-radius: 50px;
-//     padding: 4px;
-// }
-
 i.fa.fa-pencil {
     margin: 0px 6px 0 0;
+}
+
+.album-show-photo {
+    height: 350px;
+    width: 350px;
 }
