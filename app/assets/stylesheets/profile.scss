@@ -35,7 +35,6 @@
   width: 915px;
   margin: 89px auto auto auto;
   flex-direction: row-reverse;
-  justify-content: space-between;
 }
 
 ul.artist-profile-list > li {
@@ -55,8 +54,7 @@ ul.artist-profile-list > li:not(:last-child) {
 }
 
 .user-info {
-  // margin: 17px 70px 0 20px;
-  margin: 1% 5% 0% 0%;
+  margin: 1% 1% 0% 0%;
   font-family: MissionGothic-Light;
   font-size: 30px;
   text-align: left;

@@ -1,15 +1,25 @@
 .album-main {
     display: flex;
     font-family: MissionGothic-Light;
+    margin: 9px 40px 0px 0px;
 }
 
 .album-info {
     display: flex;
     flex-direction: column;
+    width: 378px;
 }
 
 .outer-album-show-photo {
     display: flex;
+}
+
+.album-info h1 {
+    font-size: 28px;
+}
+
+.album-info p {
+    font-size: 14px;
 }
 
 .album-info audio { 

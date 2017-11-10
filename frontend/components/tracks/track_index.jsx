@@ -23,7 +23,6 @@ class TrackIndex extends React.Component {
     return (
       <div className="album-main">
 
-        <div className="non-track-data">
           <div className="album-info">
               <h1>{this.props.selectedAlbum.title}</h1>
               <p>by {this.props.selectedArtist.band}</p>
@@ -54,11 +53,9 @@ class TrackIndex extends React.Component {
                 </ul> */}
               </div>
           </div>
-
           <div className="outer-album-show-photo">
             <img className="album-show-photo" value={this.props.selectedAlbum.id} src={this.props.selectedAlbum.image_url} />
           </div>
-      </div>
       </div>
     );
   }

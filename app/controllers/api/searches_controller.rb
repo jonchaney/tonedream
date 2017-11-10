@@ -20,7 +20,7 @@ class Api::SearchesController < ApplicationController
     albums.each do |album|
       @results[counter] = {}
       @results[counter][:type] = "Album"
-      @results[counter][:id] = album.user_id
+      @results[counter][:id] = album.id
       @results[counter][:name] = album.title
       @results[counter][:artist] = album.user.band
       @results[counter][:image] = album.image.url
@@ -30,7 +30,7 @@ class Api::SearchesController < ApplicationController
     tracks.each do |track|
       @results[counter] = {}
       @results[counter][:type] = "Track"
-      @results[counter][:id] = track.album.user_id
+      @results[counter][:id] = track.album.id
       @results[counter][:name] = track.title
       @results[counter][:artist] = track.user.band
       @results[counter][:image] = track.album.image.url
@@ -45,7 +45,7 @@ class Api::SearchesController < ApplicationController
   end
 
     def show
-    @featured_albums = User.where.not(band: nil).order("RANDOM()").first(10)
+    @featured_albums = User.where.not(band: nil).order("RANDOM()").first(9)
     
     render "api/searches/featured"
   end

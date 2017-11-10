@@ -57,19 +57,25 @@ class Search extends React.Component {
     } else {
       return (
         <ul className="search-results">
-          {this.props.results.slice(0,4).map((result, idx) =>
-            <Link to={`./${result.id}`} key={idx}>
-            <li>
-                <div key={idx+10}>
-                <img src={result.image} />
-              </div>
-                <div key={idx+20} className="results-text">
-                  <p>{result.name}</p>
-                  <p>{result.type}</p>
-                </div>
-            </li>
+          {this.props.results.slice(0,4).map((result, idx) => {
+            let url = `./${result.id}`;
+            if (result.type !== 'Artist') {
+              url = `albums/${result.id}`;
+            } 
+            return (
+              <Link to={`./${url}`} key={idx}>
+                <li>
+                    <div key={idx+10}>
+                    <img src={result.image} />
+                  </div>
+                    <div key={idx+20} className="results-text">
+                      <p>{result.name}</p>
+                      <p>{result.type}</p>
+                    </div>
+                </li>
               </Link>
-          )}
+            );
+          })}
         </ul>   
       );
     }

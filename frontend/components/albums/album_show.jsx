@@ -13,25 +13,35 @@ class AlbumShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.clearAlbums();
     this.props.fetchAlbum(this.props.match.params.id).then(
     );
   }
 
-  render() {
+  renderContent() {
     if (!this.props.selectedArtist.artist) {
-      return (<div>Loading...</div>);
+      return (
+        <div className="artist-profile-content">
+          <div>Loading...</div>
+        </div>
+        )
+      ;
     } else {
       return (
-        <div className="artist-profile">
-          <AltHeaderContainer />
-          <div className="artist-profile-content">
-            <SelectedArtistInfoContainer />
-            <TrackIndexContainer />
-          </div>
+        <div className="artist-profile-content">
+          <SelectedArtistInfoContainer />
+          <TrackIndexContainer />
         </div>
       );
     }
+  }
+
+  render() {
+      return (
+        <div className="artist-profile">
+          <AltHeaderContainer />
+          {this.renderContent()}
+        </div>
+      );
   }
 }
 
