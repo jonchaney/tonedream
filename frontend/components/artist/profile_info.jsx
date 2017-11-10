@@ -22,9 +22,9 @@ class ProfileInfo extends React.Component {
           <li className="bio">
             {this.props.currentUser.bio}
           </li> 
-          <li className="submit-edit">
-             <Link to="/profile/edit">edit profile</ Link> 
-          </li>
+          {/* <li className="submit-edit">
+             {<Link to="/profile/edit">edit profile</ Link> }
+          </li> */}
         </ul>
       </div>
     );
