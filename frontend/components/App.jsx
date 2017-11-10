@@ -10,6 +10,7 @@ import { login } from '../actions/session_actions';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import AlbumIndexContainer from './albums/album_index_container';
+import AlbumShowContainer from './albums/album_show_container';
 import ArtistPage from './artist/artist_page_container';
 import SearchContainer from './search_bar/search_container';
 import ArtistProfilePageContainer from './artist/artist_profile_page_container';
@@ -25,6 +26,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
+      <Route path="/albums/:id" component={AlbumShowContainer} /> 
       <Route path="/:user_id" component={ArtistProfilePageContainer} />  
     </Switch>
   </div>

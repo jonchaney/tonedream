@@ -4,7 +4,7 @@ import LoadingIcon from '../albums/loading_icon';
 
 import AlbumIndexContainer from '../albums/album_index_container';
 import TrackIndexContainer from '../tracks/track_index_container';
-import SelectedArtistInfo from './selected_artist_info_container';
+import SelectedArtistInfoContainer from './selected_artist_info_container';
 import AltHeaderContainer from '../headers/alt_header_container';
 
 class ArtistProfilePage extends React.Component {
@@ -13,6 +13,7 @@ class ArtistProfilePage extends React.Component {
   }
 
   componentWillMount() {
+    this.props.clearAlbums();
     this.props.fetchUser(this.props.match.params.user_id).then(() => {
       this.props.fetchAlbums(this.props.match.params.user_id);
     } );
@@ -30,15 +31,14 @@ class ArtistProfilePage extends React.Component {
   }
 
   render() {
-    console.log('main render');
     return (
       <div className="artist-profile">
       <AltHeaderContainer />
         <div className="artist-profile-content">
+          <SelectedArtistInfoContainer />
           <Switch>
-            <Route path="/:user_id" component={SelectedArtistInfo} />
+            <Route path="/:user_id" component={AlbumIndexContainer} />   
           </Switch>
-          <AlbumIndexContainer />
         </div>
       </div>
     );

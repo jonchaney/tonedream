@@ -52,7 +52,6 @@ export const receiveAlbumErrors = errors => ({
   errors
 });
 
-
 export const fetchAlbum = albumId => dispatch => {
     dispatch(startLoadingSingleAlbum());
     return APIUtil.fetchAlbum(albumId).then(album => {

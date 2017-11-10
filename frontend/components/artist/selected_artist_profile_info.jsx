@@ -6,8 +6,11 @@ class SelectedArtistInfo extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
-    const { loading } = this.props;
     if (!this.props.selectedArtist.artist) {
       return (<div>Loading...</div>);
     } else {

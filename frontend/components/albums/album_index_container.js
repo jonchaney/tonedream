@@ -4,7 +4,7 @@ import { fetchAlbums,
          fetchAlbum,
          deleteAlbum,
          receiveAlbum,
-         startLoadingSingleAlbum} from '../../actions/album_actions';
+         startLoadingSingleAlbum } from '../../actions/album_actions';
 import { allAlbums } from '../../reducers/selectors';
 
 import AlbumIndex from './album_index';

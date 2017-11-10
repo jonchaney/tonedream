@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch => ({
   fetchAlbums: (user) => dispatch(fetchAlbums(user)),
   updateUser: (user) => dispatch(updateUser(user)),
   updateUserProfile: (user, id) => dispatch(updateUserProfile(user, id)),
-  fetchTracks: () => dispatch(fetchTracks())
+  fetchTracks: () => dispatch(fetchTracks()),
+  clearAlbums: () => dispatch(clearAlbums())
 });
 
 export default withRouter(connect(

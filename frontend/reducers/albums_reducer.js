@@ -7,6 +7,10 @@ import {
   CLEAR_ALBUM
 } from '../actions/album_actions';
 
+import {
+  fetchUser
+} from '../actions/user_actions';
+
 const defaultState = {
   selectedAlbum: {
       title: null,
@@ -38,6 +42,7 @@ const AlbumsReducer = (state = defaultState, action) => {
       // needs a refactor of state shape
       // return Object.assign({}, {selectedAlbum: { [action.album.id]: action.album }});
       newState.selectedAlbum = action.album;
+      dispatch(fetchUser(action.album.user_id));
       return merge({}, newState);
     case CLEAR_ALBUMS:
       return defaultState;
