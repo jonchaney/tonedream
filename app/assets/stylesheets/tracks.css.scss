@@ -15,11 +15,11 @@
 }
 
 .album-info h1 {
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .album-info p {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .album-info audio { 
@@ -41,12 +41,8 @@
 }
 
 .album-info ul {
-  font-size: 20px;
-  border-bottom: .75px solid;
-  margin: 14px -52px 17px -17px;
-  padding: 0 0 11px 0;
+  font-size: 14px;
     display: flex;
-    flex-direction: column;
 }
 
 audio::-internal-media-controls-download-button {
@@ -66,6 +62,7 @@ audio::-webkit-media-controls-panel {
 .audio-item {
     display: flex;
     flex-direction: row;
+    padding: 12px 0px 0px 0px;
 }
 
 .audio-info {
@@ -85,11 +82,19 @@ audio::-webkit-media-controls-panel {
     margin: 0 0 0 -17px;
 }
 
-i.fa.fa-pencil {
-    margin: 0px 6px 0 0;
+i.fa.fa-play {
+    padding: 5px 5px 4px 7px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 10px;
 }
 
 .album-show-photo {
     height: 350px;
     width: 350px;
+}
+
+li.track-info {
+    margin: 2px 0 0 18px;
 }

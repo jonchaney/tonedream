@@ -27,20 +27,17 @@ class TrackIndex extends React.Component {
               <h1>{this.props.selectedAlbum.title}</h1>
               <p>by {this.props.selectedArtist.band}</p>
               <div>
-                {/* <ul className="track-list">
+              <div className="track-list">
                   {
                     this.props.tracks.map((track, idx) =>
-                      <ol key={idx} className="audio-item">
-                        <li className="audio-info">
-                          {track.track_num} | {track.title}
+                      <ul key={idx} className="audio-item">
+                        <li>
+                          <i className="fa fa-play" aria-hidden="true"></i>
                         </li>
-                        <div id="audioplayer">
-                          <audio controls="controls">
-                            <source src={track.audio_url} type="audio/wav"></source>
-                            <source src={track.audio_url} type="audio/mpeg"></source>
-                          </audio>
-                        </div>
-                      </ol>
+                        <li className="track-info">
+                          {track.track_num}. {track.title}
+                        </li>
+                      </ul>
                     )}
                   {document.addEventListener('play', function (e) {
                     var audios = document.getElementsByTagName('audio');
@@ -50,7 +47,7 @@ class TrackIndex extends React.Component {
                       }
                     }
                   }, true)}
-                </ul> */}
+                </div> 
               </div>
           </div>
           <div className="outer-album-show-photo">
