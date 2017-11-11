@@ -7,8 +7,9 @@ import {
   RECEIVE_SELECTED_TRACK,
   CLEAR_TRACKS,
   CLEAR_TRACK,
-  PAUSE_PLAY_TRACK
-} from '../actions/track_actions';
+  PAUSE_PLAY_TRACK,
+  FETCH_SELECTED_ALBUM
+} from '../actions/audio_player_actions';
 
 const defaultState = {
   playlist: {
@@ -34,7 +35,6 @@ const defaultState = {
       duration: null
     },
     selectedAlbum: {
-      0: {
         title: null,
         audio_url: null,
         id: null,
@@ -42,10 +42,15 @@ const defaultState = {
         album_id: null,
         track_num: null,
         download: null,
-        duration: null
-      }
+        duration: null,
+        tracks: []
     },
-    trackStatus: false
+    trackStatus: {
+      playing: false,
+      loop: false,
+      shuffle: false,
+      mute: false  
+    }
 };
 
 const TracksReducer = (state = defaultState, action) => {
@@ -56,17 +61,21 @@ const TracksReducer = (state = defaultState, action) => {
       return merge({}, state, { selectedTracks: action.tracks });
     case PAUSE_PLAY_TRACK:
       let play = true;
-      if (state.trackStatus) {
+      console.log(state.trackStatus.playing)
+      if (state.trackStatus.playing) {
         play = false;
       }
-      return merge({}, state, { trackStatus: play });
+      return merge({}, state, { trackStatus: { playing: play } });
     case RECEIVE_TRACK:
       return merge({}, state, { selectedTrack: action.track });
     case CLEAR_TRACKS:
       return defaultState;
     case CLEAR_TRACK:
       return defaultState;
-    default:
+    case FETCH_SELECTED_ALBUM:
+      newState.selectedAlbum = action.album;
+      return newState;
+      default:
       return state;
   }
 };

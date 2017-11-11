@@ -4,12 +4,6 @@ import ReactHowler from 'react-howler';
 class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      playing: true,
-      muted: false,
-      loop: false,
-      shuffle: false
-    };
   }
 
   renderPlayOrPause() {
@@ -27,10 +21,6 @@ class AudioPlayer extends React.Component {
       );
     }
   }
-
-  // handlePlay() {
-  //   this.props.playPauseTrack();
-  // }
 
   render() {
     if (this.props.selectedTrack.id) {

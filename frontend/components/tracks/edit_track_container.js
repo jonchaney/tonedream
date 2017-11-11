@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { updateFormTrack, fetchSelectedTrack } from '../../actions/track_actions'; 
+import { updateFormTrack, fetchSelectedTrack } from '../../actions/audio_player_actions'; 
 
 import EditTrack from './edit_track';
 

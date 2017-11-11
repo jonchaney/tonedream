@@ -14,7 +14,8 @@ import UPDATE_ARTIST from '../actions/user_actions';
 import { START_LOADING_TRACKS,
          RECEIVE_SINGLE_TRACK,
          START_LOADING_TRACK,
-         RECEIVE_LOADED_TRACK } from '../actions/track_actions';
+         RECEIVE_LOADED_TRACK
+} from '../actions/audio_player_actions';
 
 import { ARTIST_LOADING, RECEIVE_LOADED_ARTIST } from '../actions/user_actions';
 

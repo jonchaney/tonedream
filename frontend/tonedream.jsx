@@ -8,8 +8,9 @@ import { fetchTracks,
          updateTrack,
          fetchTrack,
          clearTrack,
-         clearTracks  } from './actions/track_actions';
-// import { getFeatured, search } from './actions/search_actions';
+         clearTracks
+} from './actions/audio_player_actions';
+
 import { featured } from './util/search_api_util';
 
 

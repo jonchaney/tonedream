@@ -8,7 +8,7 @@ import {
 import {
   fetchSelectedTrack,
   playPauseTrack
-} from '../../actions/track_actions';
+} from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
 
@@ -20,7 +20,7 @@ const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
     selectedTrack: audio_player.selectedTrack,
     tracks: selectAllTracks(albums.selectedAlbum.tracks),
     selectedArtist: selectedArtist,
-    playing: audio_player.trackStatus
+    playing: audio_player.trackStatus.playing
   };
 };
 

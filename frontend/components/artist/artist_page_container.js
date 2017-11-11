@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
 import { updateUser, updatingArtist, updateUserProfile } from '../../actions/user_actions';
-import { fetchTracks } from '../../actions/track_actions';
+import { fetchTracks } from '../../actions/audio_player_actions';
 import ArtistPage from './artist_page';
 import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createTrack, addTrack } from '../../actions/track_actions';
+import { createTrack, addTrack } from '../../actions/audio_player_actions';
 import AddTrack from './add_track';
 
 

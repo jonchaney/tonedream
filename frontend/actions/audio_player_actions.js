@@ -11,8 +11,14 @@ export const RECEIVE_SINGLE_TRACK = "RECEIVE_SINGLE_TRACK";
 export const START_LOADING_TRACK = "START_LOADING_TRACK";
 export const RECEIVE_LOADED_TRACK = "RECEIVE_LOADED_TRACK";
 export const PAUSE_PLAY_TRACK = "PAUSE_PLAY_TRACK";
+export const FETCH_SELECTED_ALBUM = "FETCH_SELECTED_ALBUM";
 
 // action creators
+
+export const fetchSelectedAlbum = album => ({
+  type: FETCH_SELECTED_ALBUM,
+  album
+});
 
 export const receiveTrack = track => ({
   type: RECEIVE_TRACK,
