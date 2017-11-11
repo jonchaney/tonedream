@@ -7,8 +7,12 @@ import {
 } from '../actions/user_actions';
 
 const nullUser = {
-  artist: null,
-  errors: []
+  band: null,
+  bio: null,
+  image_url: null,
+  location: null,
+  username: null,
+  errors: [],
 };
 
 const UserReducer = (state = nullUser, action) => {
@@ -16,9 +20,9 @@ const UserReducer = (state = nullUser, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       const artist = action.user;
-      return merge({}, nullUser, {
-        artist
-      });
+      return merge({}, nullUser, 
+        action.user
+      );
     case RECEIVE_ERRORS:
       const newErrors = action.errors;
       return merge({}, nullUser, {

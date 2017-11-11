@@ -13,15 +13,15 @@ import { selectAllTracks } from '../../reducers/selectors';
 
 import TrackIndex from './track_index';
 
-const mapStateToProps = ({ albums, session, loading, tracks, selectedArtist }) => {
+const mapStateToProps = ({ albums, session, loading, audio_player, selectedArtist }) => {
   return {
     loggedIn: Boolean(session.currentUser),
     currentUser: session.currentUser,
     selectedAlbum: albums.selectedAlbum,
-    selectedTrack: tracks.selectedTrack,
+    selectedTrack: audio_player.selectedTrack,
     tracks: selectAllTracks(albums.selectedAlbum.tracks),
     loading: loading.indexLoading,
-    selectedArtist: selectedArtist.artist
+    selectedArtist: selectedArtist
   };
 };
 

@@ -31,6 +31,18 @@ const defaultState = {
       track_num: null,
       download: null,
       duration: null
+    },
+    selectedTracks: {
+      0: {
+        title: null,
+        audio_url: null,
+        id: null,
+        user_id: null,
+        album_id: null,
+        track_num: null,
+        download: null,
+        duration: null
+      }
     }
 };
 
@@ -40,9 +52,9 @@ const TracksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_TRACKS:
       return merge({}, state, { selectedTracks: action.tracks });
-    case RECEIVE_SELECTED_TRACK:
-      newState.selectedTrack = action.track;
-      return merge({}, newState);
+    // case RECEIVE_SELECTED_TRACK:
+    //   newState.selectedTrack = action.track;
+    //   return merge({}, newState);
     case RECEIVE_TRACK:
       return merge({}, state, { selectedTrack: action.track });
       // newState.selectedTrack = action.track;

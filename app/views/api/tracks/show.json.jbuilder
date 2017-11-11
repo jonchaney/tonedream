@@ -6,3 +6,4 @@ json.download @track.download
 json.album_id  @track.album_id
 json.track_num  @track.track_num
 json.duration  @track.duration
+json.album_art  @track.album.image.url

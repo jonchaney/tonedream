@@ -13,12 +13,12 @@ import { selectAllTracks } from '../../reducers/selectors';
 
 import AudioPlayer from './audio_player';
 
-const mapStateToProps = ({ albums, session, tracks, selectedArtist }) => {
+const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
   return {
     selectedAlbum: albums.selectedAlbum,
-    selectedTrack: tracks.selectedTrack,
+    selectedTrack: audio_player.selectedTrack,
     tracks: selectAllTracks(albums.selectedAlbum.tracks),
-    selectedArtist: selectedArtist.artist
+    selectedArtist: selectedArtist
   };
 };
 

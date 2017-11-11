@@ -82,12 +82,14 @@ audio::-webkit-media-controls-panel {
     margin: 0 0 0 -17px;
 }
 
-i.fa.fa-play, i.fa.fa-pause {
+.audio-item {
+    i.fa.fa-play, i.fa.fa-pause {
     padding: 5px 5px 4px 7px;
     background: #fff;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
     font-size: 10px;
+    }
 }
 
 .album-show-photo {

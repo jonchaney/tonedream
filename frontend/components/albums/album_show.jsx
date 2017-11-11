@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import LoadingIcon from '../albums/loading_icon';
 
 import AlbumIndexContainer from '../albums/album_index_container';
 import TrackIndexContainer from '../tracks/track_index_container';
@@ -18,7 +17,7 @@ class AlbumShow extends React.Component {
   }
 
   renderContent() {
-    if (!this.props.selectedArtist.artist) {
+    if (!this.props.selectedArtist.band) {
       return (
         <div className="artist-profile-content">
           <div>Loading...</div>

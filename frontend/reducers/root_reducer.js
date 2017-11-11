@@ -11,7 +11,7 @@ const RootReducer = combineReducers({
   session: SessionReducer,
   albums: AlbumsReducer,
   loading: LoadingReducer,
-  tracks: TracksReducer,
+  audio_player: TracksReducer,
   search: SearchReducer,
   selectedArtist: UserReducer
 });

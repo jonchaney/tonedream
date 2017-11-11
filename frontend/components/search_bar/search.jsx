@@ -24,7 +24,7 @@ class Search extends React.Component {
   checkActiveSearch() {
     if (document.getElementsByClassName('search-bar')[0] != document.activeElement) {
       this.props.clearResults();
-      this.setState({ value: "" });
+      // this.setState({ value: "" });
     }
   }
 

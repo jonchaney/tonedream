@@ -11,21 +11,21 @@ class SelectedArtistInfo extends React.Component {
   }
 
   render() {
-    if (!this.props.selectedArtist.artist) {
+    if (!this.props.selectedArtist) {
       return (<div>Loading...</div>);
     } else {
       return (
         <div className="user-info">
-          <img className="profile-pic" src={this.props.selectedArtist.artist.image_url} />
+          <img className="profile-pic" src={this.props.selectedArtist.image_url} />
           <ul>
             <li className="band">
-                {this.props.selectedArtist.artist.band}
+                {this.props.selectedArtist.band}
             </li>
             <li className="location">
-                {this.props.selectedArtist.artist.location}
+                {this.props.selectedArtist.location}
             </li>
             <li className="bio">
-                {this.props.selectedArtist.artist.bio}
+                {this.props.selectedArtist.bio}
             </li>
           </ul>
         </div>
