@@ -13,16 +13,24 @@ class AudioPlayer extends React.Component {
   }
 
   renderPlayOrPause() {
-    if (this.state.playing) {
+    if (this.props.playing) {
       return (
-        <i className="fa fa-pause" aria-hidden="true"></i>
+        <li onClick={() => this.props.playPauseTrack()}>
+          <i className="fa fa-pause" aria-hidden="true"></i>
+        </li>
       );
     } else {
       return (
-        <i className="fa fa-play" aria-hidden="true"></i>
+        <li onClick={() => this.props.playPauseTrack()}>
+          <i className="fa fa-play" aria-hidden="true"></i>
+        </li>
       );
     }
   }
+
+  // handlePlay() {
+  //   this.props.playPauseTrack();
+  // }
 
   render() {
     if (this.props.selectedTrack.id) {
@@ -30,16 +38,24 @@ class AudioPlayer extends React.Component {
         <div className="audio-player">
           <ReactHowler
             src={this.props.selectedTrack.audio_url}
-            playing={true}
+            playing={this.props.playing}
             html5={true}
           />
-          <div className="audio-player-controls">
-            <i className="fa fa-step-backward" aria-hidden="true"></i>
-            {this.renderPlayOrPause()}
-            <i className="fa fa-step-forward" aria-hidden="true"></i>
-            <i className="fa fa-random" aria-hidden="true"></i>
-            <i className="fa fa-repeat" aria-hidden="true"></i>
-          </div>
+          <ul className="audio-player-controls">
+            <li>
+              <i className="fa fa-step-backward" aria-hidden="true"></i>
+            </li>
+              {this.renderPlayOrPause()}
+            <li>
+              <i className="fa fa-step-forward" aria-hidden="true"></i>
+            </li>
+            <li>
+              <i className="fa fa-random" aria-hidden="true"></i>
+            </li>
+            <li>
+              <i className="fa fa-repeat" aria-hidden="true"></i>
+            </li>
+          </ul>
           <div className="artist-info">
 
           </div>

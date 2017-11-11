@@ -6,7 +6,8 @@ import {
   RECEIVE_TRACKS,
   RECEIVE_SELECTED_TRACK,
   CLEAR_TRACKS,
-  CLEAR_TRACK
+  CLEAR_TRACK,
+  PAUSE_PLAY_TRACK
 } from '../actions/track_actions';
 
 const defaultState = {
@@ -43,7 +44,8 @@ const defaultState = {
         download: null,
         duration: null
       }
-    }
+    },
+    trackStatus: false
 };
 
 const TracksReducer = (state = defaultState, action) => {
@@ -52,13 +54,14 @@ const TracksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_TRACKS:
       return merge({}, state, { selectedTracks: action.tracks });
-    // case RECEIVE_SELECTED_TRACK:
-    //   newState.selectedTrack = action.track;
-    //   return merge({}, newState);
+    case PAUSE_PLAY_TRACK:
+      let play = true;
+      if (state.trackStatus) {
+        play = false;
+      }
+      return merge({}, state, { trackStatus: play });
     case RECEIVE_TRACK:
       return merge({}, state, { selectedTrack: action.track });
-      // newState.selectedTrack = action.track;
-      // return merge({}, newState);
     case CLEAR_TRACKS:
       return defaultState;
     case CLEAR_TRACK:

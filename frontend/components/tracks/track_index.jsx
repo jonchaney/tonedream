@@ -10,14 +10,17 @@ class TrackIndex extends React.Component {
 
   handleClick(id) {
     if (this.props.selectedTrack.id === id) {
-      this.props.clearTrack();
+      this.props.playPauseTrack();
     } else {
-      this.props.fetchSelectedTrack(id);
+      this.props.playPauseTrack();
+      this.props.fetchSelectedTrack(id).then(() =>
+        this.props.playPauseTrack()
+      );
     }
   }
 
   renderPlayOrPause(id){
-    if (this.props.selectedTrack.id === id) {
+    if (this.props.selectedTrack.id === id && this.props.playing) {
       return (
         <i className="fa fa-pause" aria-hidden="true"></i>
       );
