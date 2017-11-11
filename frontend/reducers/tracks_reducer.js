@@ -33,7 +33,7 @@ const defaultState = {
       download: null,
       duration: null
     },
-    selectedTracks: {
+    selectedAlbum: {
       0: {
         title: null,
         audio_url: null,
