@@ -5,19 +5,22 @@ export const RECEIVE_TRACK = "RECEIVE_TRACK";
 export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const CLEAR_TRACK = "CLEAR_TRACK";
 export const CLEAR_TRACKS = "CLEAR_TRACKS";
-export const RECEIVE_SELECTED_TRACK = "RECEIVE_SELECTED_TRACK";
-export const START_LOADING_TRACKS = "START_LOADING_TRACKS";
-export const RECEIVE_SINGLE_TRACK = "RECEIVE_SINGLE_TRACK";
-export const START_LOADING_TRACK = "START_LOADING_TRACK";
-export const RECEIVE_LOADED_TRACK = "RECEIVE_LOADED_TRACK";
 export const PAUSE_PLAY_TRACK = "PAUSE_PLAY_TRACK";
-export const FETCH_SELECTED_ALBUM = "FETCH_SELECTED_ALBUM";
+export const MERGE_SELECTED_ALBUM = "MERGE_SELECTED_ALBUM";
+export const MERGE_SELECTED_TRACK = "MERGE_SELECTED_TRACK";
 
 // action creators
 
-export const fetchSelectedAlbum = album => ({
-  type: FETCH_SELECTED_ALBUM,
+// merge album data with audio_player state 
+export const mergeSelectedAlbum = album => ({
+  type: MERGE_SELECTED_ALBUM,
   album
+});
+
+// merge playing track data with audio_player state 
+export const mergeSelectedTrack = track => ({
+  type: MERGE_SELECTED_TRACK,
+  track
 });
 
 export const receiveTrack = track => ({
@@ -27,28 +30,6 @@ export const receiveTrack = track => ({
 
 export const playPauseTrack = () => ({
   type: PAUSE_PLAY_TRACK
-});
-
-export const receiveSelectedTrack = track => ({
-  type: RECEIVE_SELECTED_TRACK,
-  track
-});
-
-export const receiveSingleTrack = track => ({
-  type: RECEIVE_SINGLE_TRACK,
-  track
-});
-
-export const startLoadingTracks = () => ({
-  type: START_LOADING_TRACKS,
-});
-
-export const receiveLoadedTrack = () => ({
-  type: RECEIVE_LOADED_TRACK,
-});
-
-export const startLoadingTrack = () => ({
-  type: START_LOADING_TRACK,
 });
 
 export const receiveTracks = tracks => ({
@@ -67,13 +48,6 @@ export const clearTrack = () => ({
 // think action creators 
 
 export const fetchTrack = trackId => dispatch => {
-  return APIUtil.fetchTrack(trackId).then(track => {
-    dispatch(receiveSingleTrack(track));
-    dispatch(receiveTrack(track));
-  });
-};
-
-export const fetchSelectedTrack = trackId => dispatch => {
   return APIUtil.fetchTrack(trackId).then(track => {
     dispatch(receiveTrack(track));
   });

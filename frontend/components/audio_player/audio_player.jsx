@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactHowler from 'react-howler';
+import {Howl} from 'howler';
 
 class AudioPlayer extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class AudioPlayer extends React.Component {
           <ReactHowler
             src={this.props.selectedTrack.audio_url}
             playing={this.props.playing}
+            ref={(ref) => (this.player = ref)}
             html5={true}
           />
           <ul className="audio-player-controls">
