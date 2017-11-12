@@ -71,22 +71,18 @@ class AudioPlayer extends React.Component {
   prevTrack() {
     let length = this.props.tracks.length;
     let currentTrack = (this.props.selectedTrack.track_num);
-    // starts song over
-    this.props.clearTrack();
-    this.props.receiveTrack(this.props.tracks[currentTrack-1]);
-
-    // if (currentTrack === 1) {
-    //   currentTrack = length;
-    // } else {
-    //   currentTrack -= 1;
-    // }
-    // this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
+    if (currentTrack === 1) {
+      currentTrack = length;
+    } else {
+      currentTrack -= 1;
+    }
+    this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
   }
 
   loop() {
     // if the current track is looping then loop the album on click
     if(this.props.loopedSong) {
-      this.props.loopSong();
+      this.props.loopSong()
       this.props.loopAlbum();
     // if the current album is looping, turn off looping
     } else if (this.props.loopedAlbum) {
@@ -106,6 +102,34 @@ class AudioPlayer extends React.Component {
       shuffleStyle.color = '#649922';
     }
     return shuffleStyle;
+  }
+
+  getLoopStyle() {
+    let loopStyle = {
+      color: 'black'
+    };
+    if (this.props.loopedSong || this.props.loopedAlbum) {
+      loopStyle.color = '#649922';
+    }
+    return loopStyle;
+  }
+
+  repeatType() {
+    if (this.props.loopedSong) {
+      return "looped-song";
+    } else {
+      return;
+    }
+  }
+
+  songLoopStyle() {
+    let style = {
+      display: "none"
+    };
+    if (this.props.loopedSong) {
+      style.display = "";
+    }
+    return style;
   }
 
   render() {
@@ -131,8 +155,9 @@ class AudioPlayer extends React.Component {
             <li style={this.getShuffleStyle()}>
               <i onClick={() => this.props.shuffle()} className="fa fa-random" aria-hidden="true"></i>
             </li>
-            <li>
+            <li style={this.getLoopStyle()} className={this.repeatType()}>
               <i onClick={() => this.loop()}className="fa fa-repeat" aria-hidden="true"></i>
+              <p style={this.songLoopStyle()}>1</p>
             </li>
             <li>
               {this.renderMute()}
