@@ -40,15 +40,31 @@ class AudioPlayer extends React.Component {
     let length = this.props.tracks.length;
     let currentTrack = this.props.selectedTrack.track_num - 1;
     let nextTrack = currentTrack;
-    if (this.props.shuffled) {
+    if (this.props.shuffled && this.props.loopedAlbum) {
+      // if shuffle and looped album is true, shuffle within album
       while (currentTrack === nextTrack) {
         nextTrack = Math.floor(Math.random() * (length - 1) + 1);
       }
-    } else {
+      this.props.receiveTrack(this.props.tracks[nextTrack]);
+    } else if (this.props.loopedAlbum) {
+      // if loopedAlbum is true, loop album
       nextTrack = (currentTrack + 1) % length;
+      this.props.receiveTrack(this.props.tracks[nextTrack]);
+    } 
+    else if (this.props.loopedSong) {
+      nextTrack = (currentTrack + 1) % length;
+      this.props.receiveTrack(this.props.tracks[nextTrack]);
     }
-    console.log(currentTrack);
-    this.props.receiveTrack(this.props.tracks[nextTrack]);
+     else {
+      // play album until it reaches the end
+      if (currentTrack <= length-2) {
+        nextTrack = (currentTrack + 1);
+        this.props.receiveTrack(this.props.tracks[nextTrack]);
+      } else {
+        this.props.receiveTrack(this.props.tracks[0]);
+        this.props.pauseTrack();
+      }
+    }
   }
 
   prevTrack() {
@@ -97,6 +113,7 @@ class AudioPlayer extends React.Component {
             html5={true}
             onEnd={() => this.nextTrack()}
             mute={this.props.mute}
+            loop={this.props.loopedSong}
           />
           <ul className="audio-player-controls">
             <li>
