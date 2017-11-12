@@ -225,30 +225,19 @@ label.check-box {
 *****************************/
 
 .alt-logout {
-  margin: 0 26px 0 0;
-}
-
-.alt-logout-button {
-  font-family: 'MissionGothic-Light', sans-serif;
-  background-color: #ececec;
-  border: none;
-  color: #649922;
-  font-size: 15px;
-  outline: none;
-  font-weight: 800;
-  border: 0 none transparent;
-  margin: 14px 0 0 40px;
-}
-
-.alt-logout-button:hover {
-  text-decoration: underline;
+  ul {
+    display: flex;
+    padding: 15px 23px 0px 0px;
+    li {
+      padding: 0 0 0 23px;
+    }
+  }
 }
 
 .alt-home {
     font-family: 'MissionGothic-Light', sans-serif;
     font-weight: 800;
     font-size: 15px;
-    margin: -23px 0 0 -6px;
     a {
       color: #649922;
     }
