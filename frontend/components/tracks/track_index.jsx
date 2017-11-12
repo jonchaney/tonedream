@@ -16,11 +16,11 @@ class TrackIndex extends React.Component {
         this.props.playPauseTrack();
         this.props.mergeSelectedTrack(track);
         this.props.playPauseTrack();
-        this.props.mergeSelectedAlbum(this.props.selectedArtist);
-        this.props.mergeSelectedArtist(this.props.selectedAlbum);
+        this.props.mergeSelectedAlbum(this.props.selectedAlbum);
+        this.props.mergeSelectedArtist(this.props.selectedArtist);
     } else {
-        this.props.mergeSelectedTrack(track);
         this.props.playPauseTrack();
+        this.props.mergeSelectedTrack(track);
         this.props.mergeSelectedAlbum(this.props.selectedAlbum);
         this.props.mergeSelectedArtist(this.props.selectedArtist);
     }
