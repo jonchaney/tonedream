@@ -26,7 +26,6 @@ class AudioPlayer extends React.Component {
 
   render() {
     if (this.props.selectedTrack.id) {
-      console.log(this.props.selectedArtist);
       return (
         <div className="audio-player">
           <ReactHowler

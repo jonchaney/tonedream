@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/profile');
+      this.props.history.push(`./${this.props.currentUser.id}`);
     }
   }
 
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
               email: this.state.email
             };
     }
-    this.props.processForm(user).then(() => this.props.history.push(`/profile`));
+    this.props.processForm(user).then(() => this.props.history.push(`./${this.props.currentUser.id}`));
   }
 
   navLink() {
@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
 
   guestAccount() {
     const user = {username: "guest", password: "password"};
-    this.props.login(user).then((id) => this.props.history.push('/profile'));
+    this.props.login(user).then((id) => this.props.history.push('./145'));
   }
 
   renderErrors() {
