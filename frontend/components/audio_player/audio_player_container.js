@@ -13,7 +13,8 @@ import {
   shuffle,
   loopSong,
   loopAlbum,
-  receiveTrack
+  receiveTrack,
+  clearTrack
 } from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
@@ -42,6 +43,7 @@ const mapDispatchToProps = dispatch => ({
   loopSong: () => dispatch(loopSong()),
   loopAlbum: () => dispatch(loopAlbum()),
   shuffle: () => dispatch(shuffle()),
+  clearTrack: () => dispatch(clearTrack()),
   receiveTrack: (track) => dispatch(receiveTrack(track)),
 });
 

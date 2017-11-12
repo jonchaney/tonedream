@@ -108,7 +108,7 @@ const TracksReducer = (state = defaultState, action) => {
     case CLEAR_TRACKS:
       return defaultState;
     case CLEAR_TRACK:
-      return defaultState;
+      return merge({}, state, { selectedTrack: defaultState.selectedTrack });
     case MERGE_SELECTED_ALBUM:
       newState.selectedAlbum = action.album;
       return newState;

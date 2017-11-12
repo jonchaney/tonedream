@@ -52,6 +52,7 @@ class AudioPlayer extends React.Component {
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     } 
     else if (this.props.loopedSong) {
+      // loop song, but when you press next it goes around album
       nextTrack = (currentTrack + 1) % length;
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     }
@@ -70,18 +71,22 @@ class AudioPlayer extends React.Component {
   prevTrack() {
     let length = this.props.tracks.length;
     let currentTrack = (this.props.selectedTrack.track_num);
-    if (currentTrack === 1) {
-      currentTrack = length;
-    } else {
-      currentTrack -= 1;
-    }
-    this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
+    // starts song over
+    this.props.clearTrack();
+    this.props.receiveTrack(this.props.tracks[currentTrack-1]);
+
+    // if (currentTrack === 1) {
+    //   currentTrack = length;
+    // } else {
+    //   currentTrack -= 1;
+    // }
+    // this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
   }
 
   loop() {
     // if the current track is looping then loop the album on click
     if(this.props.loopedSong) {
-      this.props.loopSong()
+      this.props.loopSong();
       this.props.loopAlbum();
     // if the current album is looping, turn off looping
     } else if (this.props.loopedAlbum) {
