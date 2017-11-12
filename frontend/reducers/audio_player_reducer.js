@@ -7,7 +7,8 @@ import {
   RECEIVE_SELECTED_TRACK,
   CLEAR_TRACKS,
   CLEAR_TRACK,
-  PAUSE_PLAY_TRACK,
+  PLAY_TRACK,
+  PAUSE_TRACK,
   MERGE_SELECTED_ALBUM,
   MERGE_SELECTED_TRACK,
   MERGE_SELECTED_ARTIST
@@ -61,13 +62,10 @@ const TracksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_TRACKS:
       return merge({}, state, { selectedTracks: action.tracks });
-    case PAUSE_PLAY_TRACK:
-      let play = true;
-      console.log(state.trackStatus.playing)
-      if (state.trackStatus.playing) {
-        play = false;
-      }
-      return merge({}, state, { trackStatus: { playing: play } });
+    case PLAY_TRACK:
+      return merge({}, state, { trackStatus: { playing: true } });
+    case PAUSE_TRACK:
+      return merge({}, state, { trackStatus: { playing: false } });
     case RECEIVE_TRACK:
       return merge({}, state, { selectedTrack: action.track });
     case CLEAR_TRACKS:

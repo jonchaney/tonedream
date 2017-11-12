@@ -7,7 +7,8 @@ import {
 import {
   mergeSelectedTrack,
   clearTrack,
-  playPauseTrack,
+  playTrack,
+  pauseTrack,
   mergeSelectedAlbum,
   mergeSelectedArtist
 } from '../../actions/audio_player_actions';
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch => ({
   receiveAlbum: (album) => dispatch(receiveAlbum(album)),
   mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
   clearTrack: () => dispatch(clearTrack()),
-  playPauseTrack: () => dispatch(playPauseTrack()),
+  pauseTrack: () => dispatch(pauseTrack()),
+  playTrack: () => dispatch(playTrack()),
   mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
   mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album))
 });

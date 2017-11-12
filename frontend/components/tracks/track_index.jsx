@@ -10,38 +10,26 @@ class TrackIndex extends React.Component {
   }
 
   handleClick(track) {
-    if (this.props.selectedTrack.id === track.id && this.props.playing) {
-      this.props.playPauseTrack();
-    } else if (this.props.selectedTrack.id !== track.id && this.props.playing) {
-        this.props.playPauseTrack();
-        this.props.mergeSelectedTrack(track);
-        this.props.playPauseTrack();
-        this.props.mergeSelectedAlbum(this.props.selectedAlbum);
-        this.props.mergeSelectedArtist(this.props.selectedArtist);
+    if (!this.props.playing && this.props.selectedTrack.id === track.id) {
+      this.props.playTrack();
+    } else if (this.props.playing && this.props.selectedTrack.id === track.id) {
+      this.props.pauseTrack();
     } else {
-        this.props.playPauseTrack();
-        this.props.mergeSelectedTrack(track);
-        this.props.mergeSelectedAlbum(this.props.selectedAlbum);
-        this.props.mergeSelectedArtist(this.props.selectedArtist);
+      this.props.mergeSelectedTrack(track);
+      this.props.mergeSelectedAlbum(this.props.selectedAlbum);
+      this.props.mergeSelectedArtist(this.props.selectedArtist);
+      this.props.playTrack();
     }
   }
 
-  trackDuration(url) {
-
-  }
-
-
-
-  
-
-  renderPlayOrPause(id){
-    if (this.props.selectedTrack.id === id && this.props.playing) {
+  renderPlayOrPause(id) {
+    if (this.props.playing && this.props.selectedTrack.id === id) {
       return (
-        <i className="fa fa-pause" aria-hidden="true"></i>
+          <i className="fa fa-pause" aria-hidden="true"></i>
       );
     } else {
       return (
-        <i className="fa fa-play" aria-hidden="true"></i>
+          <i className="fa fa-play" aria-hidden="true"></i>
       );
     }
   }
@@ -64,7 +52,7 @@ class TrackIndex extends React.Component {
                           {track.track_num}. {track.title}
                         </li>
                         <li>
-                          {this.trackDuration()}
+
                         </li>
                       </ul>
                     )}

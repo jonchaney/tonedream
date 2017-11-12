@@ -11,13 +11,13 @@ class AudioPlayer extends React.Component {
   renderPlayOrPause() {
     if (this.props.playing) {
       return (
-        <li onClick={() => this.props.playPauseTrack()}>
+        <li onClick={() => this.props.pauseTrack()}>
           <i className="fa fa-pause" aria-hidden="true"></i>
         </li>
       );
     } else {
       return (
-        <li onClick={() => this.props.playPauseTrack()}>
+        <li onClick={() => this.props.playTrack()}>
           <i className="fa fa-play" aria-hidden="true"></i>
         </li>
       );
@@ -31,7 +31,6 @@ class AudioPlayer extends React.Component {
           <ReactHowler
             src={this.props.selectedTrack.audio_url}
             playing={this.props.playing}
-            ref={(ref) => (this.player = ref)}
             html5={true}
           />
           <ul className="audio-player-controls">

@@ -9,6 +9,8 @@ export const PAUSE_PLAY_TRACK = "PAUSE_PLAY_TRACK";
 export const MERGE_SELECTED_ALBUM = "MERGE_SELECTED_ALBUM";
 export const MERGE_SELECTED_TRACK = "MERGE_SELECTED_TRACK";
 export const MERGE_SELECTED_ARTIST = "MERGE_SELECTED_ARTIST";
+export const PAUSE_TRACK = "PAUSE_TRACK";
+export const PLAY_TRACK = "PLAY_TRACK";
 
 // action creators
 
@@ -35,8 +37,12 @@ export const receiveTrack = track => ({
   track
 });
 
-export const playPauseTrack = () => ({
-  type: PAUSE_PLAY_TRACK
+export const playTrack = () => ({
+  type: PLAY_TRACK
+});
+
+export const pauseTrack = () => ({
+  type: PAUSE_TRACK
 });
 
 export const receiveTracks = tracks => ({

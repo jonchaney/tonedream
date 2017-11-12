@@ -7,7 +7,8 @@ import {
 
 import {
   fetchSelectedTrack,
-  playPauseTrack
+  playTrack,
+  pauseTrack
 } from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
@@ -27,7 +28,8 @@ const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
 const mapDispatchToProps = dispatch => ({
   receiveAlbum: (album) => dispatch(receiveAlbum(album)),
   fetchSelectedTrack: (track) => dispatch(fetchSelectedTrack(track)),
-  playPauseTrack: () => dispatch(playPauseTrack())
+  playTrack: () => dispatch(playTrack()),
+  pauseTrack: () => dispatch(pauseTrack())
 });
 
 export default withRouter(connect(
