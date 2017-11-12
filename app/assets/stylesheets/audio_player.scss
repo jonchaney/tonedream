@@ -11,15 +11,44 @@
   background-color: #f2f2f2;
   border-top: 1px solid #cecece;
   border-top-color: #848484;
-}
-
-.audio-player-controls {
-  display: flex;
   
-  li {
-    padding: 17px 0px 0 32px;
-      i {
-      padding: 0 0 0 32px;
+  .audio-player-controls {
+    display: flex;
+    
+    li {
+      padding: 17px 0px 0 32px;
+        i {
+        padding: 0 0 0 32px;
+      }
+    }
+  }
+
+  .audio-player-photo {
+    width: 43px;
+    padding: 5px 0px 0 32px;
+  }
+
+  .artist-info {
+    display: flex;
+    .artist-info-data {
+      padding: 4px 0 0 0;
+    }
+    div {
+      p a {
+        font-family: 'MissionGothic-Light';
+        font-size: 12px;
+        font-weight: bold;
+        color: #999;
+      }
+      p a:hover {
+        color: black;
+      }
+      p {
+        font-family: 'MissionGothic-Light';
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 0 0 15px;
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ export const CLEAR_TRACKS = "CLEAR_TRACKS";
 export const PAUSE_PLAY_TRACK = "PAUSE_PLAY_TRACK";
 export const MERGE_SELECTED_ALBUM = "MERGE_SELECTED_ALBUM";
 export const MERGE_SELECTED_TRACK = "MERGE_SELECTED_TRACK";
+export const MERGE_SELECTED_ARTIST = "MERGE_SELECTED_ARTIST";
 
 // action creators
 
@@ -21,6 +22,12 @@ export const mergeSelectedAlbum = album => ({
 export const mergeSelectedTrack = track => ({
   type: MERGE_SELECTED_TRACK,
   track
+});
+
+// merge playing artist data with audio_player state 
+export const mergeSelectedArtist = artist => ({
+  type: MERGE_SELECTED_ARTIST,
+  artist
 });
 
 export const receiveTrack = track => ({

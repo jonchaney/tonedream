@@ -9,7 +9,8 @@ import {
   CLEAR_TRACK,
   PAUSE_PLAY_TRACK,
   MERGE_SELECTED_ALBUM,
-  MERGE_SELECTED_TRACK
+  MERGE_SELECTED_TRACK,
+  MERGE_SELECTED_ARTIST
 } from '../actions/audio_player_actions';
 
 const defaultState = {
@@ -78,6 +79,9 @@ const TracksReducer = (state = defaultState, action) => {
       return newState;
     case MERGE_SELECTED_TRACK:
       newState.selectedTrack = action.track;
+      return newState;
+    case MERGE_SELECTED_ARTIST:
+      newState.selectedArtist= action.artist;
       return newState;
     default:
     return state;

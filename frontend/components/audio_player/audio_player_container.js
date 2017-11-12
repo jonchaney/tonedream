@@ -16,10 +16,10 @@ import AudioPlayer from './audio_player';
 
 const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
   return {
-    selectedAlbum: albums.selectedAlbum,
+    selectedAlbum: audio_player.selectedAlbum,
     selectedTrack: audio_player.selectedTrack,
     tracks: selectAllTracks(albums.selectedAlbum.tracks),
-    selectedArtist: selectedArtist,
+    selectedArtist: audio_player.selectedArtist,
     playing: audio_player.trackStatus.playing
   };
 };

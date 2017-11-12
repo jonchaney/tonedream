@@ -16,14 +16,23 @@ class TrackIndex extends React.Component {
         this.props.playPauseTrack();
         this.props.mergeSelectedTrack(track);
         this.props.playPauseTrack();
-        this.props.mergeSelectedAlbum(this.props.selectedAlbum.tracks);
+        this.props.mergeSelectedAlbum(this.props.selectedArtist);
+        this.props.mergeSelectedArtist(this.props.selectedAlbum);
     } else {
         this.props.mergeSelectedTrack(track);
         this.props.playPauseTrack();
-        this.props.mergeSelectedAlbum(this.props.selectedAlbum.tracks);
-
+        this.props.mergeSelectedAlbum(this.props.selectedAlbum);
+        this.props.mergeSelectedArtist(this.props.selectedArtist);
     }
   }
+
+  trackDuration(url) {
+
+  }
+
+
+
+  
 
   renderPlayOrPause(id){
     if (this.props.selectedTrack.id === id && this.props.playing) {
@@ -55,7 +64,7 @@ class TrackIndex extends React.Component {
                           {track.track_num}. {track.title}
                         </li>
                         <li>
-                          
+                          {this.trackDuration()}
                         </li>
                       </ul>
                     )}

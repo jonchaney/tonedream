@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactHowler from 'react-howler';
 import {Howl} from 'howler';
+import { Link } from 'react-router-dom';
 
 class AudioPlayer extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class AudioPlayer extends React.Component {
 
   render() {
     if (this.props.selectedTrack.id) {
+      console.log(this.props.selectedArtist)
       return (
         <div className="audio-player">
           <ReactHowler
@@ -49,7 +51,17 @@ class AudioPlayer extends React.Component {
             </li>
           </ul>
           <div className="artist-info">
-
+              <div>
+                <img className="audio-player-photo" value={this.props.selectedAlbum.id} src={this.props.selectedAlbum.image_url} />
+              </div>
+              <div className="artist-info-data">
+                <p>
+                  <Link to={`./${this.props.selectedArtist.id}`}>{this.props.selectedArtist.band}</Link>
+                </p>
+                <p>
+                  {this.props.selectedTrack.title}
+                </p>
+              </div>
           </div>
         </div>
       );

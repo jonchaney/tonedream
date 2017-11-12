@@ -8,7 +8,8 @@ import {
   mergeSelectedTrack,
   clearTrack,
   playPauseTrack,
-  mergeSelectedAlbum
+  mergeSelectedAlbum,
+  mergeSelectedArtist
 } from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch => ({
   mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
   clearTrack: () => dispatch(clearTrack()),
   playPauseTrack: () => dispatch(playPauseTrack()),
-  mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album))
+  mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
+  mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album))
 });
 
 export default withRouter(connect(
