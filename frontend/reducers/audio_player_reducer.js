@@ -11,6 +11,8 @@ import {
   PAUSE_TRACK,
   MUTE_TRACK,
   SHUFFLE,
+  LOOP_ALBUM,
+  LOOP_SONG,
   MERGE_SELECTED_ALBUM,
   MERGE_SELECTED_TRACK,
   MERGE_SELECTED_ARTIST
@@ -77,6 +79,22 @@ const TracksReducer = (state = defaultState, action) => {
         shuffle = true;
       }
       return merge({}, state, { trackStatus: { shuffle: shuffle } });
+    case LOOP_ALBUM:
+      let loopAlbum = newState.trackStatus.loopAlbum;
+      if (loopAlbum) {
+        loopAlbum = false;
+      } else {
+        loopAlbum = true;
+      }
+      return merge({}, state, { trackStatus: { loopAlbum: loopAlbum } });
+    case LOOP_SONG:
+      let loopSong = newState.trackStatus.loopSong;
+      if (loopSong) {
+        loopSong = false;
+      } else {
+        loopSong = true;
+      }
+      return merge({}, state, { trackStatus: { loopSong: loopSong } });
     case MUTE_TRACK:
       let mute = newState.trackStatus.mute;
       if (mute) {

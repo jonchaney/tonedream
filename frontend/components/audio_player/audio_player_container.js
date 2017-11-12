@@ -11,6 +11,8 @@ import {
   pauseTrack,
   muteTrack,
   shuffle,
+  loopSong,
+  loopAlbum,
   receiveTrack
 } from '../../actions/audio_player_actions';
 
@@ -25,8 +27,8 @@ const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
     tracks: selectAllTracks(audio_player.selectedAlbum.tracks),
     selectedArtist: audio_player.selectedArtist,
     playing: audio_player.trackStatus.playing,
-    loopSong: audio_player.trackStatus.loopSong,
-    loopAlbum: audio_player.trackStatus.loopAlbum,
+    loopedSong: audio_player.trackStatus.loopSong,
+    loopedAlbum: audio_player.trackStatus.loopAlbum,
     shuffled: audio_player.trackStatus.shuffle,
     mute: audio_player.trackStatus.mute,
   };
@@ -37,6 +39,8 @@ const mapDispatchToProps = dispatch => ({
   playTrack: () => dispatch(playTrack()),
   pauseTrack: () => dispatch(pauseTrack()),
   muteTrack: () => dispatch(muteTrack()),
+  loopSong: () => dispatch(loopSong()),
+  loopAlbum: () => dispatch(loopAlbum()),
   shuffle: () => dispatch(shuffle()),
   receiveTrack: (track) => dispatch(receiveTrack(track)),
 });

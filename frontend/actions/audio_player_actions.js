@@ -13,6 +13,8 @@ export const PAUSE_TRACK = "PAUSE_TRACK";
 export const PLAY_TRACK = "PLAY_TRACK";
 export const MUTE_TRACK = "MUTE_TRACK";
 export const SHUFFLE = "SHUFFLE_TRACK";
+export const LOOP_ALBUM = "LOOP_ALBUM";
+export const LOOP_SONG = "LOOP_SONG";
 
 // action creators
 
@@ -53,6 +55,14 @@ export const pauseTrack = () => ({
 
 export const muteTrack = () => ({
   type: MUTE_TRACK
+});
+
+export const loopAlbum = () => ({
+  type: LOOP_ALBUM
+});
+
+export const loopSong = () => ({
+  type: LOOP_SONG
 });
 
 export const receiveTracks = tracks => ({

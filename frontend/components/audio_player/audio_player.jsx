@@ -11,14 +11,14 @@ class AudioPlayer extends React.Component {
   renderPlayOrPause() {
     if (this.props.playing) {
       return (
-        <li onClick={() => this.props.pauseTrack()}>
-          <i className="fa fa-pause" aria-hidden="true"></i>
+        <li>
+          <i onClick={() => this.props.pauseTrack()} className="fa fa-pause" aria-hidden="true"></i>
         </li>
       );
     } else {
       return (
-        <li onClick={() => this.props.playTrack()}>
-          <i className="fa fa-play" aria-hidden="true"></i>
+        <li>
+          <i onClick={() => this.props.playTrack()} className="fa fa-play" aria-hidden="true"></i>
         </li>
       );
     }
@@ -62,6 +62,21 @@ class AudioPlayer extends React.Component {
     this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
   }
 
+  loop() {
+    // if the current track is looping then loop the album on click
+    if(this.props.loopedSong) {
+      this.props.loopSong()
+      this.props.loopAlbum();
+    // if the current album is looping, turn off looping
+    } else if (this.props.loopedAlbum) {
+      this.props.loopAlbum();
+    // else loop the current track on click
+    } else {
+      this.props.loopSong();
+    }
+  }
+
+
   getShuffleStyle() {
     let shuffleStyle = {
       color: 'black'
@@ -94,10 +109,10 @@ class AudioPlayer extends React.Component {
             <li style={this.getShuffleStyle()}>
               <i onClick={() => this.props.shuffle()} className="fa fa-random" aria-hidden="true"></i>
             </li>
-            {/* <li>
-              <i className="fa fa-repeat" aria-hidden="true"></i>
-            </li> */}
-            <li className="volume">
+            <li>
+              <i onClick={() => this.loop()}className="fa fa-repeat" aria-hidden="true"></i>
+            </li>
+            <li>
               {this.renderMute()}
             </li>
           </ul>

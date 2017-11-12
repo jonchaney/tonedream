@@ -14,20 +14,21 @@
   
   .audio-player-controls {
     display: flex;
-  .volume {
-          width: 30px;
-        }
     li {
-      padding: 17px 0px 0 32px;
+      height: 100%;
         i {
-        padding: 0 0 0 12px;
-      }
+        padding: 17px 0 17px 0;
+        margin: 0 0px 0 32px;
+        }
+        i:hover {
+          cursor: pointer;
+        }
     }
   }
 
   .audio-player-photo {
     width: 43px;
-    padding: 5px 0px 0 32px;
+    margin: 5px 0px 0 45px;
   }
 
   .artist-info {
