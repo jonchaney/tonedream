@@ -32,10 +32,10 @@ const mapStateToProps = ({ albums, session, loading, audio_player, selectedArtis
 
 const mapDispatchToProps = dispatch => ({
   receiveAlbum: (album) => dispatch(receiveAlbum(album)),
-  mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
   clearTrack: () => dispatch(clearTrack()),
   pauseTrack: () => dispatch(pauseTrack()),
   playTrack: () => dispatch(playTrack()),
+  mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
   mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
   mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album))
 });

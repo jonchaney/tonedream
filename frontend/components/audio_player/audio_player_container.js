@@ -2,8 +2,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import {
-  receiveAlbum
+  receiveAlbum,
+  fetchAlbum
 } from '../../actions/album_actions';
+
+import { fetchUser } from '../../actions/user_actions';
 
 import {
   fetchSelectedTrack,
@@ -14,7 +17,10 @@ import {
   loopSong,
   loopAlbum,
   receiveTrack,
-  clearTrack
+  clearTrack,
+  mergeSelectedAlbum,
+  mergeSelectedArtist,
+  mergeSelectedTrack
 } from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
@@ -32,6 +38,8 @@ const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
     loopedAlbum: audio_player.trackStatus.loopAlbum,
     shuffled: audio_player.trackStatus.shuffle,
     mute: audio_player.trackStatus.mute,
+    album: albums.selectedAlbum,
+    artist: selectedArtist
   };
 };
 
@@ -45,6 +53,11 @@ const mapDispatchToProps = dispatch => ({
   shuffle: () => dispatch(shuffle()),
   clearTrack: () => dispatch(clearTrack()),
   receiveTrack: (track) => dispatch(receiveTrack(track)),
+  fetchAlbum: (id) => dispatch(fetchAlbum(id)),
+  mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
+  mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
+  mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album)),
+  fetchUser: (user) => dispatch(fetchUser(user))
 });
 
 export default withRouter(connect(
