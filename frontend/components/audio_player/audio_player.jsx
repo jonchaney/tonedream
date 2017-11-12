@@ -51,10 +51,12 @@ class AudioPlayer extends React.Component {
       nextTrack = (currentTrack + 1) % length;
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     } 
-    else if (this.props.loopedSong) {
-      // loop song, but when you press next it goes around album
+    else if (this.props.loopedSong && this.props.playing) {
       nextTrack = (currentTrack + 1) % length;
       this.props.receiveTrack(this.props.tracks[nextTrack]);
+    }
+    else if (this.props.loopedSong) {
+      this.props.receiveTrack(this.props.tracks[currentTrack]);
     }
      else {
       // play album until it reaches the end
