@@ -5,8 +5,8 @@ json.user_id @album.user_id
 json.image_url @album.image.url
 
 json.tracks do
-  @album.tracks.each do |track|
-    json.set! track.id do 
+  @album.tracks.each_with_index do |track, idx|
+    json.set! track.track_num do 
       json.title track.title
       json.audio_url track.audio.url
       json.track_num track.track_num

@@ -24,6 +24,54 @@ class AudioPlayer extends React.Component {
     }
   }
 
+  renderMute() {
+    if (this.props.mute) {
+      return (
+        <i onClick={() => this.props.muteTrack()} className="fa fa-volume-off" aria-hidden="true"></i>
+      );
+    } else {
+      return (
+        <i onClick={() => this.props.muteTrack()} className="fa fa-volume-up" aria-hidden="true"></i>
+      );
+    }
+  }
+
+  nextTrack() {
+    let length = this.props.tracks.length;
+    let currentTrack = this.props.selectedTrack.track_num - 1;
+    let nextTrack = currentTrack;
+    if (this.props.shuffled) {
+      while (currentTrack === nextTrack) {
+        nextTrack = Math.floor(Math.random() * (length - 1) + 1);
+      }
+    } else {
+      nextTrack = (currentTrack + 1) % length;
+    }
+    console.log(currentTrack);
+    this.props.receiveTrack(this.props.tracks[nextTrack]);
+  }
+
+  prevTrack() {
+    let length = this.props.tracks.length;
+    let currentTrack = (this.props.selectedTrack.track_num);
+    if (currentTrack === 1) {
+      currentTrack = length;
+    } else {
+      currentTrack -= 1;
+    }
+    this.props.receiveTrack(this.props.tracks[(currentTrack - 1) % length]);
+  }
+
+  getShuffleStyle() {
+    let shuffleStyle = {
+      color: 'black'
+    };
+    if (this.props.shuffled) {
+      shuffleStyle.color = '#649922';
+    }
+    return shuffleStyle;
+  }
+
   render() {
     if (this.props.selectedTrack.id) {
       return (
@@ -32,20 +80,25 @@ class AudioPlayer extends React.Component {
             src={this.props.selectedTrack.audio_url}
             playing={this.props.playing}
             html5={true}
+            onEnd={() => this.nextTrack()}
+            mute={this.props.mute}
           />
           <ul className="audio-player-controls">
             <li>
-              <i className="fa fa-step-backward" aria-hidden="true"></i>
+              <i onClick={() => this.prevTrack()} className="fa fa-step-backward" aria-hidden="true"></i>
             </li>
               {this.renderPlayOrPause()}
             <li>
-              <i className="fa fa-step-forward" aria-hidden="true"></i>
+              <i onClick={() => this.nextTrack()} className="fa fa-step-forward" aria-hidden="true"></i>
             </li>
-            <li>
-              <i className="fa fa-random" aria-hidden="true"></i>
+            <li style={this.getShuffleStyle()}>
+              <i onClick={() => this.props.shuffle()} className="fa fa-random" aria-hidden="true"></i>
             </li>
-            <li>
+            {/* <li>
               <i className="fa fa-repeat" aria-hidden="true"></i>
+            </li> */}
+            <li className="volume">
+              {this.renderMute()}
             </li>
           </ul>
           <div className="artist-info">
