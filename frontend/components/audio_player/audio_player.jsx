@@ -152,8 +152,26 @@ class AudioPlayer extends React.Component {
     return (
       <div className="sound-bar">
         
+
       </div>
     );
+  }
+
+  timePassed() {
+
+  }
+
+  getDuration(id) {
+    if (this.props.selectedTrack.id === id && this.props.playing) {
+      const MINUTE = 60;
+      let minutes;
+      let seconds;
+      let duration = window.Howler._howls[0]._duration;
+      console.log(duration);
+      minutes = Math.floor(duration / MINUTE);
+      seconds = Math.floor(((duration / MINUTE) - minutes) * MINUTE);
+      return `${minutes}:${seconds}`;
+    }
   }
 
   render() {
@@ -187,7 +205,13 @@ class AudioPlayer extends React.Component {
               {this.renderMute()}
             </li>
           </ul>
-          {this.renderSoundBar()}
+          <div className="playback">
+            {this.timePassed()}
+            {this.renderSoundBar()}
+            <div className="duration">
+  
+            </div>
+          </div>
           <div className="artist-info">
               <div>
                 <img className="audio-player-photo" value={this.props.selectedAlbum.id} src={this.props.selectedAlbum.image_url} />
