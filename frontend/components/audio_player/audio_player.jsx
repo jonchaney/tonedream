@@ -9,7 +9,7 @@ class AudioPlayer extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props.selectedTrack.id)
+    // get featured artist by default
     if (!this.props.selectedTrack.id) {
       this.props.fetchAlbum(313)
       .then(() => {
@@ -149,6 +149,14 @@ class AudioPlayer extends React.Component {
     return style;
   }
 
+  renderSoundBar() {
+    return (
+      <div className="sound-bar">
+        
+      </div>
+    );
+  }
+
   render() {
     if (this.props.selectedTrack.id) {
       return (
@@ -180,6 +188,7 @@ class AudioPlayer extends React.Component {
               {this.renderMute()}
             </li>
           </ul>
+          {this.renderSoundBar()}
           <div className="artist-info">
               <div>
                 <img className="audio-player-photo" value={this.props.selectedAlbum.id} src={this.props.selectedAlbum.image_url} />
