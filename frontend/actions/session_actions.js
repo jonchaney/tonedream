@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util'
+import * as APIUtil from '../util/session_api_util';
 import { receiveErrors, clearErrors } from './error_actions';
 import { clearAlbums } from './album_actions';
 

@@ -5,14 +5,11 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      field: '',
       password: '',
-      email: '',
-      band: '',
-      hidden: 'hidden'
+      email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.bandForm = this.bandForm.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,15 +27,30 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user;
-    if (this.band) {
-      user = this.state;
+    if (this.props.formType === 'login') {
+      if (this.state.field.includes('@')) {
+        user = {
+          email: this.state.field,
+          password: this.state.password,
+        };
+      } else {
+        user = {
+          username: this.state.field,
+          password: this.state.password
+        };
+      }
     } else {
-      user = {username: this.state.username,
-              password: this.state.password,
-              email: this.state.email
-            };
+      user = {
+        username: this.state.field,
+        email: this.state.email,
+        password: this.state.password
+      };
     }
-    this.props.processForm(user).then(() => this.props.history.push(`./${this.props.currentUser.id}`));
+    this.props.processForm(user).then(
+      // this redirect is not working. it executes before the user is updated in state...currentUser is null
+      // need to figure out why
+      // () => this.props.history.push(`./${this.props.currentUser.id}`)
+    );
   }
 
   navLink() {
@@ -51,7 +63,7 @@ class SessionForm extends React.Component {
 
   guestAccount() {
     const user = {username: "guest", password: "password"};
-    this.props.login(user).then((id) => this.props.history.push('./145'));
+    this.props.login(user).then(() => this.props.history.push('./145'));
   }
 
   renderErrors() {
@@ -66,19 +78,17 @@ class SessionForm extends React.Component {
     );
   }
 
-  bandForm(e) {
-    if (this.state.hidden === 'text') {
-      this.setState({band: ''});
-    }
-    this.state.hidden = this.state.hidden === 'hidden' ? 'text' : 'hidden';
-    this.setState({hidden: this.state.hidden});
-  }
-
   render() {
     if (this.props.location.pathname === '/guest') {
-      { this.guestAccount(); }
+      this.guestAccount(); 
       return null;
     } else {
+      let type = 'hidden';
+      let placeholder = 'username/email';
+      if (this.props.formType === 'signup') {
+        type = 'text';
+        placeholder = 'username';
+      }
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -90,17 +100,18 @@ class SessionForm extends React.Component {
                 <input type="text"
                   autoFocus="autofocus"
                   className="login-input"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  placeholder={'username'}
+                  value={this.state.field}
+                  onChange={this.update('field')}
+                  placeholder={placeholder}
                 />
               </label>
               <label>
-                <input type="text"
+                <input type={type}
+                  autoFocus="autofocus"
                   className="login-input"
                   value={this.state.email}
                   onChange={this.update('email')}
-                  placeholder="email"
+                  placeholder={'email'}
                 />
               </label>
               <label>
@@ -110,18 +121,6 @@ class SessionForm extends React.Component {
                   onChange={this.update('password')}
                   placeholder="password"
                 />
-              </label>
-              <label>
-                <input type={this.state.hidden}
-                  autoFocus="autofocus"
-                  className="login-input"
-                  value={this.state.band}
-                  onChange={this.update('band')}
-                  placeholder={'artist name'}
-                />
-              </label>
-              <label className="check-box">artist account
-                <input type="checkbox" name="band" value="band" onClick={this.bandForm} />
               </label>
               <label>
                 <input type="submit"
