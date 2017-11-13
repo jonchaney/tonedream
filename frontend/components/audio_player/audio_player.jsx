@@ -57,7 +57,7 @@ class AudioPlayer extends React.Component {
     let nextTrack = currentTrack;
     if (this.props.shuffled) {
       while (currentTrack === nextTrack) {
-        nextTrack = Math.floor(Math.random() * (length - 1) + 1);
+        nextTrack = Math.floor(Math.random() * (length - 0) + 0);
       }
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     } else if (this.props.loopedAlbum) {
