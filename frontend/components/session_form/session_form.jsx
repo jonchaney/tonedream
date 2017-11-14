@@ -100,8 +100,11 @@ class SessionForm extends React.Component {
                 <Link to="/">
                   <h1 className="header">
                     tonedream
-              </h1>
+                  </h1>
                 </Link>
+              </span>
+              <span>
+                <p className="tagline">independent music network</p>
               </span>
             </div>
           </div>
@@ -113,7 +116,7 @@ class SessionForm extends React.Component {
                 {this.renderErrors()}
                 <div className="login-input">
                   <div className="item">
-                    <div>
+                    <div className="login-label">
                       <label>
                         {placeholder}
                       </label>
@@ -128,7 +131,7 @@ class SessionForm extends React.Component {
                     </div>
                   </div>
                   <div className="item">
-                    <div>
+                    <div className="login-label">
                       <label style={styles}>
                         Email
                       </label>
@@ -143,7 +146,7 @@ class SessionForm extends React.Component {
                     </div>
                   </div>
                   <div className="item">
-                    <div>
+                    <div className="login-label">
                       <label>
                         Password
                       </label>
@@ -158,12 +161,12 @@ class SessionForm extends React.Component {
                       </label>
                       </div>
                   </div>
-                  <div>
-                    <label>
-                      <input type="submit"
-                            className="login-button"
-                            value="submit" />
-                    </label>
+                  <div className="item">
+                      <label>
+                        <input type="submit"
+                              className="login-button"
+                              value="submit" />
+                      </label>
                   </div>
                 </div>
               </div>
