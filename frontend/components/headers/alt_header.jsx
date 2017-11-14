@@ -23,13 +23,10 @@ class AltHeader extends React.Component {
             </Link>
           </span>
         </div>
-
         <div className="alt-search">
             <SearchContainer />
         </div>
-
             <GreetingContainer />
-
       </div>
     );
   }

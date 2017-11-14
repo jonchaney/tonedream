@@ -51,9 +51,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <li>login</li>;
+      return <li>Log in</li>;
     } else {
-      return <li>sign up</li>;
+      return <li>Sign up</li>;
     }
   }
 
@@ -79,54 +79,97 @@ class SessionForm extends React.Component {
       this.guestAccount(); 
       return null;
     } else {
+      let styles = {
+        display: 'none'
+      };
       let type = 'hidden';
-      let placeholder = 'username/email';
+      let placeholder = 'Username / email';
       if (this.props.formType === 'signup') {
         type = 'text';
-        placeholder = 'username';
+        placeholder = 'Username';
+        styles.display = "";
       }
       return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className="login-form">
-              {this.navLink()}
-              {this.renderErrors()}
-              <div className="login-input">
-                <label>
-                  <input type="text"
-                    autoFocus="autofocus"
-                    className="login-input"
-                    value={this.state.field}
-                    onChange={this.update('field')}
-                    placeholder={placeholder}
-                  />
-                </label>
-                <label>
-                  <input type={type}
-                    autoFocus="autofocus"
-                    className="login-input"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    placeholder={'email'}
-                  />
-                </label>
-                <label>
-                  <input type="password"
-                    className="login-input"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    placeholder="password"
-                  />
-                </label>
-                <label>
-                  <input type="submit"
-                        className="login-button"
-                        value="submit" />
-                </label>
-              </div>
+        <div>
+          <div className="head">
+            <div className="head-tag">
+              <span>
+                <Link to="/">
+                  <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" width="50" height="51" alt="tonedream"></img>
+                </Link>
+                <Link to="/">
+                  <h1 className="header">
+                    tonedream
+              </h1>
+                </Link>
+              </span>
             </div>
-          </form>
-        </div>
+          </div>
+          <div className="login-form-container">
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <div className="login-form">
+                {this.navLink()}
+                <div className="top-divider"></div>
+                {this.renderErrors()}
+                <div className="login-input">
+                  <div className="item">
+                    <div>
+                      <label>
+                        {placeholder}
+                      </label>
+                    </div>
+                    <div>
+                      <input type="text"
+                        autoFocus="autofocus"
+                        className="login-input"
+                        value={this.state.field}
+                        onChange={this.update('field')}
+                      />
+                    </div>
+                  </div>
+                  <div className="item">
+                    <div>
+                      <label style={styles}>
+                        Email
+                      </label>
+                    </div>
+                    <div>
+                        <input type={type}
+                          autoFocus="autofocus"
+                          className="login-input"
+                          value={this.state.email}
+                          onChange={this.update('email')}
+                        />
+                    </div>
+                  </div>
+                  <div className="item">
+                    <div>
+                      <label>
+                        Password
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="password"
+                          className="login-input"
+                          value={this.state.password}
+                          onChange={this.update('password')}
+                        />
+                      </label>
+                      </div>
+                  </div>
+                  <div>
+                    <label>
+                      <input type="submit"
+                            className="login-button"
+                            value="submit" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+         </div>
       );
     }
   }
