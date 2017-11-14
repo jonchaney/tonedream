@@ -14,8 +14,6 @@ class Api::SessionsController < ApplicationController
       )
     end 
       
-
-
     if @user
       login(@user)
       render "api/users/show"

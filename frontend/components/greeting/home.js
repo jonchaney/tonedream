@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+       show: false
+    };
   }
 
   componentDidMount() {
-    this.props.getFeatured();
+    this.props.getFeatured().then(() => {
+      this.setState({ show: true });
+    });
   }
 
   render() {
-    if (this.props.featured.length === 0) {
+    if (!this.state.show) {
       return (
         <p>Loading...</p>
       );

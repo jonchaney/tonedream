@@ -46,11 +46,7 @@ class SessionForm extends React.Component {
         password: this.state.password
       };
     }
-    this.props.processForm(user).then(
-      // this redirect is not working. it executes before the user is updated in state...currentUser is null
-      // need to figure out why
-      // () => this.props.history.push(`./${this.props.currentUser.id}`)
-    );
+    this.props.processForm(user);
   }
 
   navLink() {
@@ -89,50 +85,50 @@ class SessionForm extends React.Component {
         type = 'text';
         placeholder = 'username';
       }
-    return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="login-form">
-            {this.navLink()}
-            {this.renderErrors()}
-            <div className="login-input">
-              <label>
-                <input type="text"
-                  autoFocus="autofocus"
-                  className="login-input"
-                  value={this.state.field}
-                  onChange={this.update('field')}
-                  placeholder={placeholder}
-                />
-              </label>
-              <label>
-                <input type={type}
-                  autoFocus="autofocus"
-                  className="login-input"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  placeholder={'email'}
-                />
-              </label>
-              <label>
-                <input type="password"
-                  className="login-input"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  placeholder="password"
-                />
-              </label>
-              <label>
-                <input type="submit"
-                       className="login-button"
-                       value="submit" />
-              </label>
+      return (
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <div className="login-form">
+              {this.navLink()}
+              {this.renderErrors()}
+              <div className="login-input">
+                <label>
+                  <input type="text"
+                    autoFocus="autofocus"
+                    className="login-input"
+                    value={this.state.field}
+                    onChange={this.update('field')}
+                    placeholder={placeholder}
+                  />
+                </label>
+                <label>
+                  <input type={type}
+                    autoFocus="autofocus"
+                    className="login-input"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    placeholder={'email'}
+                  />
+                </label>
+                <label>
+                  <input type="password"
+                    className="login-input"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    placeholder="password"
+                  />
+                </label>
+                <label>
+                  <input type="submit"
+                        className="login-button"
+                        value="submit" />
+                </label>
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
-    );
-  }
+          </form>
+        </div>
+      );
+    }
   }
 }
 

@@ -4,7 +4,8 @@ import { resultsArray } from '../../reducers/selectors';
 import Home from './home';
 
 const mapStateToProps = (state) => ({
-  featured: resultsArray(state.search.featured)
+  featured: resultsArray(state.search.featured),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
