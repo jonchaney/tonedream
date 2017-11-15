@@ -103,9 +103,9 @@ class SessionForm extends React.Component {
                   </h1>
                 </Link>
               </span>
-              <span>
-                <p className="tagline">independent music network</p>
-              </span>
+            <span>
+              <p className="tagline">independent music network</p>
+            </span>
             </div>
           </div>
           <div className="login-form-container">
@@ -138,7 +138,6 @@ class SessionForm extends React.Component {
                     </div>
                     <div>
                         <input type={type}
-                          autoFocus="autofocus"
                           className="login-input"
                           value={this.state.email}
                           onChange={this.update('email')}
