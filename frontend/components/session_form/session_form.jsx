@@ -57,6 +57,14 @@ class SessionForm extends React.Component {
     }
   }
 
+  formType() {
+    if (this.props.formType === 'login') {
+      return <li><Link to="./signup">or sign up</Link></li>;
+    } else {
+      return <li><Link to="./login">or log in</Link></li>;
+    }
+  }
+
   guestAccount() {
     const user = {username: "guest", password: "password"};
     this.props.login(user).then(() => this.props.history.push('./145'));
@@ -106,6 +114,8 @@ class SessionForm extends React.Component {
             <span>
               <p className="tagline">independent music network</p>
             </span>
+            </div>
+            <div>
             </div>
           </div>
           <div className="login-form-container">
@@ -168,6 +178,9 @@ class SessionForm extends React.Component {
                       </label>
                   </div>
                 </div>
+                  <div className="formtype">
+                    {this.formType()}
+                  </div>
               </div>
             </form>
           </div>

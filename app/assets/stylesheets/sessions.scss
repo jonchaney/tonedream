@@ -183,6 +183,19 @@ form.login-form-box {
     margin: 14px -165px 0px 0;
 }
 
+.formtype {
+    font-size: 14px;
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-align: right;
+    padding: 5px 142px 0 24px;
+}
+
+.formtype:hover {
+  text-decoration: underline;
+}
+
 /****************************
   ALT-NAV
 *****************************/
