@@ -16,10 +16,9 @@
 #
 
 class Track < ApplicationRecord
-  validates :title, :track_num, :download, :album_id, presence: true
+  validates :title, :track_num, :download, :album_id, :duration, presence: true
       
   belongs_to :album
-  belongs_to :user
 
   # spoofing protection removed -- fix later (validate_media_type: false)
   

@@ -14,14 +14,14 @@ class ArtistProfilePage extends React.Component {
   componentWillMount() {
     this.props.clearAlbums();
     this.props.fetchUser(this.props.match.params.user_id).then(() => {
-      this.props.fetchAlbums(this.props.match.params.user_id);
+      // this.props.fetchAlbums(this.props.match.params.user_id);
     } );
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
       this.props.fetchUser(nextProps.match.params.user_id).then(() => {
-        this.props.fetchAlbums(nextProps.match.params.user_id);
+        // this.props.fetchAlbums(nextProps.match.params.user_id);
       });
     }
     if (this.props.location.pathname !== nextProps.location.pathname) {
@@ -34,10 +34,10 @@ class ArtistProfilePage extends React.Component {
       <div className="artist-profile">
       <AltHeaderContainer />
         <div className="artist-profile-content">
-          <SelectedArtistInfoContainer />
+          {/* <SelectedArtistInfoContainer />
           <Switch>
             <Route path="/:user_id" component={AlbumIndexContainer} />   
-          </Switch>
+          </Switch> */}
         </div>
       </div>
     );

@@ -10,26 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726005826) do
+ActiveRecord::Schema.define(version: 20171117005135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "title", null: false
     t.date "date", null: false
-    t.string "genre"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "artist_id"
     t.index ["date"], name: "index_albums_on_date"
     t.index ["title"], name: "index_albums_on_title"
   end
 
-  create_table "tracks", force: :cascade do |t|
+  create_table "artists", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "location", null: false
+    t.text "bio"
+  end
+
+  create_table "artists_users", id: false, force: :cascade do |t|
     t.integer "user_id"
+    t.integer "artist_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
     t.integer "album_id"
     t.string "title"
     t.integer "track_num"
@@ -45,17 +54,11 @@ ActiveRecord::Schema.define(version: 20170726005826) do
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.string "username", null: false
-    t.string "band"
-    t.text "bio"
-    t.string "location"
-    t.string "banner_url"
-    t.string "background_img_url"
     t.string "email", null: false
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["band"], name: "index_users_on_band"
   end
 
 end

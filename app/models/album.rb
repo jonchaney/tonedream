@@ -14,8 +14,8 @@
 #
 
 class Album < ApplicationRecord
-  validates :title, :date, presence: true
-  belongs_to :user
+  validates :title, :date, :artist_id, presence: true
+  belongs_to :artist
   has_many :tracks
   
   has_attached_file :image, default_url: "https://s3-us-west-2.amazonaws.com/tonedream-dev/default_album.png"
