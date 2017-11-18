@@ -1,7 +1,7 @@
 export const fetchAlbums = id => {
   let url = 'api/albums';
   if (id) {
-    url = `api/user/${id}/albums`;
+    url = `api/artist/${id}/albums`;
   }
   return $.ajax({
     method: 'GET',
@@ -25,10 +25,10 @@ export const createAlbum = data => (
   })
 );
 
-export const deleteAlbum = id => (
+export const deleteAlbum = (artistId, albumId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/albums/${id}`
+    url: `api/artists/${artistId}/albums/${albumId}`
   })
 );
 

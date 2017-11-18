@@ -11,7 +11,7 @@ import { fetchTracks,
          clearTracks
 } from './actions/audio_player_actions';
 
-import { featured } from './util/search_api_util';
+import { deleteAlbum, createAlbum } from './util/album_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.featured = featured;
+  window.deleteAlbum = deleteAlbum;
+  window.createAlbum = createAlbum;
   // window.search = search;
   // end test
 

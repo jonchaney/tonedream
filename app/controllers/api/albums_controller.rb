@@ -6,7 +6,6 @@ class Api::AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
-    @album.artist_id = current_user.id
     if @album.save
       render 'api/albums/show'
     else
@@ -20,13 +19,13 @@ class Api::AlbumsController < ApplicationController
   end
 
   def select_albums
-    @user = User.find_by(id: params[:user_id])
-    @albums = @user.albums
+    @artist = Artist.find_by(id: params[:artist_id])
+    @albums = @artist.albums
     render :index
   end
 
   def update
-    @album = current_user.albums.find(params[:id])
+    @album = Album.find(params[:id])
     if @album.update_attributes(album_params)
       render :show
     else
@@ -35,9 +34,10 @@ class Api::AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = current_user.albums.find(params[:id])
+    @album = current_user.artists.find_by_id(params[:artist_id]).albums.find_by_id(params[:album_id])
 
-    if @album.destroy
+    if @album
+      @album.destroy
       render json: ['success']
     else
       render json: ['error'], status: 404
