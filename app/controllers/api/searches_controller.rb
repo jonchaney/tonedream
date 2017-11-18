@@ -10,8 +10,8 @@ class Api::SearchesController < ApplicationController
     artists.each do |artist|
       @results[counter] = {}
       @results[counter][:type] = "Artist"
-      @results[counter][:id] = artist.id
-      @results[counter][:artist] = artist.name
+      @results[counter][:artist_id] = artist.id
+      @results[counter][:name] = artist.name
       @results[counter][:image] = artist.image.url
       counter += 1
     end
@@ -19,7 +19,8 @@ class Api::SearchesController < ApplicationController
     albums.each do |album|
       @results[counter] = {}
       @results[counter][:type] = "Album"
-      @results[counter][:id] = album.id
+      @results[counter][:album_id] = album.id
+      @results[counter][:artist_id] = album.artist.id
       @results[counter][:name] = album.title
       @results[counter][:artist] = album.artist
       @results[counter][:image] = album.image.url
@@ -29,7 +30,8 @@ class Api::SearchesController < ApplicationController
     tracks.each do |track|
       @results[counter] = {}
       @results[counter][:type] = "Track"
-      @results[counter][:id] = track.album.id
+      @results[counter][:album_id] = track.album.id
+      @results[counter][:artist_id] = track.album.artist.id
       @results[counter][:name] = track.title
       @results[counter][:artist] = track.album.artist
       @results[counter][:image] = track.album.image.url
