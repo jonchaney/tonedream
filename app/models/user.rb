@@ -29,7 +29,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   has_and_belongs_to_many :artists
 
-  has_attached_file :image, default_url: "https://s3-us-west-2.amazonaws.com/tonedream-dev/default_profile_pic.jpg"
+  has_attached_file :image, default_url: "https://s3-us-west-2.amazonaws.com/tonedream-dev/default_avatar.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def password=(password)

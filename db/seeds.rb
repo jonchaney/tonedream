@@ -10,24 +10,28 @@ Artist.destroy_all
 Album.destroy_all
 Track.destroy_all
 
-date = Date.new
 
 # create user
 u = User.create!(username: "jonathan", password: "password", email:"jonchaney@gmail.com")
 
 # create artist
-artist = Artist.create!(name: "Slow Crawl", location: "San Francisco", bio: "post punk")
+slow_crawl = Artist.create!(name: "Slow Crawl", location: "San Francisco", bio: "post punk")
+slow_crawl.image = File.open('app/assets/images/slowcrawl.png')
+slow_crawl.save!
 swayed = Artist.create!(name: "Swayed", location: "San Francisco", bio: "dreampop")
+swayed.image = File.open('app/assets/images/swayed.png')
+swayed.save!
 
 # add artist to user
-u.artists << artist
+u.artists << slow_crawl
 u.save!
 u.artists << swayed
 u.save!
 
+date = Date.new
 
 # create album
-a = Album.create!(title: "Satan's Gulch", date: date, artist_id: artist.id)
+a = Album.create!(title: "Satan's Gulch", date: date, artist_id: slow_crawl.id)
 a.image = File.open('app/assets/images/satans_gulch.png')
 a.save!
 
