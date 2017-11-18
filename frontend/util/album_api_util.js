@@ -32,14 +32,15 @@ export const deleteAlbum = (artistId, albumId) => (
   })
 );
 
-export const updateAlbum = data => (
+export const updateAlbum = (artistId, albumId, data) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/albums/${data.album.id}`,
+    url: `api/artists/${artistId}/albums/${albumId}`,
     data
   })
 );
 
+// have not tested this
 export const updateFormAlbum = (formData, id) => {
   return $.ajax({
     url: `api/albums/${id}`,

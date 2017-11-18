@@ -11,7 +11,7 @@ import { fetchTracks,
          clearTracks
 } from './actions/audio_player_actions';
 
-import { deleteAlbum, createAlbum } from './util/album_api_util';
+import { deleteAlbum, createAlbum, updateAlbum } from './util/album_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.deleteAlbum = deleteAlbum;
   window.createAlbum = createAlbum;
+  window.updateAlbum = updateAlbum;
   // window.search = search;
   // end test
 
