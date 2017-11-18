@@ -1,19 +1,18 @@
 class Api::SearchesController < ApplicationController
   def index
     query = search_params[:query].downcase
-    users = User.where("LOWER(band) ~ ?", query)
+    artists = Artist.where("LOWER(name) ~ ?", query)
     albums = Album.where("LOWER(title) ~ ?", query)
     tracks = Track.where("LOWER(title) ~ ?", query)
     @results = {}
     counter = 1;
 
-    users.each do |user|
+    artists.each do |artist|
       @results[counter] = {}
       @results[counter][:type] = "Artist"
-      @results[counter][:id] = user.id
-      @results[counter][:name] = user.band
-      @results[counter][:artist] = user.band
-      @results[counter][:image] = user.image.url
+      @results[counter][:id] = artist.id
+      @results[counter][:artist] = artist.name
+      @results[counter][:image] = artist.image.url
       counter += 1
     end
     
@@ -22,7 +21,7 @@ class Api::SearchesController < ApplicationController
       @results[counter][:type] = "Album"
       @results[counter][:id] = album.id
       @results[counter][:name] = album.title
-      @results[counter][:artist] = album.user.band
+      @results[counter][:artist] = album.artist
       @results[counter][:image] = album.image.url
       counter += 1
     end
@@ -32,7 +31,7 @@ class Api::SearchesController < ApplicationController
       @results[counter][:type] = "Track"
       @results[counter][:id] = track.album.id
       @results[counter][:name] = track.title
-      @results[counter][:artist] = track.user.band
+      @results[counter][:artist] = track.album.artist
       @results[counter][:image] = track.album.image.url
       counter += 1
     end
@@ -45,7 +44,7 @@ class Api::SearchesController < ApplicationController
   end
 
     def show
-    # @featured_albums = User.where.not(band: nil).order("RANDOM()").first(8)
+    @featured_artists = Artist.order("RANDOM()").first(8)
     
     render "api/searches/featured"
   end

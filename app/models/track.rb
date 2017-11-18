@@ -20,6 +20,12 @@ class Track < ApplicationRecord
       
   belongs_to :album
 
+  has_one
+    :artist,
+    through: :album,
+    source: :artist
+
+
   # spoofing protection removed -- fix later (validate_media_type: false)
   
   has_attached_file :audio, presence: true, validate_media_type: false

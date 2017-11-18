@@ -1,6 +1,6 @@
-json.id album.id
-json.name album.name
-json.location album.location
-json.bio album.bio
-json.image_url album.image.url
+json.id artist.id
+json.name artist.name
+json.location artist.location
+json.bio artist.bio
+json.image_url artist.image.url
 
