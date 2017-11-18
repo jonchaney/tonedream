@@ -25,18 +25,32 @@ class Api::AlbumsController < ApplicationController
   end
 
   def update
-    @album = current_user.artists.find_by_id(params[:artist_id]).albums.find_by_id(params[:album_id])
-    p @album
-    if @album.update_attributes(album_params)
-      render :show
+    artist = current_user.artists.find_by_id(params[:artist_id])
+    if artist
+      @album = artist.albums.find_by_id(params[:album_id])
     else
-      render json: @album.errors.full_messages, status: 422
+      @album = false
+    end 
+    
+    if @album
+      if @album.update_attributes(album_params)
+        render :show
+      else
+       render json: @album.errors.full_messages, status: 422
+      end
+    else
+      render json: ['error'], status: 404
     end
   end
 
   def destroy
-    @album = current_user.artists.find_by_id(params[:artist_id]).albums.find_by_id(params[:album_id])
-
+    artist = current_user.artists.find_by_id(params[:artist_id])
+    if artist
+      @album = artist.albums.find_by_id(params[:album_id])
+    else
+      @album = false
+    end 
+    
     if @album
       @album.destroy
       render json: ['success']
