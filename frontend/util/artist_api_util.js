@@ -5,6 +5,13 @@ export const fetchArtist = id => (
   })
 );
 
+export const fetchArtists = () => (
+  $.ajax({
+    method: 'GET',
+    url: `api/artists`
+  })
+);
+
 
 export const createArtist = data => (
   $.ajax({
@@ -30,9 +37,9 @@ export const updateArtist = (id, data) => (
 );
 
 // have not tested this
-export const updateFormAlbum = (formData, id) => {
+export const updateFormArtist = (formData, id) => {
   return $.ajax({
-    url: `api/albums/${id}`,
+    url: `api/artists/${id}`,
     type: 'PATCH',
     processData: false,
     contentType: false,
