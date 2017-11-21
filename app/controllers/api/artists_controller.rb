@@ -31,7 +31,8 @@ class Api::ArtistsController < ApplicationController
   def destroy
     @artist = current_user.artists.find(params[:id])
 
-    if @artist.destroy
+    if @artist
+      @artist.destroy
       render json: ['success']
     else
       render json: ['error'], status: 404

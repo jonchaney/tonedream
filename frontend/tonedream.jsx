@@ -2,16 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import { fetchTracks,
-         createTrack,
-         deleteTrack,
-         updateTrack,
-         fetchTrack,
-         clearTrack,
-         clearTracks
-} from './actions/audio_player_actions';
 
-import { deleteAlbum, createAlbum, updateAlbum } from './util/album_api_util';
+import { fetchArtist, createArtist, deleteArtist } from './util/artist_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.deleteAlbum = deleteAlbum;
-  window.createAlbum = createAlbum;
-  window.updateAlbum = updateAlbum;
+  window.fetchArtist = fetchArtist;
+  window.createArtist = createArtist;
+  window.deleteArtist = deleteArtist;
   // window.search = search;
   // end test
 
