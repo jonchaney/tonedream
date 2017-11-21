@@ -21,10 +21,10 @@ export const deleteArtist = id => (
   })
 );
 
-export const updateAlbum = (artistId, albumId, data) => (
+export const updateArtist = (id, data) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/artists/${artistId}/albums/${albumId}`,
+    url: `api/artists/${id}`,
     data
   })
 );

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { fetchArtist, createArtist, deleteArtist } from './util/artist_api_util';
+import { fetchArtist, createArtist, deleteArtist, updateArtist } from './util/artist_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchArtist = fetchArtist;
   window.createArtist = createArtist;
   window.deleteArtist = deleteArtist;
+  window.updateArtist = updateArtist;
   // window.search = search;
   // end test
 
