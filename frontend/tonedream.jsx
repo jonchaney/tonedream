@@ -5,6 +5,11 @@ import Root from './components/root';
 
 import { updateUser } from './util/user_api_util';
 
+// current state of code is not what is pushed to heroku
+// COMPLETED THUS FAR
+
+// database has been redesigned
+// APIs rewritten and tested
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
