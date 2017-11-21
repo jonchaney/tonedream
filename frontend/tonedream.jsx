@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { fetchArtist, createArtist, deleteArtist, fetchArtists } from './util/artist_api_util';
+import { updateUser } from './util/user_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,10 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchArtist = fetchArtist;
-  window.createArtist = createArtist;
-  window.deleteArtist = deleteArtist;
-  window.fetchArtists = fetchArtists;
+  window.updateUser = updateUser;
   // window.search = search;
   // end test
 
