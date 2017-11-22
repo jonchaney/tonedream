@@ -34,6 +34,7 @@ class ArtistProfilePage extends React.Component {
       <div className="artist-profile">
       <AltHeaderContainer />
         <div className="artist-profile-content">
+          
           {/* <SelectedArtistInfoContainer />
           <Switch>
             <Route path="/:user_id" component={AlbumIndexContainer} />   

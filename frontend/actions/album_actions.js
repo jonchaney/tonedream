@@ -78,18 +78,19 @@ export const createAlbum = album => dispatch => (
   ))
 );
 
-export const deleteAlbum = id => dispatch => (
-  APIUtil.deleteAlbum(id)
+export const deleteAlbum = (artistId,albumId) => dispatch => (
+  APIUtil.deleteAlbum(artistId, albumId)
 );
 
-export const updateAlbum = album => dispatch => (
-  APIUtil.updateAlbum(album).then(album => {
+export const updateAlbum = (artistId, albumId, data) => dispatch => (
+  APIUtil.updateAlbum(artistId, albumId, data).then(album => {
     dispatch(receiveAlbum(album));
   }, errors => (
     dispatch(receiveErrors(errors))
   ))
 );
 
+// not tested yet
 export const updateFormAlbum = (formData, id) => (dispatch) => {
   return APIUtil.updateFormAlbum(formData, id).then(
     response => dispatch(receiveAlbum(response))

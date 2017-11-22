@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { updateUser } from './util/user_api_util';
+import { updateAlbum } from './actions/album_actions';
 
 // current state of code is not what is pushed to heroku
 // COMPLETED THUS FAR
@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.updateUser = updateUser;
+  window.updateAlbum = updateAlbum;
+
   // window.search = search;
   // end test
 
