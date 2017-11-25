@@ -43,7 +43,7 @@ class Greeting extends React.Component {
     return (
       <hgroup className={styleLogout}>
         <ul>
-          <li className={home}><Link to={`/${this.props.currentUser.id}`}>home</Link></li>
+          <li className={home}><Link to={`/users/${this.props.currentUser.id}`}>home</Link></li>
           <li className={home} onClick={logout}><Link to="/">logout</Link></li>
         </ul>
       </hgroup>

@@ -6,7 +6,7 @@ import TrackIndexContainer from '../tracks/track_index_container';
 import SelectedArtistInfoContainer from './selected_artist_info_container';
 import AltHeaderContainer from '../headers/alt_header_container';
 
-class ArtistProfilePage extends React.Component {
+class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -32,17 +32,13 @@ class ArtistProfilePage extends React.Component {
   render() {
     return (
       <div className="artist-profile">
-      <AltHeaderContainer />
         <div className="artist-profile-content">
-          
-          {/* <SelectedArtistInfoContainer />
-          <Switch>
-            <Route path="/:user_id" component={AlbumIndexContainer} />   
-          </Switch> */}
+          <SelectedArtistInfoContainer />
+          <AlbumIndexContainer/>
         </div>
       </div>
     );
   }
 }
 
-export default ArtistProfilePage;
+export default ArtistShow;

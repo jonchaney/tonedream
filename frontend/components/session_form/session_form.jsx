@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
 
   guestAccount() {
     const user = {username: "jonathan", password: "password"};
-    this.props.login(user).then(() => this.props.history.push('./171'));
+    this.props.login(user).then(() => this.props.history.push('./users/171'));
   }
 
   renderErrors() {

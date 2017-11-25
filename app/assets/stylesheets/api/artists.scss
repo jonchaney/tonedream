@@ -1,3 +1,25 @@
 // Place all the styles related to the Api::Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.artist-index-item-img img {
+    height: 230px;
+    width: 230px;
+}
+
+h1.artist-name {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-size: 16px;
+}
+
+ul.artist-index-list {
+    display: flex;
+    padding: 88px 0 12px 34px;
+}
+
+
+li.artist-index-item {
+    list-style: none;
+    margin: 10px 35px 10px 10px;
+}

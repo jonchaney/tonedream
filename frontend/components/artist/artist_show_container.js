@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
 import { fetchUser, updatingArtist, updateUserProfile } from '../../actions/user_actions';
 import { fetchTracks } from '../../actions/audio_player_actions';
-import ArtistProfilePage from './artist_profile_page';
+import ArtistShow from './artist_show';
 import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ArtistProfilePage));
+)(ArtistShow));
