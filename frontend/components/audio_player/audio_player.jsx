@@ -175,7 +175,7 @@ class AudioPlayer extends React.Component {
   }
 
   render() {
-    if (this.props.selectedTrack.id) {
+    if (this.props.selectedTrack.id && this.props.selectedArtist.id) {
       return (
         <div className="audio-player">
           <ReactHowler
@@ -218,7 +218,7 @@ class AudioPlayer extends React.Component {
               </div>
               <div className="artist-info-data">
                 <p>
-                  <Link to={`/${this.props.selectedArtist.id}`}>{this.props.selectedArtist.band}</Link>
+                  <Link to={`/artists/${this.props.selectedAlbum.artist_id}`}>{this.props.selectedArtist.name}</Link>
                 </p>
                 <p>
                   {this.props.selectedTrack.title}
