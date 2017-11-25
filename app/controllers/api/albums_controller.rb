@@ -14,7 +14,8 @@ class Api::AlbumsController < ApplicationController
   end
 
   def index
-    @albums = current_user.albums
+    @artist = Artist.find_by(id: params[:artist_id])
+    @albums = @artist.albums
     render :index
   end
 

@@ -4,19 +4,14 @@ import { Link } from 'react-router-dom';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-       show: false
-    };
   }
 
   componentDidMount() {
-    this.props.getFeatured().then(() => {
-      this.setState({ show: true });
-    });
+    this.props.getFeatured();
   }
 
   render() {
-    if (!this.state.show) {
+    if (!this.props.featured) {
       return (
         <p>Loading...</p>
       );
@@ -28,7 +23,7 @@ class Home extends React.Component {
             {this.props.featured.map((artist, idx) =>
               <div key={idx}>
                 <img className="featured-pic" src={artist.image_url} />
-                <Link to={`./${artist.id}`}>{artist.name}</Link>
+                <Link to={`./artists/${artist.id}`}>{artist.name}</Link>
               </div>
             )}
           </div>

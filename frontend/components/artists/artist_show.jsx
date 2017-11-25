@@ -13,21 +13,21 @@ class ArtistShow extends React.Component {
 
   componentWillMount() {
     this.props.clearAlbums();
-    this.props.fetchUser(this.props.match.params.user_id).then(() => {
-      // this.props.fetchAlbums(this.props.match.params.user_id);
+    this.props.fetchArtist(this.props.match.params.id).then(() => {
+      this.props.fetchAlbums(this.props.match.params.id);
     } );
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
-      this.props.fetchUser(nextProps.match.params.user_id).then(() => {
-        // this.props.fetchAlbums(nextProps.match.params.user_id);
-      });
-    }
-    if (this.props.location.pathname !== nextProps.location.pathname) {
-      this.props.clearAlbums();
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params.id !== nextProps.match.params.id) {
+  //     this.props.fetchUser(nextProps.match.params.id).then(() => {
+  //       // this.props.fetchAlbums(nextProps.match.params.user_id);
+  //     });
+  //   }
+  //   if (this.props.location.pathname !== nextProps.location.pathname) {
+  //     this.props.clearAlbums();
+  //   }
+  // }
 
   render() {
     return (

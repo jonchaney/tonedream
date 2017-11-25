@@ -58,7 +58,7 @@ class Search extends React.Component {
       return (
         <ul className="search-results">
           {this.props.results.slice(0,4).map((result, idx) => {
-            let url = `./${result.id}`;
+            let url = `./artists/${result.id}`;
             if (result.type !== 'Artist') {
               url = `albums/${result.id}`;
             } 

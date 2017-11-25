@@ -23,3 +23,7 @@ li.artist-index-item {
     list-style: none;
     margin: 10px 35px 10px 10px;
 }
+
+li.artist-index-item:hover {
+    text-decoration: underline;
+}

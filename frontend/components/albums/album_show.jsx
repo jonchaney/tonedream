@@ -3,7 +3,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 
 import AlbumIndexContainer from '../albums/album_index_container';
 import TrackIndexContainer from '../tracks/track_index_container';
-import SelectedArtistInfoContainer from '../artist/selected_artist_info_container';
+import SelectedArtistInfoContainer from '../artists/selected_artist_info_container';
 import AltHeaderContainer from '../headers/alt_header_container';
 
 class AlbumShow extends React.Component {
@@ -12,12 +12,13 @@ class AlbumShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchAlbum(this.props.match.params.id).then(
+    this.props.fetchAlbum(this.props.match.params.id).then( () =>
+      this.props.fetchArtist(this.props.selectedAlbum.artist_id)
     );
   }
 
   renderContent() {
-    if (!this.props.selectedArtist.band) {
+    if (this.props.detailLoading) {
       return (
         <div className="artist-profile-content">
           <div>Loading...</div>
@@ -28,7 +29,7 @@ class AlbumShow extends React.Component {
       return (
         <div className="artist-profile-content">
           <SelectedArtistInfoContainer />
-          <TrackIndexContainer />
+          {<TrackIndexContainer />}
         </div>
       );
     }
@@ -37,7 +38,6 @@ class AlbumShow extends React.Component {
   render() {
       return (
         <div className="artist-profile">
-          <AltHeaderContainer />
           {this.renderContent()}
         </div>
       );

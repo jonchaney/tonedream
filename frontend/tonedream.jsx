@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 
-import { updateArtist } from './actions/artist_actions';
+import { deleteAlbum } from './actions/album_actions';
 
 // current state of code is not what is pushed to heroku
 // COMPLETED THUS FAR
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.updateArtist = updateArtist;
+  window.deleteAlbum = deleteAlbum;
 
   // window.search = search;
   // end test

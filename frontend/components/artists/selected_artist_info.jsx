@@ -7,7 +7,7 @@ class SelectedArtistInfo extends React.Component {
   }
 
   render() {
-    if (!this.props.selectedArtist) {
+    if (this.props.loading) {
       return (<div>Loading...</div>);
     } else {
       return (
@@ -15,7 +15,7 @@ class SelectedArtistInfo extends React.Component {
           <img className="profile-pic" src={this.props.selectedArtist.image_url} />
           <ul>
             <li className="band">
-                {this.props.selectedArtist.band}
+                {this.props.selectedArtist.name}
             </li>
             <li className="location">
                 {this.props.selectedArtist.location}

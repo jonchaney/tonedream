@@ -21,10 +21,6 @@ export const receiveUser = (user) => {
   };
 };
 
-export const loadArtist = () => ({
-  type: ARTIST_LOADING
-});
-
 export const receiveLoadedArtist = () => ({
   type: RECEIVE_LOADED_ARTIST
 });

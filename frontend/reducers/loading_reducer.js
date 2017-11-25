@@ -11,13 +11,16 @@ import {
 } from '../actions/album_actions';
 
 import UPDATE_ARTIST from '../actions/user_actions';
+
+import START_LOADING_SELECTED_ARTIST from '../actions/artist_actions';
+
 import { START_LOADING_TRACKS,
          RECEIVE_SINGLE_TRACK,
          START_LOADING_TRACK,
          RECEIVE_LOADED_TRACK
 } from '../actions/audio_player_actions';
 
-import { ARTIST_LOADING, RECEIVE_LOADED_ARTIST } from '../actions/user_actions';
+import { ARTIST_LOADING, RECEIVE_ARTIST } from '../actions/artist_actions';
 
 const initialState = {
   indexLoading: false,
@@ -30,7 +33,7 @@ const LoadingReducer = (state = initialState, action) => {
   switch (action.type) {
     case ARTIST_LOADING:
       return Object.assign({}, state, { artistLoading: true });
-    case RECEIVE_LOADED_ARTIST:
+    case RECEIVE_ARTIST:
       return Object.assign({}, state, { artistLoading: false });
     case START_LOADING_TRACK:
       return Object.assign({}, state, { detailLoading: true });
@@ -40,8 +43,7 @@ const LoadingReducer = (state = initialState, action) => {
       return Object.assign({}, state, { indexLoading: false });
     case RECEIVE_SINGLE_TRACK:
       return Object.assign({}, state, { indexLoading: false });
-    case RECEIVE_NEW_ALBUM:
-    case RECEIVE_ALBUM:
+     case RECEIVE_ALBUM:
       return Object.assign({}, state, { detailLoading: false });
     case UPDATE_ARTIST:
       return Object.assign({}, state, { artistLoading: true });

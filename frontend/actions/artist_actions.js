@@ -3,6 +3,7 @@ import { receiveErrors, clearErrors } from './error_actions';
 
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 export const RECEIVE_ARTISTS = "RECEIVE_ARTISTS";
+export const ARTIST_LOADING = "ARTIST_LOADING";
 
 // action creators
 
@@ -16,9 +17,14 @@ export const receiveArtists = artists => ({
   artists
 });
 
+export const loadArtist = () => ({
+  type: ARTIST_LOADING
+});
+
 // thunk action creators
 
 export const fetchArtist = id => dispatch => {
+  dispatch(loadArtist());
   return APIUtil.fetchArtist(id).then(artist => {
     dispatch(receiveArtist(artist));
   }, errors => (

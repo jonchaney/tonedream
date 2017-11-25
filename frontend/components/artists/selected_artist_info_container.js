@@ -6,8 +6,8 @@ import SelectedArtistInfo from './selected_artist_info';
 import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
-const mapStateToProps = ({ albums, session, loading, selectedArtist }) => ({
-  selectedArtist: selectedArtist,
+const mapStateToProps = ({ albums, session, loading, artists }) => ({
+  selectedArtist: artists.selectedArtist,
   albums: allAlbums(albums),
   loading: loading.artistLoading,
   selectedAlbum: albums.selectedAlbum
