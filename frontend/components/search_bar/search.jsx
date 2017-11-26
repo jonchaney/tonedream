@@ -37,11 +37,12 @@ class Search extends React.Component {
     this.setState({ value: e.currentTarget.value });
   }
 
-  redirect(url) {
-    console.log(url);
+  redirect(url, id) {
     this.props.history.push(`/${url}`);
     // i don't know why its not redirecting automatically, quick fix.
-    location.reload();
+    if (this.props.artist.id !== id) {
+      location.reload();
+    }
   }
 
   searchResults() {
@@ -69,8 +70,7 @@ class Search extends React.Component {
               url = `albums/${result.id}`;
             } 
             return (
-              // <Link to={`./${url}`} key={idx} action="replace">
-              <li key={idx} onClick={() => this.redirect(url)}>
+              <li key={idx} onClick={() => this.redirect(url, result.id)}>
                     <div key={idx+10}>
                     <img src={result.image} />
                   </div>
@@ -79,7 +79,6 @@ class Search extends React.Component {
                       <p>{result.type}</p>
                     </div>
                 </li>
-              // </Link>
             );
           })}
         </ul>   

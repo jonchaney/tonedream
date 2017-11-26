@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     errors: state.errors,
     results: resultsArray(state.search.results),
     currentUser: state.session.currentUser,
+    artist: state.artists.selectedArtist
   });
 }
 
