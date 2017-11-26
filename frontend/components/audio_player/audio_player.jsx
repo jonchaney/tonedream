@@ -10,17 +10,17 @@ class AudioPlayer extends React.Component {
 
   componentWillMount() {
     // get featured artist by default
-    // if (!this.props.selectedTrack.id) {
-    //   this.props.fetchAlbum(313)
-    //   .then(() => {
-    //     this.props.fetchUser(145)
-    //   .then(() => {
-    //     this.props.mergeSelectedAlbum(this.props.album);
-    //     this.props.mergeSelectedArtist(this.props.artist);
-    //     this.props.mergeSelectedTrack(this.props.tracks[0]);
-    //     });
-    //   });
-    // }
+    if (!this.props.selectedTrack.id) {
+      this.props.fetchAlbum(354)
+      .then(() => {
+        this.props.fetchArtist(15)
+      .then(() => {
+        this.props.mergeSelectedAlbum(this.props.album);
+        this.props.mergeSelectedArtist(this.props.artist);
+        this.props.mergeSelectedTrack(this.props.tracks[0]);
+        });
+      });
+    }
   }
 
   renderPlayOrPause() {

@@ -39,7 +39,7 @@ class TrackIndex extends React.Component {
       <div className="album-main">
           <div className="album-info">
               <h1>{this.props.selectedAlbum.title}</h1>
-              {/* <p>by {this.props.selectedArtist.name}</p> */}
+              {<p>by {this.props.selectedArtist.name}</p>}
               <div>
               <div className="track-list">
                   {

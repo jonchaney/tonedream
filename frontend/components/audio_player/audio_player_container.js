@@ -6,7 +6,7 @@ import {
   fetchAlbum
 } from '../../actions/album_actions';
 
-import { fetchUser } from '../../actions/user_actions';
+import { fetchArtist } from '../../actions/artist_actions';
 
 import {
   fetchSelectedTrack,
@@ -27,7 +27,7 @@ import { selectAllTracks } from '../../reducers/selectors';
 
 import AudioPlayer from './audio_player';
 
-const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
+const mapStateToProps = ({ albums, session, audio_player, artists }) => {
   return {
     selectedAlbum: audio_player.selectedAlbum,
     selectedTrack: audio_player.selectedTrack,
@@ -39,7 +39,7 @@ const mapStateToProps = ({ albums, session, audio_player, selectedArtist }) => {
     shuffled: audio_player.trackStatus.shuffle,
     mute: audio_player.trackStatus.mute,
     album: albums.selectedAlbum,
-    artist: selectedArtist
+    artist: artists.selectedArtist
   };
 };
 
@@ -57,7 +57,7 @@ const mapDispatchToProps = dispatch => ({
   mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
   mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
   mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album)),
-  fetchUser: (user) => dispatch(fetchUser(user))
+  fetchArtist: (artist) => dispatch(fetchArtist(artist))
 });
 
 export default withRouter(connect(
