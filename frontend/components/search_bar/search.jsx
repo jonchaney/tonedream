@@ -24,7 +24,6 @@ class Search extends React.Component {
   checkActiveSearch() {
     if (this.props.results[0]) {
       this.props.clearResults();
-      // this.setState({ value: "" });
     }
   }
 
