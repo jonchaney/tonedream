@@ -18,9 +18,7 @@ import {
   loopAlbum,
   receiveTrack,
   clearTrack,
-  mergeSelectedAlbum,
-  mergeSelectedArtist,
-  mergeSelectedTrack
+  receiveAudio
 } from '../../actions/audio_player_actions';
 
 import { selectAllTracks } from '../../reducers/selectors';
@@ -39,6 +37,7 @@ const mapStateToProps = ({ albums, session, audio_player, artists }) => {
     shuffled: audio_player.trackStatus.shuffle,
     mute: audio_player.trackStatus.mute,
     album: albums.selectedAlbum,
+    track: selectAllTracks(albums.selectedAlbum.tracks)[0],
     artist: artists.selectedArtist
   };
 };
@@ -54,9 +53,7 @@ const mapDispatchToProps = dispatch => ({
   clearTrack: () => dispatch(clearTrack()),
   receiveTrack: (track) => dispatch(receiveTrack(track)),
   fetchAlbum: (id) => dispatch(fetchAlbum(id)),
-  mergeSelectedTrack: (id) => dispatch(mergeSelectedTrack(id)),
-  mergeSelectedAlbum: (album) => dispatch(mergeSelectedAlbum(album)),
-  mergeSelectedArtist: (album) => dispatch(mergeSelectedArtist(album)),
+  receiveAudio: (album, artist, track) => dispatch(receiveAudio(album, artist, track)),
   fetchArtist: (artist) => dispatch(fetchArtist(artist))
 });
 

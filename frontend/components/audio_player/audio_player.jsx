@@ -14,10 +14,8 @@ class AudioPlayer extends React.Component {
       this.props.fetchAlbum(354)
       .then(() => {
         this.props.fetchArtist(15)
-      .then(() => {
-        this.props.mergeSelectedAlbum(this.props.album);
-        this.props.mergeSelectedArtist(this.props.artist);
-        this.props.mergeSelectedTrack(this.props.tracks[0]);
+        .then(() => {
+          this.props.receiveAudio(this.props.album, this.props.artist, this.props.track);
         });
       });
     }

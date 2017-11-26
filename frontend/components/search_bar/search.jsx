@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Search extends React.Component {
   constructor(props) {
@@ -38,6 +38,12 @@ class Search extends React.Component {
     this.setState({ value: e.currentTarget.value });
   }
 
+  redirect(url) {
+    console.log(url);
+    this.props.history.push(`/${url}`);
+
+  }
+
   searchResults() {
     if (this.props.results.length == 0) {
       return;
@@ -58,13 +64,13 @@ class Search extends React.Component {
       return (
         <ul className="search-results">
           {this.props.results.slice(0,4).map((result, idx) => {
-            let url = `./artists/${result.id}`;
+            let url = `artists/${result.id}`;
             if (result.type !== 'Artist') {
               url = `albums/${result.id}`;
             } 
             return (
-              <Link to={`./${url}`} key={idx}>
-                <li>
+              // <Link to={`./${url}`} key={idx} action="replace">
+              <li key={idx} onClick={() => this.redirect(url)}>
                     <div key={idx+10}>
                     <img src={result.image} />
                   </div>
@@ -73,7 +79,7 @@ class Search extends React.Component {
                       <p>{result.type}</p>
                     </div>
                 </li>
-              </Link>
+              // </Link>
             );
           })}
         </ul>   

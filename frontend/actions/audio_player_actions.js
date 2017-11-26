@@ -6,34 +6,24 @@ export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const CLEAR_TRACK = "CLEAR_TRACK";
 export const CLEAR_TRACKS = "CLEAR_TRACKS";
 export const PAUSE_PLAY_TRACK = "PAUSE_PLAY_TRACK";
-export const MERGE_SELECTED_ALBUM = "MERGE_SELECTED_ALBUM";
-export const MERGE_SELECTED_TRACK = "MERGE_SELECTED_TRACK";
-export const MERGE_SELECTED_ARTIST = "MERGE_SELECTED_ARTIST";
+// export const MERGE_SELECTED_ALBUM = "MERGE_SELECTED_ALBUM";
+// export const MERGE_SELECTED_TRACK = "MERGE_SELECTED_TRACK";
+// export const MERGE_SELECTED_ARTIST = "MERGE_SELECTED_ARTIST";
 export const PAUSE_TRACK = "PAUSE_TRACK";
 export const PLAY_TRACK = "PLAY_TRACK";
 export const MUTE_TRACK = "MUTE_TRACK";
 export const SHUFFLE = "SHUFFLE_TRACK";
 export const LOOP_ALBUM = "LOOP_ALBUM";
 export const LOOP_SONG = "LOOP_SONG";
+export const RECEIVE_AUDIO = "RECEIVE_AUDIO";
 
 // action creators
 
-// merge album data with audio_player state 
-export const mergeSelectedAlbum = album => ({
-  type: MERGE_SELECTED_ALBUM,
-  album
-});
-
-// merge playing track data with audio_player state 
-export const mergeSelectedTrack = track => ({
-  type: MERGE_SELECTED_TRACK,
+export const receiveAudio = (album, artist, track) => ({
+  type: RECEIVE_AUDIO,
+  album,
+  artist,
   track
-});
-
-// merge playing artist data with audio_player state 
-export const mergeSelectedArtist = artist => ({
-  type: MERGE_SELECTED_ARTIST,
-  artist
 });
 
 export const receiveTrack = track => ({

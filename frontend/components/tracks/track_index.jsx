@@ -15,9 +15,7 @@ class TrackIndex extends React.Component {
     } else if (this.props.playing && this.props.selectedTrack.id === track.id) {
       this.props.pauseTrack();
     } else {
-      this.props.mergeSelectedTrack(track);
-      this.props.mergeSelectedAlbum(this.props.selectedAlbum);
-      this.props.mergeSelectedArtist(this.props.selectedArtist);
+      this.props.receiveAudio(this.props.selectedAlbum, this.props.selectedArtist, track);
       this.props.playTrack();
     }
   }

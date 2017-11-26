@@ -13,9 +13,10 @@ import {
   SHUFFLE,
   LOOP_ALBUM,
   LOOP_SONG,
-  MERGE_SELECTED_ALBUM,
-  MERGE_SELECTED_TRACK,
-  MERGE_SELECTED_ARTIST
+  // MERGE_SELECTED_ALBUM,
+  // MERGE_SELECTED_TRACK,
+  // MERGE_SELECTED_ARTIST,
+  RECEIVE_AUDIO
 } from '../actions/audio_player_actions';
 
 const defaultState = {
@@ -115,14 +116,10 @@ const TracksReducer = (state = defaultState, action) => {
       return defaultState;
     case CLEAR_TRACK:
       return merge({}, state, { selectedTrack: defaultState.selectedTrack });
-    case MERGE_SELECTED_ALBUM:
-      newState.selectedAlbum = action.album;
-      return newState;
-    case MERGE_SELECTED_TRACK:
-      newState.selectedTrack = action.track;
-      return newState;
-    case MERGE_SELECTED_ARTIST:
+    case RECEIVE_AUDIO:
       newState.selectedArtist = action.artist;
+      newState.selectedTrack = action.track;
+      newState.selectedAlbum = action.album;
       return newState;
     default:
     return state;

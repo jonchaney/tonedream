@@ -47,6 +47,10 @@ body {
   background: #F2FFE2;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .header {
   font-family: 'MissionGothic-Light', sans-serif;
   font-weight: 800;
