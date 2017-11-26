@@ -41,7 +41,8 @@ class Search extends React.Component {
   redirect(url) {
     console.log(url);
     this.props.history.push(`/${url}`);
-
+    // i don't know why its not redirecting automatically, quick fix.
+    location.reload();
   }
 
   searchResults() {

@@ -11,13 +11,13 @@ class AudioPlayer extends React.Component {
   componentWillMount() {
     // get featured artist by default
     if (!this.props.selectedTrack.id) {
-      this.props.fetchAlbum(354)
-      .then(() => {
-        this.props.fetchArtist(15)
-        .then(() => {
-          this.props.receiveAudio(this.props.album, this.props.artist, this.props.track);
-        });
-      });
+      // this.props.fetchAlbum(354)
+      // .then(() => {
+      //   // this.props.fetchArtist(15)
+      //   .then(() => {
+      //     this.props.receiveAudio(this.props.album, this.props.artist, this.props.track);
+      //   });
+      // });
     }
   }
 
