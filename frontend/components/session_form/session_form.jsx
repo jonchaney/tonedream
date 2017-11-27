@@ -126,19 +126,19 @@ class SessionForm extends React.Component {
                 {this.renderErrors()}
                 <div className="login-input">
                   <div className="item">
-                    <div className="login-label">
-                      <label>
-                        {placeholder}
-                      </label>
-                    </div>
-                    <div>
-                      <input type="text"
-                        autoFocus="autofocus"
-                        className="login-input"
-                        value={this.state.field}
-                        onChange={this.update('field')}
-                      />
-                    </div>
+                      <div className="login-label">
+                        <label>
+                          {placeholder}
+                        </label>
+                      </div>
+                      <div>
+                        <input type="text"
+                          autoFocus="autofocus"
+                          className="login-input"
+                          value={this.state.field}
+                          onChange={this.update('field')}
+                        />
+                        </div>
                   </div>
                   <div className="item">
                     <div className="login-label">

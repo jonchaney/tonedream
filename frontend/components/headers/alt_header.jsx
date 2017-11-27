@@ -6,11 +6,6 @@ import SearchContainer from '../search_bar/search_container';
 class AltHeader extends React.Component {
   constructor(props) {
     super(props);
-    
-    this.state = {
-      show: false
-    };
-
   }
 
   greeting() {
@@ -39,21 +34,11 @@ class AltHeader extends React.Component {
         <ul>
           <Link to={`/users/${this.props.currentUser.id}`}><li>home</li></Link>
           <li>add artists</li>
-          <li>settings</li>
+          <Link to={`/settings`}><li>settings</li></Link>
           <li onClick={() => this.props.logout()}>logout</li>
         </ul>
       );
   }
-
-  displayList() {
-    // if (this.state.show) {
-    //   this.setState({ show: false });
-    // } else {
-    //   this.setState({ show: true });
-    // }
-  }
-
-
 
   render() {
     return (

@@ -12,7 +12,7 @@ import GreetingContainer from './greeting/greeting_container';
 import HomeContainer from './greeting/home_container';
 import ArtistShowContainer from './artists/artist_show_container';
 import ArtistIndexContainer from './artists/artist_index_container';
-// import SettingsFormContainer from './artists/settings_form_container';
+import EditFormContainer from './artists/edit_form_container';
 import AlbumIndexContainer from './albums/album_index_container';
 import AlbumShowContainer from './albums/album_show_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
@@ -31,7 +31,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      {/* <LoginRoute path="/settings" component={SettingsFormContainer} />  */}
+      {<LoginRoute path="/settings" component={EditFormContainer} /> }
       <Route path="/artists/:id" component={ArtistShowContainer} /> 
       <Route path="/albums/:id" component={AlbumShowContainer} /> 
       <LoginRoute path="/users/:user_id" component={ArtistIndexContainer} />  
