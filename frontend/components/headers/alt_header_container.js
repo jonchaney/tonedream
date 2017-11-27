@@ -6,6 +6,7 @@ import AltHeader from './alt_header';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = dispatch => ({

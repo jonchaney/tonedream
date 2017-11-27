@@ -6,7 +6,54 @@ import SearchContainer from '../search_bar/search_container';
 class AltHeader extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      show: false
+    };
+
   }
+
+  greeting() {
+    if (this.props.loggedIn) {
+      return (
+        <div className="settings-dropdown">
+          <div className="settings-main">
+            <img src={this.props.currentUser.image_url} />
+            <p>{this.props.currentUser.username}</p>
+            <i className="fa fa-caret-down" aria-hidden="true"></i>
+          </div>
+          <div className="settings-list">
+            {this.settings()}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <GreetingContainer />
+      );
+    }
+  }
+
+  settings() {
+      return (
+        <ul>
+          <Link to={`/users/${this.props.currentUser.id}`}><li>home</li></Link>
+          <li>add artists</li>
+          <li>settings</li>
+          <li onClick={() => this.props.logout()}>logout</li>
+        </ul>
+      );
+  }
+
+  displayList() {
+    // if (this.state.show) {
+    //   this.setState({ show: false });
+    // } else {
+    //   this.setState({ show: true });
+    // }
+  }
+
+
 
   render() {
     return (
@@ -26,7 +73,7 @@ class AltHeader extends React.Component {
         <div className="alt-search">
             <SearchContainer />
         </div>
-            <GreetingContainer />
+            {this.greeting()}
       </div>
     );
   }

@@ -153,3 +153,56 @@ p.main-tagline {
   display: flex;
   flex-direction: column;
 }
+
+.settings-dropdown {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-size: 16px;
+    color: #649922;
+    padding: 16px 0px 0 59px;
+    margin: 0 20px 0 0;
+    a {
+      color: #649922;
+    }
+    p {
+      font-weight: bold;
+      padding: 0 10px 0 0;
+    }
+    .settings-main {
+      display: flex;
+    i.fa.fa-caret-down {
+        padding: 3px 10px 0 0;
+      }
+    img {
+      width: 30px;
+      height: 30px;
+      margin: -4px 12px 0px 0;
+    }
+    }
+    .settings-list {
+      display: none;
+      padding: 9px 0 0 0;
+      ul {
+        background-color: #ECECEC;
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        margin: 0px 0 0 -60px;
+        li {
+         padding: 10px 0px 10px 15px;
+        }
+        li:hover {
+          background-color: #E2E2E2;
+        }
+        li:last-child {
+          padding: 10px 0px 10px 15px;
+        }
+      }
+    }
+  }
+
+  .settings-dropdown:hover {
+    background-color: #CBCBCB;
+    .settings-list  {
+      display: block;
+    }
+  }
