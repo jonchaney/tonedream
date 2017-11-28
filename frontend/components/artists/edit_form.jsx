@@ -20,6 +20,10 @@ class EditForm extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let user = {

@@ -9,7 +9,7 @@ class AlbumIndex extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.location.pathname === '/profile'){
       this.props.fetchAlbums();
     }
