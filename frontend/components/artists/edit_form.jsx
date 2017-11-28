@@ -22,12 +22,19 @@ class EditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let formData = new FormData();
-    formData.append("user[username]", this.state.username);
-    formData.append("user[email]", this.state.email);
-    formData.append("user[image]", this.state.imageUrl);
-
-    this.props.updateUserProfile(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    // let formData = new FormData();
+    // formData.append("user[username]", this.state.username);
+    // formData.append("user[email]", this.state.email);
+    // formData.append("user[image]", this.state.imageUrl);
+    let user = {
+      username: this.state.username,
+      email: this.state.email,
+      image: this.state.imageUrl,
+      id: this.state.id
+    };
+    console.log(user);
+    // this.props.updateUserProfile(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    this.props.updateUser(user).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
   }
 
   updateFile(e) {
@@ -47,15 +54,23 @@ class EditForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    //   return(
+    //     <ul>
+    //       {this.props.errors.map((error, i) => (
+    //         <li key={`error-${i}`}>
+    //           {error}
+    //         </li>
+    //       ))}
+    //     </ul>
+    // );
+  }
 
   render() {
-    let styles = {
-      marginTop: 56
-    }
     return (
-      <div className="login-form-container" style={styles}>
+      <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {/* this.renderErrors()  */}
+          {this.renderErrors() }
           <div className="login-form">
             <li>Settings</li>
             <div className="top-divider"></div>

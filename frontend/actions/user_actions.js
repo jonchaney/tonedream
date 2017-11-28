@@ -1,5 +1,6 @@
-import { receiveCurrentUser } from './session_actions';
 import * as APIUtil from '../util/user_api_util';
+import { receiveCurrentUser } from './session_actions';
+import { receiveErrors, clearErrors } from './error_actions';
 
 export const UPDATE_ARTIST = "UPDATE_ARTIST";
 export const RECEIVE_UPDATED_USER = "RECEIVE_UPDATED_USER";
@@ -35,12 +36,22 @@ export const updateUserProfile = (formData, id) => (dispatch) => {
   );
 };
 
-export const updateUser = (user) => (dispatch) => {
-  dispatch(updatingArtist);
-  return APIUtil.updateUser(user).then(
-    response => dispatch(receiveCurrentUser(response))
-  );
-};
+export const updateUser = user => dispatch => (
+  // dispatch(updatingArtist);
+  APIUtil.updateUser(user).then(response => {
+    dispatch(receiveCurrentUser(response))
+  }, err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
+// export const login = user => dispatch => (
+//   APIUtil.login(user).then(user => {
+//     dispatch(receiveCurrentUser(user));
+//   }, err => (
+//     dispatch(receiveErrors(err.responseJSON))
+//   ))
+// );
 
 export const fetchUser = id => dispatch => {
   return APIUtil.getUser(id).then(

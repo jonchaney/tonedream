@@ -169,14 +169,14 @@ p.main-tagline {
     }
     .settings-main {
       display: flex;
-    i.fa.fa-caret-down {
-        padding: 3px 10px 0 0;
+      i.fa.fa-caret-down {
+          padding: 3px 10px 0 0;
+        }
+      img {
+        width: 30px;
+        height: 30px;
+        margin: -4px 12px 0px 0;
       }
-    img {
-      width: 30px;
-      height: 30px;
-      margin: -4px 12px 0px 0;
-    }
     }
     .settings-list {
       display: none;

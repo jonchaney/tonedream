@@ -33,7 +33,7 @@ class AltHeader extends React.Component {
       return (
         <ul>
           <Link to={`/users/${this.props.currentUser.id}`}><li>home</li></Link>
-          <li>add artists</li>
+          <li>add/edit artists</li>
           <Link to={`/settings`}><li>settings</li></Link>
           <li onClick={() => this.props.logout()}>logout</li>
         </ul>

@@ -6,15 +6,15 @@ export const updateUser = (user) => {
   });
 };
 
-export const updateProfile = (formData, id) => {
-  return $.ajax({
+export const updateProfile = (formData, id) => (
+  $.ajax({
     url: `api/users/${id}`,
     type: 'PATCH',
     processData: false,
     contentType: false,
     data: formData,
-  });
-};
+  })
+);
 
 export const getUser = id => {
   return $.ajax({
