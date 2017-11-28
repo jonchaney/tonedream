@@ -2,8 +2,6 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_USER,
-  RECEIVE_ERRORS,
-  CLEAR_ERRORS
 } from '../actions/user_actions';
 
 const nullUser = {
@@ -23,15 +21,6 @@ const UserReducer = (state = nullUser, action) => {
       return merge({}, nullUser, 
         action.user
       );
-    case RECEIVE_ERRORS:
-      const newErrors = action.errors;
-      return merge({}, nullUser, {
-        errors: newErrors
-      });
-    case CLEAR_ERRORS:
-      return merge({}, state, {
-        errors: []
-      });
     default:
       return state;
   }

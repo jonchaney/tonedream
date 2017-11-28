@@ -165,7 +165,7 @@ class AudioPlayer extends React.Component {
       let minutes;
       let seconds;
       let duration = window.Howler._howls[0]._duration;
-      console.log(duration);
+      // console.log(duration);
       minutes = Math.floor(duration / MINUTE);
       seconds = Math.floor(((duration / MINUTE) - minutes) * MINUTE);
       return `${minutes}:${seconds}`;

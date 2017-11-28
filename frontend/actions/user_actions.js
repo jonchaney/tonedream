@@ -39,7 +39,7 @@ export const updateUserProfile = (formData, id) => (dispatch) => {
 export const updateUser = user => dispatch => (
   // dispatch(updatingArtist);
   APIUtil.updateUser(user).then(response => {
-    dispatch(receiveCurrentUser(response))
+    dispatch(receiveCurrentUser(response));
   }, err => (
     dispatch(receiveErrors(err.responseJSON))
   ))

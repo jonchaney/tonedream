@@ -6,8 +6,9 @@ import EditForm from './edit_form';
 import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
-const mapStateToProps = ({ albums, session, loading }) => ({
+const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,
+  errors: session.errors
 });
 
 const mapDispatchToProps = dispatch => ({
