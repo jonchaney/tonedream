@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  validates :name, :bio, :location, presence: true
+  validates :name, uniqueness: true, presence: true
   
   has_many :albums
   has_and_belongs_to_many :users

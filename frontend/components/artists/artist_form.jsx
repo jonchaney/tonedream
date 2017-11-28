@@ -15,7 +15,7 @@ class ArtistForm extends React.Component {
   }
 
   componentWillMount() {
-    this.props.clearErrors();
+    this.props.clearArtistErrors();
   }
 
   handleSubmit(e) {
@@ -65,7 +65,6 @@ class ArtistForm extends React.Component {
       <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
-            <p>Artists</p>
             {this.renderErrors()}
               <div className="item">
                   <input type="text"
@@ -85,7 +84,7 @@ class ArtistForm extends React.Component {
                   />
               </div>
               <div className="item">
-                  <input type="text"
+                  <textarea type="text"
                     className="artist-input"
                     /* value={this.state.bio} */
                     onChange={this.update('bio')}
