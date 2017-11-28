@@ -18,17 +18,6 @@ class ArtistShow extends React.Component {
     } );
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.match.params.id !== nextProps.match.params.id) {
-  //     this.props.fetchUser(nextProps.match.params.id).then(() => {
-  //       // this.props.fetchAlbums(nextProps.match.params.user_id);
-  //     });
-  //   }
-  //   if (this.props.location.pathname !== nextProps.location.pathname) {
-  //     this.props.clearAlbums();
-  //   }
-  // }
-
   render() {
     return (
       <div className="artist-profile">

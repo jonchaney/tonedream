@@ -5,12 +5,6 @@ import Root from './components/root';
 
 import { updateUser } from './actions/user_actions';
 
-// current state of code is not what is pushed to heroku
-// COMPLETED THUS FAR
-
-// database has been redesigned
-// APIs rewritten and tested
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {

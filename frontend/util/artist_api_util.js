@@ -13,11 +13,11 @@ export const fetchArtists = () => (
 );
 
 
-export const createArtist = data => (
+export const createArtist = artist => (
   $.ajax({
     method: 'POST',
     url: 'api/artists',
-    data
+    data: { artist }
   })
 );
 

@@ -5,6 +5,11 @@ import {
   RECEIVE_ARTISTS
 } from '../actions/artist_actions';
 
+import {
+  RECEIVE_ARTIST_ERRORS,
+  CLEAR_ARTIST_ERRORS
+} from '../actions/error_actions';
+
 const defaultState = {
   selectedArtist: {
     name: null,
@@ -21,7 +26,8 @@ const defaultState = {
       image_url: null,
       id: null,
     }
-  ]
+  ],
+  errors: []
 };
 
 const ArtistReducer = (state = defaultState, action) => {
@@ -33,6 +39,12 @@ const ArtistReducer = (state = defaultState, action) => {
       return merge({}, newState);
     case RECEIVE_ARTISTS:
       newState.allArtists = action.artists;
+      return merge({}, newState);
+    case RECEIVE_ARTIST_ERRORS:
+      newState.errors = action.errors;
+      return merge({}, newState);
+    case CLEAR_ARTIST_ERRORS:
+      newState.errors = [];
       return merge({}, newState);
     default:
       return state;

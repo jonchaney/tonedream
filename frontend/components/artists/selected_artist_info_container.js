@@ -7,15 +7,10 @@ import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ albums, session, loading, artists }) => ({
-  selectedArtist: artists.selectedArtist,
-  albums: allAlbums(albums),
-  loading: loading.artistLoading,
-  selectedAlbum: albums.selectedAlbum
+  selectedArtist: artists.selectedArtist
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAlbums: (user) => dispatch(fetchAlbums(user)),
-  fetchTracks: () => dispatch(fetchTracks())
 });
 
 export default withRouter(connect(

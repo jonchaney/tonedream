@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import AlbumIndexContainer from '../albums/album_index_container';
-import TrackIndexContainer from '../tracks/track_index_container';
-import LoadingIcon from '../albums/loading_icon';
 
-class EditForm extends React.Component {
+class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -135,4 +131,4 @@ class EditForm extends React.Component {
   }
 }
 
-export default EditForm;
+export default EditUserForm;

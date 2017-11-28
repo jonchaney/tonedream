@@ -6,8 +6,8 @@ class Api::ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-    current_user.artists << @artist
     if @artist.save
+      current_user.artists << @artist
       render 'api/artists/show'
     else
       render json: @artist.errors.full_messages, status: 422
