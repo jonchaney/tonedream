@@ -40,8 +40,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      <LoginRoute path="/settings" component={EditUserFormContainer} /> 
-      <LoginRoute exact path="/artists" component={EditPageContainer} /> 
+      <LoginRoute path="/settings" component={EditPageContainer} /> 
       <Route path="/artists/:id" component={ArtistShowContainer} /> 
       <Route path="/albums/:id" component={AlbumShowContainer} /> 
       <LoginRoute path="/users/:user_id" component={ArtistIndexContainer} />  

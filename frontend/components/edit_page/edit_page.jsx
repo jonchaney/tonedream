@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ArtistFormContainer from '../artists/artist_form_container';
+import EditUserFormContainer from '../users/edit_user_form_container';
 
 
 class EditPage extends React.Component {
@@ -23,10 +24,14 @@ class EditPage extends React.Component {
       return;
     } else if (this.state.show === "edit album") {
       return;
+    } else if (this.state.show === "account settings") {
+      return (
+        <EditUserFormContainer />
+      );
     }
   }
 
-  renderListItem(itemType, currentItemStyled) {
+  renderListItem(itemType, currentItemShown) {
     let styles = {
       borderLeftWidth: 4,
       borderLeftColor: "#649922",
@@ -38,7 +43,7 @@ class EditPage extends React.Component {
       background: '#fff'
     };
 
-    if (itemType === currentItemStyled) {
+    if (itemType === currentItemShown) {
       return (
         <li style={styles} onClick={() => this.setState({ show: itemType })}>{itemType}</li>
       );
@@ -50,19 +55,20 @@ class EditPage extends React.Component {
   }
 
   render() {
-    let currentItemStyled = this.state.show;
+    let currentItemShown = this.state.show;
     return (
       <div className="edit-page-container">
         <div className="edit-page-div">
           <div>
             <div>
-              <p>Edit</p>
+              <p>Settings</p>
             </div>
             <ul className="edit-page-nav">
-              {this.renderListItem("add artist", currentItemStyled)}
-              {this.renderListItem("edit artist", currentItemStyled)}
-              {this.renderListItem("add album", currentItemStyled)}
-              {this.renderListItem("edit album", currentItemStyled)}
+              {this.renderListItem("add artist", currentItemShown)}
+              {this.renderListItem("edit artist", currentItemShown)}
+              {this.renderListItem("add album", currentItemShown)}
+              {this.renderListItem("edit album", currentItemShown)}
+              {this.renderListItem("account settings", currentItemShown)}
             </ul>
           </div>
         </div>
