@@ -1,0 +1,29 @@
+.edit-page-container {
+    display: flex;
+}
+
+.edit-page-div {
+    padding: 67px 0px 0 11px;
+    border-right: 1px solid #eaeaea;
+    width: 220px;
+    height: -webkit-fill-available;
+    background: white;
+}
+
+.edit-page-nav {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-size: 20px;
+    padding: 13px 43px 0px 18px;
+    li:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    li {
+      padding: 0 0 16px 0;
+      font-weight: bold;
+    }
+}
+
+.edit-page-form {
+  padding: 70px 0 0px 40px;
+}

@@ -15,6 +15,7 @@ import FeaturedArtistContainer from './artists/featured_artist_container';
 import ArtistShowContainer from './artists/artist_show_container';
 import ArtistIndexContainer from './artists/artist_index_container';
 import ArtistFormContainer from './artists/artist_form_container';
+import EditPageContainer from './edit_page/edit_page_container';
 // users
 import EditUserFormContainer from './users/edit_user_form_container';
 // albums
@@ -40,7 +41,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/guest" component={SessionFormContainer} /> 
       <LoginRoute path="/settings" component={EditUserFormContainer} /> 
-      <LoginRoute exact path="/artists" component={ArtistFormContainer} /> 
+      <LoginRoute exact path="/artists" component={EditPageContainer} /> 
       <Route path="/artists/:id" component={ArtistShowContainer} /> 
       <Route path="/albums/:id" component={AlbumShowContainer} /> 
       <LoginRoute path="/users/:user_id" component={ArtistIndexContainer} />  
