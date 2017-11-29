@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchArtists } from '../../actions/artist_actions';
+import { fetchArtists, clearArtist } from '../../actions/artist_actions';
 import { selectAllArtistsIds } from '../../reducers/selectors';
 
 import SelectedArtistInfo from './selected_artist_info';
@@ -14,6 +14,7 @@ const mapStateToProps = ({ albums, session, loading, artists }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchArtists: () => dispatch(fetchArtists()),
+  clearArtist: () => dispatch(clearArtist())
 });
 
 export default withRouter(connect(

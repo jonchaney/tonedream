@@ -42,7 +42,7 @@ const ArtistReducer = (state = defaultState, action) => {
       newState.allArtists = action.artists;
       return merge({}, newState);
     case RECEIVE_ARTIST_ERRORS:
-      newState.errors = action.errors;
+      newState.errors = action.errors.responseJSON;
       return merge({}, newState);
     case CLEAR_ARTIST_ERRORS:
       newState.errors = [];

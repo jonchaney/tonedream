@@ -6,6 +6,10 @@ class SelectedArtistInfo extends React.Component {
     super(props);
   }
 
+  componentDidUnmount() {
+    this.props.clearArtist();
+  }
+
   render() {
     if (this.props.loading) {
       return (<div>Loading...</div>);

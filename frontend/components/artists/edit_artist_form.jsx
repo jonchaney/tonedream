@@ -24,7 +24,6 @@ class EditArtistForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.artist);
     if (this.state.id !== nextProps.artist.id) {
       this.setState(nextProps.artist);
     }
@@ -39,7 +38,6 @@ class EditArtistForm extends React.Component {
       image: this.state.imageUrl,
       id: this.state.id
     };
-    console.log(artist);
     this.props.updateArtist(artist).then(() => this.props.history.push(`/artists/${this.props.artist.id}`));
   }
 
@@ -61,17 +59,17 @@ class EditArtistForm extends React.Component {
   }
 
   renderErrors() {
-    // if (this.props.errors) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.map((error, i) => (
-    //         <li key={`error-${i}`}>
-    //           {error}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
+    if (this.props.errors) {
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
