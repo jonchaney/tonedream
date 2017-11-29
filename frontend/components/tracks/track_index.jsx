@@ -38,7 +38,6 @@ class TrackIndex extends React.Component {
           <div className="album-info">
               <h1>{this.props.selectedAlbum.title}</h1>
               {<p>by {this.props.selectedArtist.name}</p>}
-              <p className="edit-button">edit</p>
               <div>
               <div className="track-list">
                   {

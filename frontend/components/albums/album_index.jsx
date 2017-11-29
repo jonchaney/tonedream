@@ -14,14 +14,6 @@ class AlbumIndex extends React.Component {
     this.props.fetchAlbum(id).then(() => this.props.history.push(`/albums/${id}`));
   }
 
-  edit() {
-    if (this.state.show) {
-      return (
-        <Link to="/edit_artist"><p>edit</p></Link>
-      );
-    }
-  }
-
   render() {
       return (
         this.props.indexLoading ?
