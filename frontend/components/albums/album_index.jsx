@@ -9,15 +9,17 @@ class AlbumIndex extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.location.pathname === '/profile'){
-      this.props.fetchAlbums();
-    }
-  }
-
   handleClick(id) {
     this.props.startLoadingSingleAlbum();
     this.props.fetchAlbum(id).then(() => this.props.history.push(`/albums/${id}`));
+  }
+
+  edit() {
+    if (this.state.show) {
+      return (
+        <Link to="/edit_artist"><p>edit</p></Link>
+      );
+    }
   }
 
   render() {

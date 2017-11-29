@@ -64,6 +64,20 @@ ul.artist-profile-list > li:not(:last-child) {
   width: 120px;
   height: 500px;
   background-color: white;
+  p {
+    border: 1px solid silver;
+    font-family: MissionGothic-Thin;
+    font-size: 16px;
+    background-color: lightyellow;
+    color: #0687f5;
+    font-weight: bold;
+    text-align: center;
+    margin: 9px 0 0 0;
+    padding: 2px 0 2px 0;
+  }
+  p:hover {
+    text-decoration: underline;
+  }
 }
 
 .user-info > ul {

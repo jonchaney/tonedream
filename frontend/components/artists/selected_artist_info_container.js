@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
-import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
-import { updateUser, updatingArtist, updateUserProfile } from '../../actions/user_actions';
-import { fetchTracks } from '../../actions/audio_player_actions';
+import { fetchArtists } from '../../actions/artist_actions';
+import { selectAllArtistsIds } from '../../reducers/selectors';
+
 import SelectedArtistInfo from './selected_artist_info';
-import { allAlbums } from '../../reducers/selectors';
+
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ({ albums, session, loading, artists }) => ({
-  selectedArtist: artists.selectedArtist
+  selectedArtist: artists.selectedArtist,
+  currentUser: session.currentUser,
+  artists: selectAllArtistsIds(artists),
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchArtists: () => dispatch(fetchArtists()),
 });
 
 export default withRouter(connect(

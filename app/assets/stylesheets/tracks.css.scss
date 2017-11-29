@@ -22,6 +22,24 @@
     font-size: 16px;
 }
 
+.edit-button {
+    border: 1px solid silver;
+    font-family: MissionGothic-Thin;
+    font-size: 16px;
+    background-color: lightyellow;
+    color: #0687f5;
+    font-weight: bold;
+    text-align: center;
+    margin: 9px 0 0 0;
+    padding: 2px 0 2px 0;
+        width: 52px;
+}
+
+.edit-button:hover {
+    text-decoration: underline;
+}
+
+
 .album-info audio { 
   width: 164px; 
 }
