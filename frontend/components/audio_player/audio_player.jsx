@@ -226,10 +226,7 @@ class AudioPlayer extends React.Component {
         </div>
       );
     } else {
-      return(
-        <div className="audio-player">
-        </div>
-      );
+      return null;
     }
   }
 }
