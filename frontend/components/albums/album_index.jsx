@@ -19,7 +19,7 @@ class AlbumIndex extends React.Component {
         this.props.indexLoading ?
           <LoadingIcon /> :
         <div className="artist-profile">
-          <h3>ALBUMS</h3>
+          {/* <h3>ALBUMS</h3> */}
           <ul className="album-index-container">
               {this.props.albums.map((album, idx) =>
                 <li key={idx} onClick={() => this.handleClick(album.id)}>

@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_ARTIST,
-  RECEIVE_ARTISTS
+  RECEIVE_ARTISTS,
+  CLEAR_ARTIST
 } from '../actions/artist_actions';
 
 import {
@@ -45,6 +46,9 @@ const ArtistReducer = (state = defaultState, action) => {
       return merge({}, newState);
     case CLEAR_ARTIST_ERRORS:
       newState.errors = [];
+      return merge({}, newState);
+    case CLEAR_ARTIST:
+      newState.selectedArtist = defaultState.selectedArtist;
       return merge({}, newState);
     default:
       return state;

@@ -3,28 +3,68 @@ import { Link } from 'react-router-dom';
 
 import ArtistFormContainer from '../artists/artist_form_container';
 import EditUserFormContainer from '../users/edit_user_form_container';
-
+import EditArtistFormContainer from '../artists/edit_artist_form_container';
 
 class EditPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: "add artist"
+      show: "Artists"
     };
   }
 
-  renderForm() {
-    if (this.state.show === "add artist") {
+  componentDidMount() {
+    this.props.fetchArtists();
+  }
+
+  dropdownArtists() {
+    if (this.props.artists[0].id) {
+      return (
+        <select name="artists" onChange={(event) => this.change(event.target.value)}>
+          <option value="artist">Add Artist</option>
+          <optgroup label="Edit Artist">
+            {this.props.artists.map((artist) =>
+              <option key={artist.id} value={artist.id}>{artist.name}</option>
+            )}
+          </optgroup>
+        </select>
+      );
+    } else {
+      return;
+    }
+  }
+
+  change(value) {
+    if (value === "artist") {
+      this.props.clearArtist();
+    } else {
+      this.props.fetchArtist(value);
+    }
+  }
+
+  artistForm() {
+    if(this.props.selectedArtist.id) {
+      return (
+        <EditArtistFormContainer />
+      );
+    } else {
       return (
         <ArtistFormContainer />
       );
-    } else if (this.state.show === "edit artist") {
+    }
+  }
+
+  renderForm() {
+    if (this.state.show === "Artists") {
+      return (
+        <div>
+        {this.dropdownArtists()}
+        {this.artistForm()}
+        </div>
+      );
+    } else if (this.state.show === "Albums") {
       return;
-    } else if (this.state.show === "add album") {
-      return;
-    } else if (this.state.show === "edit album") {
-      return;
-    } else if (this.state.show === "account settings") {
+    } else if (this.state.show === "Account") {
       return (
         <EditUserFormContainer />
       );
@@ -45,37 +85,40 @@ class EditPage extends React.Component {
 
     if (itemType === currentItemShown) {
       return (
-        <li style={styles} onClick={() => this.setState({ show: itemType })}>{itemType}</li>
+        <li style={styles} onClick={() => this.listItemOnClick(itemType)}>{itemType}</li>
       );
     } else {
       return (
-        <li onClick={() => this.setState({ show: itemType })}>{itemType}</li>
+        <li onClick={() => this.listItemOnClick(itemType)}>{itemType}</li>
       );
     }
   }
 
+  listItemOnClick(itemType) {
+    this.props.clearArtist();
+    this.setState({ show: itemType });
+  }
+
   render() {
     let currentItemShown = this.state.show;
-    return (
-      <div className="edit-page-container">
-        <div className="edit-page-div">
-          <div>
+      return (
+        <div className="edit-page-container">
+          <div className="edit-page-div">
             <div>
-              <p>Settings</p>
+              <div>
+                <p>Settings</p>
+              </div>
+              <ul className="edit-page-nav">
+                {this.renderListItem("Artists", currentItemShown)}
+                {this.renderListItem("Albums", currentItemShown)}
+                {this.renderListItem("Account", currentItemShown)}
+              </ul>
             </div>
-            <ul className="edit-page-nav">
-              {this.renderListItem("add artist", currentItemShown)}
-              {this.renderListItem("edit artist", currentItemShown)}
-              {this.renderListItem("add album", currentItemShown)}
-              {this.renderListItem("edit album", currentItemShown)}
-              {this.renderListItem("account settings", currentItemShown)}
-            </ul>
+          </div>
+          <div className="edit-page-form">
+            {this.renderForm()}
           </div>
         </div>
-        <div className="edit-page-form">
-          {this.renderForm()}
-        </div>
-      </div>
     );
   }
 }

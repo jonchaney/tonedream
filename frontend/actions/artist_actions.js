@@ -4,12 +4,17 @@ import { receiveArtistErrors, clearErrors } from './error_actions';
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 export const RECEIVE_ARTISTS = "RECEIVE_ARTISTS";
 export const ARTIST_LOADING = "ARTIST_LOADING";
+export const CLEAR_ARTIST = "CLEAR_ARTIST";
 
 // action creators
 
 export const receiveArtist = artist => ({
   type: RECEIVE_ARTIST,
   artist
+});
+
+export const clearArtist = () => ({
+  type: CLEAR_ARTIST
 });
 
 export const receiveArtists = artists => ({
@@ -52,8 +57,8 @@ export const deleteArtist = id => dispatch => (
   APIUtil.deleteArtist(id)
 );
 
-export const updateArtist = (id, data) => dispatch => (
-  APIUtil.updateArtist(id, data).then(artist => {
+export const updateArtist = (artist) => dispatch => (
+  APIUtil.updateArtist(artist).then(artist => {
     dispatch(receiveArtist(artist));
   }, errors => (
     dispatch(receiveArtistErrors(errors))

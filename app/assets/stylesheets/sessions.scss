@@ -91,10 +91,18 @@ li.home {
     font-weight: 800;
     font-size: 20px;
     border-right: .75px solid #e9e5e5;
-    padding: 0px 20px 0 0;
+    padding: 0px 20px 0 20px;
 }
 li.home:hover {
   text-decoration: underline;
+}
+
+.logout {
+  ul {
+    li:first-child {
+      border-right: 0;
+    }
+  }
 }
 
 /****************************

@@ -1,14 +1,15 @@
 .edit-page-container {
     display: flex;
     background-color: white;
-}
-
-.edit-page-div {
+  }
+  
+  .edit-page-div {
     padding: 100px 0px 0 0px;
     border-right: 1px solid #eaeaea;
     width: 220px;
-    height: -webkit-fill-available;
     background: white;
+    height: 800px;
+    height: -webkit-fill-available;
     p {
       font-family: 'MissionGothic-Light', sans-serif;
       font-size: 25px;
