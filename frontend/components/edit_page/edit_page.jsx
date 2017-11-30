@@ -21,14 +21,17 @@ class EditPage extends React.Component {
   dropdownArtists() {
     if (this.props.artists[0].id) {
       return (
-        <select className="edit-page-dropdown" name="artists" onChange={(event) => this.change(event.target.value)}>
-          <option value="artist">Add Artist</option>
-          <optgroup label="Edit Artist">
-            {this.props.artists.map((artist) =>
-              <option key={artist.id} value={artist.id}>{artist.name}</option>
-            )}
-          </optgroup>
-        </select>
+        <div>
+          <i className="fa fa-angle-down" aria-hidden="true"></i>
+          <select className="edit-page-dropdown" name="artists" onChange={(event) => this.change(event.target.value)}>
+            <option value="artist">Add Artist</option>
+            <optgroup label="Edit Artist">
+              {this.props.artists.map((artist) =>
+                <option key={artist.id} value={artist.id}>{artist.name}</option>
+              )}
+            </optgroup>
+          </select>
+        </div>
       );
     } else {
       return;

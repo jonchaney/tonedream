@@ -64,69 +64,46 @@ class EditUserForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="login-form">
-            <li>Settings</li>
-            <div className="top-divider"></div>
-          {this.renderErrors() }
-            <div className="login-input">
-              <div className="item">
-                  <div className="login-label">
-                    <label>
-                      Username:
-                    </label>
+        <div className="artist-form-container">
+          <form onSubmit={this.handleSubmit} className="artist-form-box">
+            <div className="artist-login-form">
+            {this.renderErrors() }
+                <div className="item">
+                    <input type="text"
+                      autoFocus="autofocus"
+                      className="artist-input"
+                      value={this.state.username}
+                      onChange={this.update('username')}
+                      placeholder={'username'}
+                    />
                   </div>
-                    <div>
-                      <input type="text"
-                        autoFocus="autofocus"
-                        className="login-input"
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                        placeholder={'username'}
-                      />
-                    </div>
-                </div>
-              <div className="item">
-                  <div className="login-label">
-                    <label>
-                      Email:
-                    </label>
-                  </div>
-                  <div>
+                <div className="item">
                   <input type="text"
-                    className="login-input"
+                    className="artist-input"
                     value={this.state.email}
                     onChange={this.update('email')}
                     placeholder="email"
                   />
-                  </div>
-              </div>
-              <div className="item">
-                  <div className="login-label">
-                    <label>
-                      Profile Image:
-                    </label>
-                  </div>
-                  <div>
-                    <input type="file"
-                      className="login-input"
-                      onChange={this.updateFile}
-                      size="60"
-                    />
-                    </div>
-              </div>
-              <div className="item">
-                <label>
-                  <input type="submit"
-                    className="login-button"
-                    value="Update" />
+                </div>
+                <div className="item">
+                <label className="custom-upload-button">
+                  <p>Upload Image</p>
+                  <input type="file"
+                    className="artist-input-file"
+                    onChange={this.updateFile}
+                  />
                 </label>
-              </div>
+                </div>
+                <div className="item">
+                  <label>
+                    <input type="submit"
+                      className="login-button"
+                      value="Update" />
+                  </label>
+                </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
     );
   }
 }
