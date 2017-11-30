@@ -45,5 +45,14 @@
 // }
 
 .edit-page-form {
-  padding: 70px 0 0px 40px;
+    padding: 101px 0 0px 31px;
+  select {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-size: 13px;
+    border: none;
+    width: 305px;
+    padding: 0px 0px 0 12px;
+    height: 33px;
+    -webkit-appearance:none 
+  }
 }

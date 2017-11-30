@@ -70,30 +70,27 @@ class ArtistForm extends React.Component {
                   <input type="text"
                     autoFocus="autofocus"
                     className="artist-input"
-                    /* value={this.state.name} */
                     onChange={this.update('name')}
-                    placeholder={'name'}
+                    placeholder={'Name'}
                   />
               </div>
               <div className="item">
                   <input type="text"
                     className="artist-input"
-                    /* value={this.state.location} */
                     onChange={this.update('location')}
-                    placeholder="location"
+                    placeholder={'Location'}
                   />
               </div>
               <div className="item">
                   <textarea type="text"
-                    className="artist-input"
-                    /* value={this.state.bio} */
+                    className="artist-input-textarea"
                     onChange={this.update('bio')}
-                    placeholder="bio"
+                    placeholder={'Bio'}
                   />
               </div>
               <div className="item">
                   <input type="file"
-                    className="artist-input"
+                    className="artist-input-file"
                     onChange={this.updateFile}
                   />
                 </div>

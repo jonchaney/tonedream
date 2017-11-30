@@ -39,6 +39,16 @@ class AltHeader extends React.Component {
       );
   }
 
+  search() {
+    if (this.props.location.pathname == '/settings') {
+      return;
+    } else {
+      return (
+        <SearchContainer />
+      );
+    }
+  }
+
   render() {
     return (
       <div className="alt-head">
@@ -55,7 +65,7 @@ class AltHeader extends React.Component {
           </span>
         </div>
         <div className="alt-search">
-            <SearchContainer />
+            {this.search()}
         </div>
             {this.greeting()}
       </div>

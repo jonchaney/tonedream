@@ -48,9 +48,9 @@ export const fetchArtists = (id) => dispatch => {
 export const createArtist = artist => dispatch => (
   APIUtil.createArtist(artist).then(album => {
     dispatch(receiveArtist(artist));
-  }, err => (
-    dispatch(receiveArtistErrors(err.responseJSON))
-  ))
+  }, err => {
+    dispatch(receiveArtistErrors(err));
+  })
 );
 
 export const deleteArtist = id => dispatch => (

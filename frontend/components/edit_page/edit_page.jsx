@@ -14,13 +14,14 @@ class EditPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearArtist();
     this.props.fetchArtists();
   }
 
   dropdownArtists() {
     if (this.props.artists[0].id) {
       return (
-        <select name="artists" onChange={(event) => this.change(event.target.value)}>
+        <select className="edit-page-dropdown" name="artists" onChange={(event) => this.change(event.target.value)}>
           <option value="artist">Add Artist</option>
           <optgroup label="Edit Artist">
             {this.props.artists.map((artist) =>

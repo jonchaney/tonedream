@@ -19,13 +19,20 @@ class EditArtistForm extends React.Component {
     this.props.clearArtistErrors();
   }
 
-  componentDidUnMount() {
+  componentWillUnmount() {
     this.props.clearArtist();
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.state.id !== nextProps.artist.id) {
-      this.setState(nextProps.artist);
+      this.setState({
+        id: nextProps.artist.id,
+        name: nextProps.artist.name,
+        bio: nextProps.artist.bio,
+        location: nextProps.artist.location,
+        imageFile: null,
+        imageUrl: nextProps.artist.image_url
+      });
     }
   }
 
@@ -97,7 +104,7 @@ class EditArtistForm extends React.Component {
             </div>
             <div className="item">
               <textarea type="text"
-                className="artist-input"
+                className="artist-input-textarea"
                 value={this.state.bio}
                 onChange={this.update('bio')}
                 placeholder="bio"
@@ -105,7 +112,7 @@ class EditArtistForm extends React.Component {
             </div>
             <div className="item">
               <input type="file"
-                className="artist-input"
+                className="artist-input-file"
                 onChange={this.updateFile}
               />
             </div>

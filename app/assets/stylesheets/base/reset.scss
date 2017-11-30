@@ -42,6 +42,10 @@ video {
   vertical-align: baseline; // 2
 }
 
+textarea, input, select {
+  outline: none;
+}
+
 del {
   text-decoration: line-through;
 }
