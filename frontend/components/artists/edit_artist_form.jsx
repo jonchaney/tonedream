@@ -111,10 +111,13 @@ class EditArtistForm extends React.Component {
               />
             </div>
             <div className="item">
-              <input type="file"
-                className="artist-input-file"
-                onChange={this.updateFile}
-              />
+              <label className="custom-upload-button">
+                <p>Choose File</p>
+                <input type="file"
+                  className="artist-input-file"
+                  onChange={this.updateFile}
+                />
+              </label>
             </div>
             <div className="item">
               <label>

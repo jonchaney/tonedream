@@ -60,10 +60,18 @@ li.artist-index-item:hover {
 *****************************/
 
 .artist-login-form {
+    .login-button {
+        margin: 0 0 0 0;
+        font-family: 'MissionGothic-Light'
+    }
+    .item {
+        margin: 28px -165px 0px 0;
+    }
     .item p {
         font-family: 'MissionGothic-Light', sans-serif;
         font-size: 13px;
     }
+
     input.artist-input {
         font-family: 'MissionGothic-Light', sans-serif;
         font-size: 13px;
@@ -74,6 +82,7 @@ li.artist-index-item:hover {
         height: 34px;
         padding: 0 0 0 11px;
     }
+
     textarea.artist-input-textarea {
         font-family: 'MissionGothic-Light', sans-serif;
         font-size: 13px;
@@ -84,5 +93,13 @@ li.artist-index-item:hover {
         border-radius: 4px;
         height: 80px;
         padding: 8px 0 0 11px;
-    }   
+    }
+
+    label.custom-upload-button p {
+    border-radius: 3px;
+    padding: 10px 12px;
+    width: 282px;
+    cursor: pointer;
+    background: #f8f8f8;   
+    }
 }
