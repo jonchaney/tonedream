@@ -62,7 +62,11 @@ li.artist-index-item:hover {
 .artist-login-form {
     .login-button {
         margin: 0 0 0 0;
-        font-family: 'MissionGothic-Light'
+        font-family: 'MissionGothic-Light';
+        border-radius: 3px;
+    }
+    .login-button:hover {
+        box-shadow: 2px 2px 5px lightgray;
     }
     .item {
         margin: 28px -165px 0px 0;
@@ -77,7 +81,7 @@ li.artist-index-item:hover {
         font-size: 13px;
         background: #f8f8f8;
         width: 294px;
-        border: none;
+        border: 1px solid lightgray;
         border-radius: 4px;
         height: 34px;
         padding: 0 0 0 11px;
@@ -89,17 +93,23 @@ li.artist-index-item:hover {
         background: #f8f8f8;
         width: 294px;
         height: 53px;
-        border: none;
+        border: 1px solid lightgray;
         border-radius: 4px;
         height: 80px;
         padding: 8px 0 0 11px;
     }
 
     label.custom-upload-button p {
-    border-radius: 3px;
-    padding: 10px 12px;
-    width: 282px;
+        border-radius: 3px;
+        padding: 10px 12px;
+        width: 282px;
+        border: 1px solid lightgray;
     cursor: pointer;
-    background: #f8f8f8;   
+        background: #f8f8f8;   
     }
+}
+
+label.custom-upload-button:hover {
+    box-shadow: 1px 1px 5px #e3e3e3;
+    border-radius: 3px;
 }
