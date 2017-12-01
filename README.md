@@ -29,9 +29,7 @@ A search feature allows for quick search of the database for music. The results 
 ![artist_page](docs/images/search.png)
 
 
-# The Future
-
-Planned features:
+# Planned Features
 
 ## Audio Player
 
