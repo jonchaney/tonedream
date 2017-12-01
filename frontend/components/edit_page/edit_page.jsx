@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ArtistFormContainer from '../artists/artist_form_container';
-import EditUserFormContainer from '../users/edit_user_form_container';
 import EditArtistFormContainer from '../artists/edit_artist_form_container';
+import ArtistDropDownMenu from '../artists/artist_drop_down_menu';
+import EditUserFormContainer from '../users/edit_user_form_container';
 import AlbumFormContainer from '../albums/album_form_container';
+import AlbumDropDownMenu from '../albums/album_drop_down_menu';
 
 class EditPage extends React.Component {
   constructor(props) {
@@ -59,16 +61,39 @@ class EditPage extends React.Component {
     }
   }
 
+  albumForm() {
+    if (this.props.selectedArtist.id) {
+      return null;
+    } else {
+      return (
+        <AlbumFormContainer />
+      );
+    }
+  }
+
+  dropdownAlbum() {
+    if (this.props.selectedArtist.id) {
+      return (
+        <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} />
+      );
+    }
+  }
+
   renderForm() {
     if (this.state.show === "Artists") {
       return (
         <div>
-        {this.dropdownArtists()}
-        {this.artistForm()}
+          {this.dropdownArtists()}
+          {this.artistForm()}
         </div>
       );
     } else if (this.state.show === "Albums") {
-      return <AlbumFormContainer />;
+      return (
+        <div>
+          <ArtistDropDownMenu artists={this.props.artists} fetchArtist={this.props.fetchArtist} fetchAlbums={this.props.fetchAlbums}/>
+          {this.dropdownAlbum()}
+        </div>
+      );
     } else if (this.state.show === "Account") {
       return (
         <EditUserFormContainer />
