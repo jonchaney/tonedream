@@ -45,4 +45,4 @@ Allow User's to follow Artists and Record Labels. Create a Facebook like wall wh
 
 ## Events
 
-Provide a space for fans to go to know where their favorite bands are playing. Facebook style events.
+Facebook style events.
