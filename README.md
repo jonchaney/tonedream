@@ -11,46 +11,37 @@ platform to sell there music at no cost.
 
 # Tonedream Features
 
-
-## Artist Pages
+## Album Pages
 
 ![artist_page](docs/images/artist-page.png)
 
-All user's on tonedream are musicians. Musicians can download and upload there music and make it available for download. Tonedream utilizes minimalist design patterns
-to allow a clutter free experience for both the fan and musician. This allows for easy navigation and a focus on the music. 
+All user's on tonedream can be admin of multiple artists. They can upload there music and allow other to download it, or just make it available for streaming. Above is a screenshot of an album page.
 
-User's can upload and edit their profile -- which includes an artist/band name, bio, location, and profile picture. The album art can also be added/changed when necessary. 
-
-The song player utilizes the HTML5 audio player. To view the tracks from an album, simply click on an album.
-
-## Song Player
+## Audio Player
 
 ![artist_page](docs/images/sound_player.png)
 
-A musician can easily create, upload, download, and destroy tracks and albums. Tracks can also be edited. The editable contents of a track include: title, track number, the track itself, and whether they want it to be downloadable.
+The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album.
 
 ## Search
 
-To find other music and musicians, search is enabled on the main page. The results are split up into tracks, albums, and artist/bands. This allows for easy location of other musicians in the network. This search was implemented with the help of: [mincer_ray][mincer_ray]
-
-[mincer_ray]: https://github.com/mincer-ray/grandcamp/blob/master/app/controllers/api/searches_controller.rb
+To find other music and musicians, search is enabled on the main page. The results are split up into tracks, albums, and artist. This allows for easy location of other musicians in the network. This search was implemented with the help of
 
 ![artist_page](docs/images/search.png)
 
 
 # The Future
 
-The future is bright at tonedream. Planned features:
+Planned features:
 
-## Fan and Record Label account
+## Audio Player
 
-Fan accounts will allow musicians to more easily connect to their fans.
-Indepentent Record Label accounts will provide a central network for labels to promote and sell music.
+Add sound bar and volume adjustment.
 
-## Follows
+## Follows and a "wall"
 
-Allow Labels, Artists, and Bands to follow eachother
+Allow User's to follow Artists and Record Labels. Create a Facebook like wall where artists can share events and news that will be shown to their followers.
 
 ## Events
 
-Provide a space for fans to go to know where their favorite bands are playing.
+Provide a space for fans to go to know where their favorite bands are playing. Facebook style events.

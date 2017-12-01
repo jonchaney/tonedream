@@ -34,13 +34,13 @@ class AltHeader extends React.Component {
         <ul>
           <Link to={`/users/${this.props.currentUser.id}`}><li>home</li></Link>
           <Link to="/settings"><li>settings</li></Link>
-          <li onClick={() => this.props.logout()}>logout</li>
+          <li onClick={() => this.props.logout().then(() => this.props.history.push('/'))}>logout</li>
         </ul>
       );
   }
 
   search() {
-    if (this.props.location.pathname == '/settings') {
+    if (this.props.location.pathname === '/settings') {
       return;
     } else {
       return (

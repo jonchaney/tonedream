@@ -1,5 +1,6 @@
 class Api::SearchesController < ApplicationController
   def index
+    ## code written by [mincer_ray]: https://github.com/mincer-ray/grandcamp/blob/master/app/controllers/api/searches_controller.rb
     query = search_params[:query].downcase
     artists = Artist.where("LOWER(name) ~ ?", query)
     albums = Album.where("LOWER(title) ~ ?", query)

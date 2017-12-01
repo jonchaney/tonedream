@@ -8,19 +8,6 @@ class AudioPlayer extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    // get featured artist by default
-    if (!this.props.selectedTrack.id) {
-      // this.props.fetchAlbum(354)
-      // .then(() => {
-      //   // this.props.fetchArtist(15)
-      //   .then(() => {
-      //     this.props.receiveAudio(this.props.album, this.props.artist, this.props.track);
-      //   });
-      // });
-    }
-  }
-
   renderPlayOrPause() {
     if (this.props.playing) {
       return (
@@ -50,7 +37,6 @@ class AudioPlayer extends React.Component {
   }
 
   nextTrack() {
-    console.log(this.player.duration());
     let length = this.props.tracks.length;
     let currentTrack = this.props.selectedTrack.track_num - 1;
     let nextTrack = currentTrack;
@@ -60,7 +46,6 @@ class AudioPlayer extends React.Component {
       }
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     } else if (this.props.loopedAlbum) {
-      // if loopedAlbum is true, loop album
       nextTrack = (currentTrack + 1) % length;
       this.props.receiveTrack(this.props.tracks[nextTrack]);
     } 
@@ -97,7 +82,7 @@ class AudioPlayer extends React.Component {
   loop() {
     // if the current track is looping then loop the album on click
     if(this.props.loopedSong) {
-      this.props.loopSong()
+      this.props.loopSong();
       this.props.loopAlbum();
     // if the current album is looping, turn off looping
     } else if (this.props.loopedAlbum) {
@@ -156,13 +141,9 @@ class AudioPlayer extends React.Component {
     );
   }
 
-  timePassed() {
-
-  }
-
   getDuration() {
     if (this.props.playing) {
-      console.log(this.player.duration())
+      console.log(this.player.duration());
       return (
         <div className="duration">
           {this.player.duration()}
@@ -204,7 +185,7 @@ class AudioPlayer extends React.Component {
             </li>
           </ul>
           <div className="playback">
-            {this.timePassed()}
+           {/* {this.timePassed()} */}
             {this.renderSoundBar()}
             {/* {this.getDuration()} */}
           </div>
