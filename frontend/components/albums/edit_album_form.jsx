@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class EditAlbum extends React.Component {
+class EditAlbumForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,30 +10,33 @@ class EditAlbum extends React.Component {
     this.update = this.update.bind(this);
       this.state = {
         id: this.props.selectedAlbum.id,
+        artist_id: this.props.selectedAlbum.artist_id,
         title: this.props.selectedAlbum.title,
         date: this.props.selectedAlbum.date,
         imageFile: null,
-        imageUrl: this.props.selectedAlbum.image_url,
-        status: true
+        image: this.props.selectedAlbum.image_url,
+        tracks: this.state.tracks
     };
   }
 
   handleSubmit(e) {
-    // need to configure date so it persists
     e.preventDefault();
-    let formData = new FormData();
-    formData.append("album[title]", this.state.title);
-    formData.append("album[date]", this.state.date);
-    formData.append("album[image]", this.state.imageUrl);
-    this.props.updateFormAlbum(formData, this.state.id);
-    this.props.history.push(`/profile/album`);
+    let album = {
+      artist_id: this.state.artist_id,
+      title: this.state.title,
+      date: this.state.date,
+      image: this.state.image,
+    };
+    this.props.updateAlbum(this.state.artist_id, this.state.id, album).then(
+      () => this.props.history.push(`/albums/${this.state.id}`)
+    );
   }
 
   updateFile(e) {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({ imageFile: file, image: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -94,4 +97,4 @@ class EditAlbum extends React.Component {
   }
 }
 
-export default EditAlbum;
+export default EditAlbumForm;

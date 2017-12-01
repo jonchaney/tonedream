@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ArtistFormContainer from '../artists/artist_form_container';
 import EditUserFormContainer from '../users/edit_user_form_container';
 import EditArtistFormContainer from '../artists/edit_artist_form_container';
+import AlbumFormContainer from '../albums/album_form_container';
 
 class EditPage extends React.Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class EditPage extends React.Component {
         </div>
       );
     } else if (this.state.show === "Albums") {
-      return;
+      return <AlbumFormContainer />;
     } else if (this.state.show === "Account") {
       return (
         <EditUserFormContainer />

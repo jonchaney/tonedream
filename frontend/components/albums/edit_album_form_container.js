@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchAlbums, clearAlbums, updateFormAlbum } from '../../actions/album_actions';
+import { fetchAlbums, clearAlbums, updateAlbum } from '../../actions/album_actions';
 import { allAlbums } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
-import EditAlbum from './edit_album';
+import EditAlbumForm from './edit_album_form';
 
 const mapStateToProps = ({ albums, session, loading }) => ({
   currentUser: session.currentUser,
@@ -12,11 +12,11 @@ const mapStateToProps = ({ albums, session, loading }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateFormAlbum: (formData, id) => dispatch(updateFormAlbum(formData, id)),
+  updateAlbum: (artistId, album) => dispatch(updateAlbum(album)),
   fetchAlbums: (user) => dispatch(fetchAlbums(user)),
 });
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditAlbum));
+)(EditAlbumForm));

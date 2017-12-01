@@ -16,7 +16,7 @@
 #
 
 class Track < ApplicationRecord
-  validates :title, :track_num, :download, :album_id, :duration, presence: true
+  validates :title, :track_num, :download, :album_id, presence: true
       
   belongs_to :album
 
