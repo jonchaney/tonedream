@@ -19,7 +19,7 @@ The song player uses the React Howler Audio Player, which is a wrapper for the W
 
 ![artist_page](docs/images/artist-page.png)
 
-All user's on tonedream can be the admin of multiple artists. They can upload their music, or other if they are a record label, and allow others to download it. They also have the option of making it only available for streaming. Above is a screenshot of an album page.
+All user's on tonedream can be the admin of multiple artists. They can upload their music and allow others to download it. They also have the option of making it only available for streaming. Above is a screenshot of an album page.
 
 ## Search
 
