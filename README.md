@@ -13,7 +13,7 @@ and React/Redux.
 
 ![artist_page](docs/images/sound_player.png)
 
-The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album.
+The audio player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. I chose this player because it does not provide a UI which allowed me to style and design my own. The player can shuffle and loop a single track or album.
 
 ## Album Pages
 
