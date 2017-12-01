@@ -1,6 +1,5 @@
 ![logo](docs/image_concepts/logo1a.jpg)
 
-
 [Live Demo][tonedream]
 
 [tonedream]: https://tonedream.herokuapp.com/
