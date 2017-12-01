@@ -6,8 +6,7 @@
 [tonedream]: https://tonedream.herokuapp.com/
 
 Tonedream is an independent music network built using Ruby on Rails
-and React/Redux.  The goal of tonedream is to connect indenpendent DIY muscians and give them a 
-platform to sell there music at no cost. 
+and React/Redux. 
 
 # Tonedream Features
 
@@ -15,7 +14,7 @@ platform to sell there music at no cost.
 
 ![artist_page](docs/images/artist-page.png)
 
-All user's on tonedream can be admin of multiple artists. They can upload there music and allow other to download it, or just make it available for streaming. Above is a screenshot of an album page.
+All user's on tonedream can be the admin of multiple artists. They can upload their music, or other if they are a record label, and allow others to download it. They also have the option of making it only available for streaming. Above is a screenshot of an album page.
 
 ## Audio Player
 
@@ -25,7 +24,7 @@ The song player uses the React Howler Audio Player, which is a wrapper for the W
 
 ## Search
 
-To find other music and musicians, search is enabled on the main page. The results are split up into tracks, albums, and artist. This allows for easy location of other musicians in the network. This search was implemented with the help of
+A search feature allows for quick search of the database for music. The results are split up into tracks, albums, and artists.
 
 ![artist_page](docs/images/search.png)
 
@@ -36,7 +35,11 @@ Planned features:
 
 ## Audio Player
 
-Add sound bar and volume adjustment.
+Add sound bar and volume adjustment. Implement "add to up next feature" which will add a song to a queue to be played next.
+
+## Purchases
+
+Implementation of Stripe or Square API to allow users to sell music. 
 
 ## Follows and a "wall"
 
