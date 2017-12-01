@@ -50,6 +50,7 @@ class AudioPlayer extends React.Component {
   }
 
   nextTrack() {
+    console.log(this.player.duration());
     let length = this.props.tracks.length;
     let currentTrack = this.props.selectedTrack.track_num - 1;
     let nextTrack = currentTrack;
@@ -159,16 +160,14 @@ class AudioPlayer extends React.Component {
 
   }
 
-  getDuration(id) {
-    if (this.props.selectedTrack.id === id && this.props.playing) {
-      const MINUTE = 60;
-      let minutes;
-      let seconds;
-      let duration = window.Howler._howls[0]._duration;
-      // console.log(duration);
-      minutes = Math.floor(duration / MINUTE);
-      seconds = Math.floor(((duration / MINUTE) - minutes) * MINUTE);
-      return `${minutes}:${seconds}`;
+  getDuration() {
+    if (this.props.playing) {
+      console.log(this.player.duration())
+      return (
+        <div className="duration">
+          {this.player.duration()}
+        </div>
+      );
     }
   }
 
@@ -183,6 +182,7 @@ class AudioPlayer extends React.Component {
             onEnd={() => this.nextTrack()}
             mute={this.props.mute}
             loop={this.props.loopedSong}
+            ref={(ref) => (this.player = ref)}
           />
           <ul className="audio-player-controls">
             <li>
@@ -206,9 +206,7 @@ class AudioPlayer extends React.Component {
           <div className="playback">
             {this.timePassed()}
             {this.renderSoundBar()}
-            <div className="duration">
-  
-            </div>
+            {/* {this.getDuration()} */}
           </div>
           <div className="artist-info">
               <div>
