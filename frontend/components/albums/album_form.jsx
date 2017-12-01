@@ -10,7 +10,7 @@ class ArtistForm extends React.Component {
       date: null,
       image: null,
       tracks: null,
-      artist_id: this.props.selectedArtist.id
+      artist_id: null
     };
   }
 
@@ -24,7 +24,7 @@ class ArtistForm extends React.Component {
       title: this.state.title,
       date: this.state.date,
       image: this.state.image,
-      artist_id: this.state.artist_id
+      artist_id: this.props.selectedArtist.id
     };
     this.props.createAlbum(album).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
   }

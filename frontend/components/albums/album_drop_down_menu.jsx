@@ -9,7 +9,7 @@ class AlbumDropDownMenu extends React.Component {
   }
 
   change(id) {
-    this.props.fetchArtist(id).then(() => this.props.fetchAlbums(id));
+    this.props.fetchAlbum(id);
   }
 
   render() {

@@ -17,11 +17,11 @@ export const fetchAlbum = id => (
 );
 
 
-export const createAlbum = data => (
+export const createAlbum = album => (
   $.ajax({
     method: 'POST',
     url: 'api/albums',
-    data
+    data: {album}
   })
 );
 

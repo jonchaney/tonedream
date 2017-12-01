@@ -62,3 +62,16 @@ i.fa.fa-angle-down {
     margin: 10px 100px 0 283px;
     pointer-events: none;
 }
+.album-dropdowns {
+    display: flex;
+    margin-left: -10px;
+    .artist-drop-down {
+      padding: 0 0 0 10px;
+    }
+}
+
+.album-form-container {
+  .artist-form-container {
+    padding: 0 0 0 10px;
+  }
+}

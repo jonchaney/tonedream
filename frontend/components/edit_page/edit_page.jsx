@@ -63,18 +63,19 @@ class EditPage extends React.Component {
 
   albumForm() {
     if (this.props.selectedArtist.id) {
-      return null;
+      return <AlbumFormContainer />;
     } else {
-      return (
-        <AlbumFormContainer />
-      );
+      return null;
     }
   }
 
   dropdownAlbum() {
     if (this.props.selectedArtist.id) {
       return (
-        <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} />
+        <div className="album-form-container">
+          <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} />
+          {this.albumForm()}
+        </div>
       );
     }
   }
@@ -89,7 +90,7 @@ class EditPage extends React.Component {
       );
     } else if (this.state.show === "Albums") {
       return (
-        <div>
+        <div className="album-dropdowns">
           <ArtistDropDownMenu artists={this.props.artists} fetchArtist={this.props.fetchArtist} fetchAlbums={this.props.fetchAlbums}/>
           {this.dropdownAlbum()}
         </div>
