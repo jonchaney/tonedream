@@ -20,7 +20,7 @@ All user's on tonedream can be the admin of multiple artists. They can upload th
 
 ![artist_page](docs/images/sound_player.png)
 
-The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album.
+The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album. 
 
 ## Search
 
