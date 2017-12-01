@@ -10,17 +10,17 @@ and React/Redux.
 
 # Tonedream Features
 
+## Audio Player
+
+![artist_page](docs/images/sound_player.png)
+
+The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album.
+
 ## Album Pages
 
 ![artist_page](docs/images/artist-page.png)
 
 All user's on tonedream can be the admin of multiple artists. They can upload their music, or other if they are a record label, and allow others to download it. They also have the option of making it only available for streaming. Above is a screenshot of an album page.
-
-## Audio Player
-
-![artist_page](docs/images/sound_player.png)
-
-The song player uses the React Howler Audio Player, which is a wrapper for the Web Audio API. It allows for shuffle, looping a single track, and looping an album. 
 
 ## Search
 
