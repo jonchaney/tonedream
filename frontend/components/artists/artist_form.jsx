@@ -49,7 +49,7 @@ class ArtistForm extends React.Component {
   renderErrors() {
     if (this.props.errors) {
       return (
-        <ul>
+        <ul className="errors">
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -65,7 +65,6 @@ class ArtistForm extends React.Component {
       <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
-            {this.renderErrors()}
               <div className="item">
                   <input type="text"
                     autoFocus="autofocus"
@@ -104,6 +103,7 @@ class ArtistForm extends React.Component {
                     value="Add Artist" />
                 </label>
               </div>
+              {this.renderErrors()}
           </div>
         </form>
       </div>
