@@ -32,11 +32,11 @@ export const deleteAlbum = (artistId, albumId) => (
   })
 );
 
-export const updateAlbum = (artistId, albumId, data) => (
+export const updateAlbum = (artistId, albumId, album) => (
   $.ajax({
     method: 'PATCH',
     url: `api/artists/${artistId}/albums/${albumId}`,
-    data
+    data: {album}
   })
 );
 

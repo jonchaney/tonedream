@@ -7,6 +7,8 @@ export const RECEIVE_ALBUM_ERRORS = "RECEIVE_ALBUM_ERRORS";
 export const REQUEST_ALBUM = "REQUEST_ALBUM";
 export const REQUEST_ALBUMS = "REQUEST_ALBUMS";
 export const CLEAR_ALBUMS = "CLEAR_ALBUMS";
+export const CLEAR_ALBUM = "CLEAR_ALBUM";
+export const CLEAR_ALBUM_ERRORS = "CLEAR_ALBUM_ERRORS";
 export const START_LOADING_ALL_ALBUMS = 'START_LOADING_ALL_ALBUMS';
 export const START_LOADING_SINGLE_ALBUM = 'START_LOADING_SINGLE_ALBUM';
 
@@ -22,7 +24,11 @@ export const clearAlbums = () => ({
 });
 
 export const clearAlbum = () => ({
-  type: CLEAR_ALBUMS
+  type: CLEAR_ALBUM
+});
+
+export const clearAlbumErrors = () => ({
+  type: CLEAR_ALBUM_ERRORS
 });
 
 export const receiveAlbums = albums => ({
@@ -74,7 +80,7 @@ export const createAlbum = album => dispatch => (
   APIUtil.createAlbum(album).then(album => {
     dispatch(receiveAlbum(album));
   }, errors => (
-    dispatch(receiveErrors(errors))
+    dispatch(receiveAlbumErrors(errors.responseJSON))
   ))
 );
 
@@ -82,13 +88,14 @@ export const deleteAlbum = (artistId,albumId) => dispatch => (
   APIUtil.deleteAlbum(artistId, albumId)
 );
 
-export const updateAlbum = (artistId, albumId, data) => dispatch => (
-  APIUtil.updateAlbum(artistId, albumId, data).then(album => {
+export const updateAlbum = (artistId, albumId, album) => dispatch => {
+  console.log(artistId, albumId, album);
+  return APIUtil.updateAlbum(artistId, albumId, album).then(album => {
     dispatch(receiveAlbum(album));
   }, errors => (
-    dispatch(receiveErrors(errors))
-  ))
-);
+    dispatch(receiveAlbumErrors(errors.responseJSON))
+  ));
+};
 
 // not tested yet
 export const updateFormAlbum = (formData, id) => (dispatch) => {

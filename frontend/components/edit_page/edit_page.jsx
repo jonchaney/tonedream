@@ -5,7 +5,9 @@ import ArtistFormContainer from '../artists/artist_form_container';
 import EditArtistFormContainer from '../artists/edit_artist_form_container';
 import ArtistDropDownMenu from '../artists/artist_drop_down_menu';
 import EditUserFormContainer from '../users/edit_user_form_container';
+
 import AlbumFormContainer from '../albums/album_form_container';
+import EditAlbumFormContainer from '../albums/edit_album_form_container';
 import AlbumDropDownMenu from '../albums/album_drop_down_menu';
 
 class EditPage extends React.Component {
@@ -18,6 +20,7 @@ class EditPage extends React.Component {
 
   componentDidMount() {
     this.props.clearArtist();
+    this.props.clearAlbum();
     this.props.fetchArtists();
   }
 
@@ -62,10 +65,14 @@ class EditPage extends React.Component {
   }
 
   albumForm() {
-    if (this.props.selectedArtist.id) {
-      return <AlbumFormContainer />;
+    if (!this.props.selectedAlbum.id) {
+      return (
+        <AlbumFormContainer />
+      );
     } else {
-      return null;
+      return (
+        <EditAlbumFormContainer />
+      );
     }
   }
 
@@ -73,7 +80,7 @@ class EditPage extends React.Component {
     if (this.props.selectedArtist.id) {
       return (
         <div className="album-form-container">
-          <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} />
+          <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} clearAlbum={this.props.clearAlbum}/>
           {this.albumForm()}
         </div>
       );
@@ -91,7 +98,13 @@ class EditPage extends React.Component {
     } else if (this.state.show === "Albums") {
       return (
         <div className="album-dropdowns">
-          <ArtistDropDownMenu artists={this.props.artists} fetchArtist={this.props.fetchArtist} fetchAlbums={this.props.fetchAlbums}/>
+          <ArtistDropDownMenu 
+            artists={this.props.artists} 
+            clearAlbumErrors={this.props.clearAlbumErrors}
+            fetchArtist={this.props.fetchArtist} 
+            fetchAlbums={this.props.fetchAlbums} 
+            clearAlbum={this.props.clearAlbum}
+          />
           {this.dropdownAlbum()}
         </div>
       );

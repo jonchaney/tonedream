@@ -4,7 +4,9 @@ import {
   RECEIVE_ALBUM,
   RECEIVE_ALBUMS,
   CLEAR_ALBUMS,
-  CLEAR_ALBUM
+  CLEAR_ALBUM,
+  RECEIVE_ALBUM_ERRORS,
+  CLEAR_ALBUM_ERRORS
 } from '../actions/album_actions';
 
 import {
@@ -29,7 +31,8 @@ const defaultState = {
       genre: null,
       tracks: null
     }
-  ]
+  ],
+  errors: []
 };
 
 const AlbumsReducer = (state = defaultState, action) => {
@@ -43,9 +46,17 @@ const AlbumsReducer = (state = defaultState, action) => {
       newState.selectedAlbum = action.album;
       return merge({}, newState);
     case CLEAR_ALBUMS:
-      return defaultState;
+      newState.allAlbums = defaultState.allAlbums;
+      return newState;
     case CLEAR_ALBUM:
-      return defaultState;
+      newState.selectedAlbum = defaultState.selectedAlbum;
+      return newState;
+    case RECEIVE_ALBUM_ERRORS:
+      newState.errors = action.errors;
+      return newState;
+    case CLEAR_ALBUM_ERRORS:
+      newState.errors = defaultState.errors;
+      return newState;
     default:
       return state;
   }

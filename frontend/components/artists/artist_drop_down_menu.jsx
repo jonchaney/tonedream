@@ -8,8 +8,10 @@ class ArtistDropDownMenu extends React.Component {
     super(props);
   }
 
-  change(id) {
-    this.props.fetchArtist(id).then(() => this.props.fetchAlbums(id));
+  change(value) {
+    this.props.clearAlbum();
+    this.props.clearAlbumErrors();
+    this.props.fetchArtist(value).then(() => this.props.fetchAlbums(value));
   }
 
   render() {

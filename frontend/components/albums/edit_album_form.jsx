@@ -15,7 +15,7 @@ class EditAlbumForm extends React.Component {
         date: this.props.selectedAlbum.date,
         imageFile: null,
         image: this.props.selectedAlbum.image_url,
-        tracks: this.state.tracks
+        tracks: this.props.tracks
     };
   }
 
@@ -25,11 +25,13 @@ class EditAlbumForm extends React.Component {
       artist_id: this.state.artist_id,
       title: this.state.title,
       date: this.state.date,
-      image: this.state.image,
+      image: this.state.image
     };
     this.props.updateAlbum(this.state.artist_id, this.state.id, album).then(
-      () => this.props.history.push(`/albums/${this.state.id}`)
-    );
+      () => { 
+        this.props.clearArtist();
+        this.props.history.push(`/albums/${this.state.id}`);
+      });
   }
 
   updateFile(e) {
@@ -49,39 +51,57 @@ class EditAlbumForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
   editAlbum() {
     return (
-      <div className="edit-album-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {/* {this.renderErrors()}  */}
-          <div className="login-input-box">
-            <label>
+      <div className="artist-form-container">
+        <form onSubmit={this.handleSubmit} className="artist-form-box">
+          <div className="artist-login-form">
+            {this.renderErrors()}
+            <div className="item">
               <input type="text"
-                className="edit-input"
-                placeholder={this.state.title}
-                value={this.state.title}
+                autoFocus="autofocus"
+                className="artist-input"
                 onChange={this.update('title')}
+                value={this.state.title}
               />
-            </label>
-            <label>
+            </div>
+            <div className="item">
               <input type="text"
-                className="edit-input"
-                placeholder={this.state.date}
-                value={this.state.date}
+                className="artist-input"
                 onChange={this.update('date')}
+                value={this.state.date}
               />
-            </label>
-            <label>
-              <input type="file"
-                className="edit-input"
-                onChange={this.updateFile}
-              />
-            </label>
-            <label>
-              <input type="submit"
-                className="submit-edit"
-                value="submit" />
-            </label>
+            </div>
+            <div className="item">
+              <label className="custom-upload-button">
+                <p>Upload Image</p>
+                <input type="file"
+                  className="artist-input-file"
+                  onChange={this.updateFile}
+                />
+              </label>
+            </div>
+            <div className="item">
+              <label>
+                <input type="submit"
+                  className="login-button"
+                  value="Update Album" />
+              </label>
+            </div>
           </div>
         </form>
       </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Updating from '../edit_page/updating';
+
 class ArtistForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,10 +14,6 @@ class ArtistForm extends React.Component {
       tracks: null,
       artist_id: null
     };
-  }
-
-  componentWillMount() {
-    // this.props.clearAlbumErrors();
   }
 
   handleSubmit(e) {
@@ -47,17 +45,17 @@ class ArtistForm extends React.Component {
   }
 
   renderErrors() {
-    // if (this.props.errors) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.map((error, i) => (
-    //         <li key={`error-${i}`}>
-    //           {error}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
+    if (this.props.errors) {
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
@@ -65,7 +63,7 @@ class ArtistForm extends React.Component {
       <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
-            {/* this.renderErrors() */}
+            {this.renderErrors()}
             <div className="item">
               <input type="text"
                 autoFocus="autofocus"
