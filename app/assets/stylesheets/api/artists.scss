@@ -125,13 +125,17 @@ label.custom-upload-button:hover {
     margin: -95px 0 0 32px;
     ul {
         margin: 0 0 0 10px;
-    }
-    ul li:last-child {
-        font-size: 14px;
+        .updating-release {
+            font-size: 14px;
+        }
+        li:last-child {
+            font-size: 13px;
+            color: gray;
+         }
     }
     img {
         width: 100px;
-        border: 2px dotted white;
+        border: 2.5px dotted white;
         background: lightgray;
     }
 }

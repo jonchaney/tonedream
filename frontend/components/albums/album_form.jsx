@@ -13,6 +13,7 @@ class ArtistForm extends React.Component {
       image: null,
       tracks: null,
       artist_id: null,
+      download: false,
       artist: this.props.selectedArtist.name
     };
   }
@@ -27,6 +28,7 @@ class ArtistForm extends React.Component {
         image: null,
         tracks: null,
         artist_id: null,
+        download: null,
         artist: this.props.selectedArtist.name
       });
     }
@@ -38,6 +40,7 @@ class ArtistForm extends React.Component {
       title: this.state.title,
       date: this.state.date,
       image: this.state.image,
+      downloac: this.state.download,
       artist_id: this.props.selectedArtist.id
     };
     this.props.createAlbum(album).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
@@ -74,6 +77,14 @@ class ArtistForm extends React.Component {
     }
   }
 
+  checkbox(event) {
+    if (this.state.download) {
+      this.setState({download: false});
+    } else {
+      this.setState({ download: true });
+    }
+  }
+
   render() {
     return (
       <div className="artist-form-container">
@@ -102,6 +113,15 @@ class ArtistForm extends React.Component {
                   onChange={this.updateFile}
                 />
               </label>
+            </div>
+            <div className="item">
+              <input type="checkbox"
+                className="album-checkbox"
+                value="download"
+                checked={this.state.download}
+                onClick={() => this.checkbox()}
+              />
+              <p>enable download</p>
             </div>
             <div className="item">
               <label>

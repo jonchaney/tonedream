@@ -10,7 +10,8 @@ class Updating extends React.Component {
       title: null,
       date: null,
       image: null,
-      artist: null
+      artist: null,
+      download: false
     };
   }
 
@@ -19,7 +20,8 @@ class Updating extends React.Component {
         title: nextProps.album.title,
         date: nextProps.album.date,
         image: nextProps.album.image,
-        artist: nextProps.artist.name
+        artist: nextProps.artist.name,
+        download: nextProps.album.download
       });
   }
 
@@ -38,11 +40,11 @@ class Updating extends React.Component {
   date() {
     if (this.state.date) {
       return (
-        <li>{this.state.date}</li>
+        <li className="updating-release">{this.state.date}</li>
       );
     } else {
       return (
-        <li>Release Date</li>
+        <li className="updating-release">Release Date</li>
       );
     }
   }
@@ -59,6 +61,18 @@ class Updating extends React.Component {
     }
   }
 
+  downloadable() {
+    if (this.state.download) {
+      return (
+        <li>downloadable</li>
+      );
+    } else {
+      return (
+        <li></li>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="updating">
@@ -66,6 +80,7 @@ class Updating extends React.Component {
         <ul className="updating-ul">
           {this.title()}
           {this.date()}
+          {this.downloadable()}
         </ul>
       </div>
     );
