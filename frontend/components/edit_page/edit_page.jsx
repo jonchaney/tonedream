@@ -80,7 +80,12 @@ class EditPage extends React.Component {
     if (this.props.selectedArtist.id) {
       return (
         <div className="album-form-container">
-          <AlbumDropDownMenu albums={this.props.albums} fetchAlbum={this.props.fetchAlbum} clearAlbum={this.props.clearAlbum}/>
+          <AlbumDropDownMenu 
+            albums={this.props.albums} 
+            fetchAlbum={this.props.fetchAlbum} 
+            clearAlbum={this.props.clearAlbum}
+            clearAlbumErrors={this.props.clearAlbumErrors}
+            />
           {this.albumForm()}
         </div>
       );

@@ -6,34 +6,69 @@ import SearchContainer from '../search_bar/search_container';
 class Updating extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title: null,
+      date: null,
+      image: null,
+      artist: null
+    };
   }
 
-  listItems() {
-    if (this.props.album.title) {
+  componentWillReceiveProps(nextProps) {
+      this.setState({
+        title: nextProps.album.title,
+        date: nextProps.album.date,
+        image: nextProps.album.image,
+        artist: nextProps.artist.name
+      });
+  }
+
+  title() {
+    if (this.state.title) {
       return (
-        <div className="updating">
-          <img src={this.props.album.image}/>
-          <ul>
-            <li>{this.props.album.title}</li>
-            <li>{this.props.album.date}</li>
-          </ul>
-        </div>
+        <li>{this.state.title}</li>
       );
     } else {
       return (
-        <div className="updating">
-          <img/>
-          <ul>
-            <li>Title</li>
-            <li>Release Date</li>
-          </ul>
-        </div>
+        <li>Untitled Album</li>
+      );
+    }
+  }
+  
+  date() {
+    if (this.state.date) {
+      return (
+        <li>{this.state.date}</li>
+      );
+    } else {
+      return (
+        <li>Release Date</li>
+      );
+    }
+  }
+
+  image() {
+    if (this.state.image) {
+      return (
+        <img width="100" height="100" src={this.state.image} />
+      );
+    } else {
+      return (
+        <img width="100" height="100" />
       );
     }
   }
 
   render() {
-    return this.listItems();
+    return (
+      <div className="updating">
+        {this.image()}
+        <ul className="updating-ul">
+          {this.title()}
+          {this.date()}
+        </ul>
+      </div>
+    );
   }
 }
 

@@ -59,7 +59,11 @@ li.artist-index-item:hover {
   ARTIST FORM
 *****************************/
 
+.artist-form-container {
+    display: flex;
+}
 .artist-login-form {
+    width: 308px;
     .login-button {
         margin: 0 0 0 0;
         font-family: 'MissionGothic-Light';
@@ -115,7 +119,19 @@ label.custom-upload-button:hover {
 }
 
 .updating {
-    margin: -207px 0 0 -310px;
     font-family: 'MissionGothic-Light', sans-serif;
     font-size: 19px;
+    display: flex;
+    margin: -95px 0 0 32px;
+    ul {
+        margin: 0 0 0 10px;
+    }
+    ul li:last-child {
+        font-size: 14px;
+    }
+    img {
+        width: 100px;
+        border: 2px dotted white;
+        background: lightgray;
+    }
 }

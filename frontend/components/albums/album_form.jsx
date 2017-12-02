@@ -12,8 +12,24 @@ class ArtistForm extends React.Component {
       date: null,
       image: null,
       tracks: null,
-      artist_id: null
+      artist_id: null,
+      artist: this.props.selectedArtist.name
     };
+  }
+
+  componentDidUpdate(nextProps, prevState) {
+    // clear form and reset album preview when artist changes
+    if(nextProps.selectedArtist.name !== prevState.artist) {
+      this.resetForm.reset();
+      this.setState({
+        title: null,
+        date: null,
+        image: null,
+        tracks: null,
+        artist_id: null,
+        artist: this.props.selectedArtist.name
+      });
+    }
   }
 
   handleSubmit(e) {
@@ -47,7 +63,7 @@ class ArtistForm extends React.Component {
   renderErrors() {
     if (this.props.errors) {
       return (
-        <ul>
+        <ul className="errors">
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -61,9 +77,8 @@ class ArtistForm extends React.Component {
   render() {
     return (
       <div className="artist-form-container">
-        <form onSubmit={this.handleSubmit} className="artist-form-box">
+        <form ref={(el) => this.resetForm = el} onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
-            {this.renderErrors()}
             <div className="item">
               <input type="text"
                 autoFocus="autofocus"
@@ -95,8 +110,10 @@ class ArtistForm extends React.Component {
                   value="Add Album" />
               </label>
             </div>
+            {this.renderErrors()}
           </div>
         </form>
+        <Updating album={this.state} artist={this.props.selectedArtist}/>
       </div>
     );
   }

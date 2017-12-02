@@ -51,7 +51,7 @@ class EditUserForm extends React.Component {
   renderErrors() {
       if (this.props.errors) {
         return(
-          <ul>
+          <ul className="errors">
             {this.props.errors.map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
@@ -62,15 +62,21 @@ class EditUserForm extends React.Component {
       }
   }
 
+  onFocus(e) {
+    let val = e.target.value;
+    e.target.value = '';
+    e.target.value = val;
+  }
+
   render() {
     return (
         <div className="artist-form-container">
           <form onSubmit={this.handleSubmit} className="artist-form-box">
             <div className="artist-login-form">
-            {this.renderErrors() }
                 <div className="item">
                     <input type="text"
                       autoFocus="autofocus"
+                      onFocus={(event) => this.onFocus(event)}
                       className="artist-input"
                       value={this.state.username}
                       onChange={this.update('username')}
@@ -101,6 +107,7 @@ class EditUserForm extends React.Component {
                       value="Update" />
                   </label>
                 </div>
+                {this.renderErrors()}
             </div>
           </form>
         </div>

@@ -79,6 +79,12 @@ class EditArtistForm extends React.Component {
     }
   }
 
+  onFocus(e) {
+    let val = e.target.value;
+    e.target.value = '';
+    e.target.value = val;
+  }
+
   render() {
     return (
       <div className="artist-form-container">
@@ -86,7 +92,8 @@ class EditArtistForm extends React.Component {
           <div className="artist-login-form">
             <div className="item">
               <input type="text"
-                autoFocus="autofocus"
+                autoFocus
+                onFocus={(event) => this.onFocus(event)}
                 className="artist-input"
                 value={this.state.name} 
                 onChange={this.update('name')}

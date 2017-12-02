@@ -54,7 +54,7 @@ class EditAlbumForm extends React.Component {
   renderErrors() {
     if (this.props.errors) {
       return (
-        <ul>
+        <ul className="errors">
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
               {error}
@@ -65,15 +65,21 @@ class EditAlbumForm extends React.Component {
     }
   }
 
+  onFocus(e) {
+    let val = e.target.value;
+    e.target.value = '';
+    e.target.value = val;
+  }
+
   editAlbum() {
     return (
       <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
-            {this.renderErrors()}
             <div className="item">
               <input type="text"
                 autoFocus="autofocus"
+                onFocus={(event) => this.onFocus(event)}
                 className="artist-input"
                 onChange={this.update('title')}
                 value={this.state.title}
@@ -102,6 +108,7 @@ class EditAlbumForm extends React.Component {
                   value="Update Album" />
               </label>
             </div>
+            {this.renderErrors()}
           </div>
         </form>
       </div>

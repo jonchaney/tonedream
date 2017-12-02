@@ -53,7 +53,8 @@
     width: 305px;
     padding: 0px 0px 0 12px;
     height: 33px;
-    -webkit-appearance:none 
+    -webkit-appearance:none;
+    -moz-appearance:none;
   }
 }
 
@@ -65,13 +66,9 @@ i.fa.fa-angle-down {
 .album-dropdowns {
     display: flex;
     margin-left: -10px;
-    .artist-drop-down {
-      padding: 0 0 0 10px;
-    }
+    flex-direction: column;
 }
 
 .album-form-container {
-  .artist-form-container {
-    padding: 0 0 0 10px;
-  }
+  margin-top: 28px;
 }

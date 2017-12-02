@@ -14,6 +14,7 @@ class AlbumDropDownMenu extends React.Component {
     } else {
       this.props.clearAlbum();
     }
+    this.props.clearAlbumErrors();
   }
 
   render() {
