@@ -134,6 +134,7 @@ class ArtistForm extends React.Component {
           </div>
         </form>
         <Updating album={this.state} artist={this.props.selectedArtist}/>
+        
       </div>
     );
   }

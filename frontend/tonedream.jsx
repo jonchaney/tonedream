@@ -4,6 +4,7 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 
 import { updateUser } from './actions/user_actions';
+import { createTrack } from './actions/audio_player_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.updateUser = updateUser;
+  window.createTrack = createTrack;
 
   // window.search = search;
   // end test

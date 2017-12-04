@@ -1,0 +1,156 @@
+/* line 6, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-index-item-img img {
+  height: 230px;
+  width: 230px;
+}
+
+/* line 11, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-index {
+  padding: 84px 0 100% 12px;
+  background: white;
+  margin: 0 auto auto auto;
+  width: 915px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 17, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-index h3 {
+  font-family: "MissionGothic-Regular", sans-serif;
+  font-weight: 200;
+  color: #649922;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+/* line 26, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+h1.artist-name {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 16px;
+}
+
+/* line 31, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+ul.artist-index-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 37, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+li.artist-index-item {
+  list-style: none;
+  margin: 10px 35px 10px 10px;
+}
+
+/* line 42, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+li.artist-index-item:hover {
+  text-decoration: underline;
+}
+
+/* line 46, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-profile-content {
+  background: white;
+}
+
+/* line 50, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-profile h3 {
+  font-family: "MissionGothic-Regular", sans-serif;
+  font-weight: 200;
+  color: #649922;
+  font-size: 25px;
+  padding-left: 14px;
+}
+
+/****************************
+  ARTIST FORM
+*****************************/
+/* line 62, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-form-container {
+  display: flex;
+}
+
+/* line 65, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form {
+  width: 308px;
+}
+/* line 67, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form .login-button {
+  margin: 0 0 0 0;
+  font-family: 'MissionGothic-Light';
+  border-radius: 3px;
+}
+/* line 72, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form .login-button:hover {
+  box-shadow: 2px 2px 5px lightgray;
+}
+/* line 75, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form .item {
+  margin: 28px -165px 0px 0;
+}
+/* line 78, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form .item p {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 13px;
+}
+/* line 83, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form input.artist-input {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 13px;
+  background: #f8f8f8;
+  width: 294px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  height: 34px;
+  padding: 0 0 0 11px;
+}
+/* line 94, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form textarea.artist-input-textarea {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 13px;
+  background: #f8f8f8;
+  width: 294px;
+  height: 53px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  height: 80px;
+  padding: 8px 0 0 11px;
+}
+/* line 106, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.artist-login-form label.custom-upload-button p {
+  border-radius: 3px;
+  padding: 10px 12px;
+  width: 282px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  background: #f8f8f8;
+}
+
+/* line 116, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+label.custom-upload-button:hover {
+  box-shadow: 1px 1px 5px #e3e3e3;
+  border-radius: 3px;
+}
+
+/* line 121, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.updating {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 19px;
+  display: flex;
+  margin: -95px 0 0 32px;
+}
+/* line 126, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.updating ul {
+  margin: 0 0 0 10px;
+}
+/* line 128, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.updating ul .updating-release {
+  font-size: 14px;
+}
+/* line 131, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.updating ul li:last-child {
+  font-size: 13px;
+  color: gray;
+}
+/* line 136, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
+.updating img {
+  width: 100px;
+  border: 2.5px dotted white;
+  background: lightgray;
+}

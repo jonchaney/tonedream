@@ -1,0 +1,128 @@
+/* line 1, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-main {
+  display: flex;
+  font-family: MissionGothic-Light;
+  margin: 9px 40px 0px 0px;
+}
+
+/* line 7, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-info {
+  display: flex;
+  flex-direction: column;
+  width: 378px;
+}
+
+/* line 13, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.outer-album-show-photo {
+  display: flex;
+}
+
+/* line 17, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-info h1 {
+  font-size: 30px;
+}
+
+/* line 21, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-info p {
+  font-size: 16px;
+}
+
+/* line 25, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.edit-button {
+  border: 1px solid silver;
+  font-family: MissionGothic-Thin;
+  font-size: 16px;
+  background-color: lightyellow;
+  color: #0687f5;
+  font-weight: bold;
+  text-align: center;
+  margin: 9px 0 0 0;
+  padding: 2px 0 2px 0;
+  width: 52px;
+}
+
+/* line 38, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.edit-button:hover {
+  text-decoration: underline;
+}
+
+/* line 43, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-info audio {
+  width: 164px;
+}
+
+/* line 47, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.non-track-data {
+  display: flex;
+}
+
+/* line 55, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.track-list {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 66, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+audio::-internal-media-controls-download-button {
+  display: none;
+}
+
+/* line 70, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+audio::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+
+/* line 74, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+audio::-webkit-media-controls-panel {
+  width: calc(100% + 75px);
+  /* Adjust as needed */
+  background-color: white;
+  height: 15px;
+}
+
+/* line 80, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.audio-item {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 0px 0px 0px;
+}
+
+/* line 86, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.audio-info {
+  margin: 0px 0px 0px 0px;
+  font-size: 15px;
+  display: inline;
+  flex-direction: inherit;
+  flex-wrap: inherit;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* line 99, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-info > .edit {
+  margin: 0 0 0 -17px;
+}
+
+/* line 104, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.audio-item i.fa.fa-play, .audio-item i.fa.fa-pause {
+  padding: 5px 5px 4px 7px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+/* line 113, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+.album-show-photo {
+  height: 350px;
+  width: 350px;
+}
+
+/* line 118, /Users/jon/GitHub/tonedream/app/assets/stylesheets/tracks.css.scss */
+li.track-info {
+  margin: 2px 0 0 18px;
+}

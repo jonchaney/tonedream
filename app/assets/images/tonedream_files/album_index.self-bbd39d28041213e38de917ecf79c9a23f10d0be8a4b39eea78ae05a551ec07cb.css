@@ -1,0 +1,52 @@
+/* line 1, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-photo {
+  height: 232px;
+  flex: auto;
+}
+
+/* line 6, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-container {
+  padding: .5vw;
+  flex-flow: row wrap;
+  display: flex;
+  margin: 0px 0 0 0px;
+  width: 760px;
+}
+
+/* line 14, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-container > li:nth-child(3) {
+  flex-basis: 0;
+}
+
+/* line 18, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.edit-album-buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 10px 0 -16px;
+}
+
+/* line 24, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.edit-album-buttons li.edit {
+  margin: 0 14px 0 0px;
+}
+
+/* line 28, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.edit-album-buttons > li {
+  margin: 0 10px 0 0;
+}
+
+/* line 32, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-container li {
+  padding: 0px 10px 0 10px;
+}
+
+/* line 36, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-container li:hover {
+  text-decoration: underline;
+}
+
+/* line 40, /Users/jon/GitHub/tonedream/app/assets/stylesheets/album_index.css.scss */
+.album-index-container li h1 {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 16px;
+}

@@ -1,0 +1,78 @@
+/* line 1, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-container {
+  display: flex;
+  background-color: white;
+}
+
+/* line 6, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-div {
+  padding: 100px 0px 0 0px;
+  border-right: 1px solid #eaeaea;
+  width: 220px;
+  background: white;
+  height: 800px;
+  height: -webkit-fill-available;
+}
+/* line 13, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-div p {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 25px;
+  color: #999999;
+  padding: 0 0 30px 20px;
+}
+
+/* line 21, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-nav {
+  font-family: 'MissionGothic-Light', sans-serif;
+  width: 209px;
+}
+/* line 24, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-nav li {
+  padding: 17px 0 16px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 202px;
+  border-left: 4px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+/* line 33, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-nav li:hover {
+  cursor: pointer;
+  background-color: #f6f6f6;
+}
+
+/* line 47, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-form {
+  padding: 101px 0 0px 55px;
+}
+/* line 49, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.edit-page-form select {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 13px;
+  border: 1px solid lightgray;
+  width: 305px;
+  padding: 0px 0px 0 12px;
+  height: 33px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 61, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+i.fa.fa-angle-down {
+  position: absolute;
+  margin: 10px 100px 0 283px;
+  pointer-events: none;
+}
+
+/* line 66, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.album-dropdowns {
+  display: flex;
+  margin-left: -10px;
+  flex-direction: column;
+}
+
+/* line 72, /Users/jon/GitHub/tonedream/app/assets/stylesheets/edit_page.scss */
+.album-form-container {
+  margin-top: 28px;
+}

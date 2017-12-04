@@ -1,0 +1,72 @@
+/* line 1, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: margin 0.25s ease-out;
+  position: fixed;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+  height: 50px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #cecece;
+  border-top-color: #848484;
+}
+/* line 15, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .audio-player-controls {
+  display: flex;
+}
+/* line 17, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .audio-player-controls li {
+  height: 100%;
+}
+/* line 19, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .audio-player-controls li i {
+  padding: 17px 0 17px 0;
+  margin: 0 0px 0 32px;
+}
+/* line 23, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .audio-player-controls li i:hover {
+  cursor: pointer;
+}
+/* line 29, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .audio-player-photo {
+  width: 43px;
+  margin: 4px 0px 0 45px;
+}
+/* line 34, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .artist-info {
+  display: flex;
+}
+/* line 36, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .artist-info .artist-info-data {
+  padding: 4px 0 0 0;
+}
+/* line 40, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .artist-info div p a {
+  font-family: 'MissionGothic-Light';
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+}
+/* line 46, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .artist-info div p a:hover {
+  color: black;
+}
+/* line 49, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.audio-player .artist-info div p {
+  font-family: 'MissionGothic-Light';
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 0 0 15px;
+}
+
+/* line 59, /Users/jon/GitHub/tonedream/app/assets/stylesheets/audio_player.scss */
+.looped-song p {
+  position: relative;
+  right: -48px;
+  top: -28px;
+  font-family: 'MissionGothic-Regular';
+  font-weight: bold;
+  font-size: 12px;
+}

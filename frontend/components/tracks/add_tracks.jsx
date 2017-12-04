@@ -1,47 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class AddTrack extends React.Component {
+class AddTracks extends React.Component {
   constructor(props) {
-    // add errors
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.update = this.update.bind(this);
     this.state = {
-      id: "",
+      id: null,
       album_id: this.props.selectedAlbum.id,
-      title: '',
+      title: null,
       download: false,
-      audioFile: "",
-      audioUrl: "",
-      trackNum: 0
+      audioFile: null,
+      audio: null,
+      trackNum: null
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // check if download box was checked
-    let download = false;
-    if (this.state.download === 'on') {
-      download = true;
-    }
-
-    let formData = new FormData();
-    formData.append("track[title]", this.state.title);
-    formData.append("track[download]", download);
-    formData.append("track[audio]", this.state.audioUrl);
-    formData.append("track[track_num]", this.state.trackNum);
-    formData.append("track[album_id]", this.state.album_id);
-    this.props.addTrack(formData);
-    this.props.history.push(`/profile/album`);
+    let track = {
+      album_id: this.props.selectedAlbum.id,
+      title: this.state.title,
+      download: this.state.download,
+      audio: this.state.audio,
+      trackNum: this.state.trackNum
+    };
+    this.props.addTrack(track);
   }
 
   updateFile(e) {
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ audioFile: file, audioUrl: fileReader.result });
+      this.setState({ audioFile: file, audio: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -52,6 +45,20 @@ class AddTrack extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  renderErrors() {
+    // if (this.props.errors) {
+    //   return (
+    //     <ul className="errors">
+    //       {this.props.errors.map((error, i) => (
+    //         <li key={`error-${i}`}>
+    //           {error}
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   );
+    // }
   }
 
   render() {
@@ -77,14 +84,6 @@ class AddTrack extends React.Component {
               />
             </label>
             <label>
-              allow download
-          <input
-                name="download"
-                type="checkbox"
-                checked={this.state.download}
-                onChange={this.update('download')} />
-            </label>
-            <label>
               <input type="file"
                 className="edit-input"
                 onChange={this.updateFile}
@@ -102,4 +101,4 @@ class AddTrack extends React.Component {
   }
 }
 
-export default AddTrack;
+export default AddTracks;

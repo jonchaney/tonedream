@@ -1,0 +1,281 @@
+/****************************
+  NAV
+*****************************/
+/* line 10, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.nav {
+  display: flex;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* line 16, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.nav li {
+  margin: 0 5px 5px 0;
+  border-right: .75px solid #e9e5e5;
+  margin: 0 0 0 -6px;
+}
+
+/* line 22, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.nav li:last-child {
+  padding-left: 10px;
+  border-right: 0;
+  margin-left: 5px;
+}
+
+/* line 28, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.nav li:first-child {
+  padding-left: 10px;
+  margin-left: 5px;
+  padding-right: 17px;
+}
+
+/* line 34, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+li.guest {
+  padding-left: 23px;
+  padding-right: 20px;
+}
+
+/* line 40, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.nav > li:hover > a {
+  text-decoration: underline;
+}
+
+/* line 44, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-signup {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: lighter;
+  display: block;
+  float: left;
+  margin: 0 0 0 21px;
+}
+
+/****************************
+  LINKS
+*****************************/
+/* line 56, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 61, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+a:visited {
+  color: black;
+}
+
+/* line 65, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.logout {
+  margin: 0 26px 0 0;
+}
+
+/* line 69, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-button {
+  width: 308px;
+  font-family: 'MissionGothic-Regular', sans-serif;
+  font-size: 16px;
+  height: 36px;
+  text-align: center;
+  color: #fff;
+  border-radius: 0;
+  padding: 0 1em;
+  outline: none;
+  background: #649922;
+  border: none;
+  margin: 20px 0 0 0px;
+}
+
+/* line 86, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+li.home {
+  font-family: 'MissionGothic-Light', sans-serif;
+  border: 0 none transparent;
+  float: right;
+  color: black;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+  border-right: .75px solid #e9e5e5;
+  padding: 0px 20px 0 20px;
+}
+
+/* line 97, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+li.home:hover {
+  text-decoration: underline;
+}
+
+/* line 103, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.logout ul li:first-child {
+  border-right: 0;
+}
+
+/****************************
+  LOGIN/SIGN IN FORM
+*****************************/
+/* line 113, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.top-divider {
+  height: 0;
+  border-top: 2px dotted #ccc;
+  margin: 36px 0 28px 0;
+}
+
+/* line 119, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-form {
+  margin-top: 29px;
+}
+
+/* line 123, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+label.check-box {
+  margin-top: 14px;
+  margin-left: 5px;
+}
+
+/* line 129, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 60px;
+  background: #F2FFE2;
+}
+
+/* line 141, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.button-check-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 147, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-form > li {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'MissionGothic-Light', sans-serif;
+}
+
+/* line 154, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-form > ul {
+  color: #FF161D;
+  height: 30px;
+  text-transform: lowercase;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* line 163, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-input {
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  outline: none;
+  display: flex;
+  align-items: flex-end;
+  width: 290px;
+  line-height: 35px;
+  padding: 0px 0 0 10px;
+}
+
+/* line 175, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-label {
+  margin: 0px 18px 0 0;
+  font-size: 16px;
+}
+
+/* line 180, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.login-form > li {
+  margin-bottom: 5px;
+}
+
+/* line 184, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+form.login-form-box {
+  width: 600px;
+}
+
+/* line 188, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.item {
+  display: flex;
+  align-items: center;
+  margin: 14px -165px 0px 0;
+}
+
+/* line 194, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.formtype {
+  font-size: 14px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-align: right;
+  padding: 5px 142px 0 24px;
+}
+
+/* line 203, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.formtype:hover {
+  text-decoration: underline;
+}
+
+/****************************
+  ALT-NAV
+*****************************/
+/* line 211, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-nav {
+  display: flex;
+  font-weight: 800;
+  font-size: 15px;
+}
+/* line 215, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-nav a {
+  color: #649922;
+}
+
+/* line 220, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-guest {
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+/* line 226, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-nav > li:hover > a {
+  text-decoration: underline;
+}
+
+/* line 230, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-login-signup {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: lighter;
+  display: block;
+  float: left;
+  margin: 14px 23px 0 22px;
+}
+
+/****************************
+  ALT-LOGOUT
+*****************************/
+/* line 244, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-logout ul {
+  display: flex;
+  padding: 15px 23px 0px 0px;
+}
+/* line 247, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-logout ul li {
+  padding: 0 0 0 23px;
+}
+
+/* line 253, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-home {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+}
+/* line 257, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-home a {
+  color: #649922;
+}
+
+/* line 261, /Users/jon/GitHub/tonedream/app/assets/stylesheets/sessions.scss */
+.alt-home:hover {
+  text-decoration: underline;
+}

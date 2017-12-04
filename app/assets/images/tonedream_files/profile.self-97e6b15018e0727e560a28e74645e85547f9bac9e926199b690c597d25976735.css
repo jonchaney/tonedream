@@ -1,0 +1,165 @@
+/* line 5, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.artist-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 10, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.artist-profile-nav {
+  font-family: 'MissionGothic-Thin', sans-serif;
+  font-weight: lighter;
+  float: left;
+  font-size: 16px;
+  margin: 0 0 0 22px;
+}
+
+/* line 18, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.artist-profile-nav > ul {
+  align-items: center;
+  display: flex;
+  margin: -1px 15px 0 0;
+  font-size: 20px;
+}
+
+/* line 25, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.artist-profile-nav > ul {
+  align-items: center;
+  justify-content: c;
+  display: flex;
+  margin: 10px 15px 0 0;
+  font-size: 20px;
+}
+
+/* line 33, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.artist-profile-content {
+  display: flex;
+  width: 915px;
+  padding: 31px 0 100% 12px;
+  margin: 53px auto auto auto;
+  flex-direction: row-reverse;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 42, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+ul.artist-profile-list > li {
+  margin: 9px 30px 0px 2px;
+  padding-right: 32px;
+  font-size: 24px;
+  font-family: 'MissionGothic-Light', sans-serif;
+}
+
+/* line 49, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+ul.artist-profile-list > li:not(:last-child) {
+  border-right: .75px solid;
+}
+
+/* line 53, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.profile-pic {
+  height: 120px;
+  width: 120px;
+  max-width: 270px;
+}
+
+/* line 59, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.user-info {
+  margin: 1% 2% 0% 0%;
+  font-family: MissionGothic-Light;
+  font-size: 30px;
+  text-align: left;
+  width: 120px;
+  height: 500px;
+  background-color: white;
+}
+/* line 67, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.user-info p {
+  border: 1px solid silver;
+  font-family: MissionGothic-Thin;
+  font-size: 16px;
+  background-color: lightyellow;
+  color: #0687f5;
+  font-weight: bold;
+  text-align: center;
+  margin: 9px 0 0 0;
+  padding: 2px 0 2px 0;
+}
+/* line 78, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.user-info p:hover {
+  text-decoration: underline;
+}
+
+/* line 83, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.user-info > ul {
+  margin: 10px;
+  text-align: center;
+  margin: 80px 0 0 0;
+  text-align: left;
+}
+
+/* line 90, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.location {
+  font-family: MissionGothic-Thin;
+  font-size: 16px;
+  border-bottom: .75px solid;
+  padding: 0 0 10px 0;
+}
+
+/* line 97, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+li.band {
+  margin: -69px 0 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: MissionGothic-Regular;
+}
+
+/* line 104, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.bio {
+  font-family: MissionGothic-Thin;
+  font-size: 16px;
+  margin: 9px 0 0 0;
+}
+
+/* line 110, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.edit-form-container {
+  padding: 64px 70px 0 20px;
+  font-family: MissionGothic-Light;
+  font-size: 30px;
+  text-align: left;
+  width: 270px;
+  height: 500px;
+}
+
+/* line 119, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.login-input-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: 'MissionGothic-Light', sans-serif;
+  outline: none;
+  margin-top: 12px;
+  margin-bottom: -4px;
+}
+
+/* line 129, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+.submit-edit, .edit > button {
+  font-family: 'MissionGothic-Light', sans-serif;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 2px 8px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 14px;
+  border: .75px solid;
+  outline: none;
+}
+
+/* line 145, /Users/jon/GitHub/tonedream/app/assets/stylesheets/profile.scss */
+input.edit-input {
+  font-size: 16px;
+  font-family: 'MissionGothic-Light';
+  margin: 8px 0 0 0;
+  width: 200px;
+}

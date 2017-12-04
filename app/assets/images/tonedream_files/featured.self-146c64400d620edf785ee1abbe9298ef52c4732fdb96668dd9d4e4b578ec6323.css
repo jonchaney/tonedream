@@ -1,0 +1,54 @@
+/* line 1, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper {
+  background: #F2FFE2;
+  padding: 0 0 8px 30px;
+  width: 100%;
+  z-index: 5;
+  background: #F2FFE2;
+  padding: 147px 0 12px 34px;
+  margin: 0px 0px 0px 0;
+}
+/* line 9, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper h3 {
+  font-family: "MissionGothic-Regular", sans-serif;
+  font-weight: 200;
+  color: #649922;
+  font-size: 25px;
+  padding: 10px 0 0 10px;
+}
+/* line 16, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 19, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div div {
+  background: white;
+  flex-direction: column;
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin: 10px 35px 10px 10px;
+  border: 1px solid;
+  border-color: #F2FFE2;
+  height: 296px;
+  width: 230px;
+}
+/* line 30, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div div a {
+  margin: 0 0 10px 0;
+}
+/* line 33, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div div a:hover {
+  text-decoration: underline;
+}
+/* line 37, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div img {
+  height: 230px;
+  width: 230px;
+}
+
+/* line 44, /Users/jon/GitHub/tonedream/app/assets/stylesheets/featured.css.scss */
+.featured-wrapper div div a {
+  margin: 19px 0 0px 16px;
+}

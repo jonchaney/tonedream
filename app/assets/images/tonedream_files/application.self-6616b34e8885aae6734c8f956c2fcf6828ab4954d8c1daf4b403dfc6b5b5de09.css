@@ -1,0 +1,238 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/*body {
+  background-color: pink;
+}*/
+/****************************
+  WEB FONTS
+*****************************/
+@font-face {
+  font-family: "MissionGothic-Light";
+  src: url(/assets/Mission-Gothic-Light-b8191573b8136f3d725844a9fc6e62d97cbf59968fe059bb27ef5fed5f2ba48d.otf) format("opentype");
+}
+@font-face {
+  font-family: "MissionGothic-Thin";
+  src: url(/assets/Mission-Gothic-Thin-ce4c963f18c83b95040be430c9f9f2b0b50d1fe0a01484b6c840c129a5e0ba26.otf) format("opentype");
+}
+@font-face {
+  font-family: "MissionGothic-Regular";
+  src: url(/assets/Mission-Gothic-Regular-c5081919b0ef1666697ef2c3271685e8ab1d120d5e4734e1e94fa2b87445adac.otf) format("opentype");
+}
+/****************************
+  HEADERS
+*****************************/
+/* line 45, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+body {
+  zoom: 90%;
+  background: #F2FFE2;
+}
+
+/* line 50, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 54, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.header {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: 800;
+  margin: -1px 18px 0px 11px;
+  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 63, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.tagline {
+  font-family: "MissionGothic-Light";
+  font-weight: 800;
+  font-size: 20px;
+  color: #649922;
+  margin: 7px 0 0 4px;
+}
+
+/* line 71, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  transition: margin 0.25s ease-out;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* line 82, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.head > a {
+  align-items: center;
+  display: flex;
+}
+
+/* line 87, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+p.main-tagline {
+  float: left;
+  display: flex;
+  font-family: "MissionGothic-Thin";
+  display: flex;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0px 4px 6px 7px;
+  float: left;
+  flex-direction: column-reverse;
+  text-align: right;
+  border-bottom: .75px solid;
+  padding: 8px 0 -3px 8px;
+}
+
+/* line 102, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.head-tag span {
+  display: flex;
+}
+
+/* line 106, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.head-tag {
+  margin: 27px 0 20px 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+/****************************
+  ALT HEADER
+*****************************/
+/* line 116, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.alt-header {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  margin: 3px 0px 0px 4px;
+}
+
+/* line 125, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.alt-head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  transition: margin 0.25s ease-out;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+  height: 50px;
+  background-color: #ECECEC;
+  border-top: 5px solid;
+  border-top-color: #848484;
+  border-bottom: 1px dotted;
+  border-bottom-color: #848484;
+}
+
+/* line 142, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.alt-head > a {
+  align-items: center;
+  display: flex;
+}
+
+/* line 147, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.alt-head-tag span {
+  display: flex;
+  margin: 10px 0 0 13px;
+}
+
+/* line 152, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.alt-head-tag {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 157, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown {
+  font-family: 'MissionGothic-Light', sans-serif;
+  font-size: 16px;
+  color: #649922;
+  padding: 16px 0px 0 59px;
+  margin: 0 20px 0 0;
+}
+/* line 163, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown a {
+  color: #649922;
+}
+/* line 166, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown p {
+  font-weight: bold;
+  padding: 0 10px 0 0;
+}
+/* line 170, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-main {
+  display: flex;
+}
+/* line 172, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-main i.fa.fa-caret-down {
+  padding: 3px 10px 0 0;
+}
+/* line 175, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-main img {
+  width: 30px;
+  height: 30px;
+  margin: -4px 12px 0px 0;
+}
+/* line 181, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-list {
+  display: none;
+  padding: 9px 0 0 0;
+}
+/* line 184, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-list ul {
+  background-color: #ECECEC;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 0px 0 0 -60px;
+}
+/* line 190, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-list ul li {
+  padding: 10px 0px 10px 15px;
+}
+/* line 193, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-list ul li:hover {
+  background-color: #E2E2E2;
+}
+/* line 196, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown .settings-list ul li:last-child {
+  padding: 10px 0px 10px 15px;
+}
+
+/* line 203, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown:hover {
+  background-color: #CBCBCB;
+}
+/* line 205, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.settings-dropdown:hover .settings-list {
+  display: block;
+}
+
+/****************************
+  ERRORS
+*****************************/
+/* line 214, /Users/jon/GitHub/tonedream/app/assets/stylesheets/application.css.scss */
+.errors {
+  color: #FF161D;
+  text-transform: lowercase;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+}
