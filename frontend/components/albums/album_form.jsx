@@ -124,32 +124,32 @@ class ArtistForm extends React.Component {
   trackForm() {
     if(this.state.trackForm) {
       return (
-        <form onSubmit={this.handleTrackSubmit} className="login-form-box">
-          {/* {this.renderTrackErrors()}  */}
-          <div className="track-form">
-            <div className="track-form-item">
-              <input type="text"
-                className="track-input"
-                placeholder="Title"
-                onChange={this.update('trackTitle')}
-              />
-            </div>
-            <div className="track-form-item">
-              <label className="custom-upload-button">
-                <p>upload audio</p>
-                <input type="file"
-                  className="track-input-file"
-                  onChange={this.updateTrackFile}
+        <div className="track-form-container">
+          <form onSubmit={this.handleTrackSubmit} className="track-form-box">
+            {/* {this.renderTrackErrors()}  */}
+              <div className="track-form-item">
+                <input type="text"
+                  className="track-input"
+                  placeholder="Title"
+                  onChange={this.update('trackTitle')}
                 />
-              </label>
-            </div>
-            <div className="track-form-item">
-              <input type="submit"
-                className="track-button"
-                value="add" />
-            </div>
-          </div>
-        </form>
+              </div>
+              <div className="track-form-item">
+                <label className="custom-upload-button">
+                  <p>upload audio</p>
+                  <input type="file"
+                    className="artist-input-file"
+                    onChange={this.updateTrackFile}
+                  />
+                </label>
+              </div>
+              <div className="track-form-item">
+                <input type="submit"
+                  className="login-button"
+                  value="add" />
+              </div>
+          </form>
+        </div>
       );
     } else {
       return null;

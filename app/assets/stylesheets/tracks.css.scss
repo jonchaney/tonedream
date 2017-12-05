@@ -10,6 +10,34 @@
     }
 }
 
+.track-input {
+    font-family: 'MissionGothic-Light', sans-serif;
+    font-size: 13px;
+    background: #f8f8f8;
+    width: 294px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    height: 34px;
+    padding: 0 0 0 11px;
+}
+
+.track-form-item {
+    p {
+        font-family: 'MissionGothic-Light', sans-serif;
+        font-size: 13px;
+        border-radius: 3px;
+        padding: 10px 12px;
+        width: 282px;
+        border: 1px solid lightgray;
+        cursor: pointer;
+        background: #f8f8f8;
+    }
+    .login-button {
+        border-radius: 3px;
+    }
+}
+
+
 // OLD STYLES 
 
 
