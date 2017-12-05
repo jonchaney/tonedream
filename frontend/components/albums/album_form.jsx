@@ -124,19 +124,19 @@ class ArtistForm extends React.Component {
   form() {
     if(this.state.trackForm) {
       return (
-        <div className="track-form-container">
-          <form onSubmit={this.handleTrackSubmit} className="track-form-box">
+          <form onSubmit={this.handleTrackSubmit} className="artist-form-box">
+            <div className="artist-login-form">
             {/* {this.renderTrackErrors()}  */}
-              <div className="track-form-item">
+              <div className="item">
                 <input type="text"
-                  className="track-input"
+                  className="artist-input"
                   placeholder="Title"
                   onChange={this.update('trackTitle')}
                 />
               </div>
-              <div className="track-form-item">
+              <div className="item">
                 <label className="custom-upload-button">
-                  <p>upload audio</p>
+                  <p>Upload Audio</p>
                   <input type="file"
                     className="artist-input-file"
                     onChange={this.updateTrackFile}
@@ -154,17 +154,17 @@ class ArtistForm extends React.Component {
                   <p>enable download</p>
                 </div>
                 <div onClick={() => this.showTrackForm()} className="item">
-                  <i className="fa fa-plus" aria-hidden="true"></i>
-                  <p>add track</p>
+                <i className="fa fa-chevron-left" aria-hidden="true"></i>
+                  <p>Edit Album</p>
                 </div>
               </div>
-              <div className="track-form-item">
+              <div className="item">
                 <input type="submit"
                   className="login-button"
                   value="add track" />
               </div>
+            </div>
           </form>
-        </div>
       );
     } else {
       return (
@@ -205,15 +205,15 @@ class ArtistForm extends React.Component {
                 <p>enable download</p> */}
               </div>
               <div onClick={() => this.showTrackForm()} className="item">
-                <i className="fa fa-plus" aria-hidden="true"></i>
-                <p>add track</p>
+                {<i className="fa fa-plus" aria-hidden="true"></i>}
+                <p>Add Track</p>
               </div>
             </div>
             <div className="item">
               <label>
                 <input type="submit"
                   className="login-button"
-                  value="Add Album" />
+                  value="Submit Album" />
               </label>
             </div>
             {this.renderErrors()}

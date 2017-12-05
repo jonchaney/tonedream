@@ -1,6 +1,7 @@
 .track-download {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     .item {
         margin: 22px 0 0 0;
         i {
