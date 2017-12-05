@@ -121,7 +121,7 @@ class ArtistForm extends React.Component {
     this.setState({tracks: tracks});
   }
 
-  trackForm() {
+  form() {
     if(this.state.trackForm) {
       return (
         <div className="track-form-container">
@@ -143,23 +143,31 @@ class ArtistForm extends React.Component {
                   />
                 </label>
               </div>
+              <div className="track-download">
+                <div className="item">
+                  <input type="checkbox"
+                    className="album-checkbox"
+                    value="download"
+                    checked={this.state.download}
+                    onClick={() => this.checkbox()}
+                  />
+                  <p>enable download</p>
+                </div>
+                <div onClick={() => this.showTrackForm()} className="item">
+                  <i className="fa fa-plus" aria-hidden="true"></i>
+                  <p>add track</p>
+                </div>
+              </div>
               <div className="track-form-item">
                 <input type="submit"
                   className="login-button"
-                  value="add" />
+                  value="add track" />
               </div>
           </form>
         </div>
       );
     } else {
-      return null;
-    }
-  }
-
-  render() {
-    console.log(this.state.tracks);
-    return (
-      <div className="artist-form-container">
+      return (
         <form ref={(el) => this.resetForm = el} onSubmit={this.handleSubmit} className="artist-form-box">
           <div className="artist-login-form">
             <div className="item">
@@ -188,15 +196,15 @@ class ArtistForm extends React.Component {
             </div>
             <div className="track-download">
               <div className="item">
-                <input type="checkbox"
+                {/* <input type="checkbox"
                   className="album-checkbox"
                   value="download"
                   checked={this.state.download}
                   onClick={() => this.checkbox()}
                 />
-                <p>enable download</p>
+                <p>enable download</p> */}
               </div>
-              <div onClick={() => this.showTrackForm()}className="item">
+              <div onClick={() => this.showTrackForm()} className="item">
                 <i className="fa fa-plus" aria-hidden="true"></i>
                 <p>add track</p>
               </div>
@@ -211,9 +219,17 @@ class ArtistForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+      );
+    }
+  }
+
+  render() {
+    console.log(this.state.tracks);
+    return (
+      <div className="artist-form-container">
+        {this.form()}
         <div className="track-updating">
           <Updating album={this.state} artist={this.props.selectedArtist}/>
-          {this.trackForm()}
         </div>
       </div>
     );
