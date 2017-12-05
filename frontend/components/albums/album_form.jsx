@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 
 import Updating from '../edit_page/updating';
+import TrackFormContainer from '../tracks/track_form_container';
 
 class ArtistForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.handleTrackSubmit = this.handleTrackSubmit.bind(this);
+    this.updateTrackFile = this.updateTrackFile.bind(this);
     this.state = {
       title: null,
       date: null,
       image: null,
-      tracks: null,
+      trackTitle: null,
+      audio: null,
+      tracks: [],
       artist_id: null,
       download: false,
-      artist: this.props.selectedArtist.name
+      artist: this.props.selectedArtist.name,
+      trackForm: false
     };
   }
 
@@ -85,7 +91,73 @@ class ArtistForm extends React.Component {
     }
   }
 
+  showTrackForm() {
+    if(this.state.trackForm) {
+      this.setState({ trackForm: false });
+    } else {
+      this.setState({ trackForm: true });
+    }
+  }
+
+  updateTrackFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ audioFile: file, audio: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+  handleTrackSubmit(e) {
+    e.preventDefault();
+    let track = {
+      title: this.state.trackTitle,
+      audio: this.state.audio,
+    };
+    let tracks = this.state.tracks;
+    tracks.push(track);
+    this.setState({tracks: tracks});
+  }
+
+  trackForm() {
+    if(this.state.trackForm) {
+      return (
+        <form onSubmit={this.handleTrackSubmit} className="login-form-box">
+          {/* {this.renderTrackErrors()}  */}
+          <div className="track-form">
+            <div className="track-form-item">
+              <input type="text"
+                className="track-input"
+                placeholder="Title"
+                onChange={this.update('trackTitle')}
+              />
+            </div>
+            <div className="track-form-item">
+              <label className="custom-upload-button">
+                <p>upload audio</p>
+                <input type="file"
+                  className="track-input-file"
+                  onChange={this.updateTrackFile}
+                />
+              </label>
+            </div>
+            <div className="track-form-item">
+              <input type="submit"
+                className="track-button"
+                value="add" />
+            </div>
+          </div>
+        </form>
+      );
+    } else {
+      return null;
+    }
+  }
+
   render() {
+    console.log(this.state.tracks);
     return (
       <div className="artist-form-container">
         <form ref={(el) => this.resetForm = el} onSubmit={this.handleSubmit} className="artist-form-box">
@@ -114,14 +186,20 @@ class ArtistForm extends React.Component {
                 />
               </label>
             </div>
-            <div className="item">
-              <input type="checkbox"
-                className="album-checkbox"
-                value="download"
-                checked={this.state.download}
-                onClick={() => this.checkbox()}
-              />
-              <p>enable download</p>
+            <div className="track-download">
+              <div className="item">
+                <input type="checkbox"
+                  className="album-checkbox"
+                  value="download"
+                  checked={this.state.download}
+                  onClick={() => this.checkbox()}
+                />
+                <p>enable download</p>
+              </div>
+              <div onClick={() => this.showTrackForm()}className="item">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+                <p>add track</p>
+              </div>
             </div>
             <div className="item">
               <label>
@@ -133,8 +211,10 @@ class ArtistForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
-        <Updating album={this.state} artist={this.props.selectedArtist}/>
-        
+        <div className="track-updating">
+          <Updating album={this.state} artist={this.props.selectedArtist}/>
+          {this.trackForm()}
+        </div>
       </div>
     );
   }

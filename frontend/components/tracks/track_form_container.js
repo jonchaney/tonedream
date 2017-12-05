@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createTrack, addTracks } from '../../actions/audio_player_actions';
-import AddTracks from './add_tracks';
+
+import TrackForm from './track_form';
 
 
 const mapStateToProps = ({ artists, albums, session, loading }) => ({
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddTracks);
+)(TrackForm);

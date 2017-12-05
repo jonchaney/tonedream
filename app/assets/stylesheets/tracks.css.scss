@@ -1,3 +1,18 @@
+.track-download {
+    display: flex;
+    justify-content: space-between;
+    .item {
+        margin: 22px 0 0 0;
+        i {
+            padding: 3px 5px 0 0;
+            font-size: 11px;
+        }
+    }
+}
+
+// OLD STYLES 
+
+
 .album-main {
     display: flex;
     font-family: MissionGothic-Light;

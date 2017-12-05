@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class AddTracks extends React.Component {
+class TrackForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,37 +63,35 @@ class AddTracks extends React.Component {
 
   render() {
     return (
-      <div className="add-track-container">
+      <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {/* {this.renderErrors()}  */}
-          <div className="login-input-box">
-            <label>
+          <div className="artist-login-form">
+            <div className="item">
               <input type="text"
-                className="edit-input"
+                className="artist-input"
                 placeholder={this.state.title}
-                value={this.state.title}
                 onChange={this.update('title')}
               />
-            </label>
-            <label>
+            </div>
+            <div className="item">
               <input type="text"
-                className="edit-input"
+                className="artist-input"
                 placeholder={this.state.trackNum}
-                value={this.state.trackNum}
                 onChange={this.update('trackNum')}
               />
-            </label>
-            <label>
+            </div>
+            <div className="item">
               <input type="file"
-                className="edit-input"
+                className="artist-input"
                 onChange={this.updateFile}
               />
-            </label>
-            <label>
+            </div>
+            <div className="item">
               <input type="submit"
-                className="submit-edit"
+                className="login-button"
                 value="submit" />
-            </label>
+            </div>
           </div>
         </form>
       </div>
@@ -101,4 +99,4 @@ class AddTracks extends React.Component {
   }
 }
 
-export default AddTracks;
+export default TrackForm;
