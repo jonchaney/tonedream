@@ -11,10 +11,10 @@ class ArtistForm extends React.Component {
     this.handleTrackSubmit = this.handleTrackSubmit.bind(this);
     this.updateTrackFile = this.updateTrackFile.bind(this);
     this.state = {
-      title: null,
-      date: null,
+      title: "",
+      trackTitle: "",
+      date: "",
       image: null,
-      trackTitle: null,
       audio: null,
       tracks: [],
       artist_id: null,
@@ -130,6 +130,7 @@ class ArtistForm extends React.Component {
                 <input type="text"
                   className="track-input"
                   placeholder="Title"
+                  value={this.state.trackTitle}
                   onChange={this.update('trackTitle')}
                 />
               </div>
@@ -173,6 +174,7 @@ class ArtistForm extends React.Component {
               <input type="text"
                 autoFocus="autofocus"
                 className="artist-input"
+                value={this.state.title}
                 onChange={this.update('title')}
                 placeholder='Album Name'
               />
@@ -180,6 +182,7 @@ class ArtistForm extends React.Component {
             <div className="item">
               <input type="text"
                 className="artist-input"
+                value={this.state.date}
                 onChange={this.update('date')}
                 placeholder='Release Date (MM/DD/YY)'
               />
