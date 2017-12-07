@@ -27,7 +27,6 @@ class ArtistForm extends React.Component {
   componentDidUpdate(nextProps, prevState) {
     // clear form and reset album preview when artist changes
     if(nextProps.selectedArtist.name !== prevState.artist) {
-      this.resetForm.reset();
       this.setState({
         title: null,
         date: null,
@@ -46,7 +45,7 @@ class ArtistForm extends React.Component {
       title: this.state.title,
       date: this.state.date,
       image: this.state.image,
-      downloac: this.state.download,
+      download: this.state.download,
       artist_id: this.props.selectedArtist.id
     };
     this.props.createAlbum(album).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
@@ -129,7 +128,7 @@ class ArtistForm extends React.Component {
             {/* {this.renderTrackErrors()}  */}
               <div className="item">
                 <input type="text"
-                  className="artist-input"
+                  className="track-input"
                   placeholder="Title"
                   onChange={this.update('trackTitle')}
                 />
@@ -175,14 +174,14 @@ class ArtistForm extends React.Component {
                 autoFocus="autofocus"
                 className="artist-input"
                 onChange={this.update('title')}
-                placeholder={'Album Name'}
+                placeholder='Album Name'
               />
             </div>
             <div className="item">
               <input type="text"
                 className="artist-input"
                 onChange={this.update('date')}
-                placeholder={'Release Date (MM/DD/YY)'}
+                placeholder='Release Date (MM/DD/YY)'
               />
             </div>
             <div className="item">
@@ -205,7 +204,7 @@ class ArtistForm extends React.Component {
                 <p>enable download</p> */}
               </div>
               <div onClick={() => this.showTrackForm()} className="item">
-                {<i className="fa fa-plus" aria-hidden="true"></i>}
+                <i className="fa fa-plus" aria-hidden="true"></i>
                 <p>Add Track</p>
               </div>
             </div>
@@ -225,6 +224,7 @@ class ArtistForm extends React.Component {
 
   render() {
     console.log(this.state.tracks);
+    console.log(this.state);
     return (
       <div className="artist-form-container">
         {this.form()}
