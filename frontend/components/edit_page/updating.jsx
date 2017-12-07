@@ -11,7 +11,8 @@ class Updating extends React.Component {
       date: null,
       image: null,
       artist: null,
-      download: false
+      download: false,
+      tracks: []
     };
   }
 
@@ -21,7 +22,8 @@ class Updating extends React.Component {
         date: nextProps.album.date,
         image: nextProps.album.image,
         artist: nextProps.artist.name,
-        download: nextProps.album.download
+        download: nextProps.album.download,
+        tracks: nextProps.album.tracks
       });
   }
 
@@ -73,15 +75,31 @@ class Updating extends React.Component {
     }
   }
 
+  tracks() {
+      let tracks = this.state.tracks.map((track, idx) => {
+        return (
+            <li key={idx}>{track.title}</li>
+        );
+      });
+      return tracks;
+  }
+
   render() {
     return (
       <div className="updating">
+        <div className="update-album">
         {this.image()}
-        <ul className="updating-ul">
-          {this.title()}
-          {this.date()}
-          {this.downloadable()}
-        </ul>
+          <ul className="updating-ul">
+            {this.title()}
+            {this.date()}
+            {this.downloadable()}
+          </ul>
+        </div>
+        <div>
+          <ul className="updating-tracks">
+            {this.tracks()}
+          </ul>
+        </div>
       </div>
     );
   }

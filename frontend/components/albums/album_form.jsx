@@ -117,7 +117,7 @@ class ArtistForm extends React.Component {
     };
     let tracks = this.state.tracks;
     tracks.push(track);
-    this.setState({tracks: tracks});
+    this.setState({tracks: tracks, trackTitle: ""});
   }
 
   form() {

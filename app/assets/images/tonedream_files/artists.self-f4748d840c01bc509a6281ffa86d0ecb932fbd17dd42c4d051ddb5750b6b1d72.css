@@ -133,6 +133,7 @@ label.custom-upload-button:hover {
   font-family: 'MissionGothic-Light', sans-serif;
   font-size: 19px;
   display: flex;
+  flex-direction: column;
   margin: -95px 0 0 32px;
 }
 /* line 126, /Users/jon/GitHub/tonedream/app/assets/stylesheets/api/artists.scss */
