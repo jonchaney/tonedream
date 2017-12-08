@@ -118,26 +118,30 @@ label.custom-upload-button:hover {
     border-radius: 3px;
 }
 
-.updateing-track-container {
-    margin: 0px 0 0 -12px;
-}
+// .updateing-track-container {
+//     margin: 0px 0 0 -12px;
+// }
 
 .updating {
     font-family: 'MissionGothic-Light', sans-serif;
     font-size: 19px;
     display: flex;
     flex-direction: column;
-    margin: -95px 0 0 32px;
+    margin: -98px 0px 0px 45px;
     .updating-track {
         display: flex;
-        margin: 20px 0 0 0;
+        padding: 0px 0px 0px 0px;
+        margin: 17px 0px 0 0;
+        background: #f8f8f8;
+        border: 1px solid lightgray;
+        border-radius: 6px;
         .track-info {
-            font-size: 16px;
+            font-size: 13px;
             border-left: 1px solid lightgray;
-            padding-left: 22px;
+            padding: 5px 10px 0px 10px;
             height: 52px;
             li:nth-last-child(-n+2) {
-                font-size: 13px;
+                font-size: 11px;
                 color: gray;
             }
         }
@@ -147,8 +151,8 @@ label.custom-upload-button:hover {
             display: flex;
             text-align: center;
             p {
-                margin: 9px 0 0 20px;
-                font-size: 25px;
+                margin: 20px auto auto auto;
+                font-size: 15px;
             }
         }
     }
