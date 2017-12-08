@@ -18,7 +18,7 @@ class ArtistForm extends React.Component {
       audio: null,
       tracks: [],
       artist_id: null,
-      download: false,
+      download: "",
       artist: this.props.selectedArtist.name,
       trackForm: false
     };
@@ -114,10 +114,11 @@ class ArtistForm extends React.Component {
     let track = {
       title: this.state.trackTitle,
       audio: this.state.audio,
+      download: this.state.download
     };
     let tracks = this.state.tracks;
     tracks.push(track);
-    this.setState({tracks: tracks, trackTitle: ""});
+    this.setState({tracks: tracks, trackTitle: "", download: ""});
   }
 
   form() {

@@ -13,7 +13,7 @@ class Updating extends React.Component {
       artist: null,
       download: false,
       tracks: [],
-      trackTitle: null
+      trackTitle: ""
     };
   }
 
@@ -65,20 +65,18 @@ class Updating extends React.Component {
     }
   }
 
-  downloadable() {
-    if (this.state.download) {
+  downloadable(download) {
+    if (download) {
       return (
-        <li>downloadable</li>
+        <p>downloadable</p>
       );
     } else {
-      return (
-        <li></li>
-      );
+      return null;
     }
   }
 
   track() {
-    if (this.state.download) {
+    if (this.state.trackTitle) {
       return null;
     } else {
       return (
@@ -90,10 +88,36 @@ class Updating extends React.Component {
   tracks() {
       let tracks = this.state.tracks.map((track, idx) => {
         return (
-            <li key={idx}>{track.title}</li>
+          <div className="" key={idx}>
+            <div>
+              <p>{idx+1}</p>
+            </div>
+            <div>
+              <p>{track.title}</p>
+              {this.downloadable(track.download)}
+            </div>
+          </div>
         );
       });
       return tracks;
+  }
+
+  updating() {
+    if (this.state.trackTitle !== "") {
+      return (
+        <div className= "updating-track">
+          <div>
+            <p>{this.state.tracks.length + 1}</p>
+          </div>
+          <div>
+            <p>{this.state.trackTitle}</p>
+            {this.downloadable(this.state.download)}
+          </div>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -104,18 +128,11 @@ class Updating extends React.Component {
           <ul className="updating-ul">
             {this.title()}
             {this.date()}
-            {this.downloadable()}
           </ul>
         </div>
+          {this.tracks()}
         <div>
-          <ul className="updating-track">
-            {this.track()}
-          </ul>
-        </div>
-        <div>
-          <ul className="updating-tracks">
-            {this.tracks()}
-          </ul>
+          {this.updating()}
         </div>
       </div>
     );
