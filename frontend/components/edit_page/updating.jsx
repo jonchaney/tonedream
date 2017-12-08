@@ -13,7 +13,8 @@ class Updating extends React.Component {
       artist: null,
       download: false,
       tracks: [],
-      trackTitle: ""
+      trackTitle: "",
+      audioFile: null
     };
   }
 
@@ -25,7 +26,8 @@ class Updating extends React.Component {
         artist: nextProps.artist.name,
         download: nextProps.album.download,
         tracks: nextProps.album.tracks,
-        trackTitle: nextProps.album.trackTitle
+        trackTitle: nextProps.album.trackTitle,
+        audioFile: nextProps.album.audioFile
       });
   }
 
@@ -68,10 +70,10 @@ class Updating extends React.Component {
   downloadable(download) {
     if (download) {
       return (
-        <p>downloadable</p>
+        <li>downloadable</li>
       );
     } else {
-      return null;
+      return <li></li>;
     }
   }
 
@@ -85,17 +87,28 @@ class Updating extends React.Component {
     }
   }
 
+  audioFileName() {
+    if (this.state.audioFile) {
+      return (
+        <li>{this.state.audioFile.name}</li>
+      );
+    } else {
+      return <li></li>;
+    }
+  }
+
   tracks() {
       let tracks = this.state.tracks.map((track, idx) => {
         return (
-          <div className="" key={idx}>
-            <div>
+          <div className="updating-track" key={idx}>
+            <div className="track-num">
               <p>{idx+1}</p>
             </div>
-            <div>
-              <p>{track.title}</p>
+            <ul className="track-info">
+              <li>{track.title}</li>
+              <li>{track.audioFile.name}</li>
               {this.downloadable(track.download)}
-            </div>
+            </ul>
           </div>
         );
       });
@@ -105,14 +118,15 @@ class Updating extends React.Component {
   updating() {
     if (this.state.trackTitle !== "") {
       return (
-        <div className= "updating-track">
-          <div>
+        <div className="updating-track">
+          <div className="track-num">
             <p>{this.state.tracks.length + 1}</p>
           </div>
-          <div>
-            <p>{this.state.trackTitle}</p>
+          <ul className="track-info">
+            <li>{this.state.trackTitle}</li>
+            {this.audioFileName()}
             {this.downloadable(this.state.download)}
-          </div>
+          </ul>
         </div>
       );
     } else {
@@ -130,8 +144,8 @@ class Updating extends React.Component {
             {this.date()}
           </ul>
         </div>
+        <div className="updateing-track-container">
           {this.tracks()}
-        <div>
           {this.updating()}
         </div>
       </div>

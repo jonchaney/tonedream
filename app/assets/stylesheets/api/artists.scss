@@ -118,12 +118,40 @@ label.custom-upload-button:hover {
     border-radius: 3px;
 }
 
+.updateing-track-container {
+    margin: 0px 0 0 -12px;
+}
+
 .updating {
     font-family: 'MissionGothic-Light', sans-serif;
     font-size: 19px;
     display: flex;
     flex-direction: column;
     margin: -95px 0 0 32px;
+    .updating-track {
+        display: flex;
+        margin: 20px 0 0 0;
+        .track-info {
+            font-size: 16px;
+            border-left: 1px solid lightgray;
+            padding-left: 22px;
+            height: 52px;
+            li:nth-last-child(-n+2) {
+                font-size: 13px;
+                color: gray;
+            }
+        }
+        .track-num {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            text-align: center;
+            p {
+                margin: 9px 0 0 20px;
+                font-size: 25px;
+            }
+        }
+    }
     .update-album {
         display: flex;
     }   

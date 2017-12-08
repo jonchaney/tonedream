@@ -20,7 +20,8 @@ class ArtistForm extends React.Component {
       artist_id: null,
       download: "",
       artist: this.props.selectedArtist.name,
-      trackForm: false
+      trackForm: false,
+      audioFile: null
     };
   }
 
@@ -28,13 +29,17 @@ class ArtistForm extends React.Component {
     // clear form and reset album preview when artist changes
     if(nextProps.selectedArtist.name !== prevState.artist) {
       this.setState({
-        title: null,
-        date: null,
+        title: "",
+        trackTitle: "",
+        date: "",
         image: null,
-        tracks: null,
+        audio: null,
+        tracks: [],
         artist_id: null,
-        download: null,
-        artist: this.props.selectedArtist.name
+        download: "",
+        artist: this.props.selectedArtist.name,
+        trackForm: false,
+        audioFile: null
       });
     }
   }
@@ -114,11 +119,12 @@ class ArtistForm extends React.Component {
     let track = {
       title: this.state.trackTitle,
       audio: this.state.audio,
-      download: this.state.download
+      download: this.state.download,
+      audioFile: this.state.audioFile
     };
     let tracks = this.state.tracks;
     tracks.push(track);
-    this.setState({tracks: tracks, trackTitle: "", download: ""});
+    this.setState({tracks: tracks, trackTitle: "", download: "", audioFile: null});
   }
 
   form() {
@@ -209,7 +215,7 @@ class ArtistForm extends React.Component {
               </div>
               <div onClick={() => this.showTrackForm()} className="item">
                 <i className="fa fa-plus" aria-hidden="true"></i>
-                <p>Add Track</p>
+                <p>Add Tracks</p>
               </div>
             </div>
             <div className="item">
