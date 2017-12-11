@@ -53,7 +53,9 @@ class ArtistForm extends React.Component {
       download: this.state.download,
       artist_id: this.props.selectedArtist.id
     };
-    this.props.createAlbum(album).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    let tracks = this.state.tracks;
+    console.log(album, tracks);
+    this.props.createAlbum(album).then(() => this.setState({trackForm: true}));
   }
 
   updateFile(e) {
@@ -203,21 +205,21 @@ class ArtistForm extends React.Component {
                 />
               </label>
             </div>
-            <div className="track-download">
+            {/* <div className="track-download">
               <div className="item">
-                {/* <input type="checkbox"
+                <input type="checkbox"
                   className="album-checkbox"
                   value="download"
                   checked={this.state.download}
                   onClick={() => this.checkbox()}
                 />
-                <p>enable download</p> */}
+                <p>enable download</p>
               </div>
               <div onClick={() => this.showTrackForm()} className="item">
                 <i className="fa fa-plus" aria-hidden="true"></i>
                 <p>Add Tracks</p>
               </div>
-            </div>
+            </div> */}
             <div className="item">
               <label>
                 <input type="submit"

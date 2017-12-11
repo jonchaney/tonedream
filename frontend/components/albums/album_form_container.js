@@ -11,8 +11,8 @@ const mapStateToProps = ({ session, albums, artists }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateAlbum: (user) => dispatch(updateAlbum(user)),
-  createAlbum: (user) => dispatch(createAlbum(user)),
+  updateAlbum: (album) => dispatch(updateAlbum(album)),
+  createAlbum: (album) => dispatch(createAlbum(album)),
   clearAlbumErrors: () => dispatch(clearAlbumErrors())
 });
 

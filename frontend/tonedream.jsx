@@ -5,6 +5,7 @@ import Root from './components/root';
 
 import { updateUser } from './actions/user_actions';
 import { createTrack } from './actions/audio_player_actions';
+import { createAlbum } from './actions/album_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.updateUser = updateUser;
+  window.createAlbum = createAlbum;
   window.createTrack = createTrack;
 
   // window.search = search;

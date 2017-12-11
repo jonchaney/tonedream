@@ -6,11 +6,12 @@ import { withRouter } from 'react-router';
 
 import EditAlbumForm from './edit_album_form';
 
-const mapStateToProps = ({ albums, session, loading }) => ({
+const mapStateToProps = ({ artists, albums, session, loading }) => ({
   currentUser: session.currentUser,
   albums: allAlbums(albums),
   selectedAlbum: albums.selectedAlbum,
-  errors: albums.errors
+  errors: albums.errors,
+  selectedArtist: artists.selectedArtist
 });
 
 const mapDispatchToProps = dispatch => ({

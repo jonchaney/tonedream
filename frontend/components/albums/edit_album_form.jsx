@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import Updating from '../edit_page/updating';
+
 class EditAlbumForm extends React.Component {
   constructor(props) {
     super(props);
@@ -13,10 +15,35 @@ class EditAlbumForm extends React.Component {
         artist_id: this.props.selectedAlbum.artist_id,
         title: this.props.selectedAlbum.title,
         date: this.props.selectedAlbum.date,
-        imageFile: null,
+        artist: this.props.selectedArtist.name,
         image: this.props.selectedAlbum.image_url,
-        tracks: this.props.tracks
+        imageFile: null,
+        audioFile: null,
+        tracks: [],
+        trackTitle: "",
+        download: "",
+        audio: null,
+        trackForm: false
     };
+  }
+
+  componentDidUpdate(nextProps, prevState) {
+    // clear form and reset album preview when artist changes
+    if (nextProps.selectedArtist.name !== prevState.artist) {
+      this.setState({
+        title: "",
+        trackTitle: "",
+        date: "",
+        image: null,
+        audio: null,
+        tracks: [],
+        artist_id: null,
+        download: "",
+        artist: this.props.selectedArtist.name,
+        trackForm: false,
+        audioFile: null
+      });
+    }
   }
 
   handleSubmit(e) {
@@ -71,7 +98,61 @@ class EditAlbumForm extends React.Component {
     e.target.value = val;
   }
 
+  showTrackForm() {
+    if (this.state.trackForm) {
+      this.setState({ trackForm: false });
+    } else {
+      this.setState({ trackForm: true });
+    }
+  }
+
   editAlbum() {
+    if (this.state.trackForm) {
+      return (
+        <form onSubmit={this.handleTrackSubmit} className="artist-form-box">
+          <div className="artist-login-form">
+            {/* {this.renderTrackErrors()}  */}
+            <div className="item">
+              <input type="text"
+                className="track-input"
+                placeholder="Title"
+                value={this.state.trackTitle}
+                onChange={this.update('trackTitle')}
+              />
+            </div>
+            <div className="item">
+              <label className="custom-upload-button">
+                <p>Upload Audio</p>
+                <input type="file"
+                  className="artist-input-file"
+                  onChange={this.updateTrackFile}
+                />
+              </label>
+            </div>
+            <div className="track-download">
+              <div className="item">
+                <input type="checkbox"
+                  className="album-checkbox"
+                  value="download"
+                  checked={this.state.download}
+                  onClick={() => this.checkbox()}
+                />
+                <p>enable download</p>
+              </div>
+              <div onClick={() => this.showTrackForm()} className="item">
+                <i className="fa fa-chevron-left" aria-hidden="true"></i>
+                <p>Edit Album</p>
+              </div>
+            </div>
+            <div className="item">
+              <input type="submit"
+                className="login-button"
+                value="add track" />
+            </div>
+          </div>
+        </form>
+      );
+    } else {
     return (
       <div className="artist-form-container">
         <form onSubmit={this.handleSubmit} className="artist-form-box">
@@ -108,17 +189,27 @@ class EditAlbumForm extends React.Component {
                   value="Update Album" />
               </label>
             </div>
+            <div className="track-download">
+              <div onClick={() => this.showTrackForm()} className="item">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+                <p>Add/Edit Tracks</p>
+              </div>
+            </div>
             {this.renderErrors()}
           </div>
         </form>
       </div>
     );
+   }
   }
   
   render() {
     return (
-      <div className="album-info">
+      <div className="artist-form-container">
         {this.editAlbum()}
+        <div className="track-updating">
+          <Updating album={this.state} artist={this.props.selectedArtist} />
+        </div>
       </div>
     );
   }
