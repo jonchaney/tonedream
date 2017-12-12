@@ -15,42 +15,42 @@ Track.destroy_all
 u = User.create!(username: "jonathan", password: "password", email:"jonchaney@gmail.com")
 
 # create artist
-slow_crawl = Artist.create!(name: "Slow Crawl", location: "San Francisco", bio: "post punk")
-slow_crawl.image = File.open('app/assets/images/slowcrawl.png')
-slow_crawl.save!
-swayed = Artist.create!(name: "Swayed", location: "San Francisco", bio: "dreampop")
-swayed.image = File.open('app/assets/images/swayed.png')
-swayed.save!
+# slow_crawl = Artist.create!(name: "Slow Crawl", location: "San Francisco", bio: "post punk")
+# slow_crawl.image = File.open('app/assets/images/slowcrawl.png')
+# slow_crawl.save!
+# swayed = Artist.create!(name: "Swayed", location: "San Francisco", bio: "dreampop")
+# swayed.image = File.open('app/assets/images/swayed.png')
+# swayed.save!
 
-# add artist to user
-u.artists << slow_crawl
-u.save!
-u.artists << swayed
-u.save!
+# # add artist to user
+# u.artists << slow_crawl
+# u.save!
+# u.artists << swayed
+# u.save!
 
-date = Date.new
+# date = Date.new
 
 # create album
-a = Album.create!(title: "Satan's Gulch", date: date, artist_id: slow_crawl.id)
-a.image = File.open('app/assets/images/satans_gulch.png')
-a.save!
+# a = Album.create!(title: "Satan's Gulch", date: date, artist_id: slow_crawl.id)
+# a.image = File.open('app/assets/images/satans_gulch.png')
+# a.save!
 
-t = Track.create!(title: "Lost Coast", duration: 200,track_num: 1, download: true, album_id: a.id)
-t1 = Track.create!(title: "Shrubs and Trees", duration: 200, track_num: 2, download: true, album_id: a.id)
-t2 = Track.create!(title: "Reptile", duration: 200, track_num: 3, download: true, album_id: a.id)
-t3 = Track.create!(title: "Fadeaway", duration: 200, track_num: 4, download: true, album_id: a.id)
-t4 = Track.create!(title: "Jam", duration: 200, track_num: 5, download: true, album_id: a.id)
+# t = Track.create!(title: "Lost Coast", duration: 200,track_num: 1, download: true, album_id: a.id)
+# t1 = Track.create!(title: "Shrubs and Trees", duration: 200, track_num: 2, download: true, album_id: a.id)
+# t2 = Track.create!(title: "Reptile", duration: 200, track_num: 3, download: true, album_id: a.id)
+# t3 = Track.create!(title: "Fadeaway", duration: 200, track_num: 4, download: true, album_id: a.id)
+# t4 = Track.create!(title: "Jam", duration: 200, track_num: 5, download: true, album_id: a.id)
 
-t.audio = File.open('app/assets/audio/LostCoast.mp3')
-t.save!
-t1.audio = File.open('app/assets/audio/ShrubsandTrees.mp3')
-t1.save!
-t2.audio = File.open('app/assets/audio/Reptile.mp3')
-t2.save!
-t3.audio = File.open('app/assets/audio/Fadeaway.mp3')
-t3.save!
-t4.audio = File.open('app/assets/audio/Jam.mp3')
-t4.save!
+# t.audio = File.open('app/assets/audio/LostCoast.mp3')
+# t.save!
+# t1.audio = File.open('app/assets/audio/ShrubsandTrees.mp3')
+# t1.save!
+# t2.audio = File.open('app/assets/audio/Reptile.mp3')
+# t2.save!
+# t3.audio = File.open('app/assets/audio/Fadeaway.mp3')
+# t3.save!
+# t4.audio = File.open('app/assets/audio/Jam.mp3')
+# t4.save!
 
 # u = User.create!(username: "hazelswart", password: "password", email:"drowninhoney@gmail.com", band: "Hazel's Wart", location: "San Francisco", bio: "rock n roll band")
 # a1 = Album.create!(title: 'Does A Secret Speak', date: date, user_id: u.id)
