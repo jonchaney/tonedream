@@ -58,7 +58,6 @@ class EditAlbumForm extends React.Component {
       image: this.state.image
     };
     this.props.updateAlbum(this.state.artist_id, this.state.id, album)
-    .then(() => this.props.addTracks(this.state.artist_id, this.state.id, this.state.tracks))
     .then(() => { 
         this.props.clearArtist();
         this.props.history.push(`/albums/${this.state.id}`);
@@ -99,11 +98,15 @@ class EditAlbumForm extends React.Component {
       title: this.state.trackTitle,
       audio: this.state.audio,
       download: this.state.download,
-      audioFile: this.state.audioFile
+      track_num: this.state.tracks.length+1,
+      name: this.state.audioFile.name,
+      album_id: this.state.id
     };
     let tracks = this.state.tracks;
     tracks.push(track);
+    this.props.createTrack(track);
     this.setState({ tracks: tracks, trackTitle: "", download: "", audioFile: null, audio: null });
+
   }
 
   checkbox(event) {

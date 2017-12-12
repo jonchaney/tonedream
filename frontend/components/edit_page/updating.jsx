@@ -14,7 +14,7 @@ class Updating extends React.Component {
       download: false,
       tracks: [],
       trackTitle: "",
-      audioFile: null
+      name: null
     };
   }
 
@@ -27,7 +27,7 @@ class Updating extends React.Component {
         download: nextProps.album.download,
         tracks: nextProps.album.tracks,
         trackTitle: nextProps.album.trackTitle,
-        audioFile: nextProps.album.audioFile
+        name: nextProps.album.name
       });
   }
 
@@ -88,9 +88,9 @@ class Updating extends React.Component {
   }
 
   audioFileName() {
-    if (this.state.audioFile) {
+    if (this.state.name) {
       return (
-        <li>{this.state.audioFile.name}</li>
+        <li>{this.state.name}</li>
       );
     } else {
       return <li></li>;
@@ -106,7 +106,7 @@ class Updating extends React.Component {
             </div>
             <ul className="track-info">
               <li>{track.title}</li>
-              <li>{track.audioFile.name}</li>
+              <li>{track.name}</li>
               {this.downloadable(track.download)}
             </ul>
           </div>

@@ -12,22 +12,12 @@ export const fetchTrack = id => (
   })
 );
 
-export const createTrack = data => (
-  $.ajax({
-    method: 'POST',
-    url: 'api/tracks',
-    data
-  })
-);
-
-export const addTracks = (artistId, albumId, tracks) => {
-  let data = {
-    tracks: tracks
-  };
+export const createTrack = (track) => {
+  console.log(track);
   return $.ajax({
     method: 'POST',
-    url: `api/artists/${artistId}/albums/${albumId}/tracks`,
-    track: data
+    url: 'api/tracks',
+    data: {track}
   });
 };
 

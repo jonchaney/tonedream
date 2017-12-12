@@ -17,15 +17,12 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    p track_params
-    p params[:artist_id]
-    p params[:album_id]
-    # @track = Track.new(track_params)
-    # if @track.save
-    #   render 'api/tracks/show'
-    # else
-    #   render json: @track.errors.full_messages, status: 422
-    # end
+    @track = Track.new(track_params)
+    if @track.save
+      render 'api/tracks/show'
+    else
+      render json: @track.errors.full_messages, status: 422
+    end
   end
 
   def index
@@ -55,6 +52,6 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    params.require(:track).permit(:title, :download, :album_id, :track_num, :audio, :tracks)
+    params.require(:track).permit(:title, :download, :album_id, :track_num, :audio)
   end
 end
