@@ -10,6 +10,9 @@ class EditAlbumForm extends React.Component {
     this.editAlbum = this.editAlbum.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.update = this.update.bind(this);
+    this.handleTrackSubmit = this.handleTrackSubmit.bind(this);
+    this.updateTrackFile = this.updateTrackFile.bind(this);
+
       this.state = {
         id: this.props.selectedAlbum.id,
         artist_id: this.props.selectedAlbum.artist_id,
@@ -54,8 +57,9 @@ class EditAlbumForm extends React.Component {
       date: this.state.date,
       image: this.state.image
     };
-    this.props.updateAlbum(this.state.artist_id, this.state.id, album).then(
-      () => { 
+    this.props.updateAlbum(this.state.artist_id, this.state.id, album)
+    .then(() => this.props.addTracks(this.state.artist_id, this.state.id, this.state.tracks))
+    .then(() => { 
         this.props.clearArtist();
         this.props.history.push(`/albums/${this.state.id}`);
       });
@@ -76,6 +80,38 @@ class EditAlbumForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  updateTrackFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ audioFile: file, audio: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+  handleTrackSubmit(e) {
+    e.preventDefault();
+    let track = {
+      title: this.state.trackTitle,
+      audio: this.state.audio,
+      download: this.state.download,
+      audioFile: this.state.audioFile
+    };
+    let tracks = this.state.tracks;
+    tracks.push(track);
+    this.setState({ tracks: tracks, trackTitle: "", download: "", audioFile: null, audio: null });
+  }
+
+  checkbox(event) {
+    if (this.state.download) {
+      this.setState({ download: false });
+    } else {
+      this.setState({ download: true });
+    }
   }
 
   renderErrors() {

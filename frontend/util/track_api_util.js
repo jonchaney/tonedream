@@ -20,6 +20,17 @@ export const createTrack = data => (
   })
 );
 
+export const addTracks = (artistId, albumId, tracks) => {
+  let data = {
+    tracks: tracks
+  };
+  return $.ajax({
+    method: 'POST',
+    url: `api/artists/${artistId}/albums/${albumId}/tracks`,
+    track: data
+  });
+};
+
 export const deleteTrack = id => (
   $.ajax({
     method: 'DELETE',

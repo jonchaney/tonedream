@@ -88,7 +88,16 @@ export const createTrack = track => dispatch => (
     dispatch(receiveErrors(errors))
   ))
 );
- 
+
+export const addTracks = (artistId, albumId, tracks) => dispatch => {
+  console.log(tracks);
+  return APIUtil.addTracks(artistId, albumId, tracks).then(() => {
+    // no action at the moment
+  }, errors => (
+    dispatch(receiveErrors(errors))
+  ));
+};
+
 export const deleteTrack = id => dispatch => (
   APIUtil.deleteTrack(id)
 );

@@ -4,7 +4,7 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 
 import { updateUser } from './actions/user_actions';
-import { createTrack } from './actions/audio_player_actions';
+import { addTracks } from './actions/track_actions';
 import { createAlbum } from './actions/album_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.createAlbum = createAlbum;
-  window.createTrack = createTrack;
+  window.addTracks = addTracks;
 
   // window.search = search;
   // end test

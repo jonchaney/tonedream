@@ -89,7 +89,6 @@ export const deleteAlbum = (artistId,albumId) => dispatch => (
 );
 
 export const updateAlbum = (artistId, albumId, album) => dispatch => {
-  console.log(artistId, albumId, album);
   return APIUtil.updateAlbum(artistId, albumId, album).then(album => {
     dispatch(receiveAlbum(album));
   }, errors => (

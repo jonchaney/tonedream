@@ -205,21 +205,6 @@ class ArtistForm extends React.Component {
                 />
               </label>
             </div>
-            {/* <div className="track-download">
-              <div className="item">
-                <input type="checkbox"
-                  className="album-checkbox"
-                  value="download"
-                  checked={this.state.download}
-                  onClick={() => this.checkbox()}
-                />
-                <p>enable download</p>
-              </div>
-              <div onClick={() => this.showTrackForm()} className="item">
-                <i className="fa fa-plus" aria-hidden="true"></i>
-                <p>Add Tracks</p>
-              </div>
-            </div> */}
             <div className="item">
               <label>
                 <input type="submit"
@@ -235,8 +220,6 @@ class ArtistForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.tracks);
-    console.log(this.state);
     return (
       <div className="artist-form-container">
         {this.form()}
