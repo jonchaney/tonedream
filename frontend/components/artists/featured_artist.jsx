@@ -7,7 +7,13 @@ class FeaturedArtist extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getFeatured();
+    this.props.getFeatured().then(() => {
+      this.props.fetchArtist(15).then(() => {
+        this.props.fetchAlbum(354).then(() => {
+          this.props.receiveAudio(this.props.album, this.props.artist, this.props.tracks[0]);
+        });
+      });
+    });
   }
 
   render() {
