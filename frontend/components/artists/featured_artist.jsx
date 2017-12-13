@@ -17,7 +17,7 @@ class FeaturedArtist extends React.Component {
   }
 
   render() {
-    if (!this.props.featured) {
+    if (!this.props.album.title) {
       return (
         <p>Loading...</p>
       );
@@ -25,14 +25,34 @@ class FeaturedArtist extends React.Component {
       return (
         <div className="featured-wrapper">
           <h3>FEATURED ARTISTS</h3>
-          <div className="featured-artist">
+          <main>
+            <section> 
+              <img src={this.props.album.image_url} />
+              <article>
+                <Link to={`/albums/${this.props.album.id}`}>
+                  <section>
+                    <p>{this.props.album.title}</p>
+                    <p>by {this.props.artist.name}</p>
+                  </section>
+                </Link>
+                <section>
+                  <p className="album-of-day">ALBUM OF THE DAY</p>
+                </section>
+              </article>
+            </section>
             {this.props.featured.map((artist, idx) =>
-              <div key={idx}>
-                <img className="featured-pic" src={artist.image_url} />
-                <Link to={`./artists/${artist.id}`}>{artist.name}</Link>
-              </div>
+              <section key={idx}>
+                      <img src={artist.image_url} />
+                      <article>
+                         <Link to={`./artists/${artist.id}`}>
+                            <section>
+                              <p>{artist.name}</p>
+                            </section>
+                         </Link>
+                      </article>
+              </section>
             )}
-          </div>
+          </main>
         </div>
       );
     }
@@ -40,3 +60,17 @@ class FeaturedArtist extends React.Component {
 }
 
 export default FeaturedArtist;
+
+
+// return (
+//   <div className="featured-wrapper">
+//     <h3>FEATURED ARTISTS</h3>
+    // <div className="featured-artist">
+    //   {this.props.featured.map((artist, idx) =>
+    //     <div key={idx}>
+    //       <img className="featured-pic" src={artist.image_url} />
+    //       <Link to={`./artists/${artist.id}`}>{artist.name}</Link>
+    //     </div>
+    //   )}
+    // </div>
+//   </div>

@@ -13,6 +13,50 @@
     font-size: 25px;
     padding: 10px 0 0 10px;
   }
+  main {
+      margin: 15px 0 0 10px;
+      display: flex;
+    section {
+      display: flex;
+      img {
+        width: 280px;
+        height: 280px;
+      }
+      article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        width: 174px;
+        height: 280px;
+        section:first-child {
+          margin-top: 15px;
+          p:first-child {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+         section:last-child {
+          margin-bottom: 15px;
+        }
+        section:first-child:hover {
+          text-decoration: underline;
+        }
+        section {
+          display: flex;  
+          flex-direction: column;
+          p {
+            font-family: 'MissionGothic-Light';
+            font-size: 18px;
+            margin-left: 20px;
+          }
+          p.album-of-day {
+            color: #777;
+          }
+        }
+      }
+    }
+  }
   div {
     display: flex;
     flex-wrap: wrap;
