@@ -10,10 +10,28 @@ class FeaturedArtist extends React.Component {
     this.props.getFeatured().then(() => {
       this.props.fetchArtist(15).then(() => {
         this.props.fetchAlbum(354).then(() => {
-          this.props.receiveAudio(this.props.album, this.props.artist, this.props.tracks[0]);
+          if (!this.props.playing) {
+            this.props.receiveAudio(this.props.album, this.props.artist, this.props.tracks[0]);
+          }
+          });
         });
-      });
     });
+  }
+
+  renderPlayOrPause() {
+    if (this.props.playing && this.props.playingAlbum.title === "Satan's Gulch") {
+      return (
+        <p>
+          <i onClick={() => this.props.pauseTrack()} className="fa fa-pause" aria-hidden="true"></i>
+        </p>
+      );
+    } else {
+      return (
+        <p>
+          <i onClick={() => this.props.playTrack()} className="fa fa-play" aria-hidden="true"></i>
+        </p>
+      );
+    }
   }
 
   render() {
@@ -30,17 +48,20 @@ class FeaturedArtist extends React.Component {
               <img src={this.props.album.image_url} />
               <article>
                 <Link to={`/albums/${this.props.album.id}`}>
-                  <section>
-                    <p>{this.props.album.title}</p>
-                    <p>by {this.props.artist.name}</p>
-                  </section>
+                    <section>
+                      <p>{this.props.album.title}</p>
+                      <p>by {this.props.artist.name}</p>
+                    </section>
                 </Link>
                 <section>
                   <p className="album-of-day">ALBUM OF THE DAY</p>
                 </section>
               </article>
+              <section className="play-button">
+                {this.renderPlayOrPause()}
+              </section>
             </section>
-            {this.props.featured.map((artist, idx) =>
+            {/* {this.props.featured.map((artist, idx) =>
               <section key={idx}>
                       <img src={artist.image_url} />
                       <article>
@@ -51,7 +72,7 @@ class FeaturedArtist extends React.Component {
                          </Link>
                       </article>
               </section>
-            )}
+            )} */}
           </main>
         </div>
       );

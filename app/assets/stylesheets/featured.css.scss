@@ -22,7 +22,18 @@
         width: 280px;
         height: 280px;
       }
+      .play-button {
+         background-color: white;
+         p {
+           padding: 28px 44px 0 10px;
+            width: 21px;
+           i {
+             font-size: 40px;
+           }
+         }
+      }
       article {
+        padding: 0 0 0 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -30,7 +41,7 @@
         width: 174px;
         height: 280px;
         section:first-child {
-          margin-top: 15px;
+          margin-top: 25px;
           p:first-child {
             font-size: 20px;
             font-weight: bold;
@@ -47,7 +58,7 @@
           flex-direction: column;
           p {
             font-family: 'MissionGothic-Light';
-            font-size: 18px;
+            font-size: 20px;
             margin-left: 20px;
           }
           p.album-of-day {
