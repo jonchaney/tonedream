@@ -61,7 +61,8 @@ class FeaturedArtist extends React.Component {
                 {this.renderPlayOrPause()}
               </section>
             </section>
-            {/* {this.props.featured.map((artist, idx) =>
+            <section className="featured-artists">
+            {this.props.featured.map((artist, idx) =>
               <section key={idx}>
                       <img src={artist.image_url} />
                       <article>
@@ -72,7 +73,8 @@ class FeaturedArtist extends React.Component {
                          </Link>
                       </article>
               </section>
-            )} */}
+            )}
+            </section>
           </main>
         </div>
       );
