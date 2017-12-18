@@ -1,94 +1,169 @@
 .featured-wrapper {
-  background: #F2FFE2;
-  padding: 0 0 8px 30px;
-  width: 100%;
-  z-index: 5;
-  background: #F2FFE2;
-  padding: 147px 0 12px 34px;
-  margin: 0px 0px 0px 0;
-  h3 {
-    font-family: "MissionGothic-Regular", sans-serif;
-    font-weight: 200;
-    color: #649922;
-    font-size: 25px;
-    padding: 10px 0 0 10px;
-  }
-  main {
-      margin: 15px 0 0 10px;
+    width: 100%;
+    z-index: 5;
+    background: #F2FFE2;
+    padding: 147px 0 40px 0;
+    margin: 0 auto auto auto;
+    width: 915px;
+    h3 {
+      font-family: "MissionGothic-Regular", sans-serif;
+      font-weight: 100;
+      color: #649922;
+      font-size: 20px;
+      padding: 5px 0px 12px 12px;
+    }
+    main {
       display: flex;
-    section {
-      display: flex;
-      img {
-        width: 280px;
-        height: 280px;
-      }
-      .play-button {
-         background-color: white;
-         height: 280px;
-         p {
-           padding: 28px 44px 0 10px;
-            width: 21px;
-           i {
-             font-size: 40px;
-           }
-         }
-      }
-      article {
-        padding: 0 0 0 5px;
+      flex-wrap: wrap;
+      margin: 7px 0 0 -10px;
+      // first child
+      div:first-child {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: white;
-        width: 174px;
-        height: 280px;
-        section:first-child {
-          margin-top: 25px;
-          p:first-child {
-            font-size: 20px;
-            font-weight: bold;
-          }
-        }
-         section:last-child {
-          margin-bottom: 15px;
-        }
-        section:first-child:hover {
-          text-decoration: underline;
-        }
-        section {
-          display: flex;  
-          flex-direction: column;
-          p {
-            font-family: 'MissionGothic-Light';
-            font-size: 20px;
-            margin-left: 20px;
-          }
-          p.album-of-day {
-            color: #777;
+        height: 100%;
+        flex-direction: row;
+        article {
+          width: 340px;
+          section {
+            height: 305px;
+            a {
+              p {
+                padding: 15px 0 0 15px;
+                font-size: 25px;
+              }
             }
+            .artist-name {
+              padding: 7px 0 0 15px;
+            }
+            .feature-type {
+              margin: 0;
+              padding: 0px 0px 15px 15px;
+              font-size: 17px;
+            }
+        }
+      }
+        img {
+          width: 305px;
+          height: 305px;
+        }
+      }
+      // all other children
+      div {
+        background-color: white;
+        margin: 0px 0 20px 20px;
+        img {
+          width: 200px;
+          height: 200px;
+        }
+        article {
+          section {
+            a:hover {
+              text-decoration: underline;
+            }
+            a {
+              color: black;
+              p {
+                padding: 10px 0 0 10px;
+                font-size: 17px;
+              }
+            }
+            font-family: "MissionGothic-Light", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
           }
         }
       }
     }
-  }
-.featured-artists section:nth-child(2n) {
-    flex-basis: 25%;
 }
-.featured-artists section {
-    display: flex;
-    flex-wrap: wrap;
-    // flex-direction: column;
-    img {
-      width: 183px !important;
-      height: 183px !important;
-    }
-  }
 
-.featured-artists section article {
-  height: 97px !important;
+.artist-name {
+  color: black;
 }
+.feature-type {
+    margin: 0px 0px 10px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #777;
+}
+
+// .featured-wrapper {
+//   main {
+//       margin: 15px 0 0 10px;
+//       display: flex;
+//     section {
+//       display: flex;
+      // img {
+      //   width: 280px;
+      //   height: 280px;
+      // }
+//       .play-button {
+//          background-color: white;
+//          height: 280px;
+//          p {
+//            padding: 28px 44px 0 10px;
+//             width: 21px;
+//            i {
+//              font-size: 40px;
+//            }
+//          }
+//       }
+//       article {
+//         padding: 0 0 0 5px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         background-color: white;
+//         width: 174px;
+//         height: 280px;
+//         section:first-child {
+//           margin-top: 25px;
+//           p:first-child {
+//             font-size: 20px;
+//             font-weight: bold;
+//           }
+//         }
+//          section:last-child {
+//           margin-bottom: 15px;
+//         }
+//         section:first-child:hover {
+//           text-decoration: underline;
+//         }
+//         section {
+//           display: flex;  
+//           flex-direction: column;
+//           p {
+//             font-family: 'MissionGothic-Light';
+//             font-size: 20px;
+//             margin-left: 20px;
+//           }
+//           p.album-of-day {
+//             color: #777;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// .featured-artists section:nth-child(2n) {
+//     flex-basis: 25%;
+// }
+// .featured-artists section {
+//     display: flex;
+//     flex-wrap: wrap;
+//     // flex-direction: column;
+//     img {
+//       width: 183px !important;
+//       height: 183px !important;
+//     }
+//   }
+
+// .featured-artists section article {
+//   height: 97px !important;
+// }
   
-.featured-wrapper div div a {
-    margin: 19px 0 0px 16px;
-}
+// .featured-wrapper div div a {
+//     margin: 19px 0 0px 16px;
+// }
 
 

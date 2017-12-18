@@ -18,22 +18,6 @@ class FeaturedArtist extends React.Component {
     });
   }
 
-  renderPlayOrPause() {
-    if (this.props.playing && this.props.playingAlbum.title === "Satan's Gulch") {
-      return (
-        <p>
-          <i onClick={() => this.props.pauseTrack()} className="fa fa-pause" aria-hidden="true"></i>
-        </p>
-      );
-    } else {
-      return (
-        <p>
-          <i onClick={() => this.props.playTrack()} className="fa fa-play" aria-hidden="true"></i>
-        </p>
-      );
-    }
-  }
-
   render() {
     if (!this.props.album.title) {
       return (
@@ -44,37 +28,33 @@ class FeaturedArtist extends React.Component {
         <div className="featured-wrapper">
           <h3>FEATURED ARTISTS</h3>
           <main>
-            <section> 
+            <div> 
               <img src={this.props.album.image_url} />
               <article>
-                <Link to={`/albums/${this.props.album.id}`}>
                     <section>
-                      <p>{this.props.album.title}</p>
-                      <p>by {this.props.artist.name}</p>
-                    </section>
+                      <article>
+                <Link to={`/albums/${this.props.album.id}`}>
+                        <p>{this.props.album.title}</p>
                 </Link>
-                <section>
-                  <p className="album-of-day">ALBUM OF THE DAY</p>
-                </section>
+                        <p className="artist-name">by {this.props.artist.name}</p>
+                      </article>
+                  <p className="feature-type">ALBUM OF THE DAY</p>
+                    </section>
               </article>
-              <section className="play-button">
-                {this.renderPlayOrPause()}
-              </section>
-            </section>
-            <section className="featured-artists">
+            </div>
             {this.props.featured.map((artist, idx) =>
-              <section key={idx}>
+              <div key={idx}>
                       <img src={artist.image_url} />
                       <article>
-                         <Link to={`./artists/${artist.id}`}>
                             <section>
+                         <Link to={`./artists/${artist.id}`}>
                               <p>{artist.name}</p>
-                            </section>
                          </Link>
+                              <p className="feature-type">FEATURE</p>
+                            </section>
                       </article>
-              </section>
+              </div>
             )}
-            </section>
           </main>
         </div>
       );
