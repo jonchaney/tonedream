@@ -11,7 +11,8 @@ class EditArtistForm extends React.Component {
       bio: this.props.artist.bio,
       location: this.props.artist.location,
       imageFile: null,
-      imageUrl: this.props.artist.image_url
+      imageUrl: this.props.artist.image_url,
+      updating: false
     };
   }
 
@@ -36,16 +37,22 @@ class EditArtistForm extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    if (this.state.updating) {
+      let artist = {
+        name: this.state.name,
+        location: this.state.location,
+        bio: this.state.bio,
+        image: this.state.imageUrl,
+        id: this.state.id
+      };
+      this.props.updateArtist(artist).then(() => this.props.history.push(`/artists/${this.props.artist.id}`));
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    let artist = {
-      name: this.state.name,
-      location: this.state.location,
-      bio: this.state.bio,
-      image: this.state.imageUrl,
-      id: this.state.id
-    };
-    this.props.updateArtist(artist).then(() => this.props.history.push(`/artists/${this.props.artist.id}`));
+    this.setState({ updating: true });
   }
 
   updateFile(e) {
@@ -83,6 +90,30 @@ class EditArtistForm extends React.Component {
     let val = e.target.value;
     e.target.value = '';
     e.target.value = val;
+  }
+
+  artistButton() {
+    if (this.state.updating) {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            style={{ opacity: .6 }} 
+            value="Updating Artist..." />
+        </label>
+      );
+    } else {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            value="Update Artist"
+            />
+        </label>
+      );
+    }
   }
 
   render() {
@@ -126,11 +157,7 @@ class EditArtistForm extends React.Component {
               </label>
             </div>
             <div className="item">
-              <label>
-                <input type="submit"
-                  className="login-button"
-                  value="Update Artist" />
-              </label>
+              {this.artistButton()}
             </div>
             {this.renderErrors()}
           </div>

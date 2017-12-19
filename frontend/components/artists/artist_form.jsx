@@ -10,7 +10,8 @@ class ArtistForm extends React.Component {
       name: null,
       location: null,
       bio: null,
-      image: null
+      image: null,
+      updating: false
     };
   }
 
@@ -18,15 +19,21 @@ class ArtistForm extends React.Component {
     this.props.clearArtistErrors();
   }
 
+  componentDidUpdate(){
+    if (this.state.updating) {
+      let artist = {
+        name: this.state.name,
+        location: this.state.location,
+        image: this.state.image,
+        bio: this.state.bio
+      };
+      this.props.createArtist(artist).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    let artist = {
-      name: this.state.name,
-      location: this.state.location,
-      image: this.state.image,
-      bio: this.state.bio
-    };
-    this.props.createArtist(artist).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    this.setState({updating: true});
   }
 
   updateFile(e) {
@@ -56,6 +63,29 @@ class ArtistForm extends React.Component {
             </li>
           ))}
         </ul>
+      );
+    }
+  }
+
+  artistButton() {
+    if (this.state.updating) {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            style={{ opacity: .6 }} 
+            value="Adding Artist..." />
+        </label>
+      );
+    } else {
+      return (
+      <label>
+        <input type="submit"
+          disabled={this.state.updating}
+          className="login-button"
+          value="Add Artist" />
+      </label>
       );
     }
   }
@@ -97,11 +127,7 @@ class ArtistForm extends React.Component {
                 </label>
                 </div>
               <div className="item">
-                <label>
-                  <input type="submit"
-                    className="login-button"
-                    value="Add Artist" />
-                </label>
+                {this.artistButton()}
               </div>
               {this.renderErrors()}
           </div>
