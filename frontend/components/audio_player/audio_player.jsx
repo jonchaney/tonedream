@@ -143,7 +143,6 @@ class AudioPlayer extends React.Component {
 
   getDuration() {
     if (this.props.playing) {
-      // console.log(this.player.duration());
       return (
         <div className="duration">
           {this.player.duration()}

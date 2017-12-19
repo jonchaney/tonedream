@@ -54,7 +54,6 @@ class ArtistForm extends React.Component {
       artist_id: this.props.selectedArtist.id
     };
     let tracks = this.state.tracks;
-    console.log(album, tracks);
     this.props.createAlbum(album).then(() => this.setState({trackForm: true}));
   }
 

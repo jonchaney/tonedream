@@ -33,7 +33,6 @@ class TrackIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.tracks);
     return (
       <div className="album-main">
           <div className="album-info">
