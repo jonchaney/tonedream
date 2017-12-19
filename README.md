@@ -21,6 +21,12 @@ The audio player uses the React Howler Audio Player, which is a wrapper for the 
 
 All user's on tonedream can be the admin of multiple artists. They can upload their music and allow others to download it. They also have the option of making it only available for streaming. Above is a screenshot of an album page.
 
+## Upload Tracks
+
+![artist_page](docs/images/upload_tracks.png)
+
+You can easily add albums to any artist. Just go to settings > albums. Then select which artist you want and either edit or add a new album and start uploading your tracks!
+
 ## Search
 
 A search feature allows for quick search of the database for music. The results are split up into tracks, albums, and artists.
