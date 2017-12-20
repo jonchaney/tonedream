@@ -12,21 +12,21 @@ class EditAlbumForm extends React.Component {
     this.update = this.update.bind(this);
     this.handleTrackSubmit = this.handleTrackSubmit.bind(this);
     this.updateTrackFile = this.updateTrackFile.bind(this);
-
-      this.state = {
-        id: this.props.selectedAlbum.id,
-        artist_id: this.props.selectedAlbum.artist_id,
-        title: this.props.selectedAlbum.title,
-        date: this.props.selectedAlbum.date,
-        artist: this.props.selectedArtist.name,
-        image: this.props.selectedAlbum.image_url,
-        imageFile: null,
-        audioFile: null,
-        tracks: [],
-        trackTitle: "",
-        download: "",
-        audio: null,
-        trackForm: false
+    this.state = {
+      id: this.props.selectedAlbum.id,
+      artist_id: this.props.selectedAlbum.artist_id,
+      title: this.props.selectedAlbum.title,
+      date: this.props.selectedAlbum.date,
+      artist: this.props.selectedArtist.name,
+      image: this.props.selectedAlbum.image_url,
+      imageFile: null,
+      audioFile: null,
+      tracks: [],
+      trackTitle: "",
+      download: "",
+      audio: null,
+      trackForm: false,
+      udpating: false
     };
   }
 
@@ -46,22 +46,24 @@ class EditAlbumForm extends React.Component {
         trackForm: false,
         audioFile: null
       });
+    } else if (this.state.updating) {
+      let album = {
+        artist_id: this.state.artist_id,
+        title: this.state.title,
+        date: this.state.date,
+        image: this.state.image
+      };
+      this.props.updateAlbum(this.state.artist_id, this.state.id, album)
+        .then(() => {
+          this.props.clearArtist();
+          this.props.history.push(`/albums/${this.state.id}`);
+        });
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let album = {
-      artist_id: this.state.artist_id,
-      title: this.state.title,
-      date: this.state.date,
-      image: this.state.image
-    };
-    this.props.updateAlbum(this.state.artist_id, this.state.id, album)
-    .then(() => { 
-        this.props.clearArtist();
-        this.props.history.push(`/albums/${this.state.id}`);
-      });
+    this.setState({updating: true});
   }
 
   updateFile(e) {
@@ -106,7 +108,6 @@ class EditAlbumForm extends React.Component {
     tracks.push(track);
     this.props.createTrack(track);
     this.setState({ tracks: tracks, trackTitle: "", download: "", audioFile: null, audio: null });
-
   }
 
   checkbox(event) {
@@ -142,6 +143,29 @@ class EditAlbumForm extends React.Component {
       this.setState({ trackForm: false });
     } else {
       this.setState({ trackForm: true });
+    }
+  }
+
+  albumButton() {
+    if (this.state.updating) {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            style={{ opacity: .6 }}
+            value="Updating Album..." />
+        </label>
+      );
+    } else {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            value="Update Album" />
+        </label>
+      );
     }
   }
 
@@ -222,11 +246,7 @@ class EditAlbumForm extends React.Component {
               </label>
             </div>
             <div className="item">
-              <label>
-                <input type="submit"
-                  className="login-button"
-                  value="Update Album" />
-              </label>
+              {this.albumButton()}
             </div>
             <div className="track-download">
               <div onClick={() => this.showTrackForm()} className="item">

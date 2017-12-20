@@ -21,7 +21,8 @@ class ArtistForm extends React.Component {
       download: "",
       artist: this.props.selectedArtist.name,
       trackForm: false,
-      audioFile: null
+      audioFile: null,
+      updating: false
     };
   }
 
@@ -41,20 +42,21 @@ class ArtistForm extends React.Component {
         trackForm: false,
         audioFile: null
       });
+    } else if (this.state.updating) {
+        let album = {
+          title: this.state.title,
+          date: this.state.date,
+          image: this.state.image,
+          download: this.state.download,
+          artist_id: this.props.selectedArtist.id
+        };
+        this.props.createAlbum(album).then(() => this.setState({ trackForm: true }));
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let album = {
-      title: this.state.title,
-      date: this.state.date,
-      image: this.state.image,
-      download: this.state.download,
-      artist_id: this.props.selectedArtist.id
-    };
-    let tracks = this.state.tracks;
-    this.props.createAlbum(album).then(() => this.setState({trackForm: true}));
+    this.setState({updating: true});
   }
 
   updateFile(e) {
@@ -126,6 +128,29 @@ class ArtistForm extends React.Component {
     let tracks = this.state.tracks;
     tracks.push(track);
     this.setState({tracks: tracks, trackTitle: "", download: "", audioFile: null});
+  }
+
+  albumButton() {
+    if (this.state.updating) {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            style={{ opacity: .6 }}
+            value="Adding Album..." />
+        </label>
+      );
+    } else {
+      return (
+        <label>
+          <input type="submit"
+            disabled={this.state.updating}
+            className="login-button"
+            value="Add Album" />
+        </label>
+      );
+    }
   }
 
   form() {
@@ -205,11 +230,7 @@ class ArtistForm extends React.Component {
               </label>
             </div>
             <div className="item">
-              <label>
-                <input type="submit"
-                  className="login-button"
-                  value="Submit Album" />
-              </label>
+              {this.albumButton()}
             </div>
             {this.renderErrors()}
           </div>
