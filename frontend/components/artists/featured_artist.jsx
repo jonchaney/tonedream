@@ -11,8 +11,8 @@ class FeaturedArtist extends React.Component {
   // heroku album 333
   componentDidMount() {
     this.props.getFeatured().then(() => {
-      this.props.fetchArtist(1).then(() => {
-        this.props.fetchAlbum(333).then(() => {
+      this.props.fetchArtist(15).then(() => {
+        this.props.fetchAlbum(354).then(() => {
           if (!this.props.playing) {
             this.props.receiveAudio(this.props.album, this.props.artist, this.props.tracks[0]);
           }
