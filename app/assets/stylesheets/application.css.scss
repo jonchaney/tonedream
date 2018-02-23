@@ -38,7 +38,7 @@
 *****************************/
 
 body {
-  background: #F5F7F7;
+  background: #d3d3d324;
 }
 
 ::-webkit-scrollbar { 
@@ -82,8 +82,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid lightgray;
-    width: 25%;
+    border-right: 1px solid #d3d3d342;
+    width: 33%;
   }
   div:last-child {
     border: none;
