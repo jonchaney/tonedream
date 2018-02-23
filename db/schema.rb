@@ -43,15 +43,16 @@ ActiveRecord::Schema.define(version: 20171202024929) do
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.integer "album_id"
-    t.string "title"
-    t.integer "track_num"
+    t.integer "album_id", null: false
+    t.string "title", null: false
+    t.integer "track_num", null: false
     t.integer "duration"
     t.boolean "download"
     t.string "audio_file_name"
     t.string "audio_content_type"
     t.integer "audio_file_size"
     t.datetime "audio_updated_at"
+    t.index ["title"], name: "index_tracks_on_title"
   end
 
   create_table "users", force: :cascade do |t|

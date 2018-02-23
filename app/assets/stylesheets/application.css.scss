@@ -13,10 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
- /*body {
-   background-color: pink;
- }*/
   
 /****************************
   WEB FONTS
@@ -42,178 +38,49 @@
 *****************************/
 
 body {
-  zoom: 90%;
-  background: #F2FFE2;
+  background: #F5F7F7;
 }
 
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }
 
-.header {
-  font-family: 'MissionGothic-Light', sans-serif;
-  font-weight: 800;
-  margin: -1px 18px 0px 11px;
-  font-size: 50px;
+header {
   display: flex;
-  flex-direction: row;
-}
-
-.tagline {
-  font-family:"MissionGothic-Light";
-  font-weight: 800;
-  font-size: 20px; 
-  color: #649922;
-  margin: 7px 0 0 4px;
-}
-
-.head {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
   width: 100%;
   transition: margin 0.25s ease-out;
-  position: fixed;
   background-color: rgba(255,255,255,0.96);
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
-}
-
-.head > a {
-  align-items: center;
-  display: flex;  
-}
-
-p.main-tagline {
-    float: left;
+  .logo {
+    padding: 29px 0 .25rem;
     display: flex;
-    font-family: "MissionGothic-Thin";
-    display: flex;
-    font-weight: 700;
-    font-size: 25px;
-    margin: 0px 4px 6px 7px;
-    float: left;
-    flex-direction: column-reverse;
-    text-align: right;
-    border-bottom: .75px solid;
-    padding: 8px 0 -3px 8px;
-}
-
-.head-tag span {
-    display: flex;
-}
-
-.head-tag {
-  margin: 27px 0 20px 42px;
-  display: flex;
-  flex-direction: column;
+    margin: auto;
+    h1 {
+      font-family: 'Lora', sans-serif;
+      letter-spacing: 1.2px;
+      font-size: 2rem;
+      font-weight: 100;
+      font-size: 10vw;
+    }
+  }
 }
 
 /****************************
-  ALT HEADER
+  FOOTERS
 *****************************/
 
-.alt-header {
-  font-family: 'MissionGothic-Light', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
+footer {
   display: flex;
-  flex-direction: row;
-  margin: 3px 0px 0px 4px;
-}
-
-.alt-head {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
+  justify-content: space-around;
   transition: margin 0.25s ease-out;
+  background-color: rgba(255, 255, 255, 0.96);
   position: fixed;
-  background-color: rgba(255,255,255,0.96);
+  bottom: 0;
+  width: 100%;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
-  height: 50px;
-  background-color: #ECECEC;
-  border-top: 5px solid;
-  border-top-color: #848484;
-  border-bottom: 1px dotted;
-  border-bottom-color: #848484;
-}
-
-.alt-head > a {
-  align-items: center;
-  display: flex;  
-}
-
-.alt-head-tag span {
-    display: flex;
-    margin: 10px 0 0 13px;
-}
-
-.alt-head-tag {
-  display: flex;
-  flex-direction: column;
-}
-
-.settings-dropdown {
-    font-family: 'MissionGothic-Light', sans-serif;
-    font-size: 16px;
-    color: #649922;
-    padding: 16px 0px 0 59px;
-    margin: 0 20px 0 0;
-    a {
-      color: #649922;
-    }
-    p {
-      font-weight: bold;
-      padding: 0 10px 0 0;
-    }
-    .settings-main {
-      display: flex;
-      i.fa.fa-caret-down {
-          padding: 3px 10px 0 0;
-        }
-      img {
-        width: 30px;
-        height: 30px;
-        margin: -4px 12px 0px 0;
-      }
-    }
-    .settings-list {
-      display: none;
-      padding: 9px 0 0 0;
-      ul {
-        background-color: #ECECEC;
-        border-right: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-        margin: 0px 0 0 -60px;
-        li {
-         padding: 10px 0px 10px 15px;
-        }
-        li:hover {
-          background-color: #E2E2E2;
-        }
-        li:last-child {
-          padding: 10px 0px 10px 15px;
-        }
-      }
-    }
+  padding: 1rem 0rem 1rem 0rem;
+  .svg-inline--fa {
+    font-size: 7vh;
   }
-
-  .settings-dropdown:hover {
-    background-color: #CBCBCB;
-    .settings-list  {
-      display: block;
-    }
-  }
-
-/****************************
-  ERRORS
-*****************************/
-
-.errors {
-  color: #FF161D;
-  text-transform: lowercase;
-  font-size: 12px;
-  margin-top: 5px;
-  text-align: right;
 }
+

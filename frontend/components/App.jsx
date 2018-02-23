@@ -21,31 +21,15 @@ import EditUserFormContainer from './users/edit_user_form_container';
 // albums
 import AlbumIndexContainer from './albums/album_index_container';
 import AlbumShowContainer from './albums/album_show_container';
-// audio player
-import AudioPlayerContainer from './audio_player/audio_player_container';
 // headers
-import AltHeaderContainer from './headers/alt_header_container';
-import MainHeader from './headers/main_header';
-// search
-import SearchContainer from './search_bar/search_container';
+import Header from './presentationals/headers/header.jsx';
+import TabsFooter from './presentationals/footers/tabsFooter.js';
+
 
 const App = () => (
   <div>
-    <Switch>
-      <Route exact path="/" component={MainHeader} /> 
-      <Route path="/" component={AltHeaderContainer} /> 
-    </Switch>
-      <Route exact path="/" component={FeaturedArtistContainer} /> 
-    <Switch>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
-      <AuthRoute path="/guest" component={SessionFormContainer} /> 
-      <LoginRoute path="/settings" component={EditPageContainer} /> 
-      <Route path="/artists/:id" component={ArtistShowContainer} /> 
-      <Route path="/albums/:id" component={AlbumShowContainer} /> 
-      <LoginRoute path="/users/:user_id" component={ArtistIndexContainer} />  
-    </Switch>
-    <Route path="/" component={AudioPlayerContainer} /> 
+      <Route exact path="/" component={Header} /> 
+      <Route exact path="/" component={TabsFooter} /> 
   </div>
 );
 

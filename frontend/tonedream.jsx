@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.createTrack = createTrack;
-
   // window.search = search;
   // end test
 
