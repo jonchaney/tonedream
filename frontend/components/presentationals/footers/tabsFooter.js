@@ -12,6 +12,7 @@ class TabsFooter extends React.Component {
         <footer>
           <Tab icon="fas fa-home"/>
           <Tab icon="fas fa-search"/>
+          <Tab icon="far fa-envelope"/>
           <Tab icon="fas fa-bars"/>
         </footer>
     );
