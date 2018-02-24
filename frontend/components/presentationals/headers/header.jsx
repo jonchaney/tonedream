@@ -11,7 +11,7 @@ class Header extends React.Component {
         <header>
           <div className="logo">
             <h1>
-              tonedream
+              Tonedream
             </h1>
           </div>
         </header>

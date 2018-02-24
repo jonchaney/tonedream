@@ -51,14 +51,15 @@ header {
   transition: margin 0.25s ease-out;
   background-color: rgba(255,255,255,0.96);
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+  height: 10vh;
   .logo {
-    padding: 29px 0 .25rem;
+    padding: 3vh 0vh 0vh 0vh;
     display: flex;
     margin: auto;
     h1 {
       font-family: 'Lora', sans-serif;
       letter-spacing: 1.2px;
-      font-size: 2rem;
+      font-size: 4vh;
       font-weight: 100;
     }
   }
@@ -77,7 +78,7 @@ footer {
   bottom: 0;
   width: 100%;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
-  height: 5rem;
+  height: 9vh;
   div {
     display: flex;
     align-items: center;
@@ -89,7 +90,7 @@ footer {
     border: none;
   }
   .svg-inline--fa {
-    font-size: 5vh;
+    font-size: 3.2vh;
   }
 }
 
