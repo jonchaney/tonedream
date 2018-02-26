@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import Input from '../presentationals/input.js';
 
 class Search extends React.Component {
   constructor(props) {
@@ -52,11 +53,8 @@ class Search extends React.Component {
       return (
         <ul className="search-results">
           <li>
-            <div>
-              <img src="http://res.cloudinary.com/tonedream/image/upload/v1500576450/settings_os0b9w.png" alt="tonedream"></img>
-            </div>
-            <div className="results-text">
-              <p>Nothing Found!</p>
+            <div className="results-text-nothing">
+              <p>Nothing Found</p>
             </div>
           </li>
         </ul> 
@@ -88,27 +86,16 @@ class Search extends React.Component {
   }
 
   render() {
-    let autoCompleteStyles = "alt-autocomplete-search";
-    let searchWrapperStyles = "alt-search-wrapper";
-    let searchbar = "alt-search-bar";
-    let placeHolder = "search tonedream";
-    if (this.props.location.pathname === '/') {
-      autoCompleteStyles = "autocomplete-search";
-      searchWrapperStyles = "search-wrapper";
-      searchbar = "search-bar";
-      placeHolder = "Search for artist, track or album";
-    }
+
     return (
-      <div className={searchWrapperStyles}>
-        <span className="fa fa-search"></span>
-        {this.searchResults()}
-        <form className={autoCompleteStyles}>
-          <input className={searchbar} 
-                 onChange={this.updateSearch} 
+      <div className="search-container">
+        <form>
+          <Input onChange={this.updateSearch} 
                  value={this.state.value} 
-                 placeholder={placeHolder}>
-          </input>
+                 placeholder="Search">
+          </Input>
         </form>
+        {this.searchResults()}
       </div>
     );
   }

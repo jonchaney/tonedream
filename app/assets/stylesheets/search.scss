@@ -1,0 +1,77 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/****************************
+  SEARCH BAR
+*****************************/
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12vh;
+  form{
+    width: 50vh;
+    input {
+      font-family: "Raleway", "Open-Sans", sans-serif;
+      font-weight: 100;
+      font-size: 2.5vh;
+      width: 100%;
+      font-size: 3vh;
+      background: #fff;
+      border-bottom: 1px solid lightgray;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      background: #f8f8f8; 
+      padding-bottom: .5vh;
+      letter-spacing: .2px;
+    }
+}
+}
+
+/****************************
+  SEARCH RESULTS
+*****************************/
+
+
+.search-results {
+  width: 50vh;
+    img {
+        height: 54px;
+        width: 54px;
+        border-radius: 50px;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid lightgray;
+      padding: 1vh 0 0vh 1vh;
+      div {
+        padding: 0px;
+      }
+      .results-text {
+        font-family: "Raleway", "Open-Sans", sans-serif;
+        font-weight: 100;
+        font-size: 2.2vh;
+        margin: 1.5vh 0 0 2vh;
+      }
+      .results-text-nothing {
+        font-family: "Raleway", "Open-Sans", sans-serif;
+        font-weight: 100;
+        font-size: 2.2vh;
+        margin: 1.5vh 0 0 2vh;
+        font-size: 2.2vh;
+        margin: 1vh 0 2vh 1vh;
+      }
+    }
+
+    li:hover {
+        outline: none;
+        background-color: #F2FFE2;
+    }
+}
+

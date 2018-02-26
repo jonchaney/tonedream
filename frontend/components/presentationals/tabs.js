@@ -10,11 +10,11 @@ class Tabs extends React.Component {
   render() {
     return (
         <nav>
-          <Icon type="fal fa-home"/>
-          {/* <Icon icon="fal fa-calendar"/> */}
-          <Icon type="fal fa-search"/>
-          {/* <Icon icon="fal fa-paper-plane"/> */}
-          <Icon type="fal fa-bars"/>
+          <Link to="/"><Icon type="fal fa-home"/></ Link>
+          {/* <Link to="/"><Icon type="fal fa-calendar"/></ Link> */}
+          <Link to="/search"><Icon type="fal fa-search"/></ Link>
+          {/* <Link to="/"><Icon type="fal fa-paper-plane"/></ Link> */}
+          <Link to="/"><Icon type="fal fa-bars"/></ Link>
         </nav>
     );
   }
