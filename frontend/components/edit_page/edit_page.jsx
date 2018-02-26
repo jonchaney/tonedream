@@ -25,7 +25,7 @@ class EditPage extends React.Component {
   }
 
   dropdownArtists() {
-    if (this.props.artists[0].id) {
+    if (this.props.artists) {
       return (
         <div>
           <i className="fa fa-angle-down" aria-hidden="true"></i>
