@@ -20,7 +20,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, ownProps) {
   return ({
     dispatch,
-    logout: () => dispatch(logout()),
     search: (query) => dispatch(search(query)),
     clearResults: () => dispatch(clearResults()),
     clearAlbums: () => dispatch(clearAlbums())
