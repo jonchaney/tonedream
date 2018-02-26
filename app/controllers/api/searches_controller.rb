@@ -46,7 +46,7 @@ class Api::SearchesController < ApplicationController
     end
   end
 
-    def show
+  def show
     @featured_artists = Artist.order("RANDOM()").first(5)
     
     render "api/searches/featured"

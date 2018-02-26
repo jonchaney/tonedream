@@ -1,0 +1,30 @@
+/***************************
+  NAV
+*****************************/
+
+
+// tabs
+nav {
+    display: flex;
+    justify-content: space-around;
+    transition: margin 0.25s ease-out;
+    background-color: rgba(255, 255, 255, 0.96);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
+    height: 9vh;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #d3d3d342;
+      width: 33%;
+    }
+    div:last-child {
+      border: none;
+    }
+    .svg-inline--fa {
+      font-size: 3.2vh;
+    }
+  }

@@ -22,6 +22,8 @@ import { START_LOADING_TRACKS,
 
 import { ARTIST_LOADING, RECEIVE_ARTIST } from '../actions/artist_actions';
 
+import { INDEX_LOADING, INDEX_LOADED } from '../actions/loadingActions.js';
+
 const initialState = {
   indexLoading: false,
   detailLoading: false,
@@ -31,6 +33,10 @@ const initialState = {
 const LoadingReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case INDEX_LOADING:
+      return Object.assign({}, state, { indexLoading: true });
+    case INDEX_LOADED:
+      return Object.assign({}, state, { indexLoading: false });
     case ARTIST_LOADING:
       return Object.assign({}, state, { artistLoading: true });
     case RECEIVE_ARTIST:

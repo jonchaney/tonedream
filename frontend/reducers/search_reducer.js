@@ -1,5 +1,5 @@
 import { RECEIVE_RESULTS, CLEAR_RESULTS, RECEIVE_FEATURED } from '../actions/search_actions';
-
+import { indexLoaded } from '../actions/loadingActions.js';
 const SearchReducer = (state = { results: [], featured: [] }, action) => {
   let newState = Object.assign({}, state);
   Object.freeze(state);

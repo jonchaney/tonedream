@@ -33,11 +33,6 @@
   src:font-url('Mission-Gothic-Regular.otf') format("opentype");
 }
 
-@font-face {
-  font-family:"CormorantUpright-SemiBold";
-  src:font-url('CormorantUpright-SemiBold.eot') format("opentype");
-}
-
 /****************************
   HEADERS
 *****************************/
@@ -45,10 +40,19 @@
 body {
   background: #d3d3d324;
 }
-
-::-webkit-scrollbar { 
-  display: none; 
+// hide scroll bar
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+// ::-webkit-scrollbar-thumb {
+//   background: #FF0000;
+// }
 
 header {
   display: flex;
@@ -57,6 +61,7 @@ header {
   background-color: rgba(255,255,255,0.96);
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
   height: 10vh;
+  position: fixed;
   .logo {
     padding: 1vh 0vh 0vh 0vh;
     display: flex;
@@ -68,33 +73,3 @@ header {
     }
   }
 }
-
-/***************************
-  FOOTERS
-*****************************/
-
-footer {
-  display: flex;
-  justify-content: space-around;
-  transition: margin 0.25s ease-out;
-  background-color: rgba(255, 255, 255, 0.96);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.15);
-  height: 9vh;
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid #d3d3d342;
-    width: 20%;
-  }
-  div:last-child {
-    border: none;
-  }
-  .svg-inline--fa {
-    font-size: 3.2vh;
-  }
-}
-

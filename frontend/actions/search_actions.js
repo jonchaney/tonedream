@@ -1,5 +1,6 @@
 import { searchDB, featured } from '../util/search_api_util';
 import { receiveErrors } from './error_actions';
+import { indexLoading, indexLoaded } from './loadingActions.js';
 
 export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
 export const RECEIVE_FEATURED = 'RECEIVE_FEATURED';
@@ -18,7 +19,7 @@ export const search = (query) => {
 export const getFeatured = (num) => {
   return (dispatch) => {
     return featured(num)
-      .then(
+    .then(
       featured => dispatch(receiveFeatured(featured)),
       errors => dispatch(receiveErrors(errors))
       );
