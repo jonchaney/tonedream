@@ -17,10 +17,14 @@ export const search = (query) => {
 };
 
 export const getFeatured = (num) => {
+  dispatch(indexLoading())
   return (dispatch) => {
     return featured(num)
     .then(
-      featured => dispatch(receiveFeatured(featured)),
+      featured => { 
+        dispatch(receiveFeatured(featured))
+        dispatch(indexLoaded())
+      },
       errors => dispatch(receiveErrors(errors))
       );
   };

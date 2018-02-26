@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../presentationals/Icon.js'
+// import LoadingIcon from '../presentationals/loadingIcon.js';
+import ReactLoading from 'react-loading';
 
 class FeaturedArtists extends React.Component {
   constructor(props) {
@@ -13,22 +14,24 @@ class FeaturedArtists extends React.Component {
 
   render() {
     return (
-      (this.props.featured.length === 0) ?
-        <Icon type="fal fa-spinner"/> :
-        <div className="featured-container">
-          <div className="featured">
-            <article>
-              <h2>FEATURED ARTISTS</h2>
-            </article>
-            {this.props.featured.map((artist, idx) =>
-              <div key={idx}>
-                {/* <Link to={`./artists/${artist.id}`}> */}
-                  <img src={artist.image_url} />
-                {/* </Link> */}
-              </div>
-            )}
+      this.props.loading ?
+      <div className="loading-icon">
+        <ReactLoading type="bubbles" color="gray"/>
+      </div> :
+      <div className="featured-container">
+        <div className="featured">
+          <article>
+            <h2>FEATURED ARTISTS</h2>
+          </article>
+          {this.props.featured.map((artist, idx) =>
+            <div key={idx}>
+              <Link to={`./artists/${artist.id}`}>
+                <img src={artist.image_url} />
+              </Link>
             </div>
-      </div>
+          )}
+          </div>
+        </div>
     );
   }
 }

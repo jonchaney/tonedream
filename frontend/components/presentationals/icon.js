@@ -24,7 +24,7 @@ class Icon extends React.Component {
   render() {
     return (
       <div>
-        <i className={this.props.type}></i>
+        <i className={this.props.type} ></i>
       </div>
     );
   }

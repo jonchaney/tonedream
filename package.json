@@ -21,6 +21,7 @@
     "react-dom": "^16.2.0",
     "react-download-link": "^1.0.1",
     "react-howler": "^3.6.4",
+    "react-loading": "^1.0.3",
     "react-redux": "^5.0.5",
     "react-render-html": "^0.5.0",
     "react-router-dom": "^4.1.2",

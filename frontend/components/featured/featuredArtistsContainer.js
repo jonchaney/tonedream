@@ -8,7 +8,8 @@ import { selectAllTracks } from '../../reducers/selectors';
 import FeaturedArtists from './featuredArtists.js';
 
 const mapStateToProps = (state) => ({
-  featured: resultsArray(state.search.featured)
+  featured: resultsArray(state.search.featured),
+  loading: state.loading.indexLoading
 });
 
 const mapDispatchToProps = dispatch => ({
