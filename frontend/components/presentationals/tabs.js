@@ -14,7 +14,7 @@ class Tabs extends React.Component {
           {/* <Link to="/"><Icon type="fal fa-calendar"/></ Link> */}
           <Link to="/search"><Icon type="fal fa-search"/></ Link>
           {/* <Link to="/"><Icon type="fal fa-paper-plane"/></ Link> */}
-          <Link to="/"><Icon type="fal fa-bars"/></ Link>
+          <Link to="/info"><Icon type="fal fa-bars"/></ Link>
         </nav>
     );
   }

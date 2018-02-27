@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/user_api_util';
-import { receiveCurrentUser } from './session_actions';
+import { receiveCurrentUser } from './sessionActions';
 import { receiveErrors, clearErrors } from './error_actions';
 
 export const UPDATE_ARTIST = "UPDATE_ARTIST";

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout } from '../../actions/sessionActions';
 import { search, clearResults } from '../../actions/search_actions';
 import { clearErrors } from '../../actions/error_actions';
-import { receiveCurrentUser } from '../../actions/session_actions';
+import { receiveCurrentUser } from '../../actions/sessionActions';
 import { resultsArray } from '../../reducers/selectors';
 import Search from './search';
 import { withRouter } from 'react-router';
