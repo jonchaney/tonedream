@@ -10,17 +10,18 @@ class DropdownMenu extends React.Component {
   profile() {
     if (this.props.currentUser) {
       return (
-        <li>Profile</li>
+        [<li key={5}>Profile</li>,
+        <li key={6}>Account</li>]
       );
     } else {
       return (
-        <li>Login or Sign Up</li>
+        [<li key={5} onClick={() => this.props.history.push('./login')}>Login</li>,
+        <li key={6} onClick={() => this.props.history.push('./signup')}>Sign Up</li>]
       );
     }
   }
 
   handleClick() {
-    console.log('test');
     this.props.logout();
   }
 
@@ -36,7 +37,6 @@ class DropdownMenu extends React.Component {
     return (
       <ul className="drop-down-menu-tab">
         {this.profile()}
-        <li>Account</li>
         <li>About</li>
         {this.renderLogout()}
       </ul>
