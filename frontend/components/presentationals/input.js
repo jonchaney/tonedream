@@ -11,8 +11,11 @@ class Input extends React.Component {
         <input onChange={this.props.onChange} 
                value={this.props.value} 
                placeholder={this.props.placeHolder}
-               autoFocus={this.props.autoFocus}>
-        </input>
+               autoFocus={this.props.autoFocus}
+               type={this.props.type}
+               className={this.props.className}
+               value={this.props.value}
+        ></input>
     );
   }
 }

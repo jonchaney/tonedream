@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from '../presentationals/input.js'
 
 class EditUserForm extends React.Component {
   constructor(props) {
@@ -70,11 +71,11 @@ class EditUserForm extends React.Component {
 
   render() {
     return (
-        <div className="artist-form-container">
-          <form onSubmit={this.handleSubmit} className="artist-form-box">
-            <div className="artist-login-form">
-                <div className="item">
-                    <input type="text"
+        <div className="edit-user-form">
+          <form onSubmit={this.handleSubmit}>
+            <div>
+                <section>
+                    <Input type="text"
                       autoFocus="autofocus"
                       onFocus={(event) => this.onFocus(event)}
                       className="artist-input"
@@ -82,31 +83,31 @@ class EditUserForm extends React.Component {
                       onChange={this.update('username')}
                       placeholder={'username'}
                     />
-                  </div>
-                <div className="item">
-                  <input type="text"
+                  </section>
+                <section>
+                  <Input type="text"
                     className="artist-input"
                     value={this.state.email}
                     onChange={this.update('email')}
                     placeholder="email"
                   />
-                </div>
-                <div className="item">
+                </section>
+                <section>
                 <label className="custom-upload-button">
                   <p>Upload Image</p>
-                  <input type="file"
+                  <Input type="file"
                     className="artist-input-file"
                     onChange={this.updateFile}
                   />
                 </label>
-                </div>
-                <div className="item">
+                </section>
+                <section>
                   <label>
-                    <input type="submit"
+                    <Input type="submit"
                       className="login-button"
                       value="Update" />
                   </label>
-                </div>
+                </section>
                 {this.renderErrors()}
             </div>
           </form>

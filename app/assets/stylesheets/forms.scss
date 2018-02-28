@@ -1,0 +1,58 @@
+/****************************
+  ARTIST FORM
+*****************************/
+
+.edit-user-form {
+    display: flex;
+    padding-top: 12vh;
+    width: 100%;
+    justify-content: center;
+    form {
+        div {
+            .login-button {
+                margin: 0 0 0 0;
+                font-family: 'MissionGothic-Light';
+                border-radius: 3px;
+            }
+            .login-button:hover {
+                box-shadow: 2px 2px 5px lightgray;
+            }
+            section p {
+                font-family: 'MissionGothic-Light', sans-serif;
+                font-size: 13px;
+            }
+        
+            input.artist-input {
+                font-family: 'MissionGothic-Light', sans-serif;
+                font-size: 13px;
+                background: #f8f8f8;
+                width: 294px;
+                border: 1px solid lightgray;
+                border-radius: 4px;
+                height: 34px;
+                padding: 0 0 0 11px;
+            }
+        
+            textarea.artist-input-textarea {
+                font-family: 'MissionGothic-Light', sans-serif;
+                font-size: 13px;
+                background: #f8f8f8;
+                width: 294px;
+                height: 53px;
+                border: 1px solid lightgray;
+                border-radius: 4px;
+                height: 80px;
+                padding: 8px 0 0 11px;
+            }
+        
+            label.custom-upload-button p {
+                border-radius: 3px;
+                padding: 10px 12px;
+                width: 282px;
+                border: 1px solid lightgray;
+            cursor: pointer;
+                background: #f8f8f8;   
+            }
+        }
+    }
+}

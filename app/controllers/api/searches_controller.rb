@@ -29,6 +29,7 @@ class Api::SearchesController < ApplicationController
     end
 
     tracks.each do |track|
+      p track
       @results[counter] = {}
       @results[counter][:type] = "Track"
       @results[counter][:album_id] = track.album.id
@@ -38,7 +39,7 @@ class Api::SearchesController < ApplicationController
       @results[counter][:image] = track.album.image.url
       counter += 1
     end
-
+    p @results
     if @results.keys.length > 0
       render "api/searches/index"
     else
