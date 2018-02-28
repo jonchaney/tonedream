@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DropdownMenuContainer from './dropdownMenu/dropdownMenuContainer.js';
+import DropdownMenuContainer from './dropdownMenuContainer.js';
 
 class DropdownMenu extends React.Component {
   constructor(props) {

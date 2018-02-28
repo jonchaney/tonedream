@@ -14,8 +14,8 @@ class Tabs extends React.Component {
   }
 
   menu() {
-    if (this.state.menu) {
-      return <DropdownMenuContainer/>;
+    if (this.state.menu && this.props.location.pathname === '/') {
+      return <DropdownMenuContainer />;
     }
   }
 
@@ -46,7 +46,7 @@ class Tabs extends React.Component {
 
   render() {
     return (
-        <div className={this.state.menu || this.state.search ? "tabs" : ""}>
+        <div className={(this.state.menu || this.state.search) && this.props.location.pathname === '/' ? "tabs" : ""}>
           {this.menu()}
           {this.search()}
           <nav>

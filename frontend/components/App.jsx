@@ -19,10 +19,10 @@ const App = () => (
   <div>
       <Route path="/" component={Header} /> 
       <Route path="/" component={Tabs} /> 
+      <Route exact path="/account" component={editUserFormContainer}/>
       <Route exact path="/" component={FeaturedArtistsContainer} /> 
       {/* <Route path="/search" component={SearchContainer}/> */}
       {/* <Route path="/info" component={DropdownMenuContainer}/> */}
-      <Route path="/account" component={editUserFormContainer}/>
   </div>
 );
 
