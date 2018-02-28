@@ -5,7 +5,6 @@ class Api::ArtistsController < ApplicationController
   end
 
   def create
-    p params
     @artist = Artist.new(artist_params)
     if @artist.save
       current_user.artists << @artist

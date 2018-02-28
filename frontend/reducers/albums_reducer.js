@@ -52,6 +52,7 @@ const AlbumsReducer = (state = defaultState, action) => {
       newState.selectedAlbum = defaultState.selectedAlbum;
       return newState;
     case RECEIVE_ALBUM_ERRORS:
+    console.log(action.errors)
       newState.errors = action.errors;
       return newState;
     case CLEAR_ALBUM_ERRORS:
