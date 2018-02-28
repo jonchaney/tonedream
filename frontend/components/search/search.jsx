@@ -39,11 +39,8 @@ class Search extends React.Component {
   }
 
   redirect(url, id) {
+    this.props.toggleSearch();
     this.props.history.push(`/${url}`);
-    // i don't know why its not redirecting automatically, quick fix.
-    if (this.props.artist.id !== id) {
-      location.reload();
-    }
   }
 
   searchResults() {

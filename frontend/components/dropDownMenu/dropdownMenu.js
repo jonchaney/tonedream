@@ -13,7 +13,7 @@ class DropdownMenu extends React.Component {
       return (
         [<li key={5}>Profile</li>,
         <li key={6} onClick={() => {
-          this.props.barsOnClick();
+          this.props.toggleList();
           this.props.history.push('./account')
         }}>Account</li>,
         <li key={7} onClick={this.handleClick}>Logout</li>]

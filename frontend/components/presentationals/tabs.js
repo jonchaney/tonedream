@@ -15,13 +15,13 @@ class Tabs extends React.Component {
 
   menu() {
     if (this.state.menu) {
-      return <DropdownMenuContainer barsOnClick={() => this.barsOnClick()} />;
+      return <DropdownMenuContainer toggleList={() => this.toggleList()} />;
     }
   }
 
   search() {
     if (this.state.search) {
-      return <SearchContainer/>;
+      return <SearchContainer toggleSearch={() => this.toggleSearch()}/>;
     }
   }
 
@@ -32,11 +32,11 @@ class Tabs extends React.Component {
     }
   }
 
-  searchOnClick() {
+  toggleSearch() {
     this.setState(this.state.search ? {search: false} : {search: true, menu: false})
   }
 
-  barsOnClick() {
+  toggleList() {
     this.setState(this.state.menu ? {menu: false} : {menu: true, search: false})
   }
 
@@ -49,9 +49,9 @@ class Tabs extends React.Component {
           <nav>
             <section onClick={() => this.homeOnClick() }><Icon type="fal fa-home"/></section>
             {/* <section onClick={}on type="fal fa-calendar"/></section> */}
-            <section onClick={() => this.searchOnClick()}><Icon type="fal fa-search"/></section>
+            <section onClick={() => this.toggleSearch()}><Icon type="fal fa-search"/></section>
             {/* <section onClick={}on type="fal fa-paper-plane"/></section> */}
-            <section onClick={() => this.barsOnClick()}><Icon type="fal fa-bars"/></section>
+            <section onClick={() => this.toggleList()}><Icon type="fal fa-bars"/></section>
           </nav>
         </div>
     );

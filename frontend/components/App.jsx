@@ -19,6 +19,7 @@ const App = () => (
       <Route path="/" component={Tabs} /> 
       <Route exact path="/" component={FeaturedArtistsContainer} /> 
       <Route exact path="/account" component={EditUserFormContainer}/>
+      <Route exact path="/artists/:id" component={EditUserFormContainer}/>
   </div>
 );
 
