@@ -43,6 +43,7 @@ class Tabs extends React.Component {
   render() {
     return (
         <div className={(this.state.menu || this.state.search) ? "tabs" : ""}>
+            {/* style={this.state.search ? {background: "rgba(34,34,34,.98)"} : {}}> */}
           {this.menu()}
           {this.search()}
           <nav>
