@@ -53,6 +53,10 @@ class Api::AlbumsController < ApplicationController
     end 
     
     if @album
+      # test this later
+      @album.tracks.each do |track|
+        track.destroy
+      end 
       @album.destroy
       render json: ['success']
     else
