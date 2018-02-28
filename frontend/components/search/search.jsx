@@ -92,7 +92,8 @@ class Search extends React.Component {
         <form>
           <Input onChange={this.updateSearch} 
                  value={this.state.value} 
-                 placeholder="Search">
+                 placeHolder="Search"
+                 autoFocus={true}>
           </Input>
         </form>
         {this.searchResults()}

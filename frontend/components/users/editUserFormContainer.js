@@ -3,7 +3,7 @@ import { updateUser } from '../../actions/user_actions';
 import { clearErrors } from '../../actions/error_actions';
 import { withRouter } from 'react-router';
 
-import EditUserForm from './edit_user_form';
+import EditUserForm from './editUserForm.js';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,

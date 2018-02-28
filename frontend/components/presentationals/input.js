@@ -10,7 +10,8 @@ class Input extends React.Component {
     return (
         <input onChange={this.props.onChange} 
                value={this.props.value} 
-               placeholder="Search">
+               placeholder={this.props.placeHolder}
+               autoFocus={this.props.autoFocus}>
         </input>
     );
   }
