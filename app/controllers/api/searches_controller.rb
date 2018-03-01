@@ -23,23 +23,22 @@ class Api::SearchesController < ApplicationController
       @results[counter][:album_id] = album.id
       @results[counter][:artist_id] = album.artist.id
       @results[counter][:name] = album.title
-      @results[counter][:artist] = album.artist
+      @results[counter][:artist] = album.artist.name
       @results[counter][:image] = album.image.url
       counter += 1
     end
 
     tracks.each do |track|
-      p track
       @results[counter] = {}
       @results[counter][:type] = "Track"
-      @results[counter][:album_id] = track.album.id
+      @results[counter][:album] = track.album.title
       @results[counter][:artist_id] = track.album.artist.id
       @results[counter][:name] = track.title
-      @results[counter][:artist] = track.album.artist
+      @results[counter][:artist] = track.album.artist.name
       @results[counter][:image] = track.album.image.url
       counter += 1
     end
-    p @results
+
     if @results.keys.length > 0
       render "api/searches/index"
     else

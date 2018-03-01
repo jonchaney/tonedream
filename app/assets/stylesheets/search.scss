@@ -44,8 +44,8 @@
   align-items: center;
   flex-direction: column;
     img {
-        height: 54px;
-        width: 54px;
+        height: 8vh;
+        width: 8vh;
         border-radius: 50px;
     }
     article {
@@ -68,11 +68,24 @@
       div {
         padding: 0px;
       }
-      .results-text {
+      .results-text, .artist-text, .album-text, .track-text {
         font-family: "Raleway", "Open-Sans", sans-serif;
         font-weight: 100;
-        font-size: 2.2vh;
-        margin: 2.5vh 0 0 2vh;
+        font-size: 2vh;
+        margin: 2.7vh 0 0 3vh;
+      }
+      .album-text, .track-text {
+        margin: 1.7vh 0 0 3vh;
+      }
+      .album-text p:last-child {
+        font-size: 1.85vh;
+        padding-top: .5vh;
+        color: #848484;
+      }
+      .track-text p:last-child {
+        font-size: 1.85vh;
+        padding-top: 3px;
+        color: #848484;
       }
       .results-text-nothing {
         font-family: "Raleway", "Open-Sans", sans-serif;

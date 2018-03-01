@@ -44,7 +44,6 @@ class Search extends React.Component {
   }
 
   searchResults() {
-    console.log(this.props.results);
     if (this.props.results.length == 0) {
       return;
     } else if (this.props.results[0] == "nothing found") {  
@@ -74,8 +73,10 @@ class Search extends React.Component {
                 <div>
                 <img src={result.image} />
               </div>
-                <div className="results-text">
+                <div className={`${result.type.toLowerCase()}-text`}>
                   <p>{result.name}</p>
+                  {result.type === "Album" ? <p>{result.artist}</p> : ""}
+                  {result.type === "Track" ? <p>{`${result.artist} \u2022 ${result.album}`}</p> : ""}
                 </div>
             </li>
         );
