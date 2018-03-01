@@ -5,29 +5,21 @@ import DropdownMenuContainer from './dropdownMenuContainer.js';
 class DropdownMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   populateList() {
     if (this.props.currentUser) {
       return (
-        [<li key={5}>Profile</li>,
-        <li key={6} onClick={() => {
-          this.props.toggleList();
-          this.props.history.push('./account')
-        }}>Account</li>,
-        <li key={7} onClick={this.handleClick}>Logout</li>]
+        [<Link key={1} to="">Profile</Link>,
+        <Link key={2} to="/account" onClick={() => this.props.toggleList()}>Account</Link>,
+        <Link key={3} to="/" onClick={() => this.props.logout().then(this.props.toggleList())}>Logout</Link>]
       );
     } else {
       return (
-        [<li key={5} onClick={() => this.props.history.push('./login')}>Login</li>,
-        <li key={6} onClick={() => this.props.history.push('./signup')}>Sign Up</li>]
+        [<Link key={1} to="/login" onClick={() => this.props.toggleList()}>Login</Link>,
+        <Link key={2} to="/signup" onClick={() => this.props.toggleList()}>Sign Up</Link>]
       );
     }
-  }
-
-  handleClick() {
-    this.props.logout().then(this.props.history.push('./'));
   }
 
   render() {

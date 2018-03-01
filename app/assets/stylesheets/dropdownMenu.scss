@@ -2,14 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    li {
+    a:visited {
+        color: white;
+    }
+    a {
         font-family: "Raleway", "Open-Sans", sans-serif;
-        font-weight: bold;
-        font-size: 2.3vh;
-        padding: 4% 0 4% 2%;
+        font-weight: 100;
+        font-size: 3vh;
+        font-kerning: 6px;
+        padding: 4% 0;
+        text-align: center;
         width: 88%;
-        letter-spacing: .5px;
-        border-bottom: 1px solid #f6f6f6;
+        letter-spacing: 0.5px;
         color: #f6f6f6;
     }
 }

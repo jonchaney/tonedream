@@ -20,14 +20,15 @@
       font-family: "Raleway", "Open-Sans", sans-serif;
       font-weight: 100;
       color: #f6f6f6;
-      font-size: 2.5vh;
+      font-size: 4vh;
       width: 88%;
-      border-bottom: 1px solid #f6f6f6;
+      background: 0;
+      border-bottom: 1px solid #f6f6f624;
       border-top: 0;
       border-left: 0;
       border-right: 0;
-      padding: 0 0 10px 10px;
-      background: #f8f8f800; 
+      border-radius: 6px;
+      padding: 10px 0 10px 10px;
       letter-spacing: .2px;
     }
   }
@@ -47,12 +48,22 @@
         width: 54px;
         border-radius: 50px;
     }
+    article {
+      font-family: "Raleway", "Open-Sans", sans-serif;
+      font-weight: bold;
+      letter-spacing: .5px;
+      width: 88%;
+      padding: 22px 0 22px 0px;
+      text-align: center;
+      color: white;
+      font-size: 2.5vh;
+      margin: auto;
+    }
     li {
       width: 88%;
       display: flex;
       flex-direction: row;
-      border-bottom: 1px solid #f6f6f6;
-      padding: 10px 0px 8px 10px;
+      padding: 5px 0px 0px 10px;
       color: #f6f6f6;
       div {
         padding: 0px;
@@ -61,7 +72,7 @@
         font-family: "Raleway", "Open-Sans", sans-serif;
         font-weight: 100;
         font-size: 2.2vh;
-        margin: 1.5vh 0 0 2vh;
+        margin: 2.5vh 0 0 2vh;
       }
       .results-text-nothing {
         font-family: "Raleway", "Open-Sans", sans-serif;

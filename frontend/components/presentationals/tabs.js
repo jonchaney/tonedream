@@ -48,9 +48,9 @@ class Tabs extends React.Component {
           {this.search()}
           <nav>
             <section onClick={() => this.homeOnClick() }><Icon type="fal fa-home"/></section>
-            {/* <section onClick={}on type="fal fa-calendar"/></section> */}
+            {/* <section><Icon type="fal fa-calendar"/></section> */}
             <section onClick={() => this.toggleSearch()}><Icon type="fal fa-search"/></section>
-            {/* <section onClick={}on type="fal fa-paper-plane"/></section> */}
+            {/* <section><Icon type="fal fa-paper-plane"/></section> */}
             <section onClick={() => this.toggleList()}><Icon type="fal fa-bars"/></section>
           </nav>
         </div>

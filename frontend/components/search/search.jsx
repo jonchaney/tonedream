@@ -44,6 +44,7 @@ class Search extends React.Component {
   }
 
   searchResults() {
+    console.log(this.props.results);
     if (this.props.results.length == 0) {
       return;
     } else if (this.props.results[0] == "nothing found") {  
@@ -57,25 +58,31 @@ class Search extends React.Component {
         </ul> 
       );
     } else {
+      let results = [];
+      let type = "";
+      this.props.results.forEach((result, idx) => {
+        let url = `artists/${result.id}`;
+        if (result.type !== 'Artist') {
+          url = `albums/${result.id}`;
+        } 
+        if (type !== result.type) {
+          results.push(<article className="results-text" key={idx+100}>{`${result.type}s`}</article>);
+          type = result.type;
+        }
+        results.push(
+          <li key={idx} onClick={() => this.redirect(url, result.id)}>
+                <div>
+                <img src={result.image} />
+              </div>
+                <div className="results-text">
+                  <p>{result.name}</p>
+                </div>
+            </li>
+        );
+      })
       return (
         <ul className="search-results">
-          {this.props.results.map((result, idx) => {
-            let url = `artists/${result.id}`;
-            if (result.type !== 'Artist') {
-              url = `albums/${result.id}`;
-            } 
-            return (
-              <li key={idx} onClick={() => this.redirect(url, result.id)}>
-                    <div key={idx+10}>
-                    <img src={result.image} />
-                  </div>
-                    <div key={idx+20} className="results-text">
-                      <p>{result.name}</p>
-                      <p>{result.type}</p>
-                    </div>
-                </li>
-            );
-          })}
+          {results}
         </ul>   
       );
     }
