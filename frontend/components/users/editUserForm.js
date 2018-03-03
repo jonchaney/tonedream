@@ -5,7 +5,6 @@ import Icon from '../presentationals/icon.js'
 class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.state = {
@@ -84,30 +83,23 @@ class EditUserForm extends React.Component {
                   />
                 </label>
               </div>
-                <Input type="text"
-                  autoFocus="autofocus"
-                  onFocus={(event) => this.onFocus(event)}
-                  className="text-input"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  placeholder={'username'}
-                />
-                <Input type="text"
-                  className="text-input"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  placeholder="email"
-                />
-                {/* <label className="custom-upload-button">
-                  <p>Upload Image</p>
-                  <Input type="file"
-                    className="artist-input-file"
-                    onChange={this.updateFile}
-                  />
-                </label> */}
-                    <Input type="submit"
-                      className="button"
-                      value="Update" />
+              <Input type="text"
+                autoFocus="autofocus"
+                onFocus={(event) => this.onFocus(event)}
+                className="text-input"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder={'username'}
+              />
+              <Input type="text"
+                className="text-input"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="email"
+              />
+                  <Input type="submit"
+                    className="button"
+                    value="Update" />
                 {this.renderErrors()}
           </form>
         </div>
