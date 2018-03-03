@@ -82,3 +82,30 @@ header {
   padding-top: 79%;
   top: 50%;
 }
+
+.button {
+  width: 88%;
+  font-family: 'MissionGothic-Regular', sans-serif;
+  font-size: 2.5vh;
+  height: 6vh;
+  color: #f6f6f6;
+  border-radius: 0;
+  outline: none;
+  background-color: #5a5a5a;
+  font-family: 'MissionGothic-Light';
+  border-radius: 3px;
+}
+
+.text-input {
+  height: 6vh;
+  font-family: 'MissionGothic-Light', sans-serif;
+  border: none;
+  font-size: 2.5vh;
+  box-sizing: border-box;
+  color: #f6f6f6;
+  background-color: rgba(34, 34, 34, 0.98);
+  -webkit-font-smoothing: antialiased;
+  padding-left: 2vh;
+  width: 88%;
+  border-radius: 4px;
+}

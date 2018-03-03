@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from '../presentationals/input.js'
+import Icon from '../presentationals/icon.js'
 
 class EditUserForm extends React.Component {
   constructor(props) {
@@ -73,43 +74,41 @@ class EditUserForm extends React.Component {
     return (
         <div className="edit-user-form">
           <form onSubmit={this.handleSubmit}>
-            <div>
-                <section>
-                    <Input type="text"
-                      autoFocus="autofocus"
-                      onFocus={(event) => this.onFocus(event)}
-                      className="artist-input"
-                      value={this.state.username}
-                      onChange={this.update('username')}
-                      placeholder={'username'}
-                    />
-                  </section>
-                <section>
-                  <Input type="text"
-                    className="artist-input"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    placeholder="email"
-                  />
-                </section>
-                <section>
-                <label className="custom-upload-button">
-                  <p>Upload Image</p>
+              <div className="container">
+                <img src={this.state.imageUrl}/>
+                <label>
+                  <Icon class="positioner" type="fal fa-upload"/>
                   <Input type="file"
                     className="artist-input-file"
                     onChange={this.updateFile}
                   />
                 </label>
-                </section>
-                <section>
-                  <label>
+              </div>
+                <Input type="text"
+                  autoFocus="autofocus"
+                  onFocus={(event) => this.onFocus(event)}
+                  className="text-input"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  placeholder={'username'}
+                />
+                <Input type="text"
+                  className="text-input"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="email"
+                />
+                {/* <label className="custom-upload-button">
+                  <p>Upload Image</p>
+                  <Input type="file"
+                    className="artist-input-file"
+                    onChange={this.updateFile}
+                  />
+                </label> */}
                     <Input type="submit"
-                      className="login-button"
+                      className="button"
                       value="Update" />
-                  </label>
-                </section>
                 {this.renderErrors()}
-            </div>
           </form>
         </div>
     );
