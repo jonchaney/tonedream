@@ -30,28 +30,19 @@ export const updatingArtist = () => ({
   type: UPDATE_ARTIST
 });
 
-export const updateUserProfile = (formData, id) => (dispatch) => {
+export const updateProfile = (formData, id) => (dispatch) => {
   return APIUtil.updateProfile(formData, id).then(
     response => dispatch(receiveCurrentUser(response))
   );
 };
 
 export const updateUser = user => dispatch => (
-  // dispatch(updatingArtist);
   APIUtil.updateUser(user).then(response => {
     dispatch(receiveCurrentUser(response));
   }, err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
-
-// export const login = user => dispatch => (
-//   APIUtil.login(user).then(user => {
-//     dispatch(receiveCurrentUser(user));
-//   }, err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
 
 export const fetchUser = id => dispatch => {
   return APIUtil.getUser(id).then(

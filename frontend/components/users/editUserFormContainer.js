@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateUser } from '../../actions/user_actions';
+import { updateUser, updateProfile } from '../../actions/user_actions';
 import { clearErrors } from '../../actions/error_actions';
 import { withRouter } from 'react-router';
 
@@ -12,6 +12,7 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateUser: (user) => dispatch(updateUser(user)),
+  updateProfile: (formData, id) => dispatch(updateProfile(formData, id)),
   clearErrors: () => dispatch(clearErrors())
 });
 
