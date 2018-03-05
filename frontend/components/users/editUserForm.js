@@ -21,6 +21,10 @@ class EditUserForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let user = {
@@ -73,16 +77,14 @@ class EditUserForm extends React.Component {
     return (
         <div className="edit-user-form">
           <form onSubmit={this.handleSubmit}>
-              <div className="container">
-                <img src={this.state.imageUrl}/>
-                <label>
-                  <Icon class="positioner" type="fal fa-upload"/>
-                  <Input type="file"
-                    className="artist-input-file"
-                    onChange={this.updateFile}
-                  />
-                </label>
-              </div>
+              <img src={this.state.imageUrl}/>
+              <label>
+                <p>Change Profile Photo</p>
+                <Input type="file"
+                  className="artist-input-file"
+                  onChange={this.updateFile}
+                />
+              </label>
               <Input type="text"
                 autoFocus="autofocus"
                 onFocus={(event) => this.onFocus(event)}
@@ -97,10 +99,10 @@ class EditUserForm extends React.Component {
                 onChange={this.update('email')}
                 placeholder="email"
               />
-                  <Input type="submit"
-                    className="button"
-                    value="Update" />
-                {this.renderErrors()}
+              <Input type="submit"
+                className="button"
+                value="Update" />
+            {this.renderErrors()}
           </form>
         </div>
     );
