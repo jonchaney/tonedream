@@ -11,7 +11,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateUser: (user) => dispatch(updateUser(user)),
+  updateUser: (user, id) => dispatch(updateUser(user, id)),
   updateProfile: (formData, id) => dispatch(updateProfile(formData, id)),
   clearErrors: () => dispatch(clearErrors())
 });

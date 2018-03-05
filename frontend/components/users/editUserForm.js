@@ -26,7 +26,7 @@ class EditUserForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.image) {
+    if (this.state.imageFile) {
       let formData = new FormData;
       formData.append("user[username]", this.state.username);
       formData.append("user[email]", this.state.email);
@@ -37,7 +37,7 @@ class EditUserForm extends React.Component {
         username: this.state.username,
         email: this.state.email
       }
-      this.props.updateUser(user).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+      this.props.updateUser(user, this.state.id).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
 
   }
