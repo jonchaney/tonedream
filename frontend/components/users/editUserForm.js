@@ -26,13 +26,20 @@ class EditUserForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.state.image) {
+      let formData = new FormData;
+      formData.append("user[username]", this.state.username);
+      formData.append("user[email]", this.state.email);
+      formData.append("user[image]", this.state.imageFile);
+      this.props.updateProfile(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    } else {
+      let user = {
+        username: this.state.username,
+        email: this.state.email
+      }
+      this.props.updateUser(user).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    }
 
-    let formData = new FormData;
-    formData.append("user[username]", this.state.username);
-    formData.append("user[email]", this.state.email);
-    formData.append("user[image]", this.state.imageFile);
-
-    this.props.updateProfile(formData, this.state.id).then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
   }
 
   updateFile(e) {

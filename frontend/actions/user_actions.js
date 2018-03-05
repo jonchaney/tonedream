@@ -31,9 +31,12 @@ export const updatingArtist = () => ({
 });
 
 export const updateProfile = (formData, id) => (dispatch) => {
-  return APIUtil.updateProfile(formData, id).then(
-    response => dispatch(receiveCurrentUser(response))
-  );
+  return APIUtil.updateProfile(formData, id).then(response =>  {
+    dispatch(receiveCurrentUser(response))
+  }, err => {
+    console.log(err);
+    dispatch(receiveErrors(err.responseJSON))
+  });
 };
 
 export const updateUser = user => dispatch => (

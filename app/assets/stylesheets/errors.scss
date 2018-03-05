@@ -1,0 +1,12 @@
+.errors {
+    font-family: "Raleway", "Open-Sans", sans-serif;
+    font-size: 1.8vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    li {
+        margin: .5vh 0 !important;
+        text-align: center;
+    }
+}
