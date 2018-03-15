@@ -33,6 +33,11 @@ A search feature allows for quick search of the database for music. The results 
 
 ![artist_page](docs/images/search.png)
 
+# What's happening on the development branch
+
+A complete responsive redesign, with the mobile version being a simple music streaming app and the full browser version capable of all other current features plus the following planned features.
+
+![dev_branch](docs/dev-branch.gif)
 
 # Planned Features
 
