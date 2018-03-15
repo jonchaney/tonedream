@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import ArtistShow from './artist_show';
+import ArtistShow from './artistShow';
 
 import { allAlbums } from '../../reducers/selectors';
 

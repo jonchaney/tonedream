@@ -11,6 +11,7 @@ import Header from './presentationals/headers/header.jsx';
 import Tabs from './presentationals/tabs.js';
 import FeaturedArtistsContainer from './featured/featuredArtistsContainer.js';
 import EditUserFormContainer from './users/editUserFormContainer.js';
+import ArtistShowContainer from './artists/artistShowContainer.js';
 
 
 const App = () => (
@@ -19,7 +20,7 @@ const App = () => (
       <Route path="/" component={Tabs} /> 
       <Route exact path="/" component={FeaturedArtistsContainer} /> 
       <Route exact path="/account" component={EditUserFormContainer}/>
-      <Route exact path="/artists/:id" component={EditUserFormContainer}/>
+      <Route exact path="/artists/:id" component={ArtistShowContainer}/>
   </div>
 );
 
