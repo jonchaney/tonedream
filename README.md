@@ -37,7 +37,7 @@ A search feature allows for quick search of the database for music. The results 
 
 The search component from the development branch has been refactored to display the results separated out in three separate sections -- Artist, Albums, or Tracks. I do this by pushing an article element into the array when the type changes.
 
-![search](docs/search.png)
+![search](docs/search.png=
 
 A complete responsive redesign, with the mobile version being a simple music streaming app and the full browser version capable of all other current features plus the following planned features.
 
