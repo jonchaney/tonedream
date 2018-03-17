@@ -10,18 +10,15 @@ import { fetchUser, updatingArtist, updateUserProfile } from '../../actions/user
 import { fetchArtist} from '../../actions/artist_actions';
 import { fetchTracks } from '../../actions/audio_player_actions';
 
-const mapStateToProps = ({ albums, session, loading, selectedArtist }) => ({
-  currentUser: session.currentUser,
+const mapStateToProps = ({ albums, session, loading, artists }) => ({
   albums: allAlbums(albums),
   artistLoading: loading.artistLoading,
-  selectedAlbum: albums.selectedAlbum,
-  selectedArtist: selectedArtist
+  artist: artists.selectedArtist
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchAlbums: (user) => dispatch(fetchAlbums(user)),
   fetchArtist: (id) => dispatch(fetchArtist(id)),
-  fetchTracks: () => dispatch(fetchTracks()),
   clearAlbums: () => dispatch(clearAlbums())
 });
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import Icon from '../presentationals/icon.js';
 
-import AlbumIndexContainer from '../albums/album_index_container';
+import AlbumIndex from '../albums/albumIndex.jsx';
 import TrackIndexContainer from '../tracks/track_index_container';
-import SelectedArtistInfoContainer from './selected_artist_info_container';
+import ArtistInfo from './artistInfo.jsx';
 
 class ArtistShow extends React.Component {
   constructor(props) {
@@ -18,12 +19,16 @@ class ArtistShow extends React.Component {
   }
 
   render() {
-    return (
-      <div className="artist-profile">
-          <SelectedArtistInfoContainer />
-          <AlbumIndexContainer/>
-      </div>
-    );
+      return (
+        this.props.artistLoading ?
+          <div>
+            <Icon type="fal fa-spinner"/>
+          </div> :
+          <div className="artist-profile">
+              <ArtistInfo artist={this.props.artist}/>
+              <AlbumIndex albums={this.props.albums} />
+          </div>
+      );
   }
 }
 

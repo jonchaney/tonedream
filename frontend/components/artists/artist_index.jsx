@@ -10,14 +10,11 @@ class ArtistIndex extends React.Component {
   render() {
     const { artists } = this.props;
     return (
-
       <div className="artist-index">
-        {/* <h3>ARTISTS</h3> */}
         <ul className="artist-index-list">
           {artists.map(artist => <ArtistIndexItem key={artist.id} artist={artist} />)}
         </ul>
       </div>
-
     );
   }
 }
