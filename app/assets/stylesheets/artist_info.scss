@@ -1,5 +1,6 @@
 .artist-profile {
   background-color: rgb(34, 34, 34);
+  height: 100vh;
   .user-info {
     display: flex;
     flex-direction: column;
@@ -20,7 +21,7 @@
       flex-direction: column;
       display: flex;
       li:last-child {
-        color: #d8d8d8;
+        color: #848484;
         font-size: 2vh;
       }
     }
