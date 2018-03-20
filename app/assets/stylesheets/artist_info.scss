@@ -1,0 +1,28 @@
+.artist-profile {
+  background-color: rgb(34, 34, 34);
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 25%;
+    div {
+      text-align: center;
+      img {
+        width: 75%;
+      }
+    }
+    ul {
+      color: white;
+      font-family: "Raleway", "Open-Sans", sans-serif;
+      font-weight: bold;
+      font-size: 3vh;
+      margin-top: 1%;
+      flex-direction: column;
+      display: flex;
+      li:last-child {
+        color: #d8d8d8;
+        font-size: 2vh;
+      }
+    }
+  }
+}

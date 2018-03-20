@@ -1,43 +1,29 @@
-.album-index-photo {
-  height: 232px;
-  flex: auto;
-}
-
 .album-index-container {
-  padding: .5vw;
-  flex-flow: row wrap;
-  display: flex;
-  margin: 0px 0 0 0px;
-  width: 760px;
-}
-
-.album-index-container > li:nth-child(3) {
-    flex-basis: 0;
-}
-
-.edit-album-buttons {
-    display: flex;
-    flex-direction: row;
-    margin: 5px 10px 0 -16px;
-}
-
-.edit-album-buttons li.edit {
-    margin: 0 14px 0 0px;
-}
-
-.edit-album-buttons > li {
-    margin: 0 10px 0 0;
-}
-
-.album-index-container li {
-    padding: 0px 10px 0 10px;
-}
-
-.album-index-container li:hover {
-    text-decoration: underline;
-}
-
-.album-index-container li h1 {
-    font-family: 'MissionGothic-Light', sans-serif;
-    font-size: 16px;
+    margin-top: 4vh;
+    li {
+        display: flex;
+        font-family: "Raleway", "Open-Sans", sans-serif;
+        font-weight: bold;
+        font-size: 2vh;
+        justify-content: space-between;
+        color: white;
+        section {
+            img {
+                height: 15vh;
+            }
+            article {
+                display: flex;
+                flex-direction: column;
+            }
+            article:last-child {
+                padding: 8%;
+            }
+        }
+        section:first-child {
+            display: flex;
+        }
+        section:last-child {
+            font-size: 5vh;
+        }
+    }
 }

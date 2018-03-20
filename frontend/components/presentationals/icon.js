@@ -9,6 +9,7 @@ import faPaperPlane from '@fortawesome/fontawesome-pro-light/faPaperPlane'
 import faCalendar from '@fortawesome/fontawesome-pro-light/faCalendar'
 import faSpinner from '@fortawesome/fontawesome-pro-light/faSpinner'
 import faUpload from '@fortawesome/fontawesome-pro-light/faUpload'
+import faChevronRight from '@fortawesome/fontawesome-pro-light/faChevronRight'
 
 fontawesome.library.add(faSpinner)
 fontawesome.library.add(faHome)
@@ -17,6 +18,7 @@ fontawesome.library.add(faBars)
 fontawesome.library.add(faPaperPlane)
 fontawesome.library.add(faCalendar)
 fontawesome.library.add(faUpload)
+fontawesome.library.add(faChevronRight)
 
 class Icon extends React.Component {
   constructor(props) {
