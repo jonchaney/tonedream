@@ -16,8 +16,8 @@ import ArtistShowContainer from './artists/artistShowContainer.js';
 
 const App = () => (
   <div>
-      <Route path="/" component={Header} /> 
       <Route path="/" component={Tabs} /> 
+      <Route exact path="/" component={Header} /> 
       <Route exact path="/" component={FeaturedArtistsContainer} /> 
       <Route exact path="/account" component={EditUserFormContainer}/>
       <Route exact path="/artists/:id" component={ArtistShowContainer}/>

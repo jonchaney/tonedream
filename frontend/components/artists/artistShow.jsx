@@ -11,11 +11,20 @@ class ArtistShow extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.clearAlbums();
     this.props.fetchArtist(this.props.match.params.id).then(() => {
       this.props.fetchAlbums(this.props.match.params.id);
     } );
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.clearAlbums();
+      this.props.fetchArtist(nextProps.match.params.id).then(() => {
+        this.props.fetchAlbums(nextProps.match.params.id);
+      });
+    }
   }
 
   render() {
