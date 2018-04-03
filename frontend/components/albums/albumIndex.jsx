@@ -19,18 +19,16 @@ class AlbumIndex extends React.Component {
         <ul className="album-index-container">
             {this.props.albums.map((album, idx) =>
               <li key={album.id} onClick={() => this.handleClick(album.id)}>
-              <section>
-                <article>
-                  <img className="album-index-photo" value={album.id} src={album.image_url}/>
-                </article>
-                <article>
-                  <p>{album.title}</p>
-                  <p>{album.date}</p>
-                </article>
-              </section>
-              <section>
-                <Icon type="fal fa-chevron-right" />
-              </section>
+                <section>
+                    <img className="album-index-photo" value={album.id} src={album.image_url}/>
+                  <article>
+                    <p>{album.title}</p>
+                    {/* <p>{album.date}</p> */}
+                  </article>
+                </section>
+                <section>
+                  <Icon type="fal fa-chevron-right" />
+                </section>
               </li>
             )}
         </ul>

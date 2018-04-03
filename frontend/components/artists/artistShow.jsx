@@ -20,7 +20,6 @@ class ArtistShow extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
-      this.props.clearAlbums();
       this.props.fetchArtist(nextProps.match.params.id).then(() => {
         this.props.fetchAlbums(nextProps.match.params.id);
       });

@@ -4,26 +4,32 @@
         display: flex;
         font-family: "Raleway", "Open-Sans", sans-serif;
         font-weight: bold;
-        font-size: 2vh;
+        font-size: .8rem;
         justify-content: space-between;
         color: white;
         section {
             img {
                 height: 12vh;
+                padding-left: 5vw;
             }
             article {
                 display: flex;
                 flex-direction: column;
             }
             article:last-child {
-                padding: 8%;
+                margin: 13% 8% 8% 10%;
+                width: 40vw;
             }
         }
         section:first-child {
             display: flex;
         }
         section:last-child {
-            font-size: 5vh;
+            div {
+                font-size: 3vh;
+                padding-right: 5vw;
+                padding-top: 4vh;
+            }
         }
     }
 }
